@@ -22,12 +22,30 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus('submitting');
 
-    // Placeholder for form submission
-    setTimeout(() => {
-      console.log('Form data:', formData);
-      setStatus('success');
-      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-    }, 1000);
+    try {
+      const response = await fetch('https://formspree.io/f/xlgweovk', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
