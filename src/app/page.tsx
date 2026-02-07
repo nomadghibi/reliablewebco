@@ -224,6 +224,7 @@ export default function Home() {
               { name: 'StrideSafe', image: '/images/portfolio/stridesafe.jpg', url: 'https://stridesafe.vercel.app', category: 'Healthcare Platform' },
               { name: 'TechEze AI', image: '/images/portfolio/techezeai.jpg', url: 'https://www.techezeai.com', category: 'AI Consulting' },
               { name: 'Destiny Insights', image: '/images/portfolio/destinyinsights.jpg', url: 'https://www.destiny-insights.com', category: 'AI Platform' },
+              { name: 'Journeys Home Care', image: '/images/portfolio/journeys.png', url: 'https://journeysstaffinghomecareservices.com', category: 'Healthcare Website' },
             ].map((demo, idx) => (
               <a
                 key={idx}
