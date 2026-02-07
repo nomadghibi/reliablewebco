@@ -24,8 +24,11 @@ export default function Header() {
       <nav className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="text-xl md:text-2xl font-bold text-gray-900">
-            Reliable<span className="text-primary-600">Web</span> Studio
+          <Link href="/" className="flex flex-col">
+            <span className="text-xl md:text-2xl font-bold text-gray-900">
+              Reliable<span className="text-primary-600">Web</span> Studio
+            </span>
+            <span className="text-xs text-gray-500 tracking-wide">Digital Transformation & Automation</span>
           </Link>
 
           {/* Desktop Navigation */}
