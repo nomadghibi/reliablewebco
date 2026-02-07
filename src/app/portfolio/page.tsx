@@ -111,6 +111,16 @@ const portfolioItems = [
     isLive: true,
     image: '/images/portfolio/techezeai.jpg',
   },
+  {
+    id: 11,
+    title: 'Destiny Insights',
+    category: 'Platform / Web App MVP',
+    description: 'AI-powered astrology and fortune-telling platform with personalized readings, Bazi analysis, compatibility insights, and subscription services.',
+    features: ['AI integration', 'Payment system', 'Personalized readings', 'Subscription model', 'Live in production'],
+    liveUrl: 'https://www.destiny-insights.com',
+    isLive: true,
+    image: '/images/portfolio/destinyinsights.jpg',
+  },
 ];
 
 export default function PortfolioPage() {
@@ -795,6 +805,77 @@ export default function PortfolioPage() {
                       <p>✓ Booking integration</p>
                       <p>✓ Professional AI branding</p>
                       <p>✓ SEO & performance optimized</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Destiny Insights */}
+            <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
+                <div>
+                  <div className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-bold px-4 py-2 rounded mb-4">
+                    Platform / Web App MVP
+                  </div>
+                  <h3 className="text-4xl font-bold mb-4">Destiny Insights</h3>
+                  <p className="text-xl text-gray-700 mb-6">
+                    AI-powered astrology and fortune-telling platform delivering personalized readings using ancient Chinese metaphysical systems combined with modern AI technology.
+                  </p>
+
+                  <div className="mb-6">
+                    <h4 className="font-bold text-lg mb-3">Platform Features:</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-purple-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>ChatGPT-4 AI integration</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-purple-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Bazi & compatibility analysis</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-purple-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Subscription & payment system</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-purple-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>12+ personalized reading types</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <a
+                    href="https://www.destiny-insights.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary text-lg inline-flex items-center gap-2"
+                  >
+                    Visit Live Site
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+
+                <div className="flex items-center justify-center">
+                  <div className="bg-white rounded-lg shadow-xl p-6 text-center">
+                    <div className="text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">$18k+</div>
+                    <div className="text-lg font-semibold text-gray-700 mb-4">Platform MVP</div>
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <p>✓ AI-powered readings engine</p>
+                      <p>✓ User authentication system</p>
+                      <p>✓ Payment & subscriptions</p>
+                      <p>✓ 12+ feature modules</p>
+                      <p>✓ 50,000+ users served</p>
                     </div>
                   </div>
                 </div>
