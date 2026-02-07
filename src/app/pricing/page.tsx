@@ -109,7 +109,7 @@ export default function PricingPage() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span>Analytics hookup (GA4 placeholder)</span>
+                    <span>Analytics ready</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
