@@ -3,7 +3,7 @@ import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'Platform & Web App Development — Custom MVPs Built Fast | ReliableWebCo',
+  title: 'Platform & Web App Development — Custom MVPs Built Fast | ReliableWeb Studio',
   description:
     'Need a web app, portal, or platform MVP? We build login systems, dashboards, databases, and integrations. $8,000-$25,000+. Quote after scope call.',
 };

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'Process — Launch Fast Without the Agency Drag | ReliableWebCo',
+  title: 'Process — Launch Fast Without the Agency Drag | ReliableWeb Studio',
   description:
     'Simple 4-step process: Intake, Build, Review, Launch. No endless meetings. No project delays. Just results.',
 };

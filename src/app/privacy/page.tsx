@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | ReliableWebCo',
-  description: 'Privacy policy for ReliableWebCo.',
+  title: 'Privacy Policy | ReliableWeb Studio',
+  description: 'Privacy policy for ReliableWeb Studio.',
 };
 
 export default function PrivacyPage() {
@@ -16,7 +16,7 @@ export default function PrivacyPage() {
 
             <h2>Introduction</h2>
             <p>
-              ReliableWebCo / Best Computer Tech LLC (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your
+              ReliableWeb Studio / Best Computer Tech LLC (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your
               privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when
               you visit our website or use our services.
             </p>

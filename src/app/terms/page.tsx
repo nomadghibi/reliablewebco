@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | ReliableWebCo',
-  description: 'Terms of service for ReliableWebCo.',
+  title: 'Terms of Service | ReliableWeb Studio',
+  description: 'Terms of service for ReliableWeb Studio.',
 };
 
 export default function TermsPage() {
@@ -16,13 +16,13 @@ export default function TermsPage() {
 
             <h2>Agreement to Terms</h2>
             <p>
-              By accessing or using the services of ReliableWebCo / Best Computer Tech LLC (&quot;we,&quot; &quot;our,&quot; or
+              By accessing or using the services of ReliableWeb Studio / Best Computer Tech LLC (&quot;we,&quot; &quot;our,&quot; or
               &quot;us&quot;), you agree to be bound by these Terms of Service. If you do not agree to these terms,
               please do not use our services.
             </p>
 
             <h2>Services</h2>
-            <p>ReliableWebCo provides web design and development services, including but not limited to:</p>
+            <p>ReliableWeb Studio provides web design and development services, including but not limited to:</p>
             <ul>
               <li>24-Hour Landing Pages</li>
               <li>Website-in-a-Week packages</li>
@@ -88,7 +88,7 @@ export default function TermsPage() {
             <h2>Intellectual Property</h2>
             <h3>Ownership</h3>
             <p>
-              Upon full payment, you own the website content and design. ReliableWebCo retains the right to display the project in
+              Upon full payment, you own the website content and design. ReliableWeb Studio retains the right to display the project in
               our portfolio unless otherwise agreed in writing.
             </p>
 
@@ -106,7 +106,7 @@ export default function TermsPage() {
 
             <h2>Limitations of Liability</h2>
             <p>
-              ReliableWebCo is not liable for any indirect, incidental, or consequential damages arising from the use
+              ReliableWeb Studio is not liable for any indirect, incidental, or consequential damages arising from the use
               or inability to use our services. Our total liability shall not exceed the amount paid for the specific
               service.
             </p>

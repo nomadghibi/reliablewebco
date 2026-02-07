@@ -10,11 +10,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ReliableWebCo — Launch a Lead-Generating Website Fast | 24-Hour Landing Pages",
+  title: "ReliableWeb Studio — Launch a Lead-Generating Website Fast | 24-Hour Landing Pages",
   description: "Get a modern landing page in 24 hours or a complete 5-page website in 7 days. Fixed price, professional, and built to convert. Generate calls, form leads, and bookings.",
   keywords: "24 hour landing page, website in a week, lead generation website, conversion website, fast website launch",
   openGraph: {
-    title: "ReliableWebCo — Launch a Lead-Generating Website Fast",
+    title: "ReliableWeb Studio — Launch a Lead-Generating Website Fast",
     description: "Get a modern landing page in 24 hours or a complete 5-page website in 7 days. Built to generate calls, form leads, and bookings.",
     type: "website",
   },

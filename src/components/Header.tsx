@@ -25,7 +25,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="text-xl md:text-2xl font-bold text-gray-900">
-            Reliable<span className="text-primary-600">WebCo</span>
+            Reliable<span className="text-primary-600">Web</span> Studio
           </Link>
 
           {/* Desktop Navigation */}
