@@ -197,7 +197,7 @@ export default function PricingPage() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span>Home, About, Services, Service Area, Contact</span>
+                    <span>Up to 8 pages (Home, About, Services, etc.)</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
