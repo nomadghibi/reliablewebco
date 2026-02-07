@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react';
 
-// Calendly URL - Update this with your actual Calendly link
-const CALENDLY_URL = 'https://calendly.com/reliablewebco/10min';
+// Calendly URL
+const CALENDLY_URL = 'https://calendly.com/freddehnashi/30min';
 
 declare global {
   interface Window {

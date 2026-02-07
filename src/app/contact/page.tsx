@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react';
 import Script from 'next/script';
 
-// Calendly URL - Update this with your actual Calendly link
-const CALENDLY_URL = 'https://calendly.com/reliablewebco/10min';
+// Calendly URL
+const CALENDLY_URL = 'https://calendly.com/freddehnashi/30min';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
