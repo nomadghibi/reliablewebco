@@ -218,7 +218,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               { name: 'HVAC Pro Office', image: '/images/portfolio/hvacprooffice.png', url: 'https://hvacprooffice.com', category: 'Platform MVP' },
               { name: 'StrideSafe', image: '/images/portfolio/stridesafe.jpg', url: 'https://stridesafe.vercel.app', category: 'Healthcare Platform' },
