@@ -350,66 +350,84 @@ export default function ContactPage() {
                 />
               </div>
 
-              {/* Process Steps */}
-              <div className="bg-white rounded-2xl shadow-xl p-6">
-                <h3 className="font-bold text-gray-900 mb-4">What Happens Next?</h3>
-                <div className="space-y-4">
-                  {[
-                    { step: '1', text: 'I review your request', time: 'Within 24 hours' },
-                    { step: '2', text: 'We have a quick discovery call', time: '15-30 minutes' },
-                    { step: '3', text: 'You receive a detailed quote', time: 'Same day' },
-                    { step: '4', text: 'We start building your site', time: 'Upon approval' },
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-4">
-                      <div className="w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
-                        {item.step}
-                      </div>
-                      <div className="flex-1">
-                        <p className="font-medium text-gray-900">{item.text}</p>
-                        <p className="text-sm text-gray-500">{item.time}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            </div>
+          </div>
 
-              {/* Contact Info Card */}
-              <div className="bg-gray-900 rounded-2xl shadow-xl p-6 text-white">
-                <h3 className="font-bold mb-4">Direct Contact</h3>
-                <div className="space-y-4">
-                  <a href="tel:+13219535199" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
+          {/* Process & Contact - Side by Side */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto mt-12">
+            {/* Process Steps */}
+            <div className="bg-white rounded-2xl shadow-xl p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
+                  <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">What Happens Next?</h3>
+              </div>
+              <div className="space-y-5">
+                {[
+                  { step: '1', text: 'I review your request', time: 'Within 24 hours' },
+                  { step: '2', text: 'We have a quick discovery call', time: '15-30 minutes' },
+                  { step: '3', text: 'You receive a detailed quote', time: 'Same day' },
+                  { step: '4', text: 'We start building your site', time: 'Upon approval' },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-lg shadow-primary-600/25">
+                      {item.step}
                     </div>
-                    <div>
-                      <div className="text-xs text-gray-500 uppercase tracking-wide">Phone</div>
-                      <div className="font-medium">(321) 953-5199</div>
+                    <div className="flex-1 pt-1">
+                      <p className="font-semibold text-gray-900">{item.text}</p>
+                      <p className="text-sm text-gray-500 mt-0.5">{item.time}</p>
                     </div>
-                  </a>
-                  <a href="mailto:hello@reliablewebco.com" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-xs text-gray-500 uppercase tracking-wide">Email</div>
-                      <div className="font-medium">hello@reliablewebco.com</div>
-                    </div>
-                  </a>
-                  <div className="flex items-center gap-3 text-gray-300">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-xs text-gray-500 uppercase tracking-wide">Location</div>
-                      <div className="font-medium">Florida, USA</div>
-                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Contact Info Card */}
+            <div className="bg-gray-900 rounded-2xl shadow-xl p-8 text-white">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold">Direct Contact</h3>
+              </div>
+              <div className="space-y-5">
+                <a href="tel:+13219535199" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                  <div className="w-12 h-12 bg-white/10 group-hover:bg-white/20 rounded-xl flex items-center justify-center transition-colors">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wider font-medium">Phone</div>
+                    <div className="font-semibold text-lg">(321) 953-5199</div>
+                  </div>
+                </a>
+                <a href="mailto:hello@reliablewebco.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                  <div className="w-12 h-12 bg-white/10 group-hover:bg-white/20 rounded-xl flex items-center justify-center transition-colors">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wider font-medium">Email</div>
+                    <div className="font-semibold text-lg">hello@reliablewebco.com</div>
+                  </div>
+                </a>
+                <div className="flex items-center gap-4 text-gray-300">
+                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wider font-medium">Location</div>
+                    <div className="font-semibold text-lg">Florida, USA</div>
                   </div>
                 </div>
               </div>
