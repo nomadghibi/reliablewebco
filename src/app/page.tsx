@@ -127,6 +127,18 @@ export default function Home() {
               </Link>
             </div>
           </div>
+
+          {/* Content Note */}
+          <div className="mt-10 text-center">
+            <div className="inline-flex items-center gap-3 bg-gray-100 px-6 py-4 rounded-xl">
+              <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-gray-700">
+                <strong>Content & Images:</strong> Provide your own, or we can source them for you — included in all packages.
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
