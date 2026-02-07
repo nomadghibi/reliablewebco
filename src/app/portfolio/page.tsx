@@ -91,6 +91,26 @@ const portfolioItems = [
     isLive: true,
     image: '/images/portfolio/lyontree.jpg',
   },
+  {
+    id: 9,
+    title: 'StrideSafe',
+    category: 'Platform / Web App MVP',
+    description: 'Fall prevention platform designed to reduce fall-related injuries. Built for healthcare facilities, elderly care communities, and rehabilitation centers.',
+    features: ['Risk assessment', 'Prevention tools', 'Healthcare focused', 'User dashboard', 'Live in production'],
+    liveUrl: 'https://stridesafe.vercel.app',
+    isLive: true,
+    image: '/images/portfolio/stridesafe.jpg',
+  },
+  {
+    id: 10,
+    title: 'TechEze AI',
+    category: 'Authority Website',
+    description: 'AI consulting firm website showcasing AI automation services for small to mid-market businesses. Features service tiers, case studies, and consultation booking.',
+    features: ['Service showcase', 'Pricing tiers', 'Consultation booking', 'Professional design', 'Live in production'],
+    liveUrl: 'https://www.techezeai.com',
+    isLive: true,
+    image: '/images/portfolio/techezeai.jpg',
+  },
 ];
 
 export default function PortfolioPage() {
@@ -633,6 +653,148 @@ export default function PortfolioPage() {
                       <p>✓ Content management</p>
                       <p>✓ Member portal access</p>
                       <p>✓ SEO optimized</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* StrideSafe */}
+            <div className="bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
+                <div>
+                  <div className="inline-block bg-red-600 text-white text-sm font-bold px-4 py-2 rounded mb-4">
+                    Platform / Web App MVP
+                  </div>
+                  <h3 className="text-4xl font-bold mb-4">StrideSafe</h3>
+                  <p className="text-xl text-gray-700 mb-6">
+                    Fall prevention platform designed to reduce fall-related injuries and accidents. Built for healthcare facilities, elderly care communities, and rehabilitation centers.
+                  </p>
+
+                  <div className="mb-6">
+                    <h4 className="font-bold text-lg mb-3">Platform Features:</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-red-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Fall risk assessment tools</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-red-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Prevention protocols & tracking</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-red-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Healthcare-focused dashboard</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-red-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>User-friendly interface</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <a
+                    href="https://stridesafe.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary text-lg inline-flex items-center gap-2"
+                  >
+                    Visit Live Site
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+
+                <div className="flex items-center justify-center">
+                  <div className="bg-white rounded-lg shadow-xl p-6 text-center">
+                    <div className="text-6xl font-bold text-red-600 mb-2">$12k+</div>
+                    <div className="text-lg font-semibold text-gray-700 mb-4">Platform MVP</div>
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <p>✓ Healthcare compliance</p>
+                      <p>✓ Risk assessment engine</p>
+                      <p>✓ User management system</p>
+                      <p>✓ Reporting & analytics</p>
+                      <p>✓ Production deployed</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* TechEze AI */}
+            <div className="bg-gradient-to-br from-indigo-50 via-violet-50 to-purple-50 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
+                <div>
+                  <div className="inline-block bg-indigo-600 text-white text-sm font-bold px-4 py-2 rounded mb-4">
+                    Authority Website
+                  </div>
+                  <h3 className="text-4xl font-bold mb-4">TechEze AI</h3>
+                  <p className="text-xl text-gray-700 mb-6">
+                    AI consulting firm website showcasing automation services for small to mid-market businesses. Features service tiers, ROI-focused messaging, and consultation booking.
+                  </p>
+
+                  <div className="mb-6">
+                    <h4 className="font-bold text-lg mb-3">Website Features:</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Service tier showcase</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Pricing & packages display</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Consultation booking integration</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Professional AI/tech branding</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <a
+                    href="https://www.techezeai.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary text-lg inline-flex items-center gap-2"
+                  >
+                    Visit Live Site
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+
+                <div className="flex items-center justify-center">
+                  <div className="bg-white rounded-lg shadow-xl p-6 text-center">
+                    <div className="text-6xl font-bold text-indigo-600 mb-2">$5,500+</div>
+                    <div className="text-lg font-semibold text-gray-700 mb-4">Authority Website</div>
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <p>✓ 12-20+ page website</p>
+                      <p>✓ Service & pricing pages</p>
+                      <p>✓ Booking integration</p>
+                      <p>✓ Professional AI branding</p>
+                      <p>✓ SEO & performance optimized</p>
                     </div>
                   </div>
                 </div>
