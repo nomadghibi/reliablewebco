@@ -17,9 +17,22 @@ export default function PricingPage() {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="heading-xl mb-6">Choose the build speed you need</h1>
-            <p className="text-xl text-gray-700">
+            <p className="text-xl text-gray-700 mb-6">
               Every package is designed to generate leads. Fixed price, fast delivery, professional launch.
             </p>
+
+            {/* Free Hosting Banner */}
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-4 rounded-2xl shadow-lg">
+              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <div className="font-bold text-lg">FREE Hosting & Domain for 1 Year</div>
+                <div className="text-green-100 text-sm">Included with all packages — No hidden fees!</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -29,7 +42,10 @@ export default function PricingPage() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
             {/* 24-Hour Landing Page */}
-            <div id="landing-page" className="bg-white rounded-lg shadow-xl p-8 border-2 border-accent-500">
+            <div id="landing-page" className="bg-white rounded-lg shadow-xl p-8 border-2 border-accent-500 relative">
+              <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                + Free Hosting & Domain
+              </div>
               <div className="text-accent-600 font-bold text-sm uppercase mb-2">Most Popular</div>
               <h2 className="text-3xl font-bold mb-4">24-Hour Landing Page</h2>
               <div className="text-5xl font-bold mb-6">
@@ -159,7 +175,10 @@ export default function PricingPage() {
             </div>
 
             {/* Website-in-a-Week */}
-            <div id="website-in-a-week" className="bg-white rounded-lg shadow-xl p-8 border-2 border-primary-500">
+            <div id="website-in-a-week" className="bg-white rounded-lg shadow-xl p-8 border-2 border-primary-500 relative">
+              <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                + Free Hosting & Domain
+              </div>
               <div className="text-primary-600 font-bold text-sm uppercase mb-2">Best Value</div>
               <h2 className="text-3xl font-bold mb-4">Website-in-a-Week</h2>
               <div className="text-5xl font-bold mb-6">
@@ -248,7 +267,10 @@ export default function PricingPage() {
           {/* Growth Website & Authority Website */}
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
             {/* Growth Website */}
-            <div id="growth-website" className="bg-white rounded-lg shadow-xl p-8">
+            <div id="growth-website" className="bg-white rounded-lg shadow-xl p-8 relative">
+              <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                + Free Hosting & Domain
+              </div>
               <h2 className="text-3xl font-bold mb-4">Growth Website</h2>
               <div className="text-4xl font-bold mb-2">
                 $3,500–$4,500
@@ -307,7 +329,10 @@ export default function PricingPage() {
             </div>
 
             {/* Authority Website */}
-            <div id="authority-website" className="bg-white rounded-lg shadow-xl p-8 border-2 border-primary-500">
+            <div id="authority-website" className="bg-white rounded-lg shadow-xl p-8 border-2 border-primary-500 relative">
+              <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                + Free Hosting & Domain
+              </div>
               <h2 className="text-3xl font-bold mb-4">Authority Website</h2>
               <div className="text-4xl font-bold mb-2">
                 $5,500–$7,500+
@@ -358,7 +383,10 @@ export default function PricingPage() {
 
           {/* Platform / Web App MVP */}
           <div className="max-w-3xl mx-auto">
-            <div id="web-app" className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-lg shadow-xl p-8">
+            <div id="web-app" className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-lg shadow-xl p-8 relative">
+              <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                + Free Hosting & Domain
+              </div>
               <h2 className="text-3xl font-bold mb-4">Platform / Web App MVP</h2>
               <div className="text-4xl font-bold mb-6">
                 $8,000–$25,000+

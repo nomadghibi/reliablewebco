@@ -32,6 +32,14 @@ export default function Home() {
             </div>
 
             <p className="text-sm text-gray-500">Speed + quality without agency timelines.</p>
+
+            {/* Free Hosting Banner */}
+            <div className="mt-8 inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full shadow-lg">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+              </svg>
+              <span className="font-semibold">FREE Hosting & Domain for 1 Year — All Packages!</span>
+            </div>
           </div>
         </div>
       </section>
@@ -41,7 +49,10 @@ export default function Home() {
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* 24-Hour Landing Page Sprint */}
-            <div className="bg-white rounded-lg shadow-xl p-8 border-2 border-accent-500">
+            <div className="bg-white rounded-lg shadow-xl p-8 border-2 border-accent-500 relative">
+              <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                + Free Hosting & Domain
+              </div>
               <div className="text-accent-600 font-bold text-sm uppercase mb-2">Most Popular</div>
               <h2 className="text-3xl font-bold mb-4">24-Hour Landing Page Sprint — $499</h2>
               <ul className="space-y-3 mb-8 text-gray-700">
@@ -79,7 +90,10 @@ export default function Home() {
             </div>
 
             {/* Website-in-a-Week */}
-            <div className="bg-white rounded-lg shadow-xl p-8 border-2 border-primary-500">
+            <div className="bg-white rounded-lg shadow-xl p-8 border-2 border-primary-500 relative">
+              <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                + Free Hosting & Domain
+              </div>
               <div className="text-primary-600 font-bold text-sm uppercase mb-2">Best Value</div>
               <h2 className="text-3xl font-bold mb-4">Website-in-a-Week — $2,000</h2>
               <ul className="space-y-3 mb-8 text-gray-700">

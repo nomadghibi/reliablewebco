@@ -56,9 +56,17 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               Let&apos;s Build Something Great
             </h1>
-            <p className="text-xl md:text-2xl text-primary-100 mb-8">
+            <p className="text-xl md:text-2xl text-primary-100 mb-6">
               Ready to launch your website? Choose how you&apos;d like to get started.
             </p>
+
+            {/* Free Hosting Banner */}
+            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 px-5 py-3 rounded-xl mb-8">
+              <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+              </svg>
+              <span className="font-semibold">FREE Hosting & Domain for 1 Year with all packages!</span>
+            </div>
 
             {/* Quick Contact Options */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -299,7 +307,10 @@ export default function ContactPage() {
             {/* Sidebar - Takes 2 columns */}
             <div className="lg:col-span-2 space-y-6">
               {/* Quick Start Card */}
-              <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl shadow-xl p-6 text-white">
+              <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl shadow-xl p-6 text-white relative">
+                <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  + Free Hosting & Domain
+                </div>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
