@@ -219,15 +219,39 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {['HVAC Lead Page', 'Cleaning Company Site', 'Dental/Clinic Landing', 'Contractor/Remodeling Site'].map((demo, idx) => (
-              <div key={idx} className="bg-white rounded-lg overflow-hidden shadow-lg">
-                <div className="aspect-video bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-                  <span className="text-white text-lg font-bold text-center px-4">{demo}</span>
+            {[
+              { name: 'HVAC Pro Office', image: '/images/portfolio/hvacprooffice.png', url: 'https://hvacprooffice.com', category: 'Platform MVP' },
+              { name: 'StrideSafe', image: '/images/portfolio/stridesafe.jpg', url: 'https://stridesafe.vercel.app', category: 'Healthcare Platform' },
+              { name: 'TechEze AI', image: '/images/portfolio/techezeai.jpg', url: 'https://www.techezeai.com', category: 'AI Consulting' },
+              { name: 'Destiny Insights', image: '/images/portfolio/destinyinsights.jpg', url: 'https://www.destiny-insights.com', category: 'AI Platform' },
+            ].map((demo, idx) => (
+              <a
+                key={idx}
+                href={demo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              >
+                <div className="aspect-video relative overflow-hidden">
+                  <img
+                    src={demo.image}
+                    alt={demo.name}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-semibold flex items-center gap-2">
+                      View Live
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
                 <div className="p-4">
-                  <h3 className="font-bold">{demo}</h3>
+                  <div className="text-xs text-primary-600 font-semibold uppercase tracking-wide mb-1">{demo.category}</div>
+                  <h3 className="font-bold text-gray-900">{demo.name}</h3>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 
