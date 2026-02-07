@@ -26,7 +26,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex flex-col">
             <span className="text-xl md:text-2xl font-bold text-gray-900">
-              Reliable<span className="text-primary-600">Web</span> Studio
+              Reliable <span className="text-primary-600">Web</span> Studio
             </span>
             <span className="text-xs text-gray-500 tracking-wide">Digital Transformation & Automation</span>
           </Link>

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'Portfolio — Real Websites, Real Results | ReliableWeb Studio',
+  title: 'Portfolio — Real Websites, Real Results | Reliable Web Studio',
   description:
     'View our live portfolio of websites and web applications. From 24-hour landing pages to full-stack platforms. See real projects serving real customers.',
 };
@@ -1039,7 +1039,7 @@ export default function PortfolioPage() {
           <div className="text-center mb-12">
             <h2 className="heading-lg mb-4">Client Success Stories</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Real feedback from real business owners who grew their business with ReliableWeb Studio.
+              Real feedback from real business owners who grew their business with Reliable Web Studio.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -1123,7 +1123,7 @@ export default function PortfolioPage() {
       {/* CTA */}
       <CTASection
         title="Ready to Build Your Success Story?"
-        subtitle="Join the businesses already growing with ReliableWeb Studio. From landing pages to full platforms, we'll build exactly what you need."
+        subtitle="Join the businesses already growing with Reliable Web Studio. From landing pages to full platforms, we'll build exactly what you need."
         primaryCTA={{ text: 'Get Started Today', href: '/contact' }}
         secondaryCTA={{ text: 'See Pricing', href: '/pricing' }}
         darkBg={true}

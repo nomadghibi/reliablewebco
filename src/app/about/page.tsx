@@ -3,9 +3,9 @@ import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'About — ReliableWeb Studio | Fast, Professional Website Development',
+  title: 'About — Reliable Web Studio | Fast, Professional Website Development',
   description:
-    'Learn about ReliableWeb Studio. We build lead-generating websites fast. No agency bloat, no endless timelines — just professional websites that convert.',
+    'Learn about Reliable Web Studio. We build lead-generating websites fast. No agency bloat, no endless timelines — just professional websites that convert.',
 };
 
 export default function AboutPage() {
@@ -32,7 +32,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Who We Are</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-xl text-gray-700 mb-6">
-                ReliableWeb Studio (operated by Best Computer Tech LLC) specializes in building high-converting websites for local service businesses.
+                Reliable Web Studio (operated by Best Computer Tech LLC) specializes in building high-converting websites for local service businesses.
               </p>
               <p className="text-lg text-gray-700 mb-6">
                 We saw a problem: most small businesses were stuck between cheap template sites that don&apos;t convert and expensive agency builds that take months.

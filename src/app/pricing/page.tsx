@@ -4,7 +4,7 @@ import CTASection from '@/components/CTASection';
 import PaymentButton from '@/components/PaymentButton';
 
 export const metadata: Metadata = {
-  title: 'Pricing — 24-Hour Landing Pages ($499) | ReliableWeb Studio',
+  title: 'Pricing — 24-Hour Landing Pages ($499) | Reliable Web Studio',
   description:
     'Choose the build speed you need. 24-Hour Landing Page ($499), Website-in-a-Week ($2,000), Growth Website ($3,500+), Authority Website ($5,500+), Platform MVP ($8,000+), and monthly care plans.',
 };
