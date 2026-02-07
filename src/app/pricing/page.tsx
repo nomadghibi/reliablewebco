@@ -387,7 +387,7 @@ export default function PricingPage() {
               <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
                 + Free Hosting & Domain
               </div>
-              <h2 className="text-3xl font-bold mb-4">Platform / Web App MVP</h2>
+              <h2 className="text-3xl font-bold mb-4">Platform / Web App / AI MVP</h2>
               <div className="text-4xl font-bold mb-6">
                 $8,000–$25,000+
               </div>
@@ -397,6 +397,7 @@ export default function PricingPage() {
                 <ul className="space-y-2 text-gray-300">
                   <li>• Login/JWT + roles</li>
                   <li>• Database CRUD + admin dashboard</li>
+                  <li>• ML/AI design & integration</li>
                   <li>• Payments/subscriptions (optional)</li>
                   <li>• Integrations (optional)</li>
                 </ul>
