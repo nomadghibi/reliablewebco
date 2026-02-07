@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
+import PaymentButton from '@/components/PaymentButton';
 
 export const metadata: Metadata = {
   title: 'Pricing — 24-Hour Landing Pages ($499) | ReliableWebCo',
@@ -149,9 +150,12 @@ export default function PricingPage() {
                 <p className="text-sm text-gray-600 mt-1">Delivery: within 24 hours AFTER intake is complete</p>
               </div>
 
-              <Link href="/contact" className="btn-accent w-full text-center">
-                Buy Now — $499
-              </Link>
+              <PaymentButton
+                type="landingPage"
+                text="Buy Now — $499"
+                variant="accent"
+                fullWidth
+              />
             </div>
 
             {/* Website-in-a-Week */}
@@ -438,9 +442,12 @@ export default function PricingPage() {
                   <span>Backups</span>
                 </li>
               </ul>
-              <Link href="/contact" className="btn-secondary w-full text-center">
-                Get Started
-              </Link>
+              <PaymentButton
+                type="carePlanBasic"
+                text="Get Started"
+                variant="secondary"
+                fullWidth
+              />
             </div>
 
             {/* Standard */}
@@ -472,9 +479,12 @@ export default function PricingPage() {
                   <span>Small edits (up to 60 min/mo)</span>
                 </li>
               </ul>
-              <Link href="/contact" className="btn-primary w-full text-center">
-                Get Started
-              </Link>
+              <PaymentButton
+                type="carePlanStandard"
+                text="Get Started"
+                variant="primary"
+                fullWidth
+              />
             </div>
 
             {/* Pro */}
@@ -515,9 +525,12 @@ export default function PricingPage() {
                   <span>Performance tweaks</span>
                 </li>
               </ul>
-              <Link href="/contact" className="btn-secondary w-full text-center">
-                Get Started
-              </Link>
+              <PaymentButton
+                type="carePlanPro"
+                text="Get Started"
+                variant="secondary"
+                fullWidth
+              />
             </div>
           </div>
         </div>

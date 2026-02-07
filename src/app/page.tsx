@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import CalendlyButton from '@/components/CalendlyButton';
+import PaymentButton from '@/components/PaymentButton';
 
 export default function Home() {
   return (
@@ -17,9 +18,12 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors duration-200">
-                Start My $499 Page
-              </Link>
+              <PaymentButton
+                type="landingPage"
+                text="Start My $499 Page"
+                variant="primary"
+                className="px-8 py-4 text-lg"
+              />
               <CalendlyButton
                 text="Book a 10-Minute Call"
                 className="px-8 py-4 text-lg"
@@ -66,9 +70,12 @@ export default function Home() {
                   <span><strong>Live in 24 hours</strong></span>
                 </li>
               </ul>
-              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-accent-600 rounded-lg hover:bg-accent-700 transition-colors duration-200 w-full text-center">
-                Start My $499 Page
-              </Link>
+              <PaymentButton
+                type="landingPage"
+                text="Start My $499 Page"
+                variant="accent"
+                fullWidth
+              />
             </div>
 
             {/* Website-in-a-Week */}
