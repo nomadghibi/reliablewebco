@@ -946,7 +946,8 @@ export default function PortfolioPage() {
                 {/* Content */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 text-gray-900">{item.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-gray-600 mb-2 text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-xs text-gray-500 mb-4">Designed by Reliable Web Studio - Best Computer Tech LLC</p>
 
                   {/* Features Tags */}
                   <div className="mb-5">

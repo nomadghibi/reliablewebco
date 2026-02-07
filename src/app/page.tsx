@@ -262,6 +262,7 @@ export default function Home() {
                 <div className="p-4">
                   <div className="text-xs text-primary-600 font-semibold uppercase tracking-wide mb-1">{demo.category}</div>
                   <h3 className="font-bold text-gray-900">{demo.name}</h3>
+                  <p className="text-xs text-gray-500 mt-2">Designed by Reliable Web Studio - Best Computer Tech LLC</p>
                 </div>
               </a>
             ))}
