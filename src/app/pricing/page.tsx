@@ -428,7 +428,7 @@ export default function PricingPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span className="text-gray-700">
-                <strong>Content & Images:</strong> Provide your own, or we can source them for you — included in all packages.
+                <strong>Just tell us what business you're in — we take care of the rest.</strong> Content & images? Provide your own or we source them for you.
               </span>
             </div>
           </div>
