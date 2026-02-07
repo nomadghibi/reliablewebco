@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import CalendlyButton from './CalendlyButton';
 
 interface CTASectionProps {
   title: string;
@@ -10,6 +13,7 @@ interface CTASectionProps {
   secondaryCTA?: {
     text: string;
     href: string;
+    isCalendly?: boolean;
   };
   darkBg?: boolean;
 }
@@ -32,16 +36,23 @@ export default function CTASection({
               {primaryCTA.text}
             </Link>
             {secondaryCTA && (
-              <Link
-                href={secondaryCTA.href}
-                className={
-                  darkBg
-                    ? 'inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white border-2 border-white rounded-lg hover:bg-white hover:text-gray-900 transition-colors duration-200'
-                    : 'btn-secondary'
-                }
-              >
-                {secondaryCTA.text}
-              </Link>
+              secondaryCTA.isCalendly ? (
+                <CalendlyButton
+                  text={secondaryCTA.text}
+                  variant={darkBg ? 'white' : 'secondary'}
+                />
+              ) : (
+                <Link
+                  href={secondaryCTA.href}
+                  className={
+                    darkBg
+                      ? 'inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white border-2 border-white rounded-lg hover:bg-white hover:text-gray-900 transition-colors duration-200'
+                      : 'btn-secondary'
+                  }
+                >
+                  {secondaryCTA.text}
+                </Link>
+              )
             )}
           </div>
         </div>

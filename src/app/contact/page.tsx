@@ -1,7 +1,10 @@
 'use client';
 
-import type { Metadata } from 'next';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Script from 'next/script';
+
+// Calendly URL - Update this with your actual Calendly link
+const CALENDLY_URL = 'https://calendly.com/reliablewebco/10min';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -181,19 +184,21 @@ export default function ContactPage() {
 
             {/* Contact Info & Quick Actions */}
             <div className="space-y-8">
+              {/* Calendly Inline Widget */}
               <div>
                 <h2 className="heading-md mb-6">Or Book a Call</h2>
-                <p className="text-gray-700 mb-6">
+                <p className="text-gray-700 mb-4">
                   Schedule a 10-minute call to discuss your project. No pressure, just quick answers to your questions.
                 </p>
-                <a
-                  href="https://calendly.com/reliablewebco"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary w-full text-center"
-                >
-                  Book a 10-Minute Call
-                </a>
+                <div
+                  className="calendly-inline-widget rounded-lg overflow-hidden border border-gray-200"
+                  data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=2563eb`}
+                  style={{ minWidth: '320px', height: '630px' }}
+                />
+                <Script
+                  src="https://assets.calendly.com/assets/external/widget.js"
+                  strategy="lazyOnload"
+                />
               </div>
 
               <div className="bg-accent-50 rounded-lg p-6">

@@ -1,8 +1,8 @@
 'use client';
 
-import type { Metadata } from 'next';
 import { useState } from 'react';
 import CTASection from '@/components/CTASection';
+import CalendlyButton from '@/components/CalendlyButton';
 
 const faqs = [
   {
@@ -186,9 +186,11 @@ export default function FAQPage() {
             <p className="text-lg text-gray-700 mb-8">
               Book a 10-minute call and I&apos;ll answer everything you need to know.
             </p>
-            <a href="/contact" className="btn-primary text-lg">
-              Book a 10-Minute Call
-            </a>
+            <CalendlyButton
+              text="Book a 10-Minute Call"
+              className="text-lg"
+              variant="primary"
+            />
           </div>
         </div>
       </section>

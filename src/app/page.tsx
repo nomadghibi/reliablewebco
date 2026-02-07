@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
+import CalendlyButton from '@/components/CalendlyButton';
 
 export default function Home() {
   return (
@@ -19,9 +20,11 @@ export default function Home() {
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors duration-200">
                 Start My $499 Page
               </Link>
-              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary-700 bg-white border-2 border-primary-600 rounded-lg hover:bg-primary-50 transition-colors duration-200">
-                Book a 10-Minute Call
-              </Link>
+              <CalendlyButton
+                text="Book a 10-Minute Call"
+                className="px-8 py-4 text-lg"
+                variant="secondary"
+              />
             </div>
 
             <p className="text-sm text-gray-500">Speed + quality without agency timelines.</p>
@@ -249,7 +252,7 @@ export default function Home() {
         title="Need something live fast?"
         subtitle="Start with the $499 sprint. Upgrade anytime."
         primaryCTA={{ text: 'Start My $499 Page', href: '/contact' }}
-        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact' }}
+        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact', isCalendly: true }}
         darkBg={true}
       />
     </main>
