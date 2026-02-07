@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://reliablewebco.com/sitemap.xml',
+    sitemap: 'https://reliablewebstudio.com/sitemap.xml',
   };
 }

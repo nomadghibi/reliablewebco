@@ -268,7 +268,7 @@ export default function AboutPage() {
                 (321) 953-5199
               </a>
               <a
-                href="mailto:hello@reliablewebco.com"
+                href="mailto:hello@reliablewebstudio.com"
                 className="inline-flex items-center justify-center gap-2 text-xl font-bold text-primary-600 hover:text-primary-700"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -279,7 +279,7 @@ export default function AboutPage() {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                hello@reliablewebco.com
+                hello@reliablewebstudio.com
               </a>
             </div>
             <p className="text-sm text-gray-600 mb-8">Response time: Within 24 hours</p>

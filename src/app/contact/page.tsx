@@ -80,13 +80,13 @@ export default function ContactPage() {
                 (321) 953-5199
               </a>
               <a
-                href="mailto:hello@reliablewebco.com"
+                href="mailto:hello@reliablewebstudio.com"
                 className="inline-flex items-center justify-center gap-3 px-6 py-4 bg-primary-500/30 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-primary-500/40 transition-all duration-200 border border-white/20"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                hello@reliablewebco.com
+                hello@reliablewebstudio.com
               </a>
             </div>
           </div>
@@ -418,7 +418,7 @@ export default function ContactPage() {
                     <div className="font-semibold text-lg">(321) 953-5199</div>
                   </div>
                 </a>
-                <a href="mailto:hello@reliablewebco.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                <a href="mailto:hello@reliablewebstudio.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
                   <div className="w-12 h-12 bg-white/10 group-hover:bg-white/20 rounded-xl flex items-center justify-center transition-colors">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -426,7 +426,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div className="text-xs text-gray-400 uppercase tracking-wider font-medium">Email</div>
-                    <div className="font-semibold text-lg">hello@reliablewebco.com</div>
+                    <div className="font-semibold text-lg">hello@reliablewebstudio.com</div>
                   </div>
                 </a>
                 <div className="flex items-center gap-4 text-gray-300">

@@ -140,8 +140,8 @@ export default function TermsPage() {
             <ul>
               <li>
                 Email:{' '}
-                <a href="mailto:hello@reliablewebco.com" className="text-primary-600">
-                  hello@reliablewebco.com
+                <a href="mailto:hello@reliablewebstudio.com" className="text-primary-600">
+                  hello@reliablewebstudio.com
                 </a>
               </li>
               <li>
