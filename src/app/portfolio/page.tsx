@@ -156,6 +156,26 @@ const portfolioItems = [
     isLive: true,
     image: '/images/portfolio/floridareliabledcourier.jpg',
   },
+  {
+    id: 14,
+    title: 'A Brighter Day Daycare',
+    category: 'Growth Website',
+    description: 'Childcare and daycare services website serving Palm Bay and Melbourne, Florida. Features location info, enrollment details, and parent resources.',
+    features: ['Multi-location', 'Enrollment info', 'Parent resources', 'Local SEO', 'Live in production'],
+    liveUrl: 'https://abrighterday.net',
+    isLive: true,
+    image: '/images/portfolio/abrighterday.jpg',
+  },
+  {
+    id: 15,
+    title: 'Best Computer Tech',
+    category: 'Authority Website',
+    description: 'Full-service IT and computer repair company website with service pages, business solutions, and customer support portal. Comprehensive online presence for a tech services provider.',
+    features: ['Service pages', 'Business solutions', 'Support portal', 'Professional design', 'Live in production'],
+    liveUrl: 'https://bestcomputertec.com',
+    isLive: true,
+    image: '/images/portfolio/bestcomputertech.jpg',
+  },
 ];
 
 export default function PortfolioPage() {
@@ -840,6 +860,148 @@ export default function PortfolioPage() {
                       <p>✓ Quote request system</p>
                       <p>✓ Local SEO optimized</p>
                       <p>✓ Trust-building design</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* A Brighter Day Daycare */}
+            <div className="bg-gradient-to-br from-yellow-50 via-lime-50 to-green-50 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
+                <div>
+                  <div className="inline-block bg-lime-600 text-white text-sm font-bold px-4 py-2 rounded mb-4">
+                    Growth Website
+                  </div>
+                  <h3 className="text-4xl font-bold mb-4">A Brighter Day Daycare</h3>
+                  <p className="text-xl text-gray-700 mb-6">
+                    Childcare and daycare services website serving Palm Bay and Melbourne, Florida. Designed to build trust with parents and drive enrollment inquiries across two locations.
+                  </p>
+
+                  <div className="mb-6">
+                    <h4 className="font-bold text-lg mb-3">Website Features:</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-lime-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Multi-location pages (Palm Bay & Melbourne)</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-lime-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Enrollment & contact forms</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-lime-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Parent resources & program info</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-lime-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Local SEO for Brevard County</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <a
+                    href="https://abrighterday.net"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary text-lg inline-flex items-center gap-2"
+                  >
+                    Visit Live Site
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+
+                <div className="flex items-center justify-center">
+                  <div className="bg-white rounded-lg shadow-xl p-6 text-center">
+                    <div className="text-6xl font-bold text-lime-600 mb-2">$3,500+</div>
+                    <div className="text-lg font-semibold text-gray-700 mb-4">Growth Website</div>
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <p>✓ 8-12 page website</p>
+                      <p>✓ Multi-location support</p>
+                      <p>✓ Enrollment system</p>
+                      <p>✓ Parent resources</p>
+                      <p>✓ Local SEO optimized</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Best Computer Tech */}
+            <div className="bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-100 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
+                <div>
+                  <div className="inline-block bg-slate-700 text-white text-sm font-bold px-4 py-2 rounded mb-4">
+                    Authority Website
+                  </div>
+                  <h3 className="text-4xl font-bold mb-4">Best Computer Tech</h3>
+                  <p className="text-xl text-gray-700 mb-6">
+                    Full-service IT and computer repair company website with comprehensive service pages, business solutions, and customer support. Built to establish authority and generate leads for tech services.
+                  </p>
+
+                  <div className="mb-6">
+                    <h4 className="font-bold text-lg mb-3">Website Features:</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-slate-700 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Comprehensive service pages</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-slate-700 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Business IT solutions showcase</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-slate-700 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Customer support portal</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-slate-700 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>Professional trust-building design</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <a
+                    href="https://bestcomputertec.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary text-lg inline-flex items-center gap-2"
+                  >
+                    Visit Live Site
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+
+                <div className="flex items-center justify-center">
+                  <div className="bg-white rounded-lg shadow-xl p-6 text-center">
+                    <div className="text-6xl font-bold text-slate-700 mb-2">$5,500+</div>
+                    <div className="text-lg font-semibold text-gray-700 mb-4">Authority Website</div>
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <p>✓ 12-20+ page website</p>
+                      <p>✓ Service & solutions pages</p>
+                      <p>✓ Support portal</p>
+                      <p>✓ Professional branding</p>
+                      <p>✓ SEO & performance optimized</p>
                     </div>
                   </div>
                 </div>
