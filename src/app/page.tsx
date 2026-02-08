@@ -472,6 +472,20 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-10 bg-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto rounded-xl border border-gray-200 bg-gray-50 px-6 py-5 text-center">
+            <p className="text-gray-700">
+              Have questions before starting?{' '}
+              <Link href="/faq" className="font-semibold text-primary-700 hover:text-primary-800">
+                Read our FAQ
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FINAL CTA */}
       <CTASection
         title="Need something live fast?"

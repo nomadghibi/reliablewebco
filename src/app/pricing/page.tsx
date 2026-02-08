@@ -798,6 +798,13 @@ export default function PricingPage() {
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors duration-200">
                 Start My $499 Page
               </Link>
+              <p className="text-sm text-gray-600 mt-5">
+                Need quick answers first?{' '}
+                <Link href="/faq" className="font-semibold text-primary-700 hover:text-primary-800">
+                  Visit the FAQ
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </div>
