@@ -25,16 +25,49 @@ export const metadata: Metadata = {
 export default function ProcessPage() {
   return (
     <main className="pt-20">
-      {/* Hero */}
-      <section className="section-padding bg-gradient-to-b from-white to-gray-50">
-        <div className="container-custom">
+      {/* Hero — Space Coast Night Sky */}
+      <section className="relative py-16 md:py-24 bg-gradient-to-b from-slate-900 via-blue-900 to-primary-800 overflow-hidden">
+        {/* CSS Stars */}
+        <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute w-1 h-1 bg-white rounded-full top-[10%] left-[15%] animate-pulse opacity-80" />
+          <div className="absolute w-1.5 h-1.5 bg-white rounded-full top-[8%] left-[45%] animate-pulse opacity-60" style={{ animationDelay: '0.5s' }} />
+          <div className="absolute w-1 h-1 bg-white rounded-full top-[15%] left-[75%] animate-pulse opacity-70" style={{ animationDelay: '1s' }} />
+          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[20%] left-[30%] opacity-50" />
+          <div className="absolute w-1 h-1 bg-white rounded-full top-[5%] left-[60%] animate-pulse opacity-60" style={{ animationDelay: '1.5s' }} />
+          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[25%] left-[85%] opacity-40" />
+          <div className="absolute w-1 h-1 bg-white rounded-full top-[12%] left-[92%] animate-pulse opacity-50" style={{ animationDelay: '2s' }} />
+          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[18%] left-[8%] opacity-60" />
+          <div className="absolute w-1.5 h-1.5 bg-white rounded-full top-[6%] left-[25%] animate-pulse opacity-40" style={{ animationDelay: '0.8s' }} />
+          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[22%] left-[55%] opacity-50" />
+          <div className="absolute w-1 h-1 bg-white rounded-full top-[3%] left-[38%] opacity-70" />
+          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[28%] left-[70%] opacity-30" />
+        </div>
+
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="heading-xl mb-6">How It Works</h1>
-            <p className="text-xl text-gray-700 mb-4">Simple. Fast. No drama.</p>
-            <p className="text-lg text-gray-600">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-white">How It Works</h1>
+            <p className="text-xl md:text-2xl text-blue-100 mb-4">Simple. Fast. No drama.</p>
+            <p className="text-lg text-blue-200/80">
               Four clear steps from idea to launch. No endless meetings. No project delays.
             </p>
+
+            {/* Space Coast Location Callout */}
+            <div className="flex items-center justify-center gap-2 mt-6 text-blue-200">
+              <svg aria-hidden="true" className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m5.96 5.96a14.926 14.926 0 01-5.84 2.58m0 0a6 6 0 01-7.38-5.84h4.8" />
+              </svg>
+              <span className="text-sm md:text-base font-medium">
+                Streamlined Process — Palm Bay, Melbourne &amp; Florida&apos;s Space Coast
+              </span>
+            </div>
           </div>
+        </div>
+
+        {/* Wave Divider */}
+        <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
+          <svg className="w-full h-16 md:h-24" viewBox="0 0 1440 96" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 96h1440V56c-120-20-240-40-360-36s-240 32-360 40-240-8-360-20S120 16 0 24v72z" fill="white" />
+          </svg>
         </div>
       </section>
 
