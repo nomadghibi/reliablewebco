@@ -1,144 +1,137 @@
 'use client';
 
-import { useState } from 'react';
-import Image from 'next/image';
+import { useMemo } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import {
+  getPortfolioSearchText,
+  industryOptions,
+  statusOptions,
+  tierOptions,
+  type PortfolioItem,
+  type PortfolioStatus,
+  type PortfolioTier,
+} from '@/data/portfolio';
+import PortfolioCard from '@/components/portfolio/PortfolioCard';
 
-interface PortfolioItem {
-  id: number;
-  title: string;
-  category: string;
-  description: string;
-  features: string[];
-  liveUrl: string;
-  isLive: boolean;
-  inDevelopment?: boolean;
-  image: string;
+function normalizeTier(value: string | null): PortfolioTier | 'all' {
+  const allowed: Array<PortfolioTier | 'all'> = ['all', '24-hour', 'week', 'growth', 'platform', 'authority'];
+  return allowed.includes((value as PortfolioTier | 'all') || 'all') ? (value as PortfolioTier | 'all') || 'all' : 'all';
 }
 
-const filters = [
-  { label: 'All', value: 'all' },
-  { label: 'Platforms', value: 'Platform / Web App MVP' },
-  { label: 'Authority', value: 'Authority Website' },
-  { label: 'Growth', value: 'Growth Website' },
-  { label: 'Website-in-a-Week', value: 'Website-in-a-Week' },
-  { label: '24-Hour', value: '24-Hour Landing Page' },
-];
+function normalizeStatus(value: string | null): PortfolioStatus | 'all' {
+  const allowed: Array<PortfolioStatus | 'all'> = ['all', 'live', 'in-development'];
+  return allowed.includes((value as PortfolioStatus | 'all') || 'all') ? (value as PortfolioStatus | 'all') || 'all' : 'all';
+}
 
 export default function PortfolioGrid({ items }: { items: PortfolioItem[] }) {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
-  const filtered = activeFilter === 'all'
-    ? items
-    : items.filter((item) => item.category === activeFilter);
+  const tier = normalizeTier(searchParams.get('tier'));
+  const industry = searchParams.get('industry') || 'all';
+  const status = normalizeStatus(searchParams.get('status'));
+  const query = searchParams.get('q') || '';
+
+  const updateQuery = (key: 'tier' | 'industry' | 'status' | 'q', value: string) => {
+    const next = new URLSearchParams(searchParams.toString());
+
+    if (!value || value === 'all') {
+      next.delete(key);
+    } else {
+      next.set(key, value);
+    }
+
+    const target = next.toString() ? `${pathname}?${next.toString()}` : pathname;
+    router.replace(target, { scroll: false });
+  };
+
+  const filteredItems = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase();
+
+    return items.filter((item) => {
+      if (tier !== 'all' && item.tier !== tier) return false;
+      if (industry !== 'all' && item.industry !== industry) return false;
+      if (status !== 'all' && item.status !== status) return false;
+      if (!normalizedQuery) return true;
+
+      return getPortfolioSearchText(item).includes(normalizedQuery);
+    });
+  }, [items, tier, industry, status, query]);
 
   return (
     <>
-      {/* Filter Chips */}
-      <div className="flex flex-wrap justify-center gap-2 mb-10">
-        {filters.map((f) => (
-          <button
-            key={f.value}
-            onClick={() => setActiveFilter(f.value)}
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-200 ${
-              activeFilter === f.value
-                ? 'bg-primary-600 text-white shadow-md'
-                : 'bg-white text-gray-700 border border-gray-200 hover:border-primary-300 hover:text-primary-700'
-            }`}
-          >
-            {f.label}
-            {f.value !== 'all' && (
-              <span className="ml-1.5 text-xs opacity-70">
-                ({items.filter((i) => i.category === f.value).length})
-              </span>
-            )}
-          </button>
-        ))}
+      <div className="bg-white rounded-2xl border border-gray-200 p-4 md:p-6 mb-10 shadow-sm">
+        <div className="grid md:grid-cols-4 gap-3">
+          <label className="block">
+            <span className="sr-only">Filter by tier</span>
+            <select
+              value={tier}
+              onChange={(e) => updateQuery('tier', e.target.value)}
+              className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            >
+              {tierOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label className="block">
+            <span className="sr-only">Filter by industry</span>
+            <select
+              value={industry}
+              onChange={(e) => updateQuery('industry', e.target.value === 'All Industries' ? 'all' : e.target.value)}
+              className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            >
+              {industryOptions.map((option) => {
+                const value = option === 'All Industries' ? 'all' : option;
+                return (
+                  <option key={option} value={value}>
+                    {option}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
+
+          <label className="block">
+            <span className="sr-only">Filter by status</span>
+            <select
+              value={status}
+              onChange={(e) => updateQuery('status', e.target.value)}
+              className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            >
+              {statusOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label className="block">
+            <span className="sr-only">Search projects</span>
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => updateQuery('q', e.target.value)}
+              placeholder="Search title, industry, stack..."
+              className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            />
+          </label>
+        </div>
       </div>
 
-      {/* Grid */}
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        {filtered.map((item) => (
-          <div
-            key={item.id}
-            className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-          >
-            <div className="aspect-[16/10] relative overflow-hidden bg-gray-100">
-              <Image
-                src={item.image}
-                alt={`${item.title} website screenshot`}
-                fill
-                className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-
-              {/* Category Badge */}
-              <div className="absolute top-3 right-3">
-                <span className="inline-block bg-white/95 backdrop-blur-sm text-gray-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
-                  {item.category}
-                </span>
-              </div>
-
-              {/* Status Badge */}
-              {item.isLive && !item.inDevelopment && (
-                <div className="absolute top-3 left-3">
-                  <span className="inline-flex items-center bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
-                    <span className="w-1.5 h-1.5 bg-white rounded-full mr-2 animate-pulse" />
-                    LIVE
-                  </span>
-                </div>
-              )}
-              {item.inDevelopment && (
-                <div className="absolute top-3 left-3">
-                  <span className="inline-flex items-center bg-blue-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
-                    <span className="w-1.5 h-1.5 bg-white rounded-full mr-2 animate-pulse" />
-                    IN DEVELOPMENT
-                  </span>
-                </div>
-              )}
-            </div>
-
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2 text-gray-900">{item.title}</h3>
-              <p className="text-gray-600 mb-4 text-sm leading-relaxed">{item.description}</p>
-
-              {/* Feature Tags */}
-              <div className="mb-5">
-                <div className="flex flex-wrap gap-1.5">
-                  {item.features.slice(0, 4).map((feature, idx) => (
-                    <span
-                      key={idx}
-                      className="inline-block bg-gray-50 text-gray-700 text-xs px-2.5 py-1 rounded-md border border-gray-200"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                  {item.features.length > 4 && (
-                    <span className="inline-block bg-gray-50 text-gray-500 text-xs px-2.5 py-1 rounded-md border border-gray-200">
-                      +{item.features.length - 4} more
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              {/* CTA */}
-              <a
-                href={item.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/btn flex items-center justify-center gap-2 w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200"
-              >
-                {item.inDevelopment ? 'Preview Site' : 'View Live Site'}
-                <svg aria-hidden="true" className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
-            </div>
-          </div>
+        {filteredItems.map((item) => (
+          <PortfolioCard key={item.id} item={item} />
         ))}
       </div>
 
-      {filtered.length === 0 && (
-        <p className="text-center text-gray-500 py-12">No projects in this category yet.</p>
+      {filteredItems.length === 0 && (
+        <p className="text-center text-gray-500 py-12">No projects matched this filter set. Try clearing one or two filters.</p>
       )}
     </>
   );
