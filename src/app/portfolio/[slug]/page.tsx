@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
 import JsonLd from '@/components/JsonLd';
 import { getPortfolioItemBySlug, portfolioItems } from '@/data/portfolio';
@@ -86,17 +87,45 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
     mainEntityOfPage: `https://reliablewebstudio.com/portfolio/${item.slug}`,
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://reliablewebstudio.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Portfolio',
+        item: 'https://reliablewebstudio.com/portfolio',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: item.title,
+        item: `https://reliablewebstudio.com/portfolio/${item.slug}`,
+      },
+    ],
+  };
+
   return (
     <main className="pt-20 bg-white">
       <JsonLd data={caseStudyJsonLd} />
+      <JsonLd data={breadcrumbSchema} />
 
       <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white section-padding">
         <div className="container-custom max-w-6xl relative z-10">
-          <div className="mb-6">
-            <Link href="/portfolio" className="inline-flex items-center text-primary-700 font-semibold hover:text-primary-800">
-              ← Back to Portfolio
-            </Link>
-          </div>
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Portfolio', href: '/portfolio' },
+              { label: item.title },
+            ]}
+          />
 
           <div className="grid lg:grid-cols-[1.6fr,1fr] gap-8 items-start">
             <div>

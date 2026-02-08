@@ -5,6 +5,7 @@ import CTASection from '@/components/CTASection';
 import CalendlyButton from '@/components/CalendlyButton';
 import PaymentButton from '@/components/PaymentButton';
 import SectionViewTracker from '@/components/SectionViewTracker';
+import { floridaLocations } from '@/data/locations';
 
 export const metadata: Metadata = {
   title: 'Reliable Web Studio — 24-Hour Landing Pages & Websites in a Week',
@@ -436,6 +437,37 @@ export default function Home() {
               <span className="font-semibold">$8,000–$25,000+ Platform MVP</span>
               <Link href="/pricing" className="text-primary-600 hover:text-primary-700 font-semibold">View →</Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-gray-50" aria-labelledby="florida-areas-heading">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center mb-10">
+            <h2 id="florida-areas-heading" className="text-3xl md:text-4xl font-bold mb-4">Florida Service Areas</h2>
+            <p className="text-xl text-gray-700">
+              City-focused pages built for local search intent and stronger conversion clarity.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {floridaLocations.slice(0, 8).map((location) => (
+              <Link
+                key={location.slug}
+                href={`/locations/${location.slug}`}
+                className="rounded-xl border border-gray-200 bg-white p-5 text-left hover:border-primary-300 hover:shadow-md transition-all"
+              >
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-2">{location.region}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">{location.city}, FL</h3>
+                <p className="text-sm text-gray-600">{location.county}</p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/locations" className="btn-secondary">
+              View All Florida Locations
+            </Link>
           </div>
         </div>
       </section>

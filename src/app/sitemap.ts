@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { portfolioItems } from '@/data/portfolio';
+import { floridaLocations } from '@/data/locations';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://reliablewebstudio.com';
@@ -19,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/portfolio`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/locations`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
@@ -74,5 +81,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...caseStudyRoutes];
+  const locationRoutes: MetadataRoute.Sitemap = floridaLocations.map((location) => ({
+    url: `${baseUrl}/locations/${location.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...caseStudyRoutes, ...locationRoutes];
 }
