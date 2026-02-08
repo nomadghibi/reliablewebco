@@ -110,9 +110,10 @@ const portfolioItems = [
     title: 'StrideSafe',
     category: 'Platform / Web App MVP',
     description: 'Fall prevention platform designed to reduce fall-related injuries. Built for healthcare facilities, elderly care communities, and rehabilitation centers.',
-    features: ['Risk assessment', 'Prevention tools', 'Healthcare focused', 'User dashboard', 'Live in production'],
+    features: ['Risk assessment', 'Prevention tools', 'Healthcare focused', 'User dashboard', 'In development'],
     liveUrl: 'https://stridesafe.vercel.app',
     isLive: true,
+    inDevelopment: true,
     image: '/images/portfolio/stridesafe.jpg',
   },
   {
@@ -684,11 +685,17 @@ export default function PortfolioPage() {
             </div>
 
             {/* StrideSafe */}
-            <div className="bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50 rounded-2xl overflow-hidden shadow-2xl border-2 border-orange-200">
               <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
                 <div>
-                  <div className="inline-block bg-red-600 text-white text-sm font-bold px-4 py-2 rounded mb-4">
-                    Platform / Web App MVP
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="inline-block bg-red-600 text-white text-sm font-bold px-4 py-2 rounded">
+                      Platform / Web App MVP
+                    </div>
+                    <span className="inline-flex items-center bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded">
+                      <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
+                      IN DEVELOPMENT
+                    </span>
                   </div>
                   <h3 className="text-4xl font-bold mb-4">StrideSafe</h3>
                   <p className="text-xl text-gray-700 mb-6">
@@ -729,9 +736,9 @@ export default function PortfolioPage() {
                     href="https://stridesafe.vercel.app"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary text-lg inline-flex items-center gap-2"
+                    className="btn-secondary text-lg inline-flex items-center gap-2"
                   >
-                    Visit Live Site
+                    Preview Development Site
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
@@ -739,15 +746,18 @@ export default function PortfolioPage() {
                 </div>
 
                 <div className="flex items-center justify-center">
-                  <div className="bg-white rounded-lg shadow-xl p-6 text-center">
+                  <div className="bg-white rounded-lg shadow-xl p-6 text-center border-2 border-orange-100">
                     <div className="text-6xl font-bold text-red-600 mb-2">$12k+</div>
-                    <div className="text-lg font-semibold text-gray-700 mb-4">Platform MVP</div>
+                    <div className="text-lg font-semibold text-gray-700 mb-4">Platform MVP (In Progress)</div>
                     <div className="space-y-2 text-sm text-gray-600">
                       <p>✓ Healthcare compliance</p>
                       <p>✓ Risk assessment engine</p>
                       <p>✓ User management system</p>
                       <p>✓ Reporting & analytics</p>
-                      <p>✓ Production deployed</p>
+                      <p>✓ In active development</p>
+                    </div>
+                    <div className="mt-4 pt-4 border-t border-gray-200">
+                      <p className="text-xs text-blue-600 font-semibold">Currently in active development</p>
                     </div>
                   </div>
                 </div>
