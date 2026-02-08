@@ -4,6 +4,7 @@ import Image from 'next/image';
 import CTASection from '@/components/CTASection';
 import CalendlyButton from '@/components/CalendlyButton';
 import PaymentButton from '@/components/PaymentButton';
+import SectionViewTracker from '@/components/SectionViewTracker';
 
 export const metadata: Metadata = {
   title: 'Reliable Web Studio — 24-Hour Landing Pages & Websites in a Week',
@@ -412,6 +413,7 @@ export default function Home() {
       {/* PRICING PREVIEW */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container-custom">
+          <SectionViewTracker eventName="pricing_view" sectionName="home_pricing_preview" />
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">All Packages</h2>
           <div className="max-w-3xl mx-auto space-y-4">
             <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">

@@ -1,9 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
-
-// Calendly URL
-const CALENDLY_URL = 'https://calendly.com/freddehnashi/30min';
+import { trackEvent } from '@/lib/analytics';
+import { CALENDLY_URL, buildCalendlyUrl } from '@/config/calendly';
 
 declare global {
   interface Window {
@@ -45,11 +44,28 @@ export default function CalendlyButton({
   }, []);
 
   const openCalendly = () => {
+    trackEvent('cta_call_click', {
+      cta_text: text,
+      location: 'calendly_button',
+    });
+    trackEvent('outbound_calendar_click', {
+      provider: 'calendly',
+      destination: CALENDLY_URL,
+    });
+
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: `${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=2563eb`,
+        url: buildCalendlyUrl({
+          hide_gdpr_banner: 1,
+          background_color: 'ffffff',
+          text_color: '1f2937',
+          primary_color: '2563eb',
+        }),
       });
+      return;
     }
+
+    window.open(CALENDLY_URL, '_blank', 'noopener,noreferrer');
   };
 
   const baseStyles = 'inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-lg transition-colors duration-200 cursor-pointer';

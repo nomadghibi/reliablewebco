@@ -2,13 +2,20 @@
 
 import { useState } from 'react';
 import Script from 'next/script';
-import Link from 'next/link';
 import PaymentButton from '@/components/PaymentButton';
-
-// Calendly URL
-const CALENDLY_URL = 'https://calendly.com/freddehnashi/30min';
+import { trackEvent } from '@/lib/analytics';
+import { buildCalendlyUrl } from '@/config/calendly';
 
 export default function ContactPage() {
+  const calendlyInlineUrl = buildCalendlyUrl({
+    hide_gdpr_banner: 1,
+    hide_landing_page_details: 1,
+    hide_event_type_details: 1,
+    background_color: 'ffffff',
+    text_color: '1f2937',
+    primary_color: '2563eb',
+  });
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,6 +24,7 @@ export default function ContactPage() {
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [hasTrackedFormStart, setHasTrackedFormStart] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,6 +47,10 @@ export default function ContactPage() {
 
       if (response.ok) {
         setStatus('success');
+        trackEvent('form_submit', {
+          form_name: 'contact_quote_form',
+          selected_service: formData.service || 'unspecified',
+        });
         setFormData({ name: '', email: '', phone: '', service: '', message: '' });
       } else {
         setStatus('error');
@@ -52,6 +64,14 @@ export default function ContactPage() {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleFormFocus = () => {
+    if (hasTrackedFormStart) return;
+    setHasTrackedFormStart(true);
+    trackEvent('form_start', {
+      form_name: 'contact_quote_form',
     });
   };
 
@@ -124,7 +144,7 @@ export default function ContactPage() {
                   <p className="text-gray-600">Fill out the form below and I&apos;ll get back to you within 24 hours.</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} onFocusCapture={handleFormFocus} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
@@ -370,7 +390,7 @@ export default function ContactPage() {
                 </div>
                 <div
                   className="calendly-inline-widget"
-                  data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&hide_landing_page_details=1&hide_event_type_details=1&background_color=ffffff&text_color=1f2937&primary_color=2563eb`}
+                  data-url={calendlyInlineUrl}
                   style={{ minWidth: '280px', height: '520px' }}
                 />
                 <Script

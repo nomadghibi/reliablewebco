@@ -3,6 +3,7 @@ import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import PaymentButton from '@/components/PaymentButton';
 import JsonLd from '@/components/JsonLd';
+import SectionViewTracker from '@/components/SectionViewTracker';
 
 export const metadata: Metadata = {
   title: 'Pricing — 24-Hour Landing Pages ($499) | Reliable Web Studio',
@@ -197,6 +198,7 @@ export default function PricingPage() {
       {/* Pricing Cards */}
       <section id="packages" className="section-padding bg-white">
         <div className="container-custom">
+          <SectionViewTracker eventName="pricing_view" sectionName="pricing_packages" />
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
             {/* 24-Hour Landing Page */}
             <div id="landing-page" className="bg-white rounded-lg shadow-xl p-8 border-2 border-accent-500 relative">
@@ -594,7 +596,7 @@ export default function PricingPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span className="text-gray-700">
-                <strong>Just tell us what business you're in — we take care of the rest.</strong> Content & images? Provide your own or we source them for you.
+                <strong>Just tell us what business you&apos;re in — we take care of the rest.</strong> Content & images? Provide your own or we source them for you.
               </span>
             </div>
           </div>
@@ -754,7 +756,7 @@ export default function PricingPage() {
             <div className="bg-gray-50 rounded-lg p-6">
               <h3 className="text-xl font-bold mb-2">Extra Revision Round</h3>
               <div className="text-3xl font-bold text-primary-600 mb-3">$99</div>
-              <p className="text-gray-600">Additional revision round beyond what's included in your package</p>
+              <p className="text-gray-600">Additional revision round beyond what&apos;s included in your package</p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6">
