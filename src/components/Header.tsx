@@ -65,7 +65,7 @@ export default function Header() {
             </a>
             <a
               href="tel:+13219535199"
-              className="flex items-center gap-2 text-gray-700 hover:text-primary-600 font-medium transition-colors"
+              className="flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
