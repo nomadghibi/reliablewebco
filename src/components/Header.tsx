@@ -67,12 +67,6 @@ export default function Header() {
             <Link href="/locations" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
               Locations
             </Link>
-            <Link href="/platform" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
-              Platform
-            </Link>
-            <Link href="/process" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
-              Process
-            </Link>
             <Link href="/faq" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
               FAQ
             </Link>
@@ -146,25 +140,11 @@ export default function Header() {
                 Portfolio
               </Link>
               <Link
-                href="/platform"
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Platform
-              </Link>
-              <Link
                 href="/locations"
                 className="text-gray-700 hover:text-primary-600 font-medium transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Locations
-              </Link>
-              <Link
-                href="/process"
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Process
               </Link>
               <Link
                 href="/faq"
