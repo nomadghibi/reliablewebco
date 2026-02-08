@@ -87,8 +87,8 @@ export default function Home() {
               />
               <CalendlyButton
                 text="Book a 10-Minute Call"
-                className="px-8 py-4 text-lg border-white/30 text-white hover:bg-white/10"
-                variant="secondary"
+                className="px-8 py-4 text-lg"
+                variant="primary"
               />
             </div>
 
