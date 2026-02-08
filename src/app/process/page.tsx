@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Process — Launch Fast Without the Agency Drag | Reliable Web Studio',
   description:
     'Simple 4-step process: Intake, Build, Review, Launch. No endless meetings. No project delays. Just results.',
+  openGraph: {
+    title: 'Process — Launch Fast Without the Agency Drag | Reliable Web Studio',
+    description: 'Simple 4-step process: Intake, Build, Review, Launch. No endless meetings. No project delays.',
+    url: 'https://reliablewebstudio.com/process',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Process — Launch Fast Without the Agency Drag | Reliable Web Studio',
+    description: 'Simple 4-step process: Intake, Build, Review, Launch. No endless meetings. No project delays.',
+  },
+  alternates: {
+    canonical: 'https://reliablewebstudio.com/process',
+  },
 };
 
 export default function ProcessPage() {

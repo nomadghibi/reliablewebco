@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Platform & Web App Development — Custom MVPs Built Fast | Reliable Web Studio',
   description:
     'Need a web app, portal, or platform MVP? We build login systems, dashboards, databases, and integrations. $8,000-$25,000+. Quote after scope call.',
+  openGraph: {
+    title: 'Platform & Web App Development — Custom MVPs Built Fast | Reliable Web Studio',
+    description: 'We build custom web applications, portals, and platform MVPs. Login systems, databases, dashboards, payments, integrations.',
+    url: 'https://reliablewebstudio.com/platform',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Platform & Web App Development — Custom MVPs Built Fast | Reliable Web Studio',
+    description: 'We build custom web applications, portals, and platform MVPs. $8,000-$25,000+.',
+  },
+  alternates: {
+    canonical: 'https://reliablewebstudio.com/platform',
+  },
 };
 
 const platformFeatures = [

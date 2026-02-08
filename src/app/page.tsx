@@ -1,7 +1,30 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import CalendlyButton from '@/components/CalendlyButton';
 import PaymentButton from '@/components/PaymentButton';
+
+export const metadata: Metadata = {
+  title: 'Reliable Web Studio — 24-Hour Landing Pages & Websites in a Week',
+  description:
+    'Get a modern landing page in 24 hours ($499) or a complete website in 7 days ($2,000). Fixed price, professional, built to convert. Florida web design for local service businesses.',
+  openGraph: {
+    title: 'Reliable Web Studio — 24-Hour Landing Pages & Websites in a Week',
+    description:
+      'Get a modern landing page in 24 hours or a complete website in 7 days. Built to generate calls, form leads, and bookings.',
+    url: 'https://reliablewebstudio.com',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Reliable Web Studio — 24-Hour Landing Pages & Websites in a Week',
+    description:
+      'Get a modern landing page in 24 hours or a complete website in 7 days. Built to generate calls, form leads, and bookings.',
+  },
+  alternates: {
+    canonical: 'https://reliablewebstudio.com',
+  },
+};
 
 export default function Home() {
   return (

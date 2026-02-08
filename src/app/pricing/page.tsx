@@ -2,16 +2,96 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import PaymentButton from '@/components/PaymentButton';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Pricing — 24-Hour Landing Pages ($499) | Reliable Web Studio',
   description:
     'Choose the build speed you need. 24-Hour Landing Page ($499), Website-in-a-Week ($2,000), Growth Website ($3,500+), Authority Website ($5,500+), Platform MVP ($8,000+), and monthly care plans.',
+  openGraph: {
+    title: 'Pricing — 24-Hour Landing Pages ($499) | Reliable Web Studio',
+    description:
+      'Choose the build speed you need. 24-Hour Landing Page ($499), Website-in-a-Week ($2,000), Growth Website ($3,500+), Authority Website ($5,500+), Platform MVP ($8,000+).',
+    url: 'https://reliablewebstudio.com/pricing',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing — 24-Hour Landing Pages ($499) | Reliable Web Studio',
+    description:
+      'Choose the build speed you need. 24-Hour Landing Page ($499), Website-in-a-Week ($2,000), Growth Website ($3,500+), and more.',
+  },
+  alternates: {
+    canonical: 'https://reliablewebstudio.com/pricing',
+  },
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      item: {
+        '@type': 'Service',
+        name: '24-Hour Landing Page Sprint',
+        description: '1-page high-converting landing page with click-to-call, lead form, basic SEO, and analytics. Delivered within 24 hours.',
+        offers: { '@type': 'Offer', price: '499', priceCurrency: 'USD' },
+        provider: { '@type': 'Organization', name: 'Reliable Web Studio' },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      item: {
+        '@type': 'Service',
+        name: 'Website-in-a-Week',
+        description: 'Up to 8 pages with strong CTA structure, forms, basic SEO, and launch support. Delivered in 5-7 days.',
+        offers: { '@type': 'Offer', price: '2000', priceCurrency: 'USD' },
+        provider: { '@type': 'Organization', name: 'Reliable Web Studio' },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      item: {
+        '@type': 'Service',
+        name: 'Growth Website',
+        description: '8-12 pages with separate service pages for SEO, reviews/testimonials, FAQ, and optional blog setup. Delivered in 7-10 days.',
+        offers: { '@type': 'AggregateOffer', lowPrice: '3500', highPrice: '4500', priceCurrency: 'USD' },
+        provider: { '@type': 'Organization', name: 'Reliable Web Studio' },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 4,
+      item: {
+        '@type': 'Service',
+        name: 'Authority Website',
+        description: '12-20 pages with multi-service and multi-area SEO buildout. Premium look and trust system. Delivered in 2-3 weeks.',
+        offers: { '@type': 'AggregateOffer', lowPrice: '5500', highPrice: '7500', priceCurrency: 'USD' },
+        provider: { '@type': 'Organization', name: 'Reliable Web Studio' },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 5,
+      item: {
+        '@type': 'Service',
+        name: 'Platform / Web App MVP',
+        description: 'Custom web applications with login/JWT, database CRUD, admin dashboard, ML/AI integration, and optional payments/subscriptions.',
+        offers: { '@type': 'AggregateOffer', lowPrice: '8000', highPrice: '25000', priceCurrency: 'USD' },
+        provider: { '@type': 'Organization', name: 'Reliable Web Studio' },
+      },
+    },
+  ],
 };
 
 export default function PricingPage() {
   return (
     <main className="pt-20">
+      <JsonLd data={serviceSchema} />
       {/* Hero */}
       <section className="section-padding bg-gradient-to-b from-white to-gray-50">
         <div className="container-custom">

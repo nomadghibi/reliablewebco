@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy | Reliable Web Studio',
   description: 'Privacy policy for Reliable Web Studio.',
+  alternates: {
+    canonical: 'https://reliablewebstudio.com/privacy',
+  },
 };
 
 export default function PrivacyPage() {

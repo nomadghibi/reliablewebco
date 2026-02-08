@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Terms of Service | Reliable Web Studio',
   description: 'Terms of service for Reliable Web Studio.',
+  alternates: {
+    canonical: 'https://reliablewebstudio.com/terms',
+  },
 };
 
 export default function TermsPage() {

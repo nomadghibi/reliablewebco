@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: 'Portfolio — Real Websites, Real Results | Reliable Web Studio',
   description:
     'View our live portfolio of websites and web applications. From 24-hour landing pages to full-stack platforms. See real projects serving real customers.',
+  openGraph: {
+    title: 'Portfolio — Real Websites, Real Results | Reliable Web Studio',
+    description: 'View our live portfolio of websites and web applications. From 24-hour landing pages to full-stack platforms.',
+    url: 'https://reliablewebstudio.com/portfolio',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Portfolio — Real Websites, Real Results | Reliable Web Studio',
+    description: 'View our live portfolio of websites and web applications. From 24-hour landing pages to full-stack platforms.',
+  },
+  alternates: {
+    canonical: 'https://reliablewebstudio.com/portfolio',
+  },
 };
 
 const portfolioItems = [

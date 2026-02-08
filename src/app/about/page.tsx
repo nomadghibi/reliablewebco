@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'About — Reliable Web Studio | Fast, Professional Website Development',
   description:
     'Learn about Reliable Web Studio. We build lead-generating websites fast. No agency bloat, no endless timelines — just professional websites that convert.',
+  openGraph: {
+    title: 'About — Reliable Web Studio | Fast, Professional Website Development',
+    description: 'We build lead-generating websites fast. No agency bloat, no endless timelines — just professional websites that convert.',
+    url: 'https://reliablewebstudio.com/about',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About — Reliable Web Studio | Fast, Professional Website Development',
+    description: 'We build lead-generating websites fast. No agency bloat, no endless timelines — just professional websites that convert.',
+  },
+  alternates: {
+    canonical: 'https://reliablewebstudio.com/about',
+  },
 };
 
 export default function AboutPage() {
