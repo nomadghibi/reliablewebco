@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="text-xl font-bold text-white mb-4">
-              Reliable<span className="text-primary-400">WebCo</span>
+              Reliable <span className="text-primary-400">Web Studio</span>
             </div>
             <p className="text-sm text-gray-400">
               Fast launch. Clear pricing. Built to convert.
