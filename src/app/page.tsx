@@ -6,6 +6,7 @@ import CalendlyButton from '@/components/CalendlyButton';
 import PaymentButton from '@/components/PaymentButton';
 import SectionViewTracker from '@/components/SectionViewTracker';
 import { floridaLocations } from '@/data/locations';
+import { getLatestBlogPosts } from '@/data/blog';
 
 export const metadata: Metadata = {
   title: 'Reliable Web Studio — 24-Hour Landing Pages & Websites in a Week',
@@ -39,6 +40,8 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const latestPosts = getLatestBlogPosts(3);
+
   return (
     <main>
       {/* HERO — Space Coast Night Sky */}
@@ -482,6 +485,40 @@ export default function Home() {
               </Link>
               .
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-gray-50" aria-labelledby="from-blog-heading">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center mb-10">
+            <h2 id="from-blog-heading" className="text-3xl md:text-4xl font-bold mb-4">From the Blog</h2>
+            <p className="text-xl text-gray-700">
+              Florida-focused SEO and conversion insights for local service businesses.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            {latestPosts.map((post) => (
+              <article key={post.slug} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:border-primary-300 hover:shadow-md transition-all">
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-2">{post.category}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug">
+                  <Link href={`/blog/${post.slug}`} className="hover:text-primary-700 transition-colors">
+                    {post.title}
+                  </Link>
+                </h3>
+                <p className="text-sm text-gray-600 mb-4">{post.readingTime}</p>
+                <Link href={`/blog/${post.slug}`} className="text-sm font-semibold text-primary-700 hover:text-primary-800">
+                  Read article
+                </Link>
+              </article>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/blog" className="btn-secondary">
+              View All Blog Articles
+            </Link>
           </div>
         </div>
       </section>

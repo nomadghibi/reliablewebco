@@ -62,6 +62,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/blog" className="hover:text-white transition-colors">
+                  Blogs
+                </Link>
+              </li>
+              <li>
                 <Link href="/locations" className="hover:text-white transition-colors">
                   Locations
                 </Link>
