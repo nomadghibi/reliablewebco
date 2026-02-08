@@ -14,8 +14,7 @@ export const PAYMENT_LINKS = {
   landingPage: {
     price: 499,
     label: '24-Hour Landing Page',
-    // Replace with your actual Stripe payment link
-    url: process.env.NEXT_PUBLIC_STRIPE_LANDING_PAGE_LINK || 'https://buy.stripe.com/PLACEHOLDER_LANDING_PAGE',
+    url: 'https://buy.stripe.com/eVq00jdVZdVU95F2gOdUY08',
   },
 
   // Website-in-a-Week Deposit - $1,000
