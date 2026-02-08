@@ -3,19 +3,19 @@ import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'About — Reliable Web Studio | Fast, Professional Website Development',
+  title: 'About — Reliable Web Studio | 15+ Years Serving Palm Bay, Melbourne & Brevard County',
   description:
-    'Learn about Reliable Web Studio. We build lead-generating websites fast. No agency bloat, no endless timelines — just professional websites that convert.',
+    'Reliable Web Studio has 15+ years of experience building lead-generating websites for local businesses in Palm Bay, Melbourne, and Brevard County, Florida. Fast, professional, built to convert.',
   openGraph: {
-    title: 'About — Reliable Web Studio | Fast, Professional Website Development',
-    description: 'We build lead-generating websites fast. No agency bloat, no endless timelines — just professional websites that convert.',
+    title: 'About — Reliable Web Studio | 15+ Years Serving Brevard County, FL',
+    description: '15+ years building lead-generating websites for local businesses in Palm Bay, Melbourne, and Brevard County, Florida.',
     url: 'https://reliablewebstudio.com/about',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About — Reliable Web Studio | Fast, Professional Website Development',
-    description: 'We build lead-generating websites fast. No agency bloat, no endless timelines — just professional websites that convert.',
+    title: 'About — Reliable Web Studio | 15+ Years Serving Brevard County, FL',
+    description: '15+ years building lead-generating websites for local businesses in Palm Bay, Melbourne, and Brevard County, Florida.',
   },
   alternates: {
     canonical: 'https://reliablewebstudio.com/about',
@@ -46,13 +46,13 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Who We Are</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-xl text-gray-700 mb-6">
-                Reliable Web Studio (operated by Best Computer Tech LLC) specializes in building high-converting websites for local service businesses.
+                Reliable Web Studio (operated by Best Computer Tech LLC) specializes in building high-converting websites for local service businesses. Based on Florida&apos;s Space Coast, we&apos;ve been serving <strong>Palm Bay, Melbourne, and Brevard County</strong> businesses for over <strong>15 years</strong>.
               </p>
               <p className="text-lg text-gray-700 mb-6">
-                We saw a problem: most small businesses were stuck between cheap template sites that don&apos;t convert and expensive agency builds that take months.
+                We saw a problem: most small businesses were stuck between cheap template sites that don&apos;t convert and expensive agency builds that take months. Local companies across Brevard County — from HVAC contractors in Palm Bay to dental practices in Melbourne — deserved better.
               </p>
               <p className="text-lg text-gray-700 mb-6">
-                So we created a better solution — professional, conversion-focused websites delivered fast at a fixed price.
+                So we created a better solution — professional, conversion-focused websites delivered fast at a fixed price. With 15+ years of experience in the Florida market, we understand what local service businesses need to generate calls, bookings, and leads online.
               </p>
             </div>
           </div>
@@ -182,7 +182,7 @@ export default function AboutPage() {
             </div>
 
             <p className="text-lg text-gray-700 text-center">
-              Based in Florida, but we work with service businesses anywhere.
+              Proudly based in <strong>Palm Bay, Florida</strong> and serving businesses across <strong>Melbourne, Brevard County</strong>, and the entire Space Coast. We also work with service businesses anywhere in the U.S.
             </p>
           </div>
         </div>

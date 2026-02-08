@@ -55,10 +55,18 @@ const localBusinessSchema = {
   url: "https://reliablewebstudio.com",
   telephone: "+1-321-953-5199",
   email: "hello@reliablewebstudio.com",
-  areaServed: {
-    "@type": "State",
-    name: "Florida",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Palm Bay",
+    addressRegion: "FL",
+    addressCountry: "US",
   },
+  areaServed: [
+    { "@type": "City", name: "Palm Bay", containedInPlace: { "@type": "State", name: "Florida" } },
+    { "@type": "City", name: "Melbourne", containedInPlace: { "@type": "State", name: "Florida" } },
+    { "@type": "AdministrativeArea", name: "Brevard County", containedInPlace: { "@type": "State", name: "Florida" } },
+    { "@type": "State", name: "Florida" },
+  ],
   priceRange: "$499 - $25000+",
   description: "Professional website development for local service businesses. 24-hour landing pages, websites in a week, and custom web app MVPs.",
   hasOfferCatalog: {
