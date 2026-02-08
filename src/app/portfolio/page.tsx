@@ -58,7 +58,7 @@ const portfolioItems = [
   {
     id: 4,
     title: 'Serve In Christ',
-    category: 'Growth Website',
+    category: 'Website-in-a-Week',
     description: 'Church/ministry website with event management, donation system, and content management.',
     features: ['Event calendar', 'Online donations', 'Blog & sermons', 'Member portal', 'Live in production'],
     liveUrl: 'https://serveinchrist.org',
@@ -78,7 +78,7 @@ const portfolioItems = [
   {
     id: 6,
     title: 'Journeys Staffing Home Care',
-    category: 'Growth Website',
+    category: 'Website-in-a-Week',
     description: 'Healthcare staffing and home care services website with service details, career opportunities, and client portal.',
     features: ['Service pages', 'Career applications', 'Client portal', 'Mobile responsive', 'Live in production'],
     liveUrl: 'https://journeysstaffinghomecareservices.com',
@@ -159,7 +159,7 @@ const portfolioItems = [
   {
     id: 14,
     title: 'A Brighter Day Daycare',
-    category: 'Growth Website',
+    category: 'Website-in-a-Week',
     description: 'Childcare and daycare services website serving Palm Bay and Melbourne, Florida. Features location info, enrollment details, and parent resources.',
     features: ['Multi-location', 'Enrollment info', 'Parent resources', 'Local SEO', 'Live in production'],
     liveUrl: 'https://abrighterday.net',
@@ -658,7 +658,7 @@ export default function PortfolioPage() {
               <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
                 <div>
                   <div className="inline-block bg-teal-600 text-white text-sm font-bold px-4 py-2 rounded mb-4">
-                    Growth Website
+                    Website-in-a-Week
                   </div>
                   <h3 className="text-4xl font-bold mb-4">Journeys Staffing Home Care</h3>
                   <p className="text-xl text-gray-700 mb-6">
@@ -710,10 +710,10 @@ export default function PortfolioPage() {
 
                 <div className="flex items-center justify-center">
                   <div className="bg-white rounded-lg shadow-xl p-6 text-center">
-                    <div className="text-6xl font-bold text-teal-600 mb-2">$3,500+</div>
-                    <div className="text-lg font-semibold text-gray-700 mb-4">Growth Website</div>
+                    <div className="text-6xl font-bold text-teal-600 mb-2">$2,000</div>
+                    <div className="text-lg font-semibold text-gray-700 mb-4">Website-in-a-Week</div>
                     <div className="space-y-2 text-sm text-gray-600">
-                      <p>✓ 8-12 page website</p>
+                      <p>✓ 5-page website</p>
                       <p>✓ Service & career pages</p>
                       <p>✓ Client portal integration</p>
                       <p>✓ Healthcare compliance ready</p>
@@ -729,7 +729,7 @@ export default function PortfolioPage() {
               <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
                 <div>
                   <div className="inline-block bg-purple-600 text-white text-sm font-bold px-4 py-2 rounded mb-4">
-                    Growth Website
+                    Website-in-a-Week
                   </div>
                   <h3 className="text-4xl font-bold mb-4">Serve In Christ</h3>
                   <p className="text-xl text-gray-700 mb-6">
@@ -781,10 +781,10 @@ export default function PortfolioPage() {
 
                 <div className="flex items-center justify-center">
                   <div className="bg-white rounded-lg shadow-xl p-6 text-center">
-                    <div className="text-6xl font-bold text-purple-600 mb-2">$3,500+</div>
-                    <div className="text-lg font-semibold text-gray-700 mb-4">Growth Website</div>
+                    <div className="text-6xl font-bold text-purple-600 mb-2">$2,000</div>
+                    <div className="text-lg font-semibold text-gray-700 mb-4">Website-in-a-Week</div>
                     <div className="space-y-2 text-sm text-gray-600">
-                      <p>✓ 8-12 page website</p>
+                      <p>✓ 5-page website</p>
                       <p>✓ Event & donation systems</p>
                       <p>✓ Content management</p>
                       <p>✓ Member portal access</p>
@@ -871,7 +871,7 @@ export default function PortfolioPage() {
               <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
                 <div>
                   <div className="inline-block bg-lime-600 text-white text-sm font-bold px-4 py-2 rounded mb-4">
-                    Growth Website
+                    Website-in-a-Week
                   </div>
                   <h3 className="text-4xl font-bold mb-4">A Brighter Day Daycare</h3>
                   <p className="text-xl text-gray-700 mb-6">
@@ -923,10 +923,10 @@ export default function PortfolioPage() {
 
                 <div className="flex items-center justify-center">
                   <div className="bg-white rounded-lg shadow-xl p-6 text-center">
-                    <div className="text-6xl font-bold text-lime-600 mb-2">$3,500+</div>
-                    <div className="text-lg font-semibold text-gray-700 mb-4">Growth Website</div>
+                    <div className="text-6xl font-bold text-lime-600 mb-2">$2,000</div>
+                    <div className="text-lg font-semibold text-gray-700 mb-4">Website-in-a-Week</div>
                     <div className="space-y-2 text-sm text-gray-600">
-                      <p>✓ 8-12 page website</p>
+                      <p>✓ 5-page website</p>
                       <p>✓ Multi-location support</p>
                       <p>✓ Enrollment system</p>
                       <p>✓ Parent resources</p>
