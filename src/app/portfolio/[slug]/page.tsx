@@ -146,10 +146,6 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
                   <dd className="font-semibold text-gray-900">{item.category}</dd>
                 </div>
                 <div>
-                  <dt className="text-gray-500">Year</dt>
-                  <dd className="font-semibold text-gray-900">{item.year}</dd>
-                </div>
-                <div>
                   <dt className="text-gray-500">Public URL</dt>
                   <dd className="font-semibold text-primary-700 break-all">{item.liveUrl.replace(/^https?:\/\//, '')}</dd>
                 </div>

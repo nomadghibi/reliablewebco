@@ -35,10 +35,7 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
       </div>
 
       <div className="p-6">
-        <div className="flex items-center justify-between gap-3 mb-2">
-          <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
-          <span className="text-xs font-semibold text-gray-500">{item.year}</span>
-        </div>
+        <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
         <p className="text-gray-600 mb-4 text-sm leading-relaxed">{item.description}</p>
 
         <div className="mb-5 flex flex-wrap gap-1.5">
