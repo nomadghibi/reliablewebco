@@ -1,8 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import { PAYMENT_LINKS, isPaymentConfigured } from '@/config/payments';
 
 export default function CheckoutCancelPage() {
+  const landingPageUrl = PAYMENT_LINKS.landingPage.url;
+  const isLandingPageConfigured = isPaymentConfigured(landingPageUrl);
+  const landingPageHref = isLandingPageConfigured ? landingPageUrl : '/contact';
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-32 pb-20">
       <div className="container-custom">
@@ -38,7 +43,7 @@ export default function CheckoutCancelPage() {
               Have Questions?
             </h2>
             <p className="text-gray-600 mb-6">
-              We're happy to answer any questions before you decide. Feel free to reach out!
+              We&apos;re happy to answer any questions before you decide. Feel free to reach out!
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
@@ -77,9 +82,9 @@ export default function CheckoutCancelPage() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://buy.stripe.com/28E28r2dh7xw81B5t0dUY09"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={landingPageHref}
+              target={isLandingPageConfigured ? '_blank' : undefined}
+              rel={isLandingPageConfigured ? 'noopener noreferrer' : undefined}
               className="btn-primary"
             >
               Try Again - $499

@@ -2,10 +2,35 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { PAYMENT_LINKS, isPaymentConfigured } from '@/config/payments';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const landingPageUrl = PAYMENT_LINKS.landingPage.url;
+  const isLandingPageConfigured = isPaymentConfigured(landingPageUrl);
+  const landingPageHref = isLandingPageConfigured ? landingPageUrl : '/contact';
+
+  const trackLandingPageClick = () => {
+    trackEvent('cta_primary_click', {
+      cta_text: 'Start Landing Page',
+      location: 'header',
+    });
+    trackEvent('package_select', {
+      package_type: 'landingPage',
+      destination: landingPageHref,
+      location: 'header',
+    });
+
+    if (isLandingPageConfigured) {
+      trackEvent('outbound_stripe_click', {
+        package_type: 'landingPage',
+        destination: landingPageUrl,
+        location: 'header',
+      });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +70,9 @@ export default function Header() {
             <Link href="/process" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
               Process
             </Link>
+            <Link href="/faq" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
+              FAQ
+            </Link>
             <Link href="/about" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
               About
             </Link>
@@ -56,10 +84,11 @@ export default function Header() {
           {/* CTA + Phone */}
           <div className="hidden md:flex items-center gap-4 mr-2">
             <a
-              href="https://buy.stripe.com/28E28r2dh7xw81B5t0dUY09"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={landingPageHref}
+              target={isLandingPageConfigured ? '_blank' : undefined}
+              rel={isLandingPageConfigured ? 'noopener noreferrer' : undefined}
               className="inline-block bg-accent-600 hover:bg-accent-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors"
+              onClick={trackLandingPageClick}
             >
               Start Landing Page
             </a>
@@ -128,6 +157,13 @@ export default function Header() {
                 Process
               </Link>
               <Link
+                href="/faq"
+                className="text-gray-700 hover:text-primary-600 font-medium transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                FAQ
+              </Link>
+              <Link
                 href="/about"
                 className="text-gray-700 hover:text-primary-600 font-medium transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -142,10 +178,11 @@ export default function Header() {
                 Contact
               </Link>
               <a
-                href="https://buy.stripe.com/28E28r2dh7xw81B5t0dUY09"
-                target="_blank"
-                rel="noopener noreferrer"
+                href={landingPageHref}
+                target={isLandingPageConfigured ? '_blank' : undefined}
+                rel={isLandingPageConfigured ? 'noopener noreferrer' : undefined}
                 className="btn-primary w-full text-center mt-4"
+                onClick={trackLandingPageClick}
               >
                 Start Landing Page
               </a>

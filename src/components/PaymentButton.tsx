@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { PAYMENT_LINKS, isPaymentConfigured } from '@/config/payments';
+import { trackEvent } from '@/lib/analytics';
 
 type PaymentType = keyof typeof PAYMENT_LINKS;
 
@@ -39,12 +40,35 @@ export default function PaymentButton({
   // If not configured, link to contact page instead
   const href = isConfigured ? payment.url : '/contact';
 
+  const handleClick = () => {
+    trackEvent('package_select', {
+      package_type: type,
+      package_label: payment.label,
+      destination: href,
+    });
+
+    if (type === 'landingPage') {
+      trackEvent('cta_primary_click', {
+        cta_text: buttonText,
+        location: 'payment_button',
+      });
+    }
+
+    if (isConfigured) {
+      trackEvent('outbound_stripe_click', {
+        package_type: type,
+        destination: payment.url,
+      });
+    }
+  };
+
   return (
     <Link
       href={href}
       target={isConfigured ? '_blank' : undefined}
       rel={isConfigured ? 'noopener noreferrer' : undefined}
       className={`${baseStyles} ${variantStyles[variant]} ${widthClass} ${className}`}
+      onClick={handleClick}
     >
       {buttonText}
       {isConfigured && (
