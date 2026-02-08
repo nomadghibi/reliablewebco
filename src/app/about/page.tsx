@@ -1,6 +1,36 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
+import JsonLd from '@/components/JsonLd';
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'About Reliable Web Studio',
+  description:
+    '15+ years building lead-generating websites for local businesses in Palm Bay, Melbourne, and Brevard County, Florida.',
+  url: 'https://reliablewebstudio.com/about',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Reliable Web Studio',
+    legalName: 'Best Computer Tech LLC',
+    url: 'https://reliablewebstudio.com',
+    telephone: '+1-321-953-5199',
+    email: 'hello@reliablewebstudio.com',
+    areaServed: [
+      { '@type': 'City', name: 'Palm Bay', containedInPlace: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'City', name: 'Melbourne', containedInPlace: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'AdministrativeArea', name: 'Brevard County', containedInPlace: { '@type': 'State', name: 'Florida' } },
+    ],
+    foundingDate: '2010',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Palm Bay',
+      addressRegion: 'FL',
+      addressCountry: 'US',
+    },
+  },
+};
 
 export const metadata: Metadata = {
   title: 'About — Reliable Web Studio | 15+ Years Serving Palm Bay, Melbourne & Brevard County',
@@ -11,11 +41,20 @@ export const metadata: Metadata = {
     description: '15+ years building lead-generating websites for local businesses in Palm Bay, Melbourne, and Brevard County, Florida.',
     url: 'https://reliablewebstudio.com/about',
     type: 'website',
+    images: [
+      {
+        url: '/api/og/about',
+        width: 1200,
+        height: 630,
+        alt: 'About Reliable Web Studio — 15+ Years Serving Florida\'s Space Coast',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About — Reliable Web Studio | 15+ Years Serving Brevard County, FL',
     description: '15+ years building lead-generating websites for local businesses in Palm Bay, Melbourne, and Brevard County, Florida.',
+    images: ['/api/og/about'],
   },
   alternates: {
     canonical: 'https://reliablewebstudio.com/about',
@@ -25,25 +64,60 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="pt-20">
-      {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
-        <div className="container-custom">
+      <JsonLd data={aboutSchema} />
+
+      {/* Hero — Space Coast Night Sky */}
+      <section className="relative py-16 md:py-24 bg-gradient-to-b from-slate-900 via-blue-900 to-primary-800 overflow-hidden">
+        {/* CSS Stars */}
+        <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute w-1 h-1 bg-white rounded-full top-[10%] left-[15%] animate-pulse opacity-80" />
+          <div className="absolute w-1.5 h-1.5 bg-white rounded-full top-[8%] left-[45%] animate-pulse opacity-60" style={{ animationDelay: '0.5s' }} />
+          <div className="absolute w-1 h-1 bg-white rounded-full top-[15%] left-[75%] animate-pulse opacity-70" style={{ animationDelay: '1s' }} />
+          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[20%] left-[30%] opacity-50" />
+          <div className="absolute w-1 h-1 bg-white rounded-full top-[5%] left-[60%] animate-pulse opacity-60" style={{ animationDelay: '1.5s' }} />
+          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[25%] left-[85%] opacity-40" />
+          <div className="absolute w-1 h-1 bg-white rounded-full top-[12%] left-[92%] animate-pulse opacity-50" style={{ animationDelay: '2s' }} />
+          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[18%] left-[8%] opacity-60" />
+          <div className="absolute w-1.5 h-1.5 bg-white rounded-full top-[6%] left-[25%] animate-pulse opacity-40" style={{ animationDelay: '0.8s' }} />
+          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[22%] left-[55%] opacity-50" />
+          <div className="absolute w-1 h-1 bg-white rounded-full top-[3%] left-[38%] opacity-70" />
+          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[28%] left-[70%] opacity-30" />
+        </div>
+
+        <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-white">
               Fast Launch. Clear Pricing. Built to Convert.
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700">
+            <p className="text-xl md:text-2xl text-blue-100">
               We&apos;re not a traditional agency. We&apos;re a lead generation website builder for businesses that need results now.
             </p>
+
+            {/* Space Coast Location Callout */}
+            <div className="flex items-center justify-center gap-2 mt-6 text-blue-200">
+              <svg aria-hidden="true" className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m5.96 5.96a14.926 14.926 0 01-5.84 2.58m0 0a6 6 0 01-7.38-5.84h4.8" />
+              </svg>
+              <span className="text-sm md:text-base font-medium">
+                15+ Years Serving Palm Bay, Melbourne &amp; Florida&apos;s Space Coast
+              </span>
+            </div>
           </div>
+        </div>
+
+        {/* Wave Divider */}
+        <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
+          <svg className="w-full h-16 md:h-24" viewBox="0 0 1440 96" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 96h1440V56c-120-20-240-40-360-36s-240 32-360 40-240-8-360-20S120 16 0 24v72z" fill="white" />
+          </svg>
         </div>
       </section>
 
       {/* Who We Are */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white" aria-labelledby="who-we-are-heading">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Who We Are</h2>
+            <h2 id="who-we-are-heading" className="text-3xl md:text-4xl font-bold mb-8">Who We Are</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-xl text-gray-700 mb-6">
                 Reliable Web Studio (operated by Best Computer Tech LLC) specializes in building high-converting websites for local service businesses. Based on Florida&apos;s Space Coast, we&apos;ve been serving <strong>Palm Bay, Melbourne, and Brevard County</strong> businesses for over <strong>15 years</strong>.
@@ -59,11 +133,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What Makes Us Different */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      {/* What Makes Us Different — Ocean tint */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-cyan-50 to-blue-50" aria-labelledby="different-heading">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What Makes Us Different</h2>
+            <h2 id="different-heading" className="text-3xl md:text-4xl font-bold text-center mb-12">What Makes Us Different</h2>
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg p-8 shadow-md">
@@ -94,7 +168,7 @@ export default function AboutPage() {
                 <div className="text-4xl mb-4">🚫</div>
                 <h3 className="text-2xl font-bold mb-3">No Agency Bloat</h3>
                 <p className="text-gray-700">
-                  No account managers. No endless meetings. No "discovery phases." Just a simple intake, fast build, one revision round, and launch.
+                  No account managers. No endless meetings. No &quot;discovery phases.&quot; Just a simple intake, fast build, one revision round, and launch.
                 </p>
               </div>
 
@@ -119,61 +193,61 @@ export default function AboutPage() {
       </section>
 
       {/* Who We Serve */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white" aria-labelledby="who-we-serve-heading">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Who We Serve</h2>
+            <h2 id="who-we-serve-heading" className="text-3xl md:text-4xl font-bold text-center mb-12">Who We Serve</h2>
 
             <div className="bg-primary-50 rounded-lg p-8 mb-8">
               <h3 className="text-2xl font-bold mb-4">Local Service Businesses</h3>
               <p className="text-lg text-gray-700 mb-4">
-                We specialize in businesses that need leads now, not "branding exercises":
+                We specialize in businesses that need leads now, not &quot;branding exercises&quot;:
               </p>
               <ul className="grid md:grid-cols-2 gap-3 text-gray-700">
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg aria-hidden="true" className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                   </svg>
                   <span>HVAC companies</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg aria-hidden="true" className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                   </svg>
                   <span>Plumbing services</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg aria-hidden="true" className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                   </svg>
                   <span>Cleaning companies</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg aria-hidden="true" className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                   </svg>
                   <span>Dental practices</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg aria-hidden="true" className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                   </svg>
                   <span>Landscaping services</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg aria-hidden="true" className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                   </svg>
                   <span>Contractors & remodelers</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg aria-hidden="true" className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                   </svg>
                   <span>Home services</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg aria-hidden="true" className="w-5 h-5 text-primary-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                   </svg>
                   <span>And more...</span>
@@ -189,10 +263,10 @@ export default function AboutPage() {
       </section>
 
       {/* Our Process */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-50" aria-labelledby="process-heading">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Process is Simple</h2>
+            <h2 id="process-heading" className="text-3xl md:text-4xl font-bold text-center mb-12">Our Process is Simple</h2>
 
             <div className="space-y-6">
               <div className="flex gap-6">
@@ -246,10 +320,10 @@ export default function AboutPage() {
       </section>
 
       {/* Guarantee */}
-      <section className="py-16 md:py-24 bg-primary-600 text-white">
+      <section className="py-16 md:py-24 bg-primary-600 text-white" aria-labelledby="guarantee-heading">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Guarantee</h2>
+            <h2 id="guarantee-heading" className="text-3xl md:text-4xl font-bold mb-6">Our Guarantee</h2>
             <p className="text-xl mb-4">
               If you complete the intake and we miss the agreed deadline, you get $100 back.
             </p>
@@ -259,10 +333,10 @@ export default function AboutPage() {
       </section>
 
       {/* Contact Info */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white" aria-labelledby="contact-heading">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Get In Touch</h2>
+            <h2 id="contact-heading" className="text-3xl md:text-4xl font-bold mb-6">Get In Touch</h2>
             <p className="text-xl text-gray-700 mb-8">
               Have questions? Want to see if we&apos;re a good fit? Let&apos;s talk.
             </p>
@@ -271,7 +345,7 @@ export default function AboutPage() {
                 href="tel:+13219535199"
                 className="inline-flex items-center justify-center gap-2 text-xl font-bold text-primary-600 hover:text-primary-700"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -285,7 +359,7 @@ export default function AboutPage() {
                 href="mailto:hello@reliablewebstudio.com"
                 className="inline-flex items-center justify-center gap-2 text-xl font-bold text-primary-600 hover:text-primary-700"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"

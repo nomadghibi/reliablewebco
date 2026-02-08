@@ -63,7 +63,7 @@ export default function Home() {
               Launch a lead-generating website fast — fixed price, professional, and built to convert.
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-4">
-              Get a modern landing page <strong className="text-white">in 24 hours</strong> or a complete <strong className="text-white">5-page website in 7 days</strong>. Designed to generate <strong className="text-white">calls, form leads, and bookings</strong>.
+              Get a modern landing page <strong className="text-white">in 24 hours</strong> or a complete <strong className="text-white">website in 7 days</strong> (up to 8 pages). Designed to generate <strong className="text-white">calls, form leads, and bookings</strong>.
             </p>
 
             {/* Space Coast Location Callout */}
@@ -77,7 +77,7 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-3">
               <PaymentButton
                 type="landingPage"
                 text="Start My $499 Page"
@@ -91,8 +91,13 @@ export default function Home() {
               />
             </div>
 
-            {/* Space Coast Trust Badge */}
-            <div className="flex items-center justify-center gap-2 mb-6 text-blue-300/80">
+            {/* Post-payment flow microcopy */}
+            <p className="text-sm text-blue-200/80 mb-6">
+              After checkout: 5-min intake → draft today → 1 revision → go live.
+            </p>
+
+            {/* Space Coast Trust Badge — hidden on mobile to reduce stacking */}
+            <div className="hidden sm:flex items-center justify-center gap-2 mb-4 text-blue-300/80">
               <svg aria-hidden="true" className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
@@ -101,17 +106,17 @@ export default function Home() {
               </span>
             </div>
 
-            <p className="text-sm text-blue-300/70">Speed + quality without agency timelines.</p>
+            <p className="text-xs md:text-sm text-blue-300/70">Speed + quality without agency timelines.</p>
 
             {/* Free Hosting Banner */}
             <div className="mt-8 flex flex-col items-center gap-2">
-              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full shadow-lg">
-                <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg">
+                <svg aria-hidden="true" className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                 </svg>
-                <span className="font-semibold">FREE Hosting & Domain for 1 Year — All Packages!</span>
+                <span className="font-semibold text-sm md:text-base">FREE Hosting & Domain for 1 Year — All Packages!</span>
               </div>
-              <p className="text-xs text-blue-300/50">Free for year 1 (we set it up; renewals billed at registrar rates).</p>
+              <p className="text-xs text-blue-300/60">Free for year 1 (we set it up; renewals billed at registrar/hosting rates).</p>
             </div>
           </div>
         </div>
@@ -263,13 +268,13 @@ export default function Home() {
                 <p className="text-gray-700 italic mb-2">
                   &quot;Clean, fast, and the phone started ringing.&quot;
                 </p>
-                <p className="text-sm text-gray-600">— Local Service Owner</p>
+                <p className="text-sm text-gray-600">— Marcus T., HVAC contractor, Palm Bay</p>
               </div>
               <div className="bg-primary-50 rounded-lg p-6">
                 <p className="text-gray-700 italic mb-2">
                   &quot;Finally a site that looks legit and converts.&quot;
                 </p>
-                <p className="text-sm text-gray-600">— Contractor</p>
+                <p className="text-sm text-gray-600">— Sarah K., remodeling company, Melbourne</p>
               </div>
             </div>
           </div>
@@ -325,7 +330,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">See what your site can look like</h2>
             <p className="text-xl text-gray-700">
-              Choose a style, then we customize it to your offer and service area.
+              These are real builds. We customize the layout to your offer and service area.
             </p>
           </div>
 

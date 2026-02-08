@@ -27,7 +27,7 @@ const faqs = [
     questions: [
       {
         q: 'What\'s the difference between the packages?',
-        a: '24-Hour Landing Page ($499) = 1 page focused on conversions. Website-in-a-Week ($2,000) = 5 pages with better SEO structure. Growth Website ($3,500+) = 8-12 pages with dedicated service pages and stronger local SEO.',
+        a: '24-Hour Landing Page ($499) = 1 page focused on conversions. Website-in-a-Week ($2,000) = up to 8 pages with better SEO structure. Growth Website ($3,500+) = 8-12 pages with dedicated service pages and stronger local SEO.',
       },
       {
         q: 'Can I upgrade later?',

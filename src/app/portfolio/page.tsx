@@ -713,7 +713,7 @@ export default function PortfolioPage() {
                     <div className="text-6xl font-bold text-teal-600 mb-2">$2,000</div>
                     <div className="text-lg font-semibold text-gray-700 mb-4">Website-in-a-Week</div>
                     <div className="space-y-2 text-sm text-gray-600">
-                      <p>✓ 5-page website</p>
+                      <p>✓ Up to 8-page website</p>
                       <p>✓ Service & career pages</p>
                       <p>✓ Client portal integration</p>
                       <p>✓ Healthcare compliance ready</p>
@@ -784,7 +784,7 @@ export default function PortfolioPage() {
                     <div className="text-6xl font-bold text-purple-600 mb-2">$2,000</div>
                     <div className="text-lg font-semibold text-gray-700 mb-4">Website-in-a-Week</div>
                     <div className="space-y-2 text-sm text-gray-600">
-                      <p>✓ 5-page website</p>
+                      <p>✓ Up to 8-page website</p>
                       <p>✓ Event & donation systems</p>
                       <p>✓ Content management</p>
                       <p>✓ Member portal access</p>
@@ -926,7 +926,7 @@ export default function PortfolioPage() {
                     <div className="text-6xl font-bold text-lime-600 mb-2">$2,000</div>
                     <div className="text-lg font-semibold text-gray-700 mb-4">Website-in-a-Week</div>
                     <div className="space-y-2 text-sm text-gray-600">
-                      <p>✓ 5-page website</p>
+                      <p>✓ Up to 8-page website</p>
                       <p>✓ Multi-location support</p>
                       <p>✓ Enrollment system</p>
                       <p>✓ Parent resources</p>

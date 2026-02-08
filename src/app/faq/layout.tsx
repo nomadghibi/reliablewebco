@@ -27,7 +27,7 @@ const faqItems = [
   { q: 'What do you need from me to get started?', a: "Business name, phone, email, service list, service area, 3 competitor links you respect, logo (or text-only is fine), and any photos you have (optional). That's it." },
   { q: 'How fast can you really launch a site?', a: 'The 24-Hour Landing Page is delivered within 24 hours AFTER you complete the intake and payment is received. Website-in-a-Week takes 5-7 days from intake to review.' },
   { q: 'Do I need to have my domain ready?', a: "Not required to start. I can launch on a temporary URL first, then move it to your domain when ready. Or you can provide your domain and I'll handle the setup." },
-  { q: "What's the difference between the packages?", a: '24-Hour Landing Page ($499) = 1 page focused on conversions. Website-in-a-Week ($2,000) = 5 pages with better SEO structure. Growth Website ($3,500+) = 8-12 pages with dedicated service pages and stronger local SEO.' },
+  { q: "What's the difference between the packages?", a: '24-Hour Landing Page ($499) = 1 page focused on conversions. Website-in-a-Week ($2,000) = up to 8 pages with better SEO structure. Growth Website ($3,500+) = 8-12 pages with dedicated service pages and stronger local SEO.' },
   { q: 'Can I upgrade later?', a: "Yes. Start with a landing page, then upgrade to a full website when you're ready. I'll credit what you already paid." },
   { q: 'Do you offer payment plans?', a: 'Website-in-a-Week and Growth packages are split: 50% deposit to start, 50% before launch. Landing pages are paid 100% upfront.' },
   { q: 'What if I need more pages?', a: 'We can add pages as needed. Custom pages are billed separately or you can upgrade to the Growth package.' },
