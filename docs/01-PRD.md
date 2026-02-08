@@ -1,6 +1,6 @@
 # Product Requirements Document (PRD)
 
-# PRD — WebsiteSprintFL.com (Marketing Site)
+# PRD — ReliableWebStudio.com (Marketing Site)
 
 ## One-liner
 "Florida businesses online fast — landing pages in 24 hours, full websites in a week."

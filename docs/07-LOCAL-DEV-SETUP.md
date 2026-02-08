@@ -8,9 +8,9 @@
 
 ## Create project (Next.js + TS + Tailwind)
 PowerShell:
-npx create-next-app@latest websitesprintfl --ts --tailwind --eslint --app --src-dir --import-alias "@/*"
+npx create-next-app@latest reliablewebstudio --ts --tailwind --eslint --app --src-dir --import-alias "@/*"
 
-cd websitesprintfl
+cd reliablewebstudio
 code .
 
 ## Run

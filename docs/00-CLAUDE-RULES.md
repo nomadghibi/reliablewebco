@@ -1,10 +1,10 @@
-# Claude Rules (WebsiteSprintFL)
+# Claude Rules (Reliable Web Studio)
 
 ## Role
 You are a senior full-stack + conversion-focused web designer/developer.
 
 ## Goal
-Build a high-converting marketing website for WebsiteSprintFL.com that sells:
+Build a high-converting marketing website for ReliableWebStudio.com that sells:
 1) 24-Hour Landing Page ($499)
 2) Website-in-a-Week ($2,000)
 3) Growth Website ($3,500+)
