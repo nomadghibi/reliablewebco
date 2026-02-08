@@ -495,7 +495,7 @@ export default function PlatformPage() {
             <div className="text-center mb-12">
               <h2 className="heading-lg mb-4">Platform MVP Pricing</h2>
               <p className="text-xl text-gray-600">
-                Custom quote based on your specific requirements. Here's what influences the price:
+                Custom quote based on your specific requirements. Here&apos;s what influences the price:
               </p>
             </div>
 
@@ -628,7 +628,7 @@ export default function PlatformPage() {
             <div className="bg-gray-50 rounded-lg p-6 text-center">
               <h3 className="text-xl font-bold mb-4">Need an Exact Quote?</h3>
               <p className="text-gray-700 mb-6">
-                Every project is different. Schedule a scope call and I'll give you a detailed quote with timeline.
+                Every project is different. Schedule a scope call and I&apos;ll give you a detailed quote with timeline.
               </p>
               <a href="/contact" className="btn-primary text-lg">
                 Book a Scope Call
@@ -649,12 +649,12 @@ export default function PlatformPage() {
                 <h3 className="font-bold text-lg mb-2">How long does it take to build an MVP?</h3>
                 <p className="text-gray-700">
                   Typical timeline is 4-8 weeks depending on complexity. Simple auth + CRUD apps are faster. Complex
-                  integrations and workflows take longer. You'll get a timeline estimate after the scope call.
+                  integrations and workflows take longer. You&apos;ll get a timeline estimate after the scope call.
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-lg mb-2">What's included in the price?</h3>
+                <h3 className="font-bold text-lg mb-2">What&apos;s included in the price?</h3>
                 <p className="text-gray-700">
                   Design, development, testing, deployment, and basic documentation. Hosting costs are separate (around
                   $20-100/month depending on usage). Ongoing maintenance is optional via care plans.

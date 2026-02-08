@@ -29,7 +29,7 @@ export default function CheckoutSuccessPage() {
             Payment Successful!
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Thank you for your purchase. We're excited to start building your landing page!
+            Thank you for your purchase. We&apos;re excited to start building your landing page!
           </p>
 
           {/* What Happens Next */}
@@ -45,7 +45,7 @@ export default function CheckoutSuccessPage() {
                 <div>
                   <h3 className="font-semibold text-gray-900">Check Your Email</h3>
                   <p className="text-gray-600">
-                    You'll receive a confirmation email with your receipt within a few minutes.
+                    You&apos;ll receive a confirmation email with your receipt within a few minutes.
                   </p>
                 </div>
               </div>
@@ -55,7 +55,7 @@ export default function CheckoutSuccessPage() {
                   <span className="text-primary-600 font-bold">2</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">We'll Reach Out</h3>
+                  <h3 className="font-semibold text-gray-900">We&apos;ll Reach Out</h3>
                   <p className="text-gray-600">
                     Our team will contact you within 2 hours (during business hours) to gather your business details and preferences.
                   </p>
@@ -79,7 +79,7 @@ export default function CheckoutSuccessPage() {
           {/* Contact Info */}
           <div className="bg-gray-50 rounded-xl p-6 mb-8">
             <p className="text-gray-600 mb-2">
-              Questions? We're here to help!
+              Questions? We&apos;re here to help!
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
