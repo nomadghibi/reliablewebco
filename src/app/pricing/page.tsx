@@ -14,76 +14,120 @@ export const metadata: Metadata = {
       'Choose the build speed you need. 24-Hour Landing Page ($499), Website-in-a-Week ($2,000), Growth Website ($3,500+), Authority Website ($5,500+), Platform MVP ($8,000+).',
     url: 'https://reliablewebstudio.com/pricing',
     type: 'website',
+    images: [
+      {
+        url: '/api/og/pricing',
+        width: 1200,
+        height: 630,
+        alt: 'Reliable Web Studio pricing',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing — 24-Hour Landing Pages ($499) | Reliable Web Studio',
     description:
       'Choose the build speed you need. 24-Hour Landing Page ($499), Website-in-a-Week ($2,000), Growth Website ($3,500+), and more.',
+    images: ['/api/og/pricing'],
   },
   alternates: {
     canonical: 'https://reliablewebstudio.com/pricing',
   },
 };
 
-const serviceSchema = {
+const pricingSchema = {
   '@context': 'https://schema.org',
-  '@type': 'ItemList',
+  '@type': 'OfferCatalog',
+  name: 'Reliable Web Studio Packages',
+  url: 'https://reliablewebstudio.com/pricing',
   itemListElement: [
     {
-      '@type': 'ListItem',
-      position: 1,
-      item: {
+      '@type': 'Offer',
+      name: '24-Hour Landing Page Sprint',
+      url: 'https://reliablewebstudio.com/pricing#landing-page',
+      price: '499',
+      priceCurrency: 'USD',
+      category: 'WebDesignService',
+      itemOffered: {
         '@type': 'Service',
         name: '24-Hour Landing Page Sprint',
-        description: '1-page high-converting landing page with click-to-call, lead form, basic SEO, and analytics. Delivered within 24 hours.',
-        offers: { '@type': 'Offer', price: '499', priceCurrency: 'USD' },
-        provider: { '@type': 'Organization', name: 'Reliable Web Studio' },
+        description:
+          '1-page high-converting landing page with click-to-call, lead form, basic SEO, and analytics. Delivered within 24 hours after intake is complete.',
+        provider: {
+          '@type': 'Organization',
+          name: 'Reliable Web Studio',
+          url: 'https://reliablewebstudio.com',
+        },
+        areaServed: { '@type': 'State', name: 'Florida' },
       },
     },
     {
-      '@type': 'ListItem',
-      position: 2,
-      item: {
+      '@type': 'Offer',
+      name: 'Website-in-a-Week',
+      url: 'https://reliablewebstudio.com/pricing#website-in-a-week',
+      price: '2000',
+      priceCurrency: 'USD',
+      category: 'WebDesignService',
+      itemOffered: {
         '@type': 'Service',
         name: 'Website-in-a-Week',
-        description: 'Up to 8 pages with strong CTA structure, forms, basic SEO, and launch support. Delivered in 5-7 days.',
-        offers: { '@type': 'Offer', price: '2000', priceCurrency: 'USD' },
-        provider: { '@type': 'Organization', name: 'Reliable Web Studio' },
+        description:
+          'Up to 8 pages with strong CTA structure, forms, basic SEO, and launch support. Delivered in 5–7 days.',
+        provider: {
+          '@type': 'Organization',
+          name: 'Reliable Web Studio',
+          url: 'https://reliablewebstudio.com',
+        },
+        areaServed: { '@type': 'State', name: 'Florida' },
       },
     },
     {
-      '@type': 'ListItem',
-      position: 3,
-      item: {
-        '@type': 'Service',
-        name: 'Growth Website',
-        description: '8-12 pages with separate service pages for SEO, reviews/testimonials, FAQ, and optional blog setup. Delivered in 7-10 days.',
-        offers: { '@type': 'AggregateOffer', lowPrice: '3500', highPrice: '4500', priceCurrency: 'USD' },
-        provider: { '@type': 'Organization', name: 'Reliable Web Studio' },
-      },
+      '@type': 'AggregateOffer',
+      name: 'Growth Website',
+      url: 'https://reliablewebstudio.com/pricing#growth-website',
+      lowPrice: '3500',
+      highPrice: '4500',
+      priceCurrency: 'USD',
     },
     {
-      '@type': 'ListItem',
-      position: 4,
-      item: {
-        '@type': 'Service',
-        name: 'Authority Website',
-        description: '12-20 pages with multi-service and multi-area SEO buildout. Premium look and trust system. Delivered in 2-3 weeks.',
-        offers: { '@type': 'AggregateOffer', lowPrice: '5500', highPrice: '7500', priceCurrency: 'USD' },
-        provider: { '@type': 'Organization', name: 'Reliable Web Studio' },
-      },
+      '@type': 'AggregateOffer',
+      name: 'Authority Website',
+      url: 'https://reliablewebstudio.com/pricing#authority-website',
+      lowPrice: '5500',
+      highPrice: '7500',
+      priceCurrency: 'USD',
     },
     {
-      '@type': 'ListItem',
-      position: 5,
-      item: {
-        '@type': 'Service',
-        name: 'Platform / Web App MVP',
-        description: 'Custom web applications with login/JWT, database CRUD, admin dashboard, ML/AI integration, and optional payments/subscriptions.',
-        offers: { '@type': 'AggregateOffer', lowPrice: '8000', highPrice: '25000', priceCurrency: 'USD' },
-        provider: { '@type': 'Organization', name: 'Reliable Web Studio' },
-      },
+      '@type': 'AggregateOffer',
+      name: 'Platform / Web App MVP',
+      url: 'https://reliablewebstudio.com/pricing#web-app',
+      lowPrice: '8000',
+      highPrice: '25000',
+      priceCurrency: 'USD',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Monthly Care Plan — Basic',
+      url: 'https://reliablewebstudio.com/pricing#care-plans',
+      price: '99',
+      priceCurrency: 'USD',
+      category: 'WebSiteMaintenance',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Monthly Care Plan — Standard',
+      url: 'https://reliablewebstudio.com/pricing#care-plans',
+      price: '199',
+      priceCurrency: 'USD',
+      category: 'WebSiteMaintenance',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Monthly Care Plan — Pro',
+      url: 'https://reliablewebstudio.com/pricing#care-plans',
+      price: '299',
+      priceCurrency: 'USD',
+      category: 'WebSiteMaintenance',
     },
   ],
 };
@@ -91,7 +135,7 @@ const serviceSchema = {
 export default function PricingPage() {
   return (
     <main className="pt-20">
-      <JsonLd data={serviceSchema} />
+      <JsonLd data={pricingSchema} />
       {/* Hero */}
       <section className="section-padding bg-gradient-to-b from-white to-gray-50">
         <div className="container-custom">
@@ -338,9 +382,17 @@ export default function PricingPage() {
                 <p className="text-gray-700">$1,000 before launch</p>
               </div>
 
-              <Link href="/contact" className="btn-primary w-full text-center">
-                Book a Call
-              </Link>
+              <div className="space-y-3">
+                <PaymentButton
+                  type="websiteDeposit"
+                  text="Pay Deposit — $1,000"
+                  variant="primary"
+                  fullWidth
+                />
+                <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-primary-700 bg-white border-2 border-primary-600 rounded-lg hover:bg-primary-50 transition-colors duration-200 w-full text-center">
+                  Book a Call
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -706,7 +758,7 @@ export default function PricingPage() {
                 <strong>Upgrade to Website-in-a-Week within 7 days and get $200 credit</strong> from your $499 sprint.
               </p>
               <p className="text-gray-600 mb-8">
-                Start with the 24-Hour Landing Page to test the waters, then upgrade to a full 5-page website and save $200.
+                Start with the 24-Hour Landing Page, then upgrade to Website-in-a-Week (up to 8 pages) and save $200.
               </p>
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors duration-200">
                 Start My $499 Page

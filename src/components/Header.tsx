@@ -54,12 +54,12 @@ export default function Header() {
           </div>
 
           {/* CTA + Phone */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-4 mr-2">
             <a
               href="https://buy.stripe.com/28E28r2dh7xw81B5t0dUY09"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="inline-block bg-accent-600 hover:bg-accent-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors"
             >
               Start Landing Page
             </a>
