@@ -433,10 +433,10 @@ export default function Home() {
             ))}
 
             {/* Your Site Here - CTA Card */}
-            <Reveal delay={380} className="md:col-span-2 md:max-w-md md:mx-auto">
+            <div className="md:col-span-2 md:max-w-md md:mx-auto">
               <Link
                 href="/contact"
-                className="group bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:from-primary-700 hover:to-primary-800"
+                className="group block bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:from-primary-700 hover:to-primary-800"
               >
                 <div className="aspect-video relative flex items-center justify-center p-6">
                   <div className="text-center">
@@ -459,7 +459,7 @@ export default function Home() {
                   </h3>
                 </div>
               </Link>
-            </Reveal>
+            </div>
           </div>
 
           <Reveal delay={460}>
