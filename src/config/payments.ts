@@ -14,7 +14,7 @@ export const PAYMENT_LINKS = {
   landingPage: {
     price: 499,
     label: '24-Hour Landing Page',
-    url: 'https://buy.stripe.com/eVq00jdVZdVU95F2gOdUY08',
+    url: 'https://buy.stripe.com/28E28r2dh7xw81B5t0dUY09',
   },
 
   // Website-in-a-Week Deposit - $1,000

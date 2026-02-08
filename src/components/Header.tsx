@@ -55,9 +55,14 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link href="/contact" className="btn-primary">
+            <a
+              href="https://buy.stripe.com/28E28r2dh7xw81B5t0dUY09"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
               Start My $499 Page
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -122,9 +127,14 @@ export default function Header() {
               >
                 Contact
               </Link>
-              <Link href="/contact" className="btn-primary w-full text-center mt-4">
+              <a
+                href="https://buy.stripe.com/28E28r2dh7xw81B5t0dUY09"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary w-full text-center mt-4"
+              >
                 Start My $499 Page
-              </Link>
+              </a>
             </div>
           </div>
         )}
