@@ -64,11 +64,11 @@ export default function Header() {
             <Link href="/portfolio" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
               Portfolio
             </Link>
-            <Link href="/blog" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
-              Blogs
-            </Link>
             <Link href="/locations" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
               Locations
+            </Link>
+            <Link href="/blog" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
+              Blogs
             </Link>
             <Link href="/about" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
               About
@@ -140,18 +140,18 @@ export default function Header() {
                 Portfolio
               </Link>
               <Link
-                href="/blog"
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Blogs
-              </Link>
-              <Link
                 href="/locations"
                 className="text-gray-700 hover:text-primary-600 font-medium transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Locations
+              </Link>
+              <Link
+                href="/blog"
+                className="text-gray-700 hover:text-primary-600 font-medium transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Blogs
               </Link>
               <Link
                 href="/about"
