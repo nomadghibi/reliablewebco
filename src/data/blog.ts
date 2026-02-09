@@ -1152,6 +1152,82 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     ctaText: 'Need a partner that delivers SEO and conversion from day one?'
+  },
+  {
+    id: 16,
+    slug: 'website-in-a-week-your-new-site-fast-florida',
+    title: 'Website-in-a-Week: Your New Site, Fast',
+    description:
+      'How Florida service businesses can launch a professional website in one week with clear scope, strong SEO foundations, and conversion-first structure.',
+    category: 'Website-in-a-Week',
+    cityFocus: ['Florida Statewide', 'Palm Bay', 'Orlando'],
+    keywords: ['website in a week florida', 'fast website launch', 'professional business website'],
+    publishedAt: '2026-02-09',
+    updatedAt: '2026-02-09',
+    readingTime: '6 min read',
+    heroBadge: 'Fast Professional Launch',
+    intro: [
+      'If your business needs a professional website quickly, speed alone is not enough. You still need clear messaging, local SEO setup, and a conversion path that actually produces calls and leads.',
+      'A one-week launch works best when scope is fixed, content is structured early, and technical setup is included from day one.'
+    ],
+    sections: [
+      {
+        heading: 'Day 1: lock offer, pages, and conversion goals',
+        paragraphs: [
+          'Start with decision clarity. Define the core offer, target locations, and one primary conversion action for each page.',
+          'A strong kickoff prevents rework and keeps the build focused on business outcomes instead of endless revisions.'
+        ],
+        bullets: [
+          'Finalize service list and service areas',
+          'Confirm one main CTA per page',
+          'Approve homepage headline and value proposition'
+        ]
+      },
+      {
+        heading: 'Day 2 to 5: build the pages that move revenue',
+        paragraphs: [
+          'Prioritize homepage, core service pages, contact page, and at least one location page. This structure gives both users and search engines a clear map of what you offer.',
+          'Every page should include trust proof, action-oriented copy, and mobile-first CTA placement.'
+        ],
+        bullets: [
+          'Homepage + service pages first',
+          'Contact and location page included',
+          'Trust proof and CTA repetition throughout'
+        ]
+      },
+      {
+        heading: 'Day 6 to 7: polish, QA, and launch',
+        paragraphs: [
+          'Use one structured revision round, then run launch QA for mobile usability, forms, analytics events, and metadata.',
+          'A fast launch should still include SEO fundamentals so the website can rank and convert after go-live.'
+        ],
+        bullets: [
+          'Single focused revision pass',
+          'Mobile and conversion flow testing',
+          'Metadata, schema, and tracking validation'
+        ]
+      }
+    ],
+    takeawayTitle: 'Website-in-a-Week launch checklist',
+    takeaways: [
+      'Fix scope before design starts',
+      'Build pages in priority order for revenue impact',
+      'Include SEO and tracking before launch',
+      'Use disciplined QA so speed does not reduce quality'
+    ],
+    faq: [
+      {
+        question: 'Can a one-week website still look professional?',
+        answer:
+          'Yes. With a clear scope and focused content process, a one-week build can look polished and perform well.'
+      },
+      {
+        question: 'Is Website-in-a-Week good for local SEO?',
+        answer:
+          'Yes, if core SEO setup is included, including metadata, internal linking, and location-relevant page structure.'
+      }
+    ],
+    ctaText: 'Need your new site live fast, without cutting quality?'
   }
 ];
 
