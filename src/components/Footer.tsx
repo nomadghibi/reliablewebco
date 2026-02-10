@@ -67,6 +67,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/audit" className="hover:text-white transition-colors">
+                  Free Website Audit
+                </Link>
+              </li>
+              <li>
                 <Link href="/locations" className="hover:text-white transition-colors">
                   Locations
                 </Link>

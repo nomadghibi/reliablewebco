@@ -136,9 +136,9 @@ export default function Home() {
                   <svg aria-hidden="true" className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                   </svg>
-                  <span className="font-semibold text-sm md:text-base">FREE Hosting & Domain for 1 Year — All Packages!</span>
+                  <span className="font-semibold text-sm md:text-base">FREE Hosting + 1 Standard Domain for Year 1</span>
                 </div>
-                <p className="text-xs text-blue-300/60">Free for year 1 (we set it up; renewals billed at registrar/hosting rates).</p>
+                <p className="text-xs text-blue-300/60">Domain is based on availability and registered under your name. Renewals are billed at registrar/hosting rates.</p>
               </div>
             </Reveal>
           </div>
@@ -165,7 +165,7 @@ export default function Home() {
             <Reveal delay={80}>
               <div className="bg-white rounded-lg shadow-xl p-8 border-2 border-accent-500 relative">
                 <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                  + Free Hosting & Domain
+                  + Free Hosting & Domain*
                 </div>
                 <div className="text-accent-600 font-bold text-sm uppercase mb-2">Most Popular</div>
                 <h3 className="text-3xl font-bold mb-4">24-Hour Landing Page Sprint — $499</h3>
@@ -208,7 +208,7 @@ export default function Home() {
             <Reveal delay={160}>
               <div className="bg-white rounded-lg shadow-xl p-8 border-2 border-primary-500 relative">
                 <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                  + Free Hosting & Domain
+                  + Free Hosting & Domain*
                 </div>
                 <div className="text-primary-600 font-bold text-sm uppercase mb-2">Best Value</div>
                 <h3 className="text-3xl font-bold mb-4">Website-in-a-Week — $2,000</h3>
@@ -445,7 +445,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-4 bg-white">
-                  <div className="text-xs text-green-600 font-semibold uppercase tracking-wide mb-1">Free Hosting & Domain</div>
+                  <div className="text-xs text-green-600 font-semibold uppercase tracking-wide mb-1">Free Hosting & Domain*</div>
                   <h3 className="font-bold text-gray-900 flex items-center gap-2">
                     Get Started Today
                     <svg className="w-4 h-4 text-primary-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -459,6 +459,7 @@ export default function Home() {
 
           <Reveal delay={460}>
             <div className="text-center mt-12">
+              <p className="text-xs text-gray-500 mb-4">* 1 standard domain, subject to availability, registered under client name.</p>
               <Link href="/portfolio" className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-primary-700 bg-white border-2 border-primary-600 rounded-lg hover:bg-primary-50 transition-colors duration-200">
                 See Portfolio
               </Link>

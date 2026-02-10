@@ -28,6 +28,7 @@ Reliable Web Studio is a marketing site for a Florida-based web design service t
 - ✅ Sticky header with CTA
 - ✅ Mobile click-to-call button
 - ✅ Contact form integration (Formspree)
+- ✅ Website analysis request flow with backend snapshot
 - ✅ FAQ with accordion
 - ✅ Privacy and Terms pages
 
@@ -41,10 +42,11 @@ Reliable Web Studio is a marketing site for a Florida-based web design service t
 6. **About** (`/about`) - Company background, service area, and differentiators
 7. **FAQ** (`/faq`) - Comprehensive FAQs organized by category
 8. **Contact** (`/contact`) - Contact form, phone, and email
-9. **Privacy** (`/privacy`) - Privacy policy
-10. **Terms** (`/terms`) - Terms of service
-11. **Checkout Success** (`/checkout/success`) - Post-payment confirmation
-12. **Checkout Cancel** (`/checkout/cancel`) - Checkout cancellation recovery
+9. **Audit** (`/audit`) - Website analysis intake form (next-day email report flow)
+10. **Privacy** (`/privacy`) - Privacy policy
+11. **Terms** (`/terms`) - Terms of service
+12. **Checkout Success** (`/checkout/success`) - Post-payment confirmation
+13. **Checkout Cancel** (`/checkout/cancel`) - Checkout cancellation recovery
 
 ## Local Development
 

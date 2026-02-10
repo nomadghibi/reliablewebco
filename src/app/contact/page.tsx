@@ -6,6 +6,23 @@ import { trackEvent } from '@/lib/analytics';
 
 export default function ContactPage() {
   const todayIso = new Date().toISOString().split('T')[0];
+  const CALL_START_MINUTES = 10 * 60;
+  const CALL_END_MINUTES = 13 * 60;
+  const CALL_SLOT_STEP_MINUTES = 10;
+
+  const callTimeOptions = Array.from(
+    { length: (CALL_END_MINUTES - CALL_START_MINUTES) / CALL_SLOT_STEP_MINUTES + 1 },
+    (_, index) => {
+      const totalMinutes = CALL_START_MINUTES + index * CALL_SLOT_STEP_MINUTES;
+      const hour = Math.floor(totalMinutes / 60);
+      const minute = totalMinutes % 60;
+      const value = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+      const hour12 = hour > 12 ? hour - 12 : hour;
+      const suffix = hour >= 12 ? 'PM' : 'AM';
+      const label = `${hour12}:${String(minute).padStart(2, '0')} ${suffix}`;
+      return { value, label };
+    }
+  );
 
   const [formData, setFormData] = useState({
     name: '',
@@ -36,7 +53,7 @@ export default function ContactPage() {
     return day >= 1 && day <= 4;
   };
 
-  const isAfterTenAm = (timeValue: string) => timeValue >= '10:00';
+  const isWithinCallWindow = (timeValue: string) => callTimeOptions.some((slot) => slot.value === timeValue);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -100,8 +117,8 @@ export default function ContactPage() {
       return;
     }
 
-    if (!isAfterTenAm(callFormData.preferredTime)) {
-      setCallValidationError('Please choose a time at or after 10:00 AM.');
+    if (!isWithinCallWindow(callFormData.preferredTime)) {
+      setCallValidationError('Please choose a time between 10:00 AM and 1:00 PM.');
       return;
     }
 
@@ -190,8 +207,9 @@ export default function ContactPage() {
               <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
               </svg>
-              <span className="font-semibold">FREE Hosting & Domain for 1 Year with all packages!</span>
+              <span className="font-semibold">FREE Hosting + 1 Standard Domain for Year 1</span>
             </div>
+            <p className="text-xs text-primary-100/80 mt-3">Domain is based on availability and registered under the client&apos;s name.</p>
 
             {/* Quick Contact Options */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -434,7 +452,7 @@ export default function ContactPage() {
               {/* Quick Start Card */}
               <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl shadow-xl p-6 text-white relative">
                 <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                  + Free Hosting & Domain
+                  + Free Hosting & Domain*
                 </div>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
@@ -458,6 +476,7 @@ export default function ContactPage() {
                   fullWidth
                   className="bg-white text-accent-600 hover:bg-accent-50"
                 />
+                <p className="text-xs text-accent-100 mt-3">* 1 standard domain based on availability, registered under client name.</p>
               </div>
 
               {/* Book a Call Card */}
@@ -471,7 +490,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-gray-900">Book a 10-Minute Call</h3>
-                      <p className="text-gray-500 text-sm">Monday-Thursday, after 10:00 AM</p>
+                      <p className="text-gray-500 text-sm">Monday-Thursday, 10:00 AM to 1:00 PM</p>
                     </div>
                   </div>
                 </div>
@@ -615,16 +634,21 @@ export default function ContactPage() {
                       <label htmlFor="call-time" className="block text-sm font-semibold text-gray-900 mb-2">
                         Time
                       </label>
-                      <input
+                      <select
                         id="call-time"
                         name="preferredTime"
-                        type="time"
                         required
-                        min="10:00"
                         value={callFormData.preferredTime}
                         onChange={handleCallFormChange}
                         className="w-full px-3 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
-                      />
+                      >
+                        <option value="">Select time</option>
+                        {callTimeOptions.map((slot) => (
+                          <option key={slot.value} value={slot.value}>
+                            {slot.label}
+                          </option>
+                        ))}
+                      </select>
                     </div>
                   </div>
 
@@ -648,7 +672,7 @@ export default function ContactPage() {
                   </div>
 
                   <p className="text-xs text-gray-500">
-                    Booking rules: Monday-Thursday only, time at or after 10:00 AM.
+                    Booking rules: Monday-Thursday only, time between 10:00 AM and 1:00 PM.
                   </p>
 
                   <div>

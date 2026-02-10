@@ -170,8 +170,8 @@ export default function PricingPage() {
                 </svg>
               </div>
               <div className="text-left">
-                <div className="font-bold text-base md:text-lg">FREE Hosting & Domain for 1 Year</div>
-                <div className="text-green-100 text-xs md:text-sm">Included with all packages (renewals at registrar/hosting rates)</div>
+                <div className="font-bold text-base md:text-lg">FREE Hosting + 1 Standard Domain for Year 1</div>
+                <div className="text-green-100 text-xs md:text-sm">Domain is based on availability and registered under client name. Renewals are billed at registrar/hosting rates.</div>
               </div>
             </div>
 
@@ -203,7 +203,7 @@ export default function PricingPage() {
             {/* 24-Hour Landing Page */}
             <div id="landing-page" className="bg-white rounded-lg shadow-xl p-8 border-2 border-accent-500 relative">
               <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                + Free Hosting & Domain
+                + Free Hosting & Domain*
               </div>
               <div className="text-accent-600 font-bold text-sm uppercase mb-2">Most Popular</div>
               <h2 className="text-3xl font-bold mb-4">24-Hour Landing Page</h2>
@@ -336,7 +336,7 @@ export default function PricingPage() {
             {/* Website-in-a-Week */}
             <div id="website-in-a-week" className="bg-white rounded-lg shadow-xl p-8 border-2 border-primary-500 relative">
               <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                + Free Hosting & Domain
+                + Free Hosting & Domain*
               </div>
               <div className="text-primary-600 font-bold text-sm uppercase mb-2">Best Value</div>
               <h2 className="text-3xl font-bold mb-4">Website-in-a-Week</h2>
@@ -436,7 +436,7 @@ export default function PricingPage() {
             {/* Growth Website */}
             <div id="growth-website" className="bg-white rounded-lg shadow-xl p-8 relative">
               <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                + Free Hosting & Domain
+                + Free Hosting & Domain*
               </div>
               <h2 className="text-3xl font-bold mb-4">Growth Website</h2>
               <div className="text-4xl font-bold mb-2">
@@ -498,7 +498,7 @@ export default function PricingPage() {
             {/* Authority Website */}
             <div id="authority-website" className="bg-white rounded-lg shadow-xl p-8 border-2 border-primary-500 relative">
               <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                + Free Hosting & Domain
+                + Free Hosting & Domain*
               </div>
               <h2 className="text-3xl font-bold mb-4">Authority Website</h2>
               <div className="text-4xl font-bold mb-2">
@@ -552,7 +552,7 @@ export default function PricingPage() {
           <div className="max-w-3xl mx-auto">
             <div id="web-app" className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-lg shadow-xl p-8 relative">
               <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                + Free Hosting & Domain
+                + Free Hosting & Domain*
               </div>
               <h2 className="text-3xl font-bold mb-4">Platform / Web App / AI MVP</h2>
               <div className="text-4xl font-bold mb-6">
@@ -588,6 +588,10 @@ export default function PricingPage() {
               </Link>
             </div>
           </div>
+
+          <p className="text-center text-xs text-gray-500 mb-8">
+            * 1 standard domain included for year 1, subject to availability, registered under client name.
+          </p>
 
           {/* Content Note */}
           <div className="mt-12 text-center">

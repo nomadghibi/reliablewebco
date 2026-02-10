@@ -32,6 +32,13 @@ Day 6–7: launch + handoff
 ## Scope guardrails
 If client requests login/portal/dashboard -> move to Platform MVP tier.
 
+## Website Analysis Workflow (Next-Day Email)
+- Client submits form at `/audit`.
+- Backend endpoint `/api/audit-request` runs a quick automated homepage snapshot.
+- Request details + snapshot are forwarded to Formspree inbox.
+- Manual expert review is completed and full report is emailed by next business day.
+- Use `docs/10-AUDIT-REPORT-TEMPLATE.md` + `docs/11-AUDIT-SCORING-CHECKLIST.md` for consistent delivery.
+
 ## Email Setup Recommendation
 
 ### Cloudflare Email Routing (Recommended)

@@ -18,3 +18,14 @@
 
 ## DM Script (primary)
 “Hey — I build and launch a lead-focused landing page in 24 hours for $499. It’s designed to generate calls and form leads (not just look good). Want me to send a demo style?”
+
+## AI Audit Offer (lead generation)
+- Free mini audit: 3-5 findings, 24-hour turnaround.
+- Full audit: scored report + priority action plan.
+
+Audit pitch:
+- "If you share your current website, I will run a full AI + expert audit and send a clear report with P0/P1/P2 fixes."
+- "You will see exactly what is hurting leads and local SEO, plus what to fix first."
+
+Audit close:
+- "If you want, we can implement the top fixes this week and track form/call conversion lifts."

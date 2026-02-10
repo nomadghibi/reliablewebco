@@ -54,7 +54,7 @@ export default function TermsPage() {
               <li>Required business information</li>
               <li>Content, images, and branding materials</li>
               <li>Timely feedback during revision rounds</li>
-              <li>Access to domain and hosting (if applicable)</li>
+              <li>Access to existing domain/hosting accounts (if migration or DNS updates are needed)</li>
             </ul>
 
             <h2>Payment Terms</h2>
@@ -75,6 +75,16 @@ export default function TermsPage() {
               Deposits are non-refundable once work has commenced. Refunds may be issued at our discretion in cases of
               service failure or as specified in our guarantee.
             </p>
+
+            <h2>Domain and Hosting Offer Terms</h2>
+            <ul>
+              <li>Eligible packages include one standard domain and hosting for year 1.</li>
+              <li>Domain selection is subject to availability at the time of registration.</li>
+              <li>The domain is registered under the client&apos;s legal/business name and contact details.</li>
+              <li>Premium domains, specialty TLDs, auctions, and transfer fees are not included unless quoted separately.</li>
+              <li>After year 1, renewals are billed at registrar and hosting provider rates.</li>
+              <li>For overdue accounts, we may suspend managed hosting/services until balances are current; domain ownership remains with the client.</li>
+            </ul>
 
             <h2>Revisions</h2>
             <p>Revision rounds included:</p>
