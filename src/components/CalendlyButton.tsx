@@ -58,7 +58,7 @@ export default function CalendlyButton({
       background_color: 'ffffff',
       text_color: '1f2937',
       primary_color: '2563eb',
-      locale: 'en',
+      locale: 'en-US',
       timezone: 'America/New_York',
     });
 
