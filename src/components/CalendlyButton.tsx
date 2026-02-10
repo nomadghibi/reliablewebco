@@ -53,19 +53,23 @@ export default function CalendlyButton({
       destination: CALENDLY_URL,
     });
 
+    const calendlyWidgetUrl = buildCalendlyUrl({
+      hide_gdpr_banner: 1,
+      background_color: 'ffffff',
+      text_color: '1f2937',
+      primary_color: '2563eb',
+      locale: 'en',
+      timezone: 'America/New_York',
+    });
+
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: buildCalendlyUrl({
-          hide_gdpr_banner: 1,
-          background_color: 'ffffff',
-          text_color: '1f2937',
-          primary_color: '2563eb',
-        }),
+        url: calendlyWidgetUrl,
       });
       return;
     }
 
-    window.open(CALENDLY_URL, '_blank', 'noopener,noreferrer');
+    window.open(calendlyWidgetUrl, '_blank', 'noopener,noreferrer');
   };
 
   const baseStyles = 'inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-lg transition-colors duration-200 cursor-pointer';
