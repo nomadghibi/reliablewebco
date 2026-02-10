@@ -355,7 +355,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         title="Ready to Turn Content Strategy Into Revenue?"
         subtitle="We can build the pages, tracking, and local SEO structure behind your growth goals."
         primaryCTA={{ text: 'Start My Project', href: '/contact' }}
-        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact', isCalendly: true }}
+        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact' }}
         darkBg={true}
       />
     </main>

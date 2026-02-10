@@ -40,7 +40,7 @@ Reliable Web Studio is a marketing site for a Florida-based web design service t
 5. **Process** (`/process`) - 4-step process, intake requirements, payment structure
 6. **About** (`/about`) - Company background, service area, and differentiators
 7. **FAQ** (`/faq`) - Comprehensive FAQs organized by category
-8. **Contact** (`/contact`) - Contact form, phone, email, Calendly link
+8. **Contact** (`/contact`) - Contact form, phone, and email
 9. **Privacy** (`/privacy`) - Privacy policy
 10. **Terms** (`/terms`) - Terms of service
 11. **Checkout Success** (`/checkout/success`) - Post-payment confirmation
@@ -99,7 +99,6 @@ Recommended environment variables:
 - `NEXT_PUBLIC_STRIPE_CARE_BASIC_LINK` - Basic care plan payment link
 - `NEXT_PUBLIC_STRIPE_CARE_STANDARD_LINK` - Standard care plan payment link
 - `NEXT_PUBLIC_STRIPE_CARE_PRO_LINK` - Pro care plan payment link
-- `NEXT_PUBLIC_CALENDLY_URL` - Optional Calendly booking URL override used across buttons and widgets
 
 ## Customization
 
@@ -182,7 +181,6 @@ SEO metadata is configured for each page:
 
 2. **Integrate services**:
    - Email form submission
-   - Calendly for booking
    - Google Analytics
    - Payment processing (for $499 landing page buy-now flow)
 

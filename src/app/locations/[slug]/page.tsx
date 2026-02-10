@@ -331,7 +331,7 @@ export default async function LocationPage({ params }: PageProps) {
         title={`Need a ${location.city}-Focused Site That Converts?`}
         subtitle="Get a fixed-scope plan, transparent timeline, and a clear launch path."
         primaryCTA={{ text: 'Start My $499 Page', href: '/contact' }}
-        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact', isCalendly: true }}
+        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact' }}
         darkBg={true}
         trackingLocation="location_cta_section"
         trackingContext={{

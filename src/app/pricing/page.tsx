@@ -815,7 +815,7 @@ export default function PricingPage() {
         title="Ready to get started?"
         subtitle="Book a call or start your $499 landing page right now."
         primaryCTA={{ text: 'Start My $499 Page', href: '/contact' }}
-        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact', isCalendly: true }}
+        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact' }}
         darkBg={true}
       />
     </main>

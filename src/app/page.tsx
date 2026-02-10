@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import CTASection from '@/components/CTASection';
-import CalendlyButton from '@/components/CalendlyButton';
 import PaymentButton from '@/components/PaymentButton';
 import SectionViewTracker from '@/components/SectionViewTracker';
 import Reveal from '@/components/Reveal';
@@ -101,11 +100,9 @@ export default function Home() {
                 variant="primary"
                 className="px-8 py-4 text-lg"
               />
-              <CalendlyButton
-                text="Book a 10-Minute Call"
-                className="px-8 py-4 text-lg"
-                variant="primary"
-              />
+              <Link href="/contact" className="btn-primary px-8 py-4 text-lg">
+                Book a 10-Minute Call
+              </Link>
               </div>
             </Reveal>
 
@@ -248,11 +245,9 @@ export default function Home() {
                     variant="primary"
                     fullWidth
                   />
-                  <CalendlyButton
-                    text="Book a Call First"
-                    className="w-full text-center"
-                    variant="secondary"
-                  />
+                  <Link href="/contact" className="btn-secondary w-full text-center">
+                    Book a Call First
+                  </Link>
                 </div>
               </div>
             </Reveal>
@@ -609,7 +604,7 @@ export default function Home() {
         title="Need something live fast?"
         subtitle="Start with the $499 sprint. Upgrade anytime."
         primaryCTA={{ text: 'Start My $499 Page', href: '/contact' }}
-        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact', isCalendly: true }}
+        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact' }}
         darkBg={true}
       />
     </main>

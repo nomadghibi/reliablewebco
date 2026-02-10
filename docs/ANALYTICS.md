@@ -12,9 +12,7 @@
 - form_start -> user focuses first form input
 - form_submit -> form submit success
 - outbound_stripe_click -> clicks stripe payment link
-- outbound_calendar_click -> clicks calendly link
 
 ## Conversions
 - form_submit
-- outbound_calendar_click
 - outbound_stripe_click

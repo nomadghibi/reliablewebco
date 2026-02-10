@@ -380,7 +380,7 @@ export default function AboutPage() {
         title="Ready to get started?"
         subtitle="Launch your lead-generating website fast."
         primaryCTA={{ text: 'Start My $499 Page', href: '/contact' }}
-        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact', isCalendly: true }}
+        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact' }}
         darkBg={true}
       />
     </main>

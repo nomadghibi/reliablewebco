@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import CTASection from '@/components/CTASection';
-import CalendlyButton from '@/components/CalendlyButton';
+import Link from 'next/link';
 
 const faqs = [
   {
@@ -186,11 +186,9 @@ export default function FAQPage() {
             <p className="text-lg text-gray-700 mb-8">
               Book a 10-minute call and I&apos;ll answer everything you need to know.
             </p>
-            <CalendlyButton
-              text="Book a 10-Minute Call"
-              className="text-lg"
-              variant="primary"
-            />
+            <Link href="/contact" className="btn-primary text-lg">
+              Book a 10-Minute Call
+            </Link>
           </div>
         </div>
       </section>

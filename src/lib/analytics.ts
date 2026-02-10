@@ -5,8 +5,7 @@ export type AnalyticsEventName =
   | 'package_select'
   | 'form_start'
   | 'form_submit'
-  | 'outbound_stripe_click'
-  | 'outbound_calendar_click';
+  | 'outbound_stripe_click';
 
 type AnalyticsParams = Record<string, string | number | boolean | undefined>;
 

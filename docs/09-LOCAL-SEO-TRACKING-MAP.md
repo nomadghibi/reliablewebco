@@ -17,7 +17,6 @@ Measure local SEO performance by city and service intent, not just total traffic
 - `form_start`
 - `form_submit`
 - `outbound_stripe_click`
-- `outbound_calendar_click`
 
 ## Required Page-Level Dimensions
 Attach these dimensions to every tracked event where possible:

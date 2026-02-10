@@ -1,23 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import Script from 'next/script';
 import PaymentButton from '@/components/PaymentButton';
 import { trackEvent } from '@/lib/analytics';
-import { buildCalendlyUrl } from '@/config/calendly';
 
 export default function ContactPage() {
-  const calendlyInlineUrl = buildCalendlyUrl({
-    hide_gdpr_banner: 1,
-    hide_landing_page_details: 1,
-    hide_event_type_details: 1,
-    background_color: 'ffffff',
-    text_color: '1f2937',
-    primary_color: '2563eb',
-    locale: 'en-US',
-    timezone: 'America/New_York',
-  });
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -390,15 +377,17 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-                <div
-                  className="calendly-inline-widget"
-                  data-url={calendlyInlineUrl}
-                  style={{ minWidth: '280px', height: '520px' }}
-                />
-                <Script
-                  src="https://assets.calendly.com/assets/external/widget.js"
-                  strategy="lazyOnload"
-                />
+                <div className="p-6 space-y-4">
+                  <p className="text-gray-700">
+                    Online booking is temporarily disabled. Use the options below and we will schedule directly.
+                  </p>
+                  <a href="tel:+13219535199" className="btn-primary w-full text-center">
+                    Call (321) 953-5199
+                  </a>
+                  <a href="mailto:hello@reliablewebstudio.com" className="btn-secondary w-full text-center">
+                    Email hello@reliablewebstudio.com
+                  </a>
+                </div>
               </div>
 
             </div>
