@@ -29,6 +29,92 @@ export interface BlogPost {
   ctaText: string;
 }
 
+interface TemplatePostInput {
+  id: number;
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  cityFocus: string[];
+  keywords: string[];
+  publishedAt: string;
+  updatedAt: string;
+}
+
+function createTemplatePost(input: TemplatePostInput): BlogPost {
+  const primaryKeyword = input.keywords[0] || 'local web design strategy';
+  const secondaryKeyword = input.keywords[1] || 'website conversion system';
+  const cityLine = input.cityFocus.join(', ');
+
+  return {
+    ...input,
+    readingTime: '7 min read',
+    heroBadge: `${input.category} Guide`,
+    intro: [
+      `${input.title} is a high-intent topic for service businesses that need stronger lead flow. This guide explains how to align page structure, messaging, and local SEO so traffic turns into qualified inquiries.`,
+      `For markets like ${cityLine}, results improve when content is built around decision-stage intent instead of generic design advice.`
+    ],
+    sections: [
+      {
+        heading: 'Clarify intent before writing or redesigning pages',
+        paragraphs: [
+          `Start by defining what users expect when searching ${primaryKeyword}. Your page should answer that intent in the first screen with clear offer framing and one primary conversion action.`,
+          'When this intent match is missing, users bounce quickly even if rankings are strong.'
+        ],
+        bullets: [
+          'One primary CTA per page section',
+          'Clear value statement above the fold',
+          'Trust cues near action elements'
+        ]
+      },
+      {
+        heading: 'Build SEO depth with structured internal linking',
+        paragraphs: [
+          `Use related pages and posts to support this topic cluster. Interlinking around ${secondaryKeyword} helps search engines understand relevance and helps users navigate toward money pages.`,
+          'A structured cluster performs better than isolated posts targeting overlapping keywords.'
+        ],
+        bullets: [
+          'Link to pricing and contact pages contextually',
+          'Use supporting city or service pages for depth',
+          'Keep anchors specific to user intent'
+        ]
+      },
+      {
+        heading: 'Measure conversion outcomes after publishing',
+        paragraphs: [
+          'Publishing is the start, not the finish. Track phone clicks, form starts, and submissions from this content to evaluate business impact.',
+          'Use this data to improve headline clarity, CTA placement, and supporting proof blocks.'
+        ],
+        bullets: [
+          'Track lead events by page',
+          'Review performance monthly',
+          'Iterate based on qualified lead trends'
+        ]
+      }
+    ],
+    takeawayTitle: 'Execution checklist',
+    takeaways: [
+      'Align page copy to exact search intent',
+      'Connect this post to related money pages',
+      'Use a clear CTA system across sections',
+      'Optimize based on real conversion metrics'
+    ],
+    faq: [
+      {
+        question: 'How long should this kind of SEO article be?',
+        answer:
+          'Long-form usually performs best when it is genuinely useful, well-structured, and mapped to one primary search intent.'
+      },
+      {
+        question: 'Will this article help local rankings by itself?',
+        answer:
+          'It helps most when paired with strong internal links, city/service relevance, and conversion-ready destination pages.'
+      }
+    ],
+    ctaText: 'Need this implemented on your website with measurable SEO goals?'
+  };
+}
+
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
@@ -1760,7 +1846,216 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     ctaText: 'Need a conversion audit to fix low lead performance?'
-  }
+  },
+  createTemplatePost({
+    id: 24,
+    slug: 'whats-included-in-our-website-packages',
+    title: "What's Included in Our Website Packages?",
+    description: 'A detailed breakdown of what is included in our website packages for small business owners.',
+    category: 'Pricing Strategy',
+    cityFocus: ['Florida Statewide', 'Palm Bay', 'Orlando'],
+    keywords: ['website packages for small business', 'website package inclusions'],
+    publishedAt: '2025-03-18',
+    updatedAt: '2026-01-11',
+  }),
+  createTemplatePost({
+    id: 25,
+    slug: 'how-to-compare-web-development-packages',
+    title: 'How to Compare Web Development Packages',
+    description: 'Compare web development packages using scope, SEO readiness, and conversion outcomes.',
+    category: 'Pricing Strategy',
+    cityFocus: ['Florida Statewide', 'Tampa', 'Jacksonville'],
+    keywords: ['web development packages', 'compare website packages'],
+    publishedAt: '2025-06-09',
+    updatedAt: '2026-01-20',
+  }),
+  createTemplatePost({
+    id: 26,
+    slug: 'fixed-price-web-design-no-surprise-fees',
+    title: 'Fixed Price Web Design: No Surprise Fees',
+    description: 'Why fixed-price website design can reduce project risk and improve delivery clarity.',
+    category: 'Pricing Strategy',
+    cityFocus: ['Florida Statewide', 'Melbourne', 'Orlando'],
+    keywords: ['website design pricing packages', 'fixed price web design'],
+    publishedAt: '2025-08-25',
+    updatedAt: '2026-01-27',
+  }),
+  createTemplatePost({
+    id: 27,
+    slug: 'how-much-does-a-small-business-website-cost',
+    title: 'How Much Does a Small Business Website Cost?',
+    description: 'A practical guide to understanding small business website cost ranges and what drives price.',
+    category: 'Budget Planning',
+    cityFocus: ['Florida Statewide', 'Palm Bay', 'Tampa'],
+    keywords: ['small business website cost', 'website pricing for small business'],
+    publishedAt: '2025-10-02',
+    updatedAt: '2026-02-03',
+  }),
+  createTemplatePost({
+    id: 28,
+    slug: 'affordable-vs-cheap-a-web-design-guide',
+    title: 'Affordable vs. Cheap: A Web Design Guide',
+    description: 'Learn the difference between affordable web design and low-quality cheap builds.',
+    category: 'Budget Planning',
+    cityFocus: ['Florida Statewide', 'Orlando', 'Melbourne'],
+    keywords: ['affordable web design', 'cheap website design risks'],
+    publishedAt: '2025-12-14',
+    updatedAt: '2026-02-04',
+  }),
+  createTemplatePost({
+    id: 29,
+    slug: 'what-is-a-lead-generating-website',
+    title: 'What Is a Lead-Generating Website?',
+    description: 'Define what a lead-generating website is and how to build one for service businesses.',
+    category: 'Lead Generation',
+    cityFocus: ['Florida Statewide', 'Palm Bay', 'Orlando'],
+    keywords: ['lead generating website', 'lead generation website structure'],
+    publishedAt: '2025-04-06',
+    updatedAt: '2026-01-29',
+  }),
+  createTemplatePost({
+    id: 30,
+    slug: 'five-features-every-service-website-needs',
+    title: '5 Features Every Service Website Needs',
+    description: 'The five highest-impact features that improve trust, SEO, and conversion on service websites.',
+    category: 'Lead Generation',
+    cityFocus: ['Florida Statewide', 'Tampa', 'Jacksonville'],
+    keywords: ['service business website features', 'website features for lead generation'],
+    publishedAt: '2025-11-03',
+    updatedAt: '2026-01-31',
+  }),
+  createTemplatePost({
+    id: 31,
+    slug: 'florida-web-design-a-local-guide',
+    title: 'Florida Web Design: A Local Guide',
+    description: 'A local-first web design guide for Florida businesses that want better rankings and conversions.',
+    category: 'Local SEO',
+    cityFocus: ['Florida Statewide', 'Orlando', 'Tampa'],
+    keywords: ['florida web design', 'local web design florida'],
+    publishedAt: '2025-02-22',
+    updatedAt: '2026-01-15',
+  }),
+  createTemplatePost({
+    id: 32,
+    slug: 'south-florida-web-design-websites-that-drive-growth',
+    title: 'South Florida Web Design: Websites That Drive Growth',
+    description: 'How to approach south Florida web design with growth-focused SEO and conversion strategy.',
+    category: 'Local SEO',
+    cityFocus: ['South Florida', 'Miami', 'Fort Lauderdale'],
+    keywords: ['south florida web design', 'websites that drive growth'],
+    publishedAt: '2025-09-17',
+    updatedAt: '2026-02-02',
+  }),
+  createTemplatePost({
+    id: 33,
+    slug: 'melbourne-fl-web-design-build-trust-and-grow-business',
+    title: 'Melbourne FL Web Design: Build Trust & Grow Your Business',
+    description: 'Melbourne FL web design strategies to improve trust and local lead conversion.',
+    category: 'Local SEO',
+    cityFocus: ['Melbourne', 'West Melbourne', 'Palm Bay'],
+    keywords: ['melbourne fl web design', 'melbourne website growth'],
+    publishedAt: '2025-06-28',
+    updatedAt: '2026-01-22',
+  }),
+  createTemplatePost({
+    id: 34,
+    slug: 'top-palm-bay-web-design-for-local-business-growth',
+    title: 'Top Palm Bay Web Design for Local Business Growth',
+    description: 'Palm Bay web design best practices for local rankings, trust, and conversion growth.',
+    category: 'Local SEO',
+    cityFocus: ['Palm Bay', 'Melbourne', 'Brevard County'],
+    keywords: ['palm bay web design', 'local business growth web design'],
+    publishedAt: '2025-07-12',
+    updatedAt: '2026-01-26',
+  }),
+  createTemplatePost({
+    id: 35,
+    slug: 'orlando-web-design-company-build-your-site-fast',
+    title: 'Orlando Web Design Company: Build Your Site Fast',
+    description: 'What to expect from an Orlando web design company when speed and performance both matter.',
+    category: 'Local SEO',
+    cityFocus: ['Orlando', 'Winter Park', 'Lake Nona'],
+    keywords: ['orlando web design company', 'fast website build orlando'],
+    publishedAt: '2025-10-29',
+    updatedAt: '2026-02-06',
+  }),
+  createTemplatePost({
+    id: 36,
+    slug: 'web-design-for-insurance-agencies',
+    title: 'Web Design for Insurance Agencies',
+    description: 'A practical guide to insurance agency web design that improves trust and qualified quote requests.',
+    category: 'Industry Strategy',
+    cityFocus: ['Florida Statewide', 'Orlando', 'Tampa'],
+    keywords: ['insurance agency web design', 'insurance website lead generation'],
+    publishedAt: '2025-05-01',
+    updatedAt: '2026-01-19',
+  }),
+  createTemplatePost({
+    id: 37,
+    slug: 'why-web-design-matters-for-contractors',
+    title: 'Why Web Design Matters for Contractors',
+    description: 'How contractor-focused web design improves local trust, calls, and estimate requests.',
+    category: 'Industry Strategy',
+    cityFocus: ['Florida Statewide', 'Palm Bay', 'Orlando'],
+    keywords: ['web design for contractors', 'contractor website lead generation'],
+    publishedAt: '2025-03-27',
+    updatedAt: '2026-01-23',
+  }),
+  createTemplatePost({
+    id: 38,
+    slug: 'guide-to-real-estate-web-design',
+    title: 'A Guide to Real Estate Web Design',
+    description: 'Real estate web design fundamentals for lead capture, listing visibility, and trust-building.',
+    category: 'Industry Strategy',
+    cityFocus: ['Florida Statewide', 'South Florida', 'Orlando'],
+    keywords: ['real estate web design', 'real estate website conversion'],
+    publishedAt: '2025-08-05',
+    updatedAt: '2026-01-28',
+  }),
+  createTemplatePost({
+    id: 39,
+    slug: 'five-questions-to-ask-a-web-design-firm',
+    title: '5 Questions to Ask a Web Design Firm',
+    description: 'Use these five questions to evaluate a web design firm before signing a contract.',
+    category: 'Agency Selection',
+    cityFocus: ['Florida Statewide', 'Orlando', 'Tampa'],
+    keywords: ['questions to ask a web design company', 'hire web design firm'],
+    publishedAt: '2025-04-14',
+    updatedAt: '2026-01-21',
+  }),
+  createTemplatePost({
+    id: 40,
+    slug: 'local-vs-national-web-design-company',
+    title: 'Local vs. National Web Design Company',
+    description: 'Compare local and national web design companies based on fit, speed, and long-term results.',
+    category: 'Agency Selection',
+    cityFocus: ['Florida Statewide', 'Palm Bay', 'Jacksonville'],
+    keywords: ['local web design company', 'local vs national web design'],
+    publishedAt: '2025-09-30',
+    updatedAt: '2026-01-30',
+  }),
+  createTemplatePost({
+    id: 41,
+    slug: 'affordable-web-design-for-small-business',
+    title: 'Affordable Web Design for Small Business',
+    description: 'How small businesses can get affordable web design services without sacrificing results.',
+    category: 'Budget Planning',
+    cityFocus: ['Florida Statewide', 'Melbourne', 'Tampa'],
+    keywords: ['affordable web design services', 'affordable web design for small business'],
+    publishedAt: '2025-12-01',
+    updatedAt: '2026-02-07',
+  }),
+  createTemplatePost({
+    id: 42,
+    slug: 'paypal-for-small-business-is-it-right',
+    title: 'PayPal for Small Business: Is It Right?',
+    description: 'A practical look at PayPal for small business payments, website integration, and conversion impact.',
+    category: 'Payments/Tools',
+    cityFocus: ['Florida Statewide', 'Orlando', 'Palm Bay'],
+    keywords: ['paypal for small business', 'small business payment options'],
+    publishedAt: '2025-07-03',
+    updatedAt: '2026-01-25',
+  }),
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
