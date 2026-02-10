@@ -45,13 +45,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       url: canonical,
       type: 'article',
-      images: [{ url: '/api/og', width: 1200, height: 630, alt: `${service.name} in ${city.city}` }],
+      images: [{ url: city.image, width: 1200, height: 675, alt: `${service.name} in ${city.city}` }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: ['/api/og'],
+      images: [city.image],
     },
   };
 }

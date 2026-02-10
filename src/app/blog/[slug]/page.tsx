@@ -30,6 +30,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const pageTitle = `${post.title} | Reliable Web Studio Blog`;
+  const matchedCity = floridaLocations.find((location) =>
+    post.cityFocus.some((city) => city.toLowerCase() === location.city.toLowerCase())
+  );
+  const ogImage = matchedCity?.image ?? '/api/og';
+  const ogImageHeight = matchedCity ? 675 : 630;
 
   return {
     title: pageTitle,
@@ -48,9 +53,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       tags: post.keywords,
       images: [
         {
-          url: '/api/og',
+          url: ogImage,
           width: 1200,
-          height: 630,
+          height: ogImageHeight,
           alt: post.title,
         },
       ],
@@ -59,7 +64,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: 'summary_large_image',
       title: pageTitle,
       description: post.description,
-      images: ['/api/og'],
+      images: [ogImage],
     },
   };
 }
@@ -101,6 +106,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         href: `/services/${service.slug}/${primaryMatchedCity.slug}`,
       }))
     : [];
+  const schemaImage = primaryMatchedCity?.image ?? '/api/og';
 
   const blogPostingSchema = {
     '@context': 'https://schema.org',
@@ -115,6 +121,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
     wordCount: totalWordCount,
     timeRequired: `PT${Math.max(6, Math.ceil(totalWordCount / 220))}M`,
     mainEntityOfPage: `https://reliablewebstudio.com/blog/${post.slug}`,
+    image: `https://reliablewebstudio.com${schemaImage}`,
     author: {
       '@type': 'Organization',
       name: 'Reliable Web Studio',

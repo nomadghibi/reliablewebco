@@ -45,9 +45,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: 'article',
       images: [
         {
-          url: '/api/og',
+          url: location.image,
           width: 1200,
-          height: 630,
+          height: 675,
           alt: `${location.city}, Florida web design`,
         },
       ],
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: 'summary_large_image',
       title: cityTitle,
       description,
-      images: ['/api/og'],
+      images: [location.image],
     },
   };
 }
