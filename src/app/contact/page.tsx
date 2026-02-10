@@ -20,8 +20,12 @@ export default function ContactPage() {
     name: '',
     email: '',
     phone: '',
+    company: '',
+    serviceType: '',
+    callGoal: '',
     preferredDate: '',
     preferredTime: '',
+    timezone: 'America/New_York',
     notes: '',
   });
   const [callStatus, setCallStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -75,7 +79,7 @@ export default function ContactPage() {
     });
   };
 
-  const handleCallFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleCallFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setCallFormData((prev) => ({
       ...prev,
@@ -114,8 +118,12 @@ export default function ContactPage() {
           name: callFormData.name,
           email: callFormData.email,
           phone: callFormData.phone,
+          company: callFormData.company,
+          service_type: callFormData.serviceType,
+          call_goal: callFormData.callGoal,
           preferred_date: callFormData.preferredDate,
           preferred_time: callFormData.preferredTime,
+          timezone: callFormData.timezone,
           notes: callFormData.notes,
         }),
       });
@@ -129,8 +137,12 @@ export default function ContactPage() {
           name: '',
           email: '',
           phone: '',
+          company: '',
+          serviceType: '',
+          callGoal: '',
           preferredDate: '',
           preferredTime: '',
+          timezone: 'America/New_York',
           notes: '',
         });
         return;
@@ -464,52 +476,123 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <form onSubmit={handleCallBookingSubmit} className="p-6 space-y-4">
-                  <div>
-                    <label htmlFor="call-name" className="block text-sm font-semibold text-gray-900 mb-2">
-                      Full Name
-                    </label>
-                    <input
-                      id="call-name"
-                      name="name"
-                      type="text"
-                      required
-                      value={callFormData.name}
-                      onChange={handleCallFormChange}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
-                      placeholder="John Smith"
-                    />
+                  <div className="rounded-xl border border-blue-100 bg-blue-50 px-4 py-3">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-blue-700 mb-1">Call Intake</p>
+                    <p className="text-sm text-blue-900">
+                      Complete this form to request your 10-minute strategy call. We confirm by email.
+                    </p>
                   </div>
 
-                  <div>
-                    <label htmlFor="call-email" className="block text-sm font-semibold text-gray-900 mb-2">
-                      Email
-                    </label>
-                    <input
-                      id="call-email"
-                      name="email"
-                      type="email"
-                      required
-                      value={callFormData.email}
-                      onChange={handleCallFormChange}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
-                      placeholder="john@company.com"
-                    />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label htmlFor="call-name" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Full Name
+                      </label>
+                      <input
+                        id="call-name"
+                        name="name"
+                        type="text"
+                        required
+                        value={callFormData.name}
+                        onChange={handleCallFormChange}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
+                        placeholder="John Smith"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="call-email" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Email
+                      </label>
+                      <input
+                        id="call-email"
+                        name="email"
+                        type="email"
+                        required
+                        value={callFormData.email}
+                        onChange={handleCallFormChange}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
+                        placeholder="john@company.com"
+                      />
+                    </div>
                   </div>
 
-                  <div>
-                    <label htmlFor="call-phone" className="block text-sm font-semibold text-gray-900 mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      id="call-phone"
-                      name="phone"
-                      type="tel"
-                      required
-                      value={callFormData.phone}
-                      onChange={handleCallFormChange}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
-                      placeholder="(321) 555-1234"
-                    />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label htmlFor="call-phone" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Phone Number
+                      </label>
+                      <input
+                        id="call-phone"
+                        name="phone"
+                        type="tel"
+                        required
+                        value={callFormData.phone}
+                        onChange={handleCallFormChange}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
+                        placeholder="(321) 555-1234"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="call-company" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Business Name
+                      </label>
+                      <input
+                        id="call-company"
+                        name="company"
+                        type="text"
+                        required
+                        value={callFormData.company}
+                        onChange={handleCallFormChange}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
+                        placeholder="Reliable Plumbing Co."
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label htmlFor="call-service-type" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Service Interest
+                      </label>
+                      <select
+                        id="call-service-type"
+                        name="serviceType"
+                        required
+                        value={callFormData.serviceType}
+                        onChange={handleCallFormChange}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
+                      >
+                        <option value="">Select service</option>
+                        <option value="landing-page">24-Hour Landing Page</option>
+                        <option value="website-in-a-week">Website-in-a-Week</option>
+                        <option value="growth-website">Growth Website</option>
+                        <option value="authority-website">Authority Website</option>
+                        <option value="software-development">Software Development / ML-AI</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="call-goal" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Primary Goal
+                      </label>
+                      <select
+                        id="call-goal"
+                        name="callGoal"
+                        required
+                        value={callFormData.callGoal}
+                        onChange={handleCallFormChange}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
+                      >
+                        <option value="">Select goal</option>
+                        <option value="more-leads">Generate more leads</option>
+                        <option value="new-site">Launch a new website</option>
+                        <option value="redesign">Redesign current website</option>
+                        <option value="local-seo">Improve local SEO</option>
+                        <option value="automation">Discuss custom automation/software</option>
+                      </select>
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
@@ -545,22 +628,42 @@ export default function ContactPage() {
                     </div>
                   </div>
 
+                  <div>
+                    <label htmlFor="call-timezone" className="block text-sm font-semibold text-gray-900 mb-2">
+                      Timezone
+                    </label>
+                    <select
+                      id="call-timezone"
+                      name="timezone"
+                      required
+                      value={callFormData.timezone}
+                      onChange={handleCallFormChange}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
+                    >
+                      <option value="America/New_York">Eastern Time (ET)</option>
+                      <option value="America/Chicago">Central Time (CT)</option>
+                      <option value="America/Denver">Mountain Time (MT)</option>
+                      <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                    </select>
+                  </div>
+
                   <p className="text-xs text-gray-500">
-                    Booking rules: Monday-Thursday only, and time must be 10:00 AM or later.
+                    Booking rules: Monday-Thursday only, time at or after 10:00 AM.
                   </p>
 
                   <div>
                     <label htmlFor="call-notes" className="block text-sm font-semibold text-gray-900 mb-2">
-                      Notes (Optional)
+                      Agenda / Notes
                     </label>
                     <textarea
                       id="call-notes"
                       name="notes"
                       rows={3}
+                      required
                       value={callFormData.notes}
                       onChange={handleCallFormChange}
                       className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200 resize-none"
-                      placeholder="What would you like to discuss?"
+                      placeholder="Share your website goals and what you want to cover in the 10-minute call."
                     />
                   </div>
 
