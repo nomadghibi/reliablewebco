@@ -204,6 +204,21 @@ export default async function LocationPage({ params }: PageProps) {
       </section>
 
       <section className="section-padding bg-white">
+        <div className="container-custom max-w-4xl mb-12">
+          <article className="rounded-xl border border-gray-200 bg-white p-6 md:p-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Why {location.city} Businesses Choose a Conversion-Focused Website
+            </h2>
+            <div className="space-y-4 text-gray-700">
+              {location.detailedIntro.map((paragraph) => (
+                <p key={paragraph} className="leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </article>
+        </div>
+
         <div className="container-custom max-w-6xl grid lg:grid-cols-2 gap-8">
           <article className="rounded-xl border border-gray-200 p-6 bg-gray-50">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">What We Build for {location.city} Businesses</h2>

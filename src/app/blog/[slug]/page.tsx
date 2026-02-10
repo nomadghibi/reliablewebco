@@ -5,6 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
 import JsonLd from '@/components/JsonLd';
 import { blogPosts, getBlogPostBySlug } from '@/data/blog';
+import { floridaLocations } from '@/data/locations';
+import { localSeoServices } from '@/data/local-seo';
 import { estimateTotalPostWordCount, getLongFormSections } from '@/lib/blog-content';
 
 interface PageProps {
@@ -89,6 +91,16 @@ export default async function BlogArticlePage({ params }: PageProps) {
   const renderedSections = [...post.sections, ...longFormSections];
   const totalWordCount = estimateTotalPostWordCount(post);
   const computedReadingTime = `${Math.max(6, Math.ceil(totalWordCount / 220))} min read`;
+  const matchedCities = floridaLocations.filter((location) =>
+    post.cityFocus.some((city) => city.toLowerCase() === location.city.toLowerCase())
+  );
+  const primaryMatchedCity = matchedCities[0];
+  const linkedServicePages = primaryMatchedCity
+    ? localSeoServices.slice(0, 3).map((service) => ({
+        label: `${service.name} in ${primaryMatchedCity.city}, FL`,
+        href: `/services/${service.slug}/${primaryMatchedCity.slug}`,
+      }))
+    : [];
 
   const blogPostingSchema = {
     '@context': 'https://schema.org',
@@ -239,6 +251,49 @@ export default async function BlogArticlePage({ params }: PageProps) {
               ))}
             </ul>
           </section>
+
+          {(matchedCities.length > 0 || linkedServicePages.length > 0) && (
+            <section className="mt-12 rounded-xl border border-gray-200 bg-white p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Related Local Pages</h2>
+              <p className="text-gray-700 mb-5">
+                Continue with high-intent city and service pages connected to this topic.
+              </p>
+
+              {matchedCities.length > 0 && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">City Pages</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {matchedCities.map((city) => (
+                      <Link
+                        key={city.slug}
+                        href={`/locations/${city.slug}`}
+                        className="inline-flex items-center rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-primary-700 hover:text-primary-800 hover:border-primary-300 transition-colors"
+                      >
+                        Web Design in {city.city}, FL
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {linkedServicePages.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">Service + City Pages</h3>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    {linkedServicePages.map((linkItem) => (
+                      <Link
+                        key={linkItem.href}
+                        href={linkItem.href}
+                        className="rounded-md border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-semibold text-primary-700 hover:text-primary-800 hover:border-primary-300 transition-colors"
+                      >
+                        {linkItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </section>
+          )}
 
           <section className="mt-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">FAQ</h2>
