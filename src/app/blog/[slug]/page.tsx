@@ -5,6 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
 import JsonLd from '@/components/JsonLd';
 import { blogPosts, getBlogPostBySlug } from '@/data/blog';
+import { estimateTotalPostWordCount, getLongFormSections } from '@/lib/blog-content';
 
 interface PageProps {
   params: Promise<{
@@ -84,6 +85,10 @@ export default async function BlogArticlePage({ params }: PageProps) {
   const relatedByCategory = blogPosts.filter((item) => item.slug !== post.slug && item.category === post.category);
   const relatedFallback = blogPosts.filter((item) => item.slug !== post.slug);
   const relatedPosts = [...relatedByCategory, ...relatedFallback].slice(0, 3);
+  const longFormSections = getLongFormSections(post);
+  const renderedSections = [...post.sections, ...longFormSections];
+  const totalWordCount = estimateTotalPostWordCount(post);
+  const computedReadingTime = `${Math.max(6, Math.ceil(totalWordCount / 220))} min read`;
 
   const blogPostingSchema = {
     '@context': 'https://schema.org',
@@ -95,6 +100,8 @@ export default async function BlogArticlePage({ params }: PageProps) {
     articleSection: post.category,
     keywords: post.keywords.join(', '),
     inLanguage: 'en-US',
+    wordCount: totalWordCount,
+    timeRequired: `PT${Math.max(6, Math.ceil(totalWordCount / 220))}M`,
     mainEntityOfPage: `https://reliablewebstudio.com/blog/${post.slug}`,
     author: {
       '@type': 'Organization',
@@ -176,7 +183,8 @@ export default async function BlogArticlePage({ params }: PageProps) {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-600 mb-8">
             <span>Published: {publishedLabel}</span>
             <span>Updated: {updatedLabel}</span>
-            <span>{post.readingTime}</span>
+            <span>{computedReadingTime}</span>
+            <span>{totalWordCount} words</span>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -198,8 +206,8 @@ export default async function BlogArticlePage({ params }: PageProps) {
               </p>
             ))}
 
-            {post.sections.map((section) => (
-              <section key={section.heading} className="mt-10">
+            {renderedSections.map((section, index) => (
+              <section key={`${section.heading}-${index}`} className="mt-10">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{section.heading}</h2>
                 {section.paragraphs.map((paragraph) => (
                   <p key={paragraph} className="mb-4 leading-relaxed text-gray-700">
