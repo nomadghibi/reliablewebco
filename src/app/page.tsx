@@ -135,7 +135,7 @@ export default function Home() {
             {/* Free Hosting Banner */}
             <Reveal delay={500}>
               <div className="mt-8 flex flex-col items-center gap-2">
-                <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg animate-float-gentle">
+                <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-3 text-center bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg animate-float-gentle">
                   <svg aria-hidden="true" className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                   </svg>
