@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
 import JsonLd from '@/components/JsonLd';
+import LocalIntentCtas from '@/components/LocalIntentCtas';
 import { floridaLocations, getLocationBySlug } from '@/data/locations';
 import { getLocalSeoServiceBySlug, localSeoServiceCityPairs } from '@/data/local-seo';
 
@@ -142,10 +143,12 @@ export default async function ServiceCityPage({ params }: PageProps) {
             <p className="text-lg text-gray-600 mb-8">
               We help {city.city} businesses build SEO-ready pages that rank locally and convert visitors into calls, forms, and booked appointments.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary">Start My Project</Link>
-              <Link href="/pricing" className="btn-secondary">See Pricing</Link>
-            </div>
+            <LocalIntentCtas
+              pageType="service_city"
+              citySlug={city.slug}
+              serviceSlug={service.slug}
+              ctaLocation="service_city_hero"
+            />
           </div>
         </div>
       </section>
@@ -193,6 +196,12 @@ export default async function ServiceCityPage({ params }: PageProps) {
         primaryCTA={{ text: 'Start My $499 Page', href: '/contact' }}
         secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact', isCalendly: true }}
         darkBg={true}
+        trackingLocation="service_city_cta_section"
+        trackingContext={{
+          page_type: 'service_city',
+          city_slug: city.slug,
+          service_slug: service.slug,
+        }}
       />
     </main>
   );

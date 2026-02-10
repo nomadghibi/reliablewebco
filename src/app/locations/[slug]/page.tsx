@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
 import JsonLd from '@/components/JsonLd';
+import LocalIntentCtas from '@/components/LocalIntentCtas';
 import { floridaLocations, getLocationBySlug } from '@/data/locations';
 import { localSeoServices } from '@/data/local-seo';
 
@@ -184,14 +185,7 @@ export default async function LocationPage({ params }: PageProps) {
             <p className="text-xl text-gray-700 mb-4">{location.summary}</p>
             <p className="text-lg text-gray-600 mb-8">{location.localIntent}</p>
 
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary">
-                Start My Project
-              </Link>
-              <Link href="/pricing" className="btn-secondary">
-                See Pricing
-              </Link>
-            </div>
+            <LocalIntentCtas pageType="location_city" citySlug={location.slug} ctaLocation="location_hero" />
           </div>
         </div>
       </section>
@@ -270,6 +264,12 @@ export default async function LocationPage({ params }: PageProps) {
         primaryCTA={{ text: 'Start My $499 Page', href: '/contact' }}
         secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact', isCalendly: true }}
         darkBg={true}
+        trackingLocation="location_cta_section"
+        trackingContext={{
+          page_type: 'location_city',
+          city_slug: location.slug,
+          service_slug: 'none',
+        }}
       />
     </main>
   );

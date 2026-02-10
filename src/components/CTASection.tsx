@@ -17,6 +17,8 @@ interface CTASectionProps {
     isCalendly?: boolean;
   };
   darkBg?: boolean;
+  trackingContext?: Record<string, string | number | boolean | undefined>;
+  trackingLocation?: string;
 }
 
 export default function CTASection({
@@ -25,12 +27,15 @@ export default function CTASection({
   primaryCTA,
   secondaryCTA,
   darkBg = false,
+  trackingContext = {},
+  trackingLocation = 'cta_section',
 }: CTASectionProps) {
   const trackPrimaryClick = () => {
     trackEvent('cta_primary_click', {
       cta_text: primaryCTA.text,
       cta_href: primaryCTA.href,
-      location: 'cta_section',
+      location: trackingLocation,
+      ...trackingContext,
     });
   };
 
@@ -43,7 +48,8 @@ export default function CTASection({
       trackEvent('cta_call_click', {
         cta_text: secondaryCTA.text,
         cta_href: secondaryCTA.href,
-        location: 'cta_section',
+        location: trackingLocation,
+        ...trackingContext,
       });
       return;
     }
@@ -51,7 +57,8 @@ export default function CTASection({
     trackEvent('cta_primary_click', {
       cta_text: secondaryCTA.text,
       cta_href: secondaryCTA.href,
-      location: 'cta_section',
+      location: trackingLocation,
+      ...trackingContext,
     });
   };
 
