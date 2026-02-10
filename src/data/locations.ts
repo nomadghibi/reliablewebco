@@ -10,6 +10,7 @@ export interface FloridaLocation {
   cityHighlights: Array<{
     name: string;
     detail: string;
+    url: string;
   }>;
   serviceHighlights: string[];
   nearbyAreas: string[];
@@ -39,16 +40,19 @@ export const floridaLocations: FloridaLocation[] = [
         name: 'Turkey Creek Sanctuary',
         detail:
           'One of Palm Bay’s most recognized nature spots and a common reference point for local community traffic and neighborhoods.',
+        url: 'https://www.palmbayflorida.org/government/city-departments-f-to-z/parks-recreation/turkey-creek-sanctuary',
       },
       {
         name: 'Bayside Lakes District',
         detail:
           'A key area for service demand growth where homeowners often search for trusted local contractors and providers.',
+        url: 'https://www.palmbayflorida.org/',
       },
       {
         name: 'US-1 and Palm Bay Road Corridors',
         detail:
           'High-visibility commercial zones that shape how local businesses position service-area messaging online.',
+        url: 'https://www.palmbayflorida.org/',
       },
     ],
     serviceHighlights: [
@@ -90,16 +94,19 @@ export const floridaLocations: FloridaLocation[] = [
         name: 'Historic Downtown Melbourne',
         detail:
           'A central business and dining area that drives local discovery intent and neighborhood-based search behavior.',
+        url: 'https://downtownmelbourne.com/',
       },
       {
         name: 'Eau Gallie Arts District',
         detail:
           'A strong community identity zone where local brand trust and location-specific messaging matter.',
+        url: 'https://www.eaugalliearts.com/',
       },
       {
         name: 'Causeway Access to Beachside Communities',
         detail:
           'Important for service businesses covering both mainland and beachside customers in one clear offer.',
+        url: 'https://www.melbourneflorida.org/',
       },
     ],
     serviceHighlights: [
@@ -141,16 +148,19 @@ export const floridaLocations: FloridaLocation[] = [
         name: 'Kennedy Space Center Gateway Area',
         detail:
           'A major regional draw that influences search demand and trust language for surrounding local businesses.',
+        url: 'https://www.kennedyspacecenter.com/',
       },
       {
         name: 'Downtown Titusville',
         detail:
           'A local commerce anchor where businesses benefit from clear service-area and contact messaging.',
+        url: 'https://www.downtowntitusville.com/',
       },
       {
         name: 'US-1 North-South Service Corridor',
         detail:
           'A practical route structure that supports multi-area service positioning in local SEO content.',
+        url: 'https://www.titusville.com/',
       },
     ],
     serviceHighlights: [
@@ -191,16 +201,19 @@ export const floridaLocations: FloridaLocation[] = [
         name: 'The Avenue Viera',
         detail:
           'A well-known local destination that reinforces premium audience expectations and trust-first presentation.',
+        url: 'https://www.theavenueviera.com/',
       },
       {
         name: 'Viera Regional Growth Areas',
         detail:
           'Fast-developing zones where businesses need scalable service-area pages and strong lead capture flow.',
+        url: 'https://www.viera.com/',
       },
       {
         name: 'Suntree-Viera Service Overlap',
         detail:
           'A common local coverage pattern that benefits from city-specific and nearby-area page structure.',
+        url: 'https://www.visitspacecoast.com/communities/viera-suntree/',
       },
     ],
     serviceHighlights: [
@@ -241,16 +254,19 @@ export const floridaLocations: FloridaLocation[] = [
         name: 'Downtown Orlando Business Core',
         detail:
           'A high-competition market where precise offer positioning and fast conversion paths are essential.',
+        url: 'https://www.orlando.gov/',
       },
       {
         name: 'Lake Nona Growth Corridor',
         detail:
           'A rapidly expanding area that rewards localized service pages and trust-heavy messaging.',
+        url: 'https://www.lakenona.com/',
       },
       {
         name: 'Winter Park and Adjacent Neighborhoods',
         detail:
           'A nearby high-intent zone where audience expectations often favor premium, professional web experiences.',
+        url: 'https://www.cityofwinterpark.org/',
       },
     ],
     serviceHighlights: [
@@ -292,16 +308,19 @@ export const floridaLocations: FloridaLocation[] = [
         name: 'Downtown Tampa and Channelside',
         detail:
           'A strong commercial area where local differentiation and clear CTA hierarchy directly impact lead quality.',
+        url: 'https://www.tampa.gov/',
       },
       {
         name: 'Westshore Business District',
         detail:
           'A major professional-services cluster where credibility signals and conversion clarity are critical.',
+        url: 'https://westshorealliance.org/',
       },
       {
         name: 'Brandon-Riverview Expansion Belt',
         detail:
           'A frequent service-area extension where city-plus-suburb coverage pages improve search reach.',
+        url: 'https://www.hillsboroughcounty.org/',
       },
     ],
     serviceHighlights: [
@@ -343,16 +362,19 @@ export const floridaLocations: FloridaLocation[] = [
         name: 'Downtown Jacksonville Core',
         detail:
           'A broad business hub where local trust and clear service intent help convert comparison-driven traffic.',
+        url: 'https://www.jacksonville.gov/',
       },
       {
         name: 'Southside and Mandarin Service Zone',
         detail:
           'A high-demand suburban corridor where structured location content improves discoverability.',
+        url: 'https://www.visitjacksonville.com/neighborhoods/southside/',
       },
       {
         name: 'Beaches and Coastal Adjacencies',
         detail:
           'A common adjacent market where nearby-area messaging can expand qualified local reach.',
+        url: 'https://www.visitjacksonville.com/neighborhoods/beaches/',
       },
     ],
     serviceHighlights: [

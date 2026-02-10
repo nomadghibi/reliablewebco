@@ -310,7 +310,16 @@ export default async function LocationPage({ params }: PageProps) {
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
             {location.cityHighlights.map((highlight) => (
               <article key={highlight.name} className="rounded-xl border border-gray-200 bg-gray-50 p-5">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{highlight.name}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  <a
+                    href={highlight.url}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    className="hover:text-primary-700 transition-colors"
+                  >
+                    {highlight.name}
+                  </a>
+                </h3>
                 <p className="text-gray-700 text-sm leading-relaxed">{highlight.detail}</p>
               </article>
             ))}
