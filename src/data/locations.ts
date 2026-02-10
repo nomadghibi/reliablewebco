@@ -3,6 +3,7 @@ export interface FloridaLocation {
   city: string;
   county: string;
   region: string;
+  image: string;
   summary: string;
   localIntent: string;
   serviceHighlights: string[];
@@ -19,6 +20,7 @@ export const floridaLocations: FloridaLocation[] = [
     city: 'Palm Bay',
     county: 'Brevard County',
     region: 'Space Coast',
+    image: '/images/cities/palm-bay-fl.svg',
     summary:
       'Conversion-focused web design for Palm Bay service businesses that need faster calls, form leads, and bookings.',
     localIntent:
@@ -48,6 +50,7 @@ export const floridaLocations: FloridaLocation[] = [
     city: 'Melbourne',
     county: 'Brevard County',
     region: 'Space Coast',
+    image: '/images/cities/melbourne-fl.svg',
     summary:
       'Professional website design for Melbourne, FL companies that need stronger trust, better local visibility, and consistent lead flow.',
     localIntent:
@@ -77,6 +80,7 @@ export const floridaLocations: FloridaLocation[] = [
     city: 'Titusville',
     county: 'Brevard County',
     region: 'Space Coast',
+    image: '/images/cities/titusville-fl.svg',
     summary:
       'Titusville web design services focused on practical conversions, clean user flow, and stronger local ranking potential.',
     localIntent:
@@ -105,6 +109,7 @@ export const floridaLocations: FloridaLocation[] = [
     city: 'Viera',
     county: 'Brevard County',
     region: 'Space Coast',
+    image: '/images/cities/viera-fl.svg',
     summary:
       'Viera-focused website builds for businesses that need premium presentation and measurable conversion performance.',
     localIntent:
@@ -133,6 +138,7 @@ export const floridaLocations: FloridaLocation[] = [
     city: 'Orlando',
     county: 'Orange County',
     region: 'Central Florida',
+    image: '/images/cities/orlando-fl.svg',
     summary:
       'Web design and conversion strategy for Orlando businesses that need higher-quality leads from local search and paid traffic.',
     localIntent:
@@ -162,6 +168,7 @@ export const floridaLocations: FloridaLocation[] = [
     city: 'Tampa',
     county: 'Hillsborough County',
     region: 'West Florida',
+    image: '/images/cities/tampa-fl.svg',
     summary:
       'Tampa web design services built for local lead generation, clearer offer positioning, and better conversion consistency.',
     localIntent:
@@ -191,6 +198,7 @@ export const floridaLocations: FloridaLocation[] = [
     city: 'Jacksonville',
     county: 'Duval County',
     region: 'North Florida',
+    image: '/images/cities/jacksonville-fl.svg',
     summary:
       'Jacksonville website design for local businesses that need modern credibility and a dependable lead capture system.',
     localIntent:

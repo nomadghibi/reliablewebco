@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -170,22 +171,34 @@ export default async function LocationPage({ params }: PageProps) {
             ]}
           />
 
-          <div className="max-w-4xl">
-            <div className="flex flex-wrap gap-2 mb-5">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary-100 text-primary-800">
-                {location.region}
-              </span>
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-700">
-                {location.county}
-              </span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-5">
-              Web Design in {location.city}, Florida
-            </h1>
-            <p className="text-xl text-gray-700 mb-4">{location.summary}</p>
-            <p className="text-lg text-gray-600 mb-8">{location.localIntent}</p>
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <div className="flex flex-wrap gap-2 mb-5">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary-100 text-primary-800">
+                  {location.region}
+                </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-700">
+                  {location.county}
+                </span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-5">
+                Web Design in {location.city}, Florida
+              </h1>
+              <p className="text-xl text-gray-700 mb-4">{location.summary}</p>
+              <p className="text-lg text-gray-600 mb-8">{location.localIntent}</p>
 
-            <LocalIntentCtas pageType="location_city" citySlug={location.slug} ctaLocation="location_hero" />
+              <LocalIntentCtas pageType="location_city" citySlug={location.slug} ctaLocation="location_hero" />
+            </div>
+            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+              <Image
+                src={location.image}
+                alt={`${location.city}, Florida skyline style graphic`}
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>

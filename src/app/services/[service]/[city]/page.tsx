@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -127,28 +128,40 @@ export default async function ServiceCityPage({ params }: PageProps) {
             ]}
           />
 
-          <div className="max-w-4xl">
-            <div className="flex flex-wrap gap-2 mb-5">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary-100 text-primary-800">
-                {service.name}
-              </span>
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-700">
-                {city.city}, FL
-              </span>
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <div className="flex flex-wrap gap-2 mb-5">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary-100 text-primary-800">
+                  {service.name}
+                </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-700">
+                  {city.city}, FL
+                </span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">
+                {service.name} in {city.city}, Florida
+              </h1>
+              <p className="text-xl text-gray-700 mb-4">{service.shortDescription}</p>
+              <p className="text-lg text-gray-600 mb-8">
+                We help {city.city} businesses build SEO-ready pages that rank locally and convert visitors into calls, forms, and booked appointments.
+              </p>
+              <LocalIntentCtas
+                pageType="service_city"
+                citySlug={city.slug}
+                serviceSlug={service.slug}
+                ctaLocation="service_city_hero"
+              />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">
-              {service.name} in {city.city}, Florida
-            </h1>
-            <p className="text-xl text-gray-700 mb-4">{service.shortDescription}</p>
-            <p className="text-lg text-gray-600 mb-8">
-              We help {city.city} businesses build SEO-ready pages that rank locally and convert visitors into calls, forms, and booked appointments.
-            </p>
-            <LocalIntentCtas
-              pageType="service_city"
-              citySlug={city.slug}
-              serviceSlug={service.slug}
-              ctaLocation="service_city_hero"
-            />
+            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+              <Image
+                src={city.image}
+                alt={`${city.city}, Florida skyline style graphic`}
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import JsonLd from '@/components/JsonLd';
@@ -93,7 +94,17 @@ export default function LocationsPage() {
 
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {floridaLocations.map((location) => (
-              <article key={location.slug} className="rounded-xl border border-gray-200 p-6 bg-gray-50 hover:border-primary-300 hover:shadow-md transition-all">
+              <article key={location.slug} className="rounded-xl border border-gray-200 bg-gray-50 overflow-hidden hover:border-primary-300 hover:shadow-md transition-all">
+                <div className="relative aspect-[16/9]">
+                  <Image
+                    src={location.image}
+                    alt={`${location.city}, Florida`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="p-6">
                 <div className="mb-3">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary-100 text-primary-800">
                     {location.region}
@@ -113,6 +124,7 @@ export default function LocationsPage() {
                 <Link href={`/locations/${location.slug}`} className="btn-primary w-full text-center">
                   View {location.city} Page
                 </Link>
+                </div>
               </article>
             ))}
           </div>
