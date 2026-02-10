@@ -26,13 +26,192 @@ export function estimateBasePostWordCount(post: BlogPost): number {
   );
 }
 
+function getCategorySpecificModules(post: BlogPost): BlogSection[] {
+  const category = post.category.toLowerCase();
+
+  if (category === 'restaurant marketing') {
+    return [
+      {
+        heading: 'Restaurant Funnel Design: Reservation, Ordering, and Repeat Visits',
+        paragraphs: [
+          'Restaurant websites convert best when the funnel is intentionally segmented by user intent: reserve now, order now, or browse menu before deciding. Blending those paths without clear prioritization causes drop-off, especially on mobile where attention is limited.',
+          'A stronger setup places reservation and ordering actions above the fold, then supports decision-making with menu highlights, location proof, and social validation. This structure improves both immediate conversions and repeat customer behavior.'
+        ],
+        bullets: [
+          'Separate reservation and ordering CTA pathways',
+          'Use sticky action controls on mobile',
+          'Highlight high-margin menu and offer items in strategic positions'
+        ]
+      },
+      {
+        heading: 'Local Restaurant SEO: Capture Near-Me and Neighborhood Intent',
+        paragraphs: [
+          'Restaurant visibility in Florida depends heavily on local context signals. Pages should reinforce neighborhood relevance, opening hours, and cuisine intent in a natural way that helps users make fast decisions.',
+          'When these signals are aligned across site content and local listings, ranking consistency and click-through quality usually improve. Strong internal links to menus, events, and catering pages also increase crawl depth and conversion opportunities.'
+        ],
+        bullets: [
+          'Reinforce neighborhood-level service relevance',
+          'Keep hours and location details highly visible',
+          'Interlink menu, events, and private dining pages'
+        ]
+      }
+    ];
+  }
+
+  if (category === 'pricing strategy' || category === 'budget planning') {
+    return [
+      {
+        heading: 'Pricing Communication: Remove Friction Before the First Call',
+        paragraphs: [
+          'Pricing content should reduce uncertainty without overwhelming prospects. Most buyers are not asking for exact cost first. They want to understand scope tiers, outcomes, and expected timeline so they can qualify themselves quickly.',
+          'A package page that explains fit criteria, boundaries, and upgrade paths can improve lead quality while decreasing unqualified inquiries. This is especially useful for small teams that need predictable sales conversations.'
+        ],
+        bullets: [
+          'Use fit-based package positioning',
+          'Clarify scope boundaries for each tier',
+          'Show upgrade path to support future growth'
+        ]
+      },
+      {
+        heading: 'Budget-Efficient Build Strategy for Growth-Oriented Teams',
+        paragraphs: [
+          'Affordable projects work best when they prioritize pages and features by business impact. Start with the assets that influence pipeline directly: homepage clarity, service pages, contact conversion flow, and tracking.',
+          'As revenue improves, expand with supporting content like location pages, case studies, and deeper educational articles. This staged approach keeps spend aligned to measurable return.'
+        ],
+        bullets: [
+          'Launch core conversion pages first',
+          'Delay non-critical features to phase two',
+          'Tie expansion decisions to lead and close data'
+        ]
+      }
+    ];
+  }
+
+  if (category === 'landing pages') {
+    return [
+      {
+        heading: 'Landing Page Message Match for Paid and Organic Traffic',
+        paragraphs: [
+          'Landing pages perform best when message continuity is preserved from query or ad to page headline and CTA framing. If users see one promise in search and a different one on-page, trust drops immediately.',
+          'Use a controlled message system where offer language, urgency framing, and action copy are intentionally synchronized across channels.'
+        ],
+        bullets: [
+          'Match headline copy to acquisition intent',
+          'Use one primary offer per landing page',
+          'Align CTA wording across ads and page sections'
+        ]
+      },
+      {
+        heading: 'Post-Launch Landing Page Optimization Workflow',
+        paragraphs: [
+          'A landing page is not complete at publish time. Real gains come from iterative testing of headlines, proof order, CTA placement, and form friction based on event data.',
+          'Even small changes can produce meaningful improvements when tested in a structured sequence and tied to lead-quality outcomes.'
+        ],
+        bullets: [
+          'Run one-variable tests on high-impact sections',
+          'Prioritize changes using call/form event trends',
+          'Document outcomes for repeatable playbook growth'
+        ]
+      }
+    ];
+  }
+
+  if (category === 'lead generation') {
+    return [
+      {
+        heading: 'Lead System Diagnosis: Visibility, Messaging, or Conversion Friction',
+        paragraphs: [
+          'When lead volume is low, diagnose the bottleneck before changing design. Problems typically fall into three categories: not enough qualified traffic, weak message relevance, or conversion friction in page flow.',
+          'Segmenting the issue correctly prevents wasted effort and helps teams prioritize fixes that produce measurable results quickly.'
+        ],
+        bullets: [
+          'Audit traffic quality by page and channel',
+          'Evaluate offer/message alignment to user intent',
+          'Review form and CTA drop-off patterns'
+        ]
+      },
+      {
+        heading: 'Lead Quality Improvement Through Pre-Qualification Design',
+        paragraphs: [
+          'Higher lead volume is not always better if quality is poor. Pre-qualification language and form logic can filter low-fit inquiries while improving close rates.',
+          'The best approach balances accessibility with selective clarity so sales teams spend time on high-probability opportunities.'
+        ],
+        bullets: [
+          'Clarify who your service is best for',
+          'Use form prompts that gather decision-stage context',
+          'Route urgent leads through faster follow-up workflows'
+        ]
+      }
+    ];
+  }
+
+  if (category === 'agency selection') {
+    return [
+      {
+        heading: 'Vendor Due Diligence: Questions That Reveal Delivery Risk',
+        paragraphs: [
+          'Most project failures are visible before the contract is signed if you ask the right operational questions. Ask how the team handles scope changes, quality control, handoff, and post-launch ownership.',
+          'Teams with mature delivery systems answer with specifics and examples, not general promises.'
+        ],
+        bullets: [
+          'Request sample timelines and QA checkpoints',
+          'Confirm ownership and access for all core assets',
+          'Validate post-launch support and response standards'
+        ]
+      },
+      {
+        heading: 'Contract and Scope Structure That Protects Outcomes',
+        paragraphs: [
+          'A strong scope model protects both budget and quality. It should define included pages, technical setup, revision limits, and launch criteria in concrete language.',
+          'When scope is explicit, project momentum improves and disagreements decrease because decision boundaries are clear.'
+        ],
+        bullets: [
+          'Define page and feature inventory in writing',
+          'Set revision rounds with acceptance criteria',
+          'Tie payment milestones to delivery checkpoints'
+        ]
+      }
+    ];
+  }
+
+  if (category === 'industry strategy') {
+    return [
+      {
+        heading: 'Service Industry Positioning: Build Trust Before Price Discussion',
+        paragraphs: [
+          'In service industries, buyers often choose based on confidence before comparing price. Website structure should establish credibility quickly through proof, process clarity, and localized relevance.',
+          'Pages that move to pricing too early without trust scaffolding tend to produce lower conversion rates or lower-quality leads.'
+        ],
+        bullets: [
+          'Lead with proof and process clarity',
+          'Use local case context where possible',
+          'Sequence trust elements before pricing prompts'
+        ]
+      },
+      {
+        heading: 'Operational Scalability for Multi-Service, Multi-City Growth',
+        paragraphs: [
+          'As service businesses expand, website systems need scalable templates for new services and locations. Without this, quality drifts and SEO consistency declines.',
+          'A template-driven architecture supports faster content rollout while preserving conversion patterns and technical integrity.'
+        ],
+        bullets: [
+          'Use reusable service-page frameworks',
+          'Standardize location-page model for new markets',
+          'Maintain shared QA checklist for every new page'
+        ]
+      }
+    ];
+  }
+
+  return [];
+}
+
 function createLongFormModules(post: BlogPost): BlogSection[] {
   const primaryKeyword = post.keywords[0] || 'local web design strategy';
   const secondaryKeyword = post.keywords[1] || 'conversion-focused website';
   const localFocus = post.cityFocus.join(', ');
   const serviceCategory = post.category;
-
-  return [
+  const baseModules: BlogSection[] = [
     {
       heading: 'Market Context: Why This Topic Matters in Florida Right Now',
       paragraphs: [
@@ -57,6 +236,7 @@ function createLongFormModules(post: BlogPost): BlogSection[] {
         'Standardize metadata and schema as a publishing requirement'
       ]
     },
+    ...getCategorySpecificModules(post),
     {
       heading: 'Conversion Layer: Turn Visibility Into Qualified Inquiries',
       paragraphs: [
@@ -106,6 +286,8 @@ function createLongFormModules(post: BlogPost): BlogSection[] {
       ]
     }
   ];
+
+  return baseModules;
 }
 
 export function getLongFormSections(
