@@ -155,11 +155,24 @@ export default async function LocationPage({ params }: PageProps) {
     })),
   };
 
+  const cityHighlightsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `Notable Areas in ${location.city}, Florida`,
+    itemListElement: location.cityHighlights.map((highlight, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: highlight.name,
+      description: highlight.detail,
+    })),
+  };
+
   return (
     <main className="pt-20 bg-white">
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={cityHighlightsSchema} />
 
       <section className="section-padding bg-gradient-to-b from-primary-50 to-white">
         <div className="container-custom max-w-6xl">
@@ -280,6 +293,25 @@ export default async function LocationPage({ params }: PageProps) {
               <article key={item.question} className="rounded-xl border border-gray-200 bg-white p-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{item.question}</h3>
                 <p className="text-gray-700">{item.answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white border-t border-gray-100">
+        <div className="container-custom max-w-6xl">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Local Highlights in {location.city}
+          </h2>
+          <p className="text-gray-700 mb-8">
+            These city-specific reference points help shape stronger local messaging, service-area positioning, and search relevance.
+          </p>
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+            {location.cityHighlights.map((highlight) => (
+              <article key={highlight.name} className="rounded-xl border border-gray-200 bg-gray-50 p-5">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{highlight.name}</h3>
+                <p className="text-gray-700 text-sm leading-relaxed">{highlight.detail}</p>
               </article>
             ))}
           </div>
