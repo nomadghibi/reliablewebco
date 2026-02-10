@@ -5,6 +5,8 @@ import PaymentButton from '@/components/PaymentButton';
 import { trackEvent } from '@/lib/analytics';
 
 export default function ContactPage() {
+  const todayIso = new Date().toISOString().split('T')[0];
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +16,23 @@ export default function ContactPage() {
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [hasTrackedFormStart, setHasTrackedFormStart] = useState(false);
+  const [callFormData, setCallFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    preferredDate: '',
+    preferredTime: '',
+    notes: '',
+  });
+  const [callStatus, setCallStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [callValidationError, setCallValidationError] = useState('');
+
+  const isMonToThu = (dateValue: string) => {
+    const day = new Date(`${dateValue}T00:00:00`).getDay();
+    return day >= 1 && day <= 4;
+  };
+
+  const isAfterTenAm = (timeValue: string) => timeValue >= '10:00';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,6 +73,73 @@ export default function ContactPage() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleCallFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setCallFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    if (name === 'preferredDate' || name === 'preferredTime') {
+      setCallValidationError('');
+    }
+  };
+
+  const handleCallBookingSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setCallValidationError('');
+
+    if (!isMonToThu(callFormData.preferredDate)) {
+      setCallValidationError('Please choose Monday to Thursday only.');
+      return;
+    }
+
+    if (!isAfterTenAm(callFormData.preferredTime)) {
+      setCallValidationError('Please choose a time at or after 10:00 AM.');
+      return;
+    }
+
+    setCallStatus('submitting');
+
+    try {
+      const response = await fetch('https://formspree.io/f/xlgweovk', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          inquiry_type: '10_minute_call_booking',
+          name: callFormData.name,
+          email: callFormData.email,
+          phone: callFormData.phone,
+          preferred_date: callFormData.preferredDate,
+          preferred_time: callFormData.preferredTime,
+          notes: callFormData.notes,
+        }),
+      });
+
+      if (response.ok) {
+        setCallStatus('success');
+        trackEvent('form_submit', {
+          form_name: 'book_10_minute_call',
+        });
+        setCallFormData({
+          name: '',
+          email: '',
+          phone: '',
+          preferredDate: '',
+          preferredTime: '',
+          notes: '',
+        });
+        return;
+      }
+
+      setCallStatus('error');
+    } catch {
+      setCallStatus('error');
+    }
   };
 
   const handleFormFocus = () => {
@@ -372,22 +458,138 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900">Schedule a Call</h3>
-                      <p className="text-gray-500 text-sm">30 minutes, no obligation</p>
+                      <h3 className="font-bold text-gray-900">Book a 10-Minute Call</h3>
+                      <p className="text-gray-500 text-sm">Monday-Thursday, after 10:00 AM</p>
                     </div>
                   </div>
                 </div>
-                <div className="p-6 space-y-4">
-                  <p className="text-gray-700">
-                    Online booking is temporarily disabled. Use the options below and we will schedule directly.
+                <form onSubmit={handleCallBookingSubmit} className="p-6 space-y-4">
+                  <div>
+                    <label htmlFor="call-name" className="block text-sm font-semibold text-gray-900 mb-2">
+                      Full Name
+                    </label>
+                    <input
+                      id="call-name"
+                      name="name"
+                      type="text"
+                      required
+                      value={callFormData.name}
+                      onChange={handleCallFormChange}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
+                      placeholder="John Smith"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="call-email" className="block text-sm font-semibold text-gray-900 mb-2">
+                      Email
+                    </label>
+                    <input
+                      id="call-email"
+                      name="email"
+                      type="email"
+                      required
+                      value={callFormData.email}
+                      onChange={handleCallFormChange}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
+                      placeholder="john@company.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="call-phone" className="block text-sm font-semibold text-gray-900 mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      id="call-phone"
+                      name="phone"
+                      type="tel"
+                      required
+                      value={callFormData.phone}
+                      onChange={handleCallFormChange}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
+                      placeholder="(321) 555-1234"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label htmlFor="call-date" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Date
+                      </label>
+                      <input
+                        id="call-date"
+                        name="preferredDate"
+                        type="date"
+                        required
+                        min={todayIso}
+                        value={callFormData.preferredDate}
+                        onChange={handleCallFormChange}
+                        className="w-full px-3 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="call-time" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Time
+                      </label>
+                      <input
+                        id="call-time"
+                        name="preferredTime"
+                        type="time"
+                        required
+                        min="10:00"
+                        value={callFormData.preferredTime}
+                        onChange={handleCallFormChange}
+                        className="w-full px-3 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200"
+                      />
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-gray-500">
+                    Booking rules: Monday-Thursday only, and time must be 10:00 AM or later.
                   </p>
-                  <a href="tel:+13219535199" className="btn-primary w-full text-center">
-                    Call (321) 953-5199
-                  </a>
-                  <a href="mailto:hello@reliablewebstudio.com" className="btn-secondary w-full text-center">
-                    Email hello@reliablewebstudio.com
-                  </a>
-                </div>
+
+                  <div>
+                    <label htmlFor="call-notes" className="block text-sm font-semibold text-gray-900 mb-2">
+                      Notes (Optional)
+                    </label>
+                    <textarea
+                      id="call-notes"
+                      name="notes"
+                      rows={3}
+                      value={callFormData.notes}
+                      onChange={handleCallFormChange}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 focus:bg-white transition-all duration-200 resize-none"
+                      placeholder="What would you like to discuss?"
+                    />
+                  </div>
+
+                  {callValidationError && (
+                    <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                      {callValidationError}
+                    </div>
+                  )}
+
+                  {callStatus === 'success' && (
+                    <div className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
+                      Your call request is submitted. We will confirm your slot by email.
+                    </div>
+                  )}
+
+                  {callStatus === 'error' && (
+                    <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                      Could not submit booking. Please call (321) 953-5199.
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={callStatus === 'submitting'}
+                    className="btn-primary w-full disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {callStatus === 'submitting' ? 'Submitting...' : 'Request 10-Minute Call'}
+                  </button>
+                </form>
               </div>
 
             </div>
