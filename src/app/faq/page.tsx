@@ -186,7 +186,7 @@ export default function FAQPage() {
             <p className="text-lg text-gray-700 mb-8">
               Book a 10-minute call and I&apos;ll answer everything you need to know.
             </p>
-            <Link href="/contact" className="btn-primary text-lg">
+            <Link href="/contact#book-call" className="btn-primary text-lg">
               Book a 10-Minute Call
             </Link>
           </div>

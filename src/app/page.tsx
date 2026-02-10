@@ -100,7 +100,7 @@ export default function Home() {
                 variant="primary"
                 className="px-8 py-4 text-lg"
               />
-              <Link href="/contact" className="btn-primary px-8 py-4 text-lg">
+              <Link href="/contact#book-call" className="btn-primary px-8 py-4 text-lg">
                 Book a 10-Minute Call
               </Link>
               </div>
@@ -245,7 +245,7 @@ export default function Home() {
                     variant="primary"
                     fullWidth
                   />
-                  <Link href="/contact" className="btn-secondary w-full text-center">
+                  <Link href="/contact#book-call" className="btn-secondary w-full text-center">
                     Book a Call First
                   </Link>
                 </div>

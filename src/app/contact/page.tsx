@@ -449,7 +449,7 @@ export default function ContactPage() {
               </div>
 
               {/* Book a Call Card */}
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div id="book-call" className="bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div className="p-6 border-b border-gray-100">
                   <div className="flex items-center gap-3 mb-2">
                     <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">

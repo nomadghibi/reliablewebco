@@ -28,6 +28,12 @@ export default function CTASection({
   trackingContext = {},
   trackingLocation = 'cta_section',
 }: CTASectionProps) {
+  const isCallIntent = secondaryCTA ? /book|call|schedule/i.test(secondaryCTA.text) : false;
+  const secondaryHref =
+    secondaryCTA && isCallIntent && secondaryCTA.href === '/contact'
+      ? '/contact#book-call'
+      : secondaryCTA?.href;
+
   const trackPrimaryClick = () => {
     trackEvent('cta_primary_click', {
       cta_text: primaryCTA.text,
@@ -40,12 +46,10 @@ export default function CTASection({
   const trackSecondaryClick = () => {
     if (!secondaryCTA) return;
 
-    const isCallIntent = /book|call|schedule/i.test(secondaryCTA.text);
-
     if (isCallIntent) {
       trackEvent('cta_call_click', {
         cta_text: secondaryCTA.text,
-        cta_href: secondaryCTA.href,
+        cta_href: secondaryHref,
         location: trackingLocation,
         ...trackingContext,
       });
@@ -54,7 +58,7 @@ export default function CTASection({
 
     trackEvent('cta_primary_click', {
       cta_text: secondaryCTA.text,
-      cta_href: secondaryCTA.href,
+      cta_href: secondaryHref,
       location: trackingLocation,
       ...trackingContext,
     });
@@ -76,7 +80,7 @@ export default function CTASection({
             </Link>
             {secondaryCTA && (
               <Link
-                href={secondaryCTA.href}
+                href={secondaryHref || secondaryCTA.href}
                 className={
                   darkBg
                     ? 'inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white border-2 border-white rounded-lg hover:bg-white hover:text-gray-900 transition-colors duration-200'
