@@ -121,6 +121,12 @@ export default function Footer() {
               >
                 (321) 953-5199
               </a>
+              <p className="mt-2 text-xs text-gray-400">
+                Palm Bay, FL, United States
+              </p>
+              <p className="text-xs text-gray-500">
+                hello@reliablewebstudio.com
+              </p>
             </div>
           </div>
         </div>

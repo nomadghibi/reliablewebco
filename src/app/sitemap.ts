@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { portfolioItems } from '@/data/portfolio';
 import { floridaLocations } from '@/data/locations';
 import { blogPosts } from '@/data/blog';
+import { localSeoServiceCityPairs } from '@/data/local-seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://reliablewebstudio.com';
@@ -33,6 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/locations`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
@@ -102,5 +109,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...caseStudyRoutes, ...locationRoutes, ...blogRoutes];
+  const serviceCityRoutes: MetadataRoute.Sitemap = localSeoServiceCityPairs.map((pair) => ({
+    url: `${baseUrl}/services/${pair.serviceSlug}/${pair.citySlug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...caseStudyRoutes, ...locationRoutes, ...blogRoutes, ...serviceCityRoutes];
 }

@@ -12,6 +12,12 @@ const inter = Inter({
 });
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
+const sameAsLinks = [
+  process.env.NEXT_PUBLIC_GBP_URL,
+  process.env.NEXT_PUBLIC_FACEBOOK_URL,
+  process.env.NEXT_PUBLIC_LINKEDIN_URL,
+  process.env.NEXT_PUBLIC_INSTAGRAM_URL,
+].filter(Boolean);
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://reliablewebstudio.com"),
@@ -48,7 +54,7 @@ const organizationSchema = {
   url: "https://reliablewebstudio.com",
   email: "hello@reliablewebstudio.com",
   telephone: "+1-321-953-5199",
-  sameAs: [],
+  sameAs: sameAsLinks,
 };
 
 const localBusinessSchema = {
@@ -64,6 +70,12 @@ const localBusinessSchema = {
     addressRegion: "FL",
     addressCountry: "US",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 28.0345,
+    longitude: -80.5887,
+  },
+  sameAs: sameAsLinks,
   areaServed: [
     { "@type": "City", name: "Palm Bay", containedInPlace: { "@type": "State", name: "Florida" } },
     { "@type": "City", name: "Melbourne", containedInPlace: { "@type": "State", name: "Florida" } },

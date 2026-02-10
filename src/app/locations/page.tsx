@@ -3,6 +3,7 @@ import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import JsonLd from '@/components/JsonLd';
 import { floridaLocations } from '@/data/locations';
+import { localSeoServices } from '@/data/local-seo';
 
 export const metadata: Metadata = {
   title: 'Florida Web Design Service Areas | Reliable Web Studio',
@@ -124,6 +125,27 @@ export default function LocationsPage() {
             <Link href="/contact" className="btn-secondary">
               Request My City Page
             </Link>
+          </div>
+
+          <div className="max-w-5xl mx-auto mt-12 rounded-2xl border border-gray-200 bg-white p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Service + City Local SEO Pages</h3>
+            <p className="text-gray-700 text-center mb-6">
+              Explore service-focused local pages built for higher intent matching and conversion clarity.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {localSeoServices.slice(0, 4).map((service) => (
+                <Link
+                  key={service.slug}
+                  href={`/services/${service.slug}/${floridaLocations[0].slug}`}
+                  className="block rounded-lg border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-semibold text-primary-700 hover:text-primary-800 hover:border-primary-300 transition-colors"
+                >
+                  {service.name}
+                </Link>
+              ))}
+            </div>
+            <div className="text-center mt-6">
+              <Link href="/services" className="btn-secondary">View All Service + City Pages</Link>
+            </div>
           </div>
         </div>
       </section>

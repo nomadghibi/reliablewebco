@@ -5,6 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
 import JsonLd from '@/components/JsonLd';
 import { floridaLocations, getLocationBySlug } from '@/data/locations';
+import { localSeoServices } from '@/data/local-seo';
 
 interface PageProps {
   params: Promise<{
@@ -225,6 +226,27 @@ export default async function LocationPage({ params }: PageProps) {
               Need multi-city coverage? We can create a structured service + location content model that scales.
             </p>
           </article>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white border-t border-gray-100">
+        <div className="container-custom max-w-6xl">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Popular Service Pages for {location.city}</h2>
+          <p className="text-gray-700 mb-6">
+            These pages target service + city intent combinations for stronger local SEO coverage and clearer conversion paths.
+          </p>
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+            {localSeoServices.map((service) => (
+              <Link
+                key={`${service.slug}-${location.slug}`}
+                href={`/services/${service.slug}/${location.slug}`}
+                className="block rounded-lg border border-gray-200 bg-gray-50 p-4 hover:border-primary-300 hover:shadow-sm transition-all"
+              >
+                <h3 className="font-bold text-gray-900 mb-1">{service.name}</h3>
+                <p className="text-sm text-gray-600">{location.city}, FL</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
