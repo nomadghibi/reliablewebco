@@ -97,7 +97,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-3">
               <PaymentButton
                 type="landingPage"
-                text="Start My $499 Page"
+                text="Start 24-Hour Landing Page"
                 variant="primary"
                 className="px-8 py-4 text-lg"
               />
@@ -200,7 +200,7 @@ export default function Home() {
                 </ul>
                 <PaymentButton
                   type="landingPage"
-                  text="Start My $499 Page"
+                  text="Start 24-Hour Landing Page"
                   variant="accent"
                   fullWidth
                 />
