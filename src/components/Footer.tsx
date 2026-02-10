@@ -73,7 +73,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/platform" className="hover:text-white transition-colors">
-                  Platform
+                  Software Development
                 </Link>
               </li>
               <li>

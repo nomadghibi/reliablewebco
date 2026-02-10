@@ -3,19 +3,19 @@ import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'Platform & Web App Development — Custom MVPs Built Fast | Reliable Web Studio',
+  title: 'Software Development & ML/AI Solutions — Custom MVPs Built Fast | Reliable Web Studio',
   description:
-    'Need a web app, portal, or platform MVP? We build login systems, dashboards, databases, and integrations. $8,000-$25,000+. Quote after scope call.',
+    'Need custom software, a web app, or ML/AI features? We build portals, dashboards, databases, APIs, and AI-enabled workflows. $8,000-$25,000+. Quote after scope call.',
   openGraph: {
-    title: 'Platform & Web App Development — Custom MVPs Built Fast | Reliable Web Studio',
-    description: 'We build custom web applications, portals, and platform MVPs. Login systems, databases, dashboards, payments, integrations.',
+    title: 'Software Development & ML/AI Solutions — Custom MVPs Built Fast | Reliable Web Studio',
+    description: 'We build custom software, web applications, and ML/AI-enabled products. Login systems, databases, dashboards, payments, integrations.',
     url: 'https://reliablewebstudio.com/platform',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Platform & Web App Development — Custom MVPs Built Fast | Reliable Web Studio',
-    description: 'We build custom web applications, portals, and platform MVPs. $8,000-$25,000+.',
+    title: 'Software Development & ML/AI Solutions — Custom MVPs Built Fast | Reliable Web Studio',
+    description: 'We build custom software, web applications, and ML/AI-enabled products. $8,000-$25,000+.',
   },
   alternates: {
     canonical: 'https://reliablewebstudio.com/platform',
@@ -100,6 +100,20 @@ const platformFeatures = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
+          d="M9.75 3.75h4.5m-7.5 6h10.5m-9.75 6h9m-7.5 4.5h6"
+        />
+      </svg>
+    ),
+    title: 'ML/AI Integrations',
+    description: 'AI chat, recommendation flows, classification, summarization, and automation features integrated into your product.',
+  },
+  {
+    icon: (
+      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
           d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
         />
       </svg>
@@ -131,6 +145,10 @@ const useCases = [
     examples: ['Subscription platforms', 'Analytics tools', 'Workflow automation', 'Data processing'],
   },
   {
+    title: 'ML/AI Products',
+    examples: ['AI assistants', 'Knowledge search', 'Prediction features', 'AI workflow automation'],
+  },
+  {
     title: 'E-Commerce',
     examples: ['Custom stores', 'Product catalogs', 'Shopping carts', 'Payment processing'],
   },
@@ -160,14 +178,14 @@ export default function PlatformPage() {
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block bg-white/10 text-blue-200 text-sm font-bold px-4 py-2 rounded-full mb-6 border border-white/20">
-              Platform / Web App MVP
+              Software Development / Web App / ML-AI
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-white">Build Your Web App or Platform MVP</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-white">Build Custom Software with Web App + ML/AI Capabilities</h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-4">
-              Need more than a marketing site? We build custom web applications, portals, and platform MVPs.
+              Need more than a marketing site? We build custom software, web applications, portals, and ML/AI-enabled MVPs.
             </p>
             <p className="text-lg text-blue-200/80 mb-8">
-              Login systems, databases, dashboards, payments, integrations — quote after scope call.
+              Login systems, databases, dashboards, APIs, ML/AI integrations, payments — quote after scope call.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact" className="btn-primary text-lg">
@@ -184,7 +202,7 @@ export default function PlatformPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m5.96 5.96a14.926 14.926 0 01-5.84 2.58m0 0a6 6 0 01-7.38-5.84h4.8" />
               </svg>
               <span className="text-sm md:text-base font-medium">
-                Custom Platforms — Palm Bay, Melbourne &amp; Florida&apos;s Space Coast
+                Custom Software Development — Palm Bay, Melbourne &amp; Florida&apos;s Space Coast
               </span>
             </div>
           </div>
@@ -226,7 +244,7 @@ export default function PlatformPage() {
           <div className="text-center mb-12">
             <h2 className="heading-lg mb-4">Common Use Cases</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From customer portals to SaaS MVPs, we build custom solutions for your specific needs.
+              From customer portals to SaaS MVPs and ML/AI products, we build custom solutions for your specific needs.
             </p>
           </div>
 
@@ -493,7 +511,7 @@ export default function PlatformPage() {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="heading-lg mb-4">Platform MVP Pricing</h2>
+              <h2 className="heading-lg mb-4">Software Development Pricing</h2>
               <p className="text-xl text-gray-600">
                 Custom quote based on your specific requirements. Here&apos;s what influences the price:
               </p>
@@ -502,7 +520,7 @@ export default function PlatformPage() {
             <div className="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 md:p-12 mb-12">
               <div className="text-center mb-8">
                 <div className="text-5xl font-bold text-primary-600 mb-2">$8,000 – $25,000+</div>
-                <div className="text-xl text-gray-700">Platform / Web App MVP</div>
+                <div className="text-xl text-gray-700">Software / Web App / ML-AI MVP</div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -642,7 +660,7 @@ export default function PlatformPage() {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Platform Development FAQ</h2>
+            <h2 className="heading-md text-center mb-12">Software Development FAQ</h2>
 
             <div className="space-y-6">
               <div className="bg-white rounded-lg p-6">
@@ -706,7 +724,7 @@ export default function PlatformPage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to build your platform?"
+        title="Ready to build your software product?"
         subtitle="Let's discuss your project and get you a detailed quote."
         primaryCTA={{ text: 'Book a Scope Call', href: '/contact' }}
         secondaryCTA={{ text: 'View Other Services', href: '/pricing' }}
