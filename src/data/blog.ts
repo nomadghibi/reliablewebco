@@ -1304,6 +1304,462 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     ctaText: 'Need a landing page live in 24 hours?'
+  },
+  {
+    id: 18,
+    slug: 'top-web-design-company-warning-signs',
+    title: 'Top Web Design Company Warning Signs',
+    description:
+      'Know the biggest warning signs before hiring a web design company, so your Florida business avoids delays, weak SEO setup, and low-converting pages.',
+    category: 'Agency Selection',
+    cityFocus: ['Florida Statewide', 'Orlando', 'Tampa'],
+    keywords: ['top web design company warning signs', 'choose web design company florida', 'website project red flags'],
+    publishedAt: '2025-05-14',
+    updatedAt: '2026-01-18',
+    readingTime: '7 min read',
+    heroBadge: 'Hiring Guide',
+    intro: [
+      'Picking a web design company should feel like a strategic decision, not a gamble. The wrong team can leave you with a site that looks fine but does not rank or convert.',
+      'These warning signs help you qualify providers early so your project stays on schedule and supports long-term SEO growth.'
+    ],
+    sections: [
+      {
+        heading: 'Vague process and no clear deliverables',
+        paragraphs: [
+          'If the proposal does not clearly define scope, timeline, and revision rounds, expect scope creep and delays.',
+          'A professional team should explain exactly what is included: pages, SEO setup, tracking, QA, and launch support.'
+        ],
+        bullets: [
+          'No detailed scope document',
+          'No launch checklist',
+          'No revision policy'
+        ]
+      },
+      {
+        heading: 'SEO is treated as an optional upsell',
+        paragraphs: [
+          'Technical SEO basics should be included in modern web builds. If metadata, sitemap, schema, and internal linking are extra, the foundation is likely weak.',
+          'SEO-ready structure at launch is cheaper and more effective than retrofitting later.'
+        ],
+        bullets: [
+          'Missing metadata plan',
+          'No local page architecture',
+          'No mention of structured data'
+        ]
+      },
+      {
+        heading: 'No measurable success metrics',
+        paragraphs: [
+          'Without event tracking, no one can prove what is working. Serious teams set up lead-focused analytics from day one.',
+          'At minimum, track calls, form starts, and form submissions to support optimization decisions.'
+        ],
+        bullets: [
+          'No conversion KPI discussion',
+          'No analytics event setup',
+          'No post-launch review process'
+        ]
+      }
+    ],
+    takeawayTitle: 'Pre-hire checklist',
+    takeaways: [
+      'Require clear scope and deliverables',
+      'Confirm SEO foundations are included in the build',
+      'Demand conversion tracking at launch',
+      'Choose process quality over design hype'
+    ],
+    faq: [
+      {
+        question: 'What is the most important thing to ask before hiring?',
+        answer:
+          'Ask for the exact build process with timeline, deliverables, revision limits, and launch criteria.'
+      },
+      {
+        question: 'Should SEO be included in every modern website build?',
+        answer:
+          'Yes. Core technical SEO should be part of the base scope, not an optional add-on.'
+      }
+    ],
+    ctaText: 'Need a transparent, SEO-ready web design process?'
+  },
+  {
+    id: 19,
+    slug: 'restaurant-website-design-essentials-florida',
+    title: 'Restaurant Website Design Essentials',
+    description:
+      'The essential website structure for Florida restaurants that want stronger local visibility, more reservations, and better online order conversion.',
+    category: 'Restaurant Marketing',
+    cityFocus: ['Orlando', 'Tampa', 'Melbourne'],
+    keywords: ['restaurant website design essentials', 'florida restaurant seo', 'restaurant reservations website'],
+    publishedAt: '2025-09-03',
+    updatedAt: '2026-01-30',
+    readingTime: '7 min read',
+    heroBadge: 'Restaurant Growth',
+    intro: [
+      'Restaurant websites need speed, clarity, and immediate action paths. If customers cannot find your menu, hours, or reservation options quickly, they leave.',
+      'A strong restaurant site combines local SEO structure with conversion-focused UX for mobile-first diners.'
+    ],
+    sections: [
+      {
+        heading: 'Make menu, hours, and booking instantly accessible',
+        paragraphs: [
+          'Your primary actions should appear in the first view: view menu, reserve table, and call now.',
+          'On mobile, each action must be one tap away with no layout clutter.'
+        ],
+        bullets: [
+          'Sticky reserve/call controls',
+          'Clear hours and location details',
+          'Fast-loading menu experience'
+        ]
+      },
+      {
+        heading: 'Use local SEO signals on key pages',
+        paragraphs: [
+          'Restaurant pages should include location intent in titles, headings, and metadata without keyword stuffing.',
+          'Linking to city-specific content helps capture nearby searches with purchase intent.'
+        ],
+        bullets: [
+          'City and cuisine relevance in metadata',
+          'Structured navigation for findability',
+          'Internal links to event and offer pages'
+        ]
+      },
+      {
+        heading: 'Support conversion with trust and social proof',
+        paragraphs: [
+          'Add concise reviews, food imagery, and clear value statements near your primary CTA blocks.',
+          'Visitors deciding where to eat compare confidence signals quickly, especially in competitive Florida markets.'
+        ],
+        bullets: [
+          'Short review snippets',
+          'High-quality dish photos',
+          'Simple value-first messaging'
+        ]
+      }
+    ],
+    takeawayTitle: 'Restaurant website essentials checklist',
+    takeaways: [
+      'Prioritize menu, reservation, and call actions',
+      'Add local SEO context to core pages',
+      'Place social proof near conversion buttons',
+      'Design for fast mobile decisions'
+    ],
+    faq: [
+      {
+        question: 'Do restaurants need separate pages for events and catering?',
+        answer:
+          'Yes. Dedicated pages usually perform better for SEO and conversion than placing everything on one homepage.'
+      },
+      {
+        question: 'Should online ordering links be in the header?',
+        answer:
+          'Yes. Ordering should be a primary action in navigation and repeated throughout high-intent sections.'
+      }
+    ],
+    ctaText: 'Need a restaurant website built for reservations and orders?'
+  },
+  {
+    id: 20,
+    slug: 'finding-a-web-designer-you-can-afford-without-sacrificing-results',
+    title: 'Finding a Web Designer You Can Afford',
+    description:
+      'A practical guide to finding an affordable web designer while still getting SEO fundamentals, conversion structure, and professional delivery.',
+    category: 'Budget Planning',
+    cityFocus: ['Florida Statewide', 'Palm Bay', 'Jacksonville'],
+    keywords: ['finding a web designer you can afford', 'affordable web design florida', 'small business web design budget'],
+    publishedAt: '2025-04-27',
+    updatedAt: '2026-02-01',
+    readingTime: '6 min read',
+    heroBadge: 'Budget Guide',
+    intro: [
+      'Affordable should not mean low-value. The real goal is to pay for work that moves revenue, not visual extras that do not impact leads.',
+      'With the right selection process, you can keep budget control while still launching a professional and SEO-ready site.'
+    ],
+    sections: [
+      {
+        heading: 'Prioritize outcomes over feature lists',
+        paragraphs: [
+          'Ask what will directly improve calls, form submissions, and booked appointments. This keeps scope focused and cost-efficient.',
+          'Many businesses overspend on features that add complexity but no conversion value.'
+        ],
+        bullets: [
+          'Define one primary business goal',
+          'Cut non-essential features early',
+          'Keep launch scope focused on lead flow'
+        ]
+      },
+      {
+        heading: 'Choose fixed-scope packages when possible',
+        paragraphs: [
+          'Fixed-scope packages reduce billing surprises and make delivery expectations clearer for both sides.',
+          'A clear package model also helps compare providers fairly.'
+        ],
+        bullets: [
+          'Clear deliverables and timeline',
+          'Known revision limits',
+          'Predictable total project cost'
+        ]
+      },
+      {
+        heading: 'Do not skip SEO and analytics basics',
+        paragraphs: [
+          'Even budget-conscious projects should include metadata, sitemap support, and conversion tracking setup.',
+          'Without these basics, your site will cost more to fix later and grow slower in search.'
+        ],
+        bullets: [
+          'Metadata and technical baseline',
+          'Internal linking plan',
+          'CTA event tracking'
+        ]
+      }
+    ],
+    takeawayTitle: 'Affordable design decision rules',
+    takeaways: [
+      'Pay for revenue-impacting scope first',
+      'Use fixed packages to control risk',
+      'Require SEO and analytics at launch',
+      'Avoid feature bloat during initial build'
+    ],
+    faq: [
+      {
+        question: 'Is a low-cost custom website always a bad choice?',
+        answer:
+          'Not always. It can work if scope is disciplined and core SEO plus conversion elements are included.'
+      },
+      {
+        question: 'What should small businesses avoid when hiring on a budget?',
+        answer:
+          'Avoid vague proposals, unlimited-scope promises, and projects that do not include measurable success metrics.'
+      }
+    ],
+    ctaText: 'Need an affordable website plan that still drives leads?'
+  },
+  {
+    id: 21,
+    slug: 'our-web-design-packages-find-your-fit',
+    title: 'Our Web Design Packages: Find Your Fit',
+    description:
+      'A straightforward guide to choosing the right web design package for your business stage, timeline, and lead-generation goals.',
+    category: 'Pricing Strategy',
+    cityFocus: ['Florida Statewide', 'Melbourne', 'Orlando'],
+    keywords: ['web design packages florida', 'find your website package', 'business website pricing'],
+    publishedAt: '2025-11-12',
+    updatedAt: '2026-02-02',
+    readingTime: '6 min read',
+    heroBadge: 'Package Guide',
+    intro: [
+      'Not every business needs the same website scope. The best package depends on urgency, offer complexity, and your current stage of growth.',
+      'Choosing correctly saves time, improves conversion speed, and prevents unnecessary rebuilds.'
+    ],
+    sections: [
+      {
+        heading: 'Choose based on urgency and traffic source',
+        paragraphs: [
+          'If you need immediate campaign support, a focused landing page may be enough to start lead flow quickly.',
+          'If you need long-term SEO depth, a multi-page build with service and location architecture is the better fit.'
+        ],
+        bullets: [
+          'Fast launch for urgent demand',
+          'Multi-page structure for organic growth',
+          'Package matched to acquisition channel'
+        ]
+      },
+      {
+        heading: 'Match page depth to sales complexity',
+        paragraphs: [
+          'Simple offers convert with fewer pages. Higher-ticket or multi-service businesses need more trust, proof, and education pages.',
+          'Page depth should reflect how much explanation a buyer needs before contact.'
+        ],
+        bullets: [
+          'Simple offer, lighter structure',
+          'Complex services, deeper page architecture',
+          'Proof and FAQ added by decision stage'
+        ]
+      },
+      {
+        heading: 'Plan upgrade path from day one',
+        paragraphs: [
+          'A strong package strategy allows you to start lean and expand without redoing the whole site.',
+          'Growth planning is easier when design system, content model, and internal linking are scalable.'
+        ],
+        bullets: [
+          'Define upgrade milestones',
+          'Preserve reusable design components',
+          'Expand with service and city page templates'
+        ]
+      }
+    ],
+    takeawayTitle: 'Package selection framework',
+    takeaways: [
+      'Align package with urgency and channel',
+      'Use page depth that matches sales complexity',
+      'Choose scalable architecture for future growth',
+      'Start lean, then expand strategically'
+    ],
+    faq: [
+      {
+        question: 'Should new businesses start with a landing page or full site?',
+        answer:
+          'If speed is critical, start with a landing page. If SEO growth is the priority, start with a structured multi-page site.'
+      },
+      {
+        question: 'Can I upgrade from a smaller package later?',
+        answer:
+          'Yes. A structured build approach allows phased growth without rebuilding from zero.'
+      }
+    ],
+    ctaText: 'Need help choosing the right package for your business stage?'
+  },
+  {
+    id: 22,
+    slug: 'web-design-for-service-industries-florida-guide',
+    title: 'Web Design for Service Industries',
+    description:
+      'A service-industry web design guide for Florida businesses that need stronger local SEO, trust positioning, and lead conversion.',
+    category: 'Industry Strategy',
+    cityFocus: ['Florida Statewide', 'Tampa', 'Jacksonville'],
+    keywords: ['web design for service industries', 'service business web design florida', 'local lead generation website'],
+    publishedAt: '2025-07-21',
+    updatedAt: '2026-01-24',
+    readingTime: '7 min read',
+    heroBadge: 'Service Industry Playbook',
+    intro: [
+      'Service businesses win online when websites are structured around buyer intent, not company history pages.',
+      'A high-performing service site should make your offer clear, reduce trust friction, and drive fast contact actions.'
+    ],
+    sections: [
+      {
+        heading: 'Build pages around customer problems',
+        paragraphs: [
+          'Each service page should target a specific problem your audience is actively searching for.',
+          'This improves SEO relevance and helps visitors quickly self-identify the right solution.'
+        ],
+        bullets: [
+          'One page per core service intent',
+          'Problem-solution copy structure',
+          'Visible CTA in every page segment'
+        ]
+      },
+      {
+        heading: 'Use local relevance as a conversion layer',
+        paragraphs: [
+          'Florida buyers often choose providers based on service area confidence and local trust cues.',
+          'Location pages and nearby-area references help users feel you are the right fit for their market.'
+        ],
+        bullets: [
+          'City-specific location pages',
+          'Nearby-area service references',
+          'Localized social proof blocks'
+        ]
+      },
+      {
+        heading: 'Optimize for mobile action speed',
+        paragraphs: [
+          'Service industry leads often convert from mobile. Buttons, forms, and phone actions should be frictionless on smaller screens.',
+          'Design decisions should prioritize clarity, thumb reach, and reduced input effort.'
+        ],
+        bullets: [
+          'Tap-friendly CTA sizing',
+          'Short mobile form experience',
+          'Persistent call actions for urgent services'
+        ]
+      }
+    ],
+    takeawayTitle: 'Service-industry website checklist',
+    takeaways: [
+      'Match page structure to real customer problems',
+      'Layer city relevance into service architecture',
+      'Prioritize mobile contact speed',
+      'Use proof and CTA repetition to reduce friction'
+    ],
+    faq: [
+      {
+        question: 'Do all service industries need location pages?',
+        answer:
+          'If local search is important, yes. Location pages improve relevance and help capture city-specific intent.'
+      },
+      {
+        question: 'What is the first page to optimize for service businesses?',
+        answer:
+          'Start with the highest-value service page where qualified leads are most likely to convert.'
+      }
+    ],
+    ctaText: 'Need a service-industry website built for leads and local SEO?'
+  },
+  {
+    id: 23,
+    slug: 'why-your-website-is-not-getting-leads-florida-fixes',
+    title: "Why Your Website Isn't Getting Leads",
+    description:
+      'The most common reasons service-business websites fail to generate leads, plus practical fixes to improve conversion and SEO performance.',
+    category: 'Lead Generation',
+    cityFocus: ['Florida Statewide', 'Palm Bay', 'Orlando'],
+    keywords: ['why your website is not getting leads', 'website lead generation fixes', 'florida conversion seo'],
+    publishedAt: '2025-12-06',
+    updatedAt: '2026-02-05',
+    readingTime: '8 min read',
+    heroBadge: 'Lead Fix Guide',
+    intro: [
+      'Many businesses assume traffic is the main issue, but most lead problems come from poor conversion structure and unclear messaging.',
+      'If your site has visitors but few calls or form submissions, the fix is usually strategic page optimization, not just more traffic.'
+    ],
+    sections: [
+      {
+        heading: 'Your offer is unclear in the first screen',
+        paragraphs: [
+          'Visitors should immediately understand what you do, who you help, and what action to take. If this is missing, bounce rates climb quickly.',
+          'Rewrite hero messaging to focus on outcome and location relevance.'
+        ],
+        bullets: [
+          'Clear value proposition headline',
+          'Simple offer statement',
+          'Primary CTA above the fold'
+        ]
+      },
+      {
+        heading: 'There is no trust proof near CTA points',
+        paragraphs: [
+          'Users need confidence before contacting you. Add concise testimonials, guarantees, and proof elements beside forms and call buttons.',
+          'Do not isolate social proof on a separate page only.'
+        ],
+        bullets: [
+          'Testimonials close to CTA blocks',
+          'Licensing or credibility indicators',
+          'Outcome-oriented proof snippets'
+        ]
+      },
+      {
+        heading: 'You are not measuring the right actions',
+        paragraphs: [
+          'Without event tracking, optimization becomes guesswork. Track the steps that indicate buyer intent and act on that data monthly.',
+          'This lets you improve page sections that block conversion instead of making random visual changes.'
+        ],
+        bullets: [
+          'Track phone and form events',
+          'Review lead flow by page type',
+          'Run focused conversion tests regularly'
+        ]
+      }
+    ],
+    takeawayTitle: 'Lead generation recovery plan',
+    takeaways: [
+      'Fix homepage clarity first',
+      'Add trust proof near every conversion path',
+      'Measure lead actions, not vanity metrics',
+      'Iterate pages monthly with real data'
+    ],
+    faq: [
+      {
+        question: 'Can SEO traffic increase but leads stay flat?',
+        answer:
+          'Yes. Traffic growth without conversion-focused page structure often produces low business impact.'
+      },
+      {
+        question: 'What should I fix first if leads are low?',
+        answer:
+          'Start with offer clarity, CTA placement, and trust proof on your highest-traffic pages.'
+      }
+    ],
+    ctaText: 'Need a conversion audit to fix low lead performance?'
   }
 ];
 
