@@ -1,12 +1,39 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function CheckoutSuccessPage() {
+  const router = useRouter();
+
+  const handleGoBack = () => {
+    if (typeof window !== 'undefined' && window.history.length > 1) {
+      router.back();
+      return;
+    }
+    router.push('/pricing');
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-primary-50 to-white pt-32 pb-20">
       <div className="container-custom">
         <div className="max-w-2xl mx-auto text-center">
+          <div className="mb-6 flex items-center justify-center gap-3">
+            <button
+              type="button"
+              onClick={handleGoBack}
+              className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:border-primary-300 hover:text-primary-700 transition-colors"
+            >
+              ← Back
+            </button>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:border-primary-300 hover:text-primary-700 transition-colors"
+            >
+              Back to Pricing
+            </Link>
+          </div>
+
           {/* Success Icon */}
           <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
             <svg

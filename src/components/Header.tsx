@@ -85,8 +85,6 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-4 mr-2">
             <a
               href={landingPageHref}
-              target={isLandingPageConfigured ? '_blank' : undefined}
-              rel={isLandingPageConfigured ? 'noopener noreferrer' : undefined}
               className="inline-block bg-accent-600 hover:bg-accent-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors"
               onClick={trackLandingPageClick}
             >
@@ -179,8 +177,6 @@ export default function Header() {
               </Link>
               <a
                 href={landingPageHref}
-                target={isLandingPageConfigured ? '_blank' : undefined}
-                rel={isLandingPageConfigured ? 'noopener noreferrer' : undefined}
                 className="btn-primary w-full text-center mt-4"
                 onClick={trackLandingPageClick}
               >

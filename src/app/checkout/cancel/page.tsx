@@ -1,17 +1,43 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { PAYMENT_LINKS, isPaymentConfigured } from '@/config/payments';
 
 export default function CheckoutCancelPage() {
+  const router = useRouter();
   const landingPageUrl = PAYMENT_LINKS.landingPage.url;
   const isLandingPageConfigured = isPaymentConfigured(landingPageUrl);
   const landingPageHref = isLandingPageConfigured ? landingPageUrl : '/contact';
+
+  const handleGoBack = () => {
+    if (typeof window !== 'undefined' && window.history.length > 1) {
+      router.back();
+      return;
+    }
+    router.push('/pricing');
+  };
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-32 pb-20">
       <div className="container-custom">
         <div className="max-w-2xl mx-auto text-center">
+          <div className="mb-6 flex items-center justify-center gap-3">
+            <button
+              type="button"
+              onClick={handleGoBack}
+              className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:border-primary-300 hover:text-primary-700 transition-colors"
+            >
+              ← Back
+            </button>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:border-primary-300 hover:text-primary-700 transition-colors"
+            >
+              Back to Pricing
+            </Link>
+          </div>
+
           {/* Back Icon */}
           <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-8">
             <svg
@@ -83,8 +109,6 @@ export default function CheckoutCancelPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href={landingPageHref}
-              target={isLandingPageConfigured ? '_blank' : undefined}
-              rel={isLandingPageConfigured ? 'noopener noreferrer' : undefined}
               className="btn-primary"
             >
               Try Again - $499

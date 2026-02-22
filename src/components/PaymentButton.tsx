@@ -65,8 +65,6 @@ export default function PaymentButton({
   return (
     <Link
       href={href}
-      target={isConfigured ? '_blank' : undefined}
-      rel={isConfigured ? 'noopener noreferrer' : undefined}
       className={`${baseStyles} ${variantStyles[variant]} ${widthClass} ${className}`}
       onClick={handleClick}
     >
