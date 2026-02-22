@@ -221,15 +221,17 @@ export default async function ServiceCityPage({ params }: PageProps) {
                 ctaLocation="service_city_hero"
               />
             </div>
-            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
-              <Image
-                src={city.image}
-                alt={`${city.city}, Florida skyline style graphic`}
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+            <div className="rounded-2xl border border-gray-200 shadow-sm bg-white pt-3 px-3 pb-3">
+              <div className="relative aspect-[16/10] rounded-xl overflow-hidden">
+                <Image
+                  src={city.image}
+                  alt={`${city.city}, Florida skyline style graphic`}
+                  fill
+                  priority
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
         </div>
