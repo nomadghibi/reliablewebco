@@ -133,14 +133,19 @@ export default function BlogPage() {
             ))}
           </div>
 
-          <div className="max-w-4xl mx-auto mt-12 rounded-2xl border border-gray-200 bg-white p-8 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Need a topic covered for your city or industry?</h3>
+          <div className="max-w-4xl mx-auto mt-12 rounded-2xl border-2 border-primary-200 bg-primary-50 p-8 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Want a custom teardown of your website?</h3>
             <p className="text-gray-700 mb-6">
-              We publish based on real business questions. Tell us your niche, service area, and growth challenge.
+              Submit your URL and get a prioritized P0/P1/P2 analysis emailed by next business day.
             </p>
-            <Link href="/contact" className="btn-primary">
-              Request a Topic
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link href="/audit" className="btn-primary">
+                Get My Free Website Analysis
+              </Link>
+              <Link href="/contact#book-call" className="btn-secondary">
+                Book a 10-Minute Call
+              </Link>
+            </div>
           </div>
         </div>
       </section>

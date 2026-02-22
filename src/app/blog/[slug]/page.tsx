@@ -302,6 +302,21 @@ export default async function BlogArticlePage({ params }: PageProps) {
             </section>
           )}
 
+          <section className="mt-12 rounded-xl border-2 border-primary-200 bg-primary-50 p-6 text-center">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Get a Website Analysis for Your Business</h2>
+            <p className="text-gray-700 mb-6">
+              We review your current site and send a next-business-day report with P0/P1/P2 fixes tailored to your market.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link href="/audit" className="btn-primary">
+                Get My Free Website Analysis
+              </Link>
+              <Link href="/contact#book-call" className="btn-secondary">
+                Book a 10-Minute Call
+              </Link>
+            </div>
+          </section>
+
           <section className="mt-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">FAQ</h2>
             <div className="space-y-4">

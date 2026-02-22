@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = `${service.name} in ${city.city}, FL | Reliable Web Studio`;
-  const description = `${service.shortDescription} Local SEO and conversion strategy for ${city.city}, ${city.county}.`;
+  const description = `${service.shortDescription} ${city.localIntent}`;
   const canonical = `https://reliablewebstudio.com/services/${service.slug}/${city.slug}`;
 
   return {
@@ -66,7 +66,48 @@ export default async function ServiceCityPage({ params }: PageProps) {
   }
 
   const serviceUrl = `https://reliablewebstudio.com/services/${service.slug}/${city.slug}`;
-  const relatedCities = floridaLocations.filter((item) => item.slug !== city.slug).slice(0, 3);
+  const relatedCitiesByRegion = floridaLocations
+    .filter((item) => item.slug !== city.slug && item.region === city.region)
+    .slice(0, 3);
+  const relatedCities =
+    relatedCitiesByRegion.length > 0
+      ? relatedCitiesByRegion
+      : floridaLocations.filter((item) => item.slug !== city.slug).slice(0, 3);
+  const executionPrioritiesByService: Record<string, string[]> = {
+    'landing-page-design': [
+      'Lead with one primary offer and one primary CTA above the fold.',
+      'Use short-form sections built for fast mobile scanning.',
+      'Track call clicks and form submissions from day one.',
+    ],
+    'website-in-a-week': [
+      'Build service-page hierarchy around high-intent buyer questions.',
+      'Use role-based trust sections (proof, process, guarantees) on key pages.',
+      'Connect each page to one measurable conversion path.',
+    ],
+    'local-seo-web-design': [
+      'Align title/H1/internal links to service + city intent clusters.',
+      'Build location relevance without repeating thin copy blocks.',
+      'Create crawl-friendly pathways between city pages and money pages.',
+    ],
+    'conversion-website-redesign': [
+      'Preserve existing ranking assets during redesign rollout.',
+      'Rebuild CTA flow to reduce drop-off at key decision points.',
+      'Instrument analytics events before and after launch for comparison.',
+    ],
+    'service-industry-web-design': [
+      'Match page language to service-specific buyer pain points.',
+      'Add trust elements tied to licensing, response time, and local reputation.',
+      'Standardize lead-routing workflows so inquiries are not missed.',
+    ],
+  };
+  const executionPriorities =
+    executionPrioritiesByService[service.slug] ??
+    [
+      'Clarify your offer immediately for local buyers.',
+      'Use one primary CTA path with low-friction form flow.',
+      'Track lead actions to improve conversion performance over time.',
+    ];
+  const faqItems = city.faq.slice(0, 3);
 
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -113,10 +154,24 @@ export default async function ServiceCityPage({ params }: PageProps) {
     ],
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <main className="pt-20 bg-white">
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={faqSchema} />
 
       <section className="section-padding bg-gradient-to-b from-primary-50 to-white">
         <div className="container-custom max-w-6xl">
@@ -168,18 +223,52 @@ export default async function ServiceCityPage({ params }: PageProps) {
 
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl grid lg:grid-cols-2 gap-8">
+          <article className="rounded-xl border border-gray-200 p-6 md:p-8 bg-gray-50">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Market Context in {city.city}</h2>
+            <p className="text-gray-700 mb-4">{city.localIntent}</p>
+            <div className="space-y-4 text-gray-700">
+              {city.detailedIntro.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </article>
+
+          <article className="rounded-xl border border-gray-200 p-6 md:p-8 bg-gray-50">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Execution Priorities for {service.name}</h2>
+            <ul className="space-y-3 text-gray-700 mb-6">
+              {executionPriorities.map((priority) => (
+                <li key={priority} className="flex items-start gap-3">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>{priority}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-sm text-gray-600 mb-3">
+              Ideal for: <span className="font-semibold text-gray-900">{service.idealFor}</span>
+            </p>
+            <p className="text-sm text-gray-600">
+              Nearby areas we account for in structure: {city.nearbyAreas.join(', ')}.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-6xl grid lg:grid-cols-2 gap-8">
           <article className="rounded-xl border border-gray-200 p-6 bg-gray-50">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Why This Works in {city.city}</h2>
             <ul className="space-y-3 text-gray-700">
-              <li className="flex items-start gap-3"><span className="text-green-600 font-bold">✓</span><span>Service + city intent alignment in titles, headings, and schema</span></li>
-              <li className="flex items-start gap-3"><span className="text-green-600 font-bold">✓</span><span>Conversion-first layout with repeated CTA strategy</span></li>
-              <li className="flex items-start gap-3"><span className="text-green-600 font-bold">✓</span><span>Tracking setup for calls, form starts, and submissions</span></li>
-              <li className="flex items-start gap-3"><span className="text-green-600 font-bold">✓</span><span>Scalable template system for nearby city expansion</span></li>
+              {city.serviceHighlights.map((highlight) => (
+                <li key={highlight} className="flex items-start gap-3">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>{highlight}</span>
+                </li>
+              ))}
             </ul>
           </article>
 
           <article className="rounded-xl border border-gray-200 p-6 bg-gray-50">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Keyword Focus</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Keyword and City Signal Focus</h2>
             <div className="flex flex-wrap gap-2 mb-6">
               {service.keywords.map((keyword) => (
                 <span key={keyword} className="inline-flex items-center px-3 py-1 rounded-md bg-white border border-gray-200 text-sm text-gray-800">
@@ -187,19 +276,66 @@ export default async function ServiceCityPage({ params }: PageProps) {
                 </span>
               ))}
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-3">Related Service Cities</h3>
-            <div className="space-y-2">
+            <h3 className="text-lg font-bold text-gray-900 mb-3">Local Signals Referenced</h3>
+            <ul className="space-y-3 mb-6">
+              {city.cityHighlights.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded-lg border border-gray-200 bg-white p-3 hover:border-primary-300"
+                  >
+                    <p className="font-semibold text-primary-700">{item.name}</p>
+                    <p className="text-sm text-gray-600 mt-1">{item.detail}</p>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href={`/locations/${city.slug}`}
+              className="inline-flex items-center text-sm font-semibold text-primary-700 hover:text-primary-800"
+            >
+              Explore full {city.city} city page →
+            </Link>
+          </article>
+        </div>
+      </section>
+
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom max-w-6xl">
+          <div className="rounded-xl border border-gray-200 bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              {service.name} in {city.city}: Common Questions
+            </h2>
+            <div className="space-y-5">
+              {faqItems.map((item) => (
+                <article key={item.question}>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.question}</h3>
+                  <p className="text-gray-700">{item.answer}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-6xl">
+          <div className="rounded-xl border border-gray-200 p-6 md:p-8 bg-gray-50">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Related Service Cities in {city.region}</h2>
+            <div className="grid md:grid-cols-3 gap-3">
               {relatedCities.map((relatedCity) => (
                 <Link
                   key={relatedCity.slug}
                   href={`/services/${service.slug}/${relatedCity.slug}`}
-                  className="block text-sm font-semibold text-primary-700 hover:text-primary-800"
+                  className="rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm font-semibold text-primary-700 hover:border-primary-300 hover:text-primary-800"
                 >
                   {service.name} in {relatedCity.city}, FL
                 </Link>
               ))}
             </div>
-          </article>
+          </div>
         </div>
       </section>
 
