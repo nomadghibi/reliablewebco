@@ -29,7 +29,10 @@ export default function CheckoutSuccessPage() {
             Payment Successful!
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Thank you for your purchase. We&apos;re excited to start building your landing page!
+            Thank you for your purchase. We&apos;re excited to start building your landing page.
+          </p>
+          <p className="text-sm text-primary-700 font-semibold mb-8">
+            Important: the 24-hour delivery timeline starts after your intake details are complete.
           </p>
 
           {/* What Happens Next */}
@@ -43,9 +46,9 @@ export default function CheckoutSuccessPage() {
                   <span className="text-primary-600 font-bold">1</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Check Your Email</h3>
+                  <h3 className="font-semibold text-gray-900">Check Your Email and Complete Intake</h3>
                   <p className="text-gray-600">
-                    You&apos;ll receive a confirmation email with your receipt within a few minutes.
+                    You&apos;ll receive your receipt and intake instructions within a few minutes. Fill out intake right away so we can start.
                   </p>
                 </div>
               </div>
@@ -55,9 +58,9 @@ export default function CheckoutSuccessPage() {
                   <span className="text-primary-600 font-bold">2</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">We&apos;ll Reach Out</h3>
+                  <h3 className="font-semibold text-gray-900">Kickoff and Content Confirmation</h3>
                   <p className="text-gray-600">
-                    Our team will contact you within 2 hours (during business hours) to gather your business details and preferences.
+                    Our team will confirm your business details, offer, and CTA flow within 2 hours during business hours.
                   </p>
                 </div>
               </div>
@@ -69,7 +72,7 @@ export default function CheckoutSuccessPage() {
                 <div>
                   <h3 className="font-semibold text-gray-900">Your Page Goes Live</h3>
                   <p className="text-gray-600">
-                    Within 24 hours, your professional landing page will be ready to launch!
+                    Within 24 hours after intake completion, your professional landing page will be ready to launch.
                   </p>
                 </div>
               </div>

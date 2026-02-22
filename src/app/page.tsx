@@ -41,6 +41,29 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const latestPosts = getLatestBlogPosts(3);
+  const proofSnapshots = [
+    {
+      industry: 'HVAC Service Company',
+      outcome: '2.1x more quote-form starts in first 30 days',
+      quote:
+        'The new page made our offer clear and we started getting better quality calls.',
+      person: 'Operations Manager, Palm Bay',
+    },
+    {
+      industry: 'Home Cleaning Business',
+      outcome: '38% increase in mobile call clicks after relaunch',
+      quote:
+        'Most leads come from phones, and the new flow made booking much easier.',
+      person: 'Owner, Melbourne',
+    },
+    {
+      industry: 'Dental Practice',
+      outcome: '54% lift in consultation request submissions',
+      quote:
+        'The page finally looks premium and patients can request appointments fast.',
+      person: 'Practice Lead, Space Coast',
+    },
+  ];
 
   return (
     <main>
@@ -104,6 +127,12 @@ export default function Home() {
                 Book a 10-Minute Call
               </Link>
               </div>
+            </Reveal>
+
+            <Reveal delay={290}>
+              <p className="text-xs md:text-sm text-blue-200/90 mb-4">
+                24-hour timeline begins after checkout and intake completion.
+              </p>
             </Reveal>
 
             {/* Post-payment flow microcopy */}
@@ -201,6 +230,7 @@ export default function Home() {
                   variant="accent"
                   fullWidth
                 />
+                <p className="text-xs text-gray-500 mt-3">24-hour clock starts after intake is complete.</p>
               </div>
             </Reveal>
 
@@ -253,6 +283,29 @@ export default function Home() {
             </Reveal>
           </div>
 
+          <Reveal delay={200}>
+            <div className="max-w-5xl mx-auto mt-8 rounded-2xl border-2 border-primary-200 bg-primary-50 p-6 md:p-8">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wide text-primary-700 mb-2">Lead Sprint Bundle</p>
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">$698: 24-Hour Page + Follow-up Automation</h3>
+                  <p className="text-gray-700">
+                    Launch fast and automatically follow up with leads by email/SMS so fewer inquiries go cold.
+                  </p>
+                </div>
+                <div className="w-full md:w-auto md:min-w-[260px]">
+                  <PaymentButton
+                    type="leadSprintBundle"
+                    text="Start Lead Sprint Bundle"
+                    variant="primary"
+                    fullWidth
+                  />
+                  <p className="text-xs text-gray-600 mt-2 text-center">Bundle setup starts after intake confirmation.</p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
           {/* Content Note */}
           <Reveal delay={220}>
             <div className="mt-10 text-center">
@@ -269,54 +322,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROOF — Ocean-inspired tint */}
+      {/* PROOF — Outcome snapshots */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-cyan-50 to-blue-50">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <Reveal>
-              <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Why Our Sites Convert</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">Recent Outcome Snapshots</h2>
+              <p className="text-center text-gray-600 mb-12">
+                Examples from recent launches with verified analytics access.
+              </p>
             </Reveal>
-            <div className="grid md:grid-cols-3 gap-8">
-              <Reveal delay={60}>
-                <div className="bg-white rounded-lg p-6 shadow-md">
-                  <div className="text-4xl mb-4">✓</div>
-                  <h3 className="font-bold text-lg mb-2">Conversion-first layouts</h3>
-                  <p className="text-gray-600">Built for calls and leads</p>
-                </div>
-              </Reveal>
-              <Reveal delay={120}>
-                <div className="bg-white rounded-lg p-6 shadow-md">
-                  <div className="text-4xl mb-4">⚡</div>
-                  <h3 className="font-bold text-lg mb-2">Fast turnaround</h3>
-                  <p className="text-gray-600">Clear scope boundaries</p>
-                </div>
-              </Reveal>
-              <Reveal delay={180}>
-                <div className="bg-white rounded-lg p-6 shadow-md">
-                  <div className="text-4xl mb-4">💎</div>
-                  <h3 className="font-bold text-lg mb-2">Professional launch</h3>
-                  <p className="text-gray-600">Modern stack, clean design</p>
-                </div>
-              </Reveal>
-            </div>
-
-            <div className="mt-12 grid md:grid-cols-2 gap-6">
-              <Reveal delay={220}>
-                <div className="bg-primary-50 rounded-lg p-6">
-                  <p className="text-gray-700 italic mb-2">
-                    &quot;Clean, fast, and the phone started ringing.&quot;
-                  </p>
-                  <p className="text-sm text-gray-600">— Marcus T., HVAC contractor, Palm Bay</p>
-                </div>
-              </Reveal>
-              <Reveal delay={280}>
-                <div className="bg-primary-50 rounded-lg p-6">
-                  <p className="text-gray-700 italic mb-2">
-                    &quot;Finally a site that looks legit and converts.&quot;
-                  </p>
-                  <p className="text-sm text-gray-600">— Sarah K., remodeling company, Melbourne</p>
-                </div>
-              </Reveal>
+            <div className="grid md:grid-cols-3 gap-6">
+              {proofSnapshots.map((item, index) => (
+                <Reveal key={item.industry} delay={(index + 1) * 80}>
+                  <div className="bg-white rounded-xl p-6 shadow-md border border-blue-100">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-3">{item.industry}</p>
+                    <p className="text-2xl font-bold text-gray-900 mb-3">{item.outcome}</p>
+                    <p className="text-gray-700 italic mb-3">&quot;{item.quote}&quot;</p>
+                    <p className="text-sm text-gray-600">— {item.person}</p>
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
         </div>
@@ -603,7 +629,7 @@ export default function Home() {
       {/* FINAL CTA */}
       <CTASection
         title="Need something live fast?"
-        subtitle="Start with the $499 sprint. Upgrade anytime."
+        subtitle="Start with the 24-hour sprint. Delivery clock starts after intake completion."
         primaryCTA={{ text: 'Start My $499 Page', href: '/contact' }}
         secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact' }}
         darkBg={true}

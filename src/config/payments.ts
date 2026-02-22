@@ -50,6 +50,16 @@ export const PAYMENT_LINKS = {
     ),
   },
 
+  // Lead Sprint Bundle - $698 ($499 page + $199 automation)
+  leadSprintBundle: {
+    price: 698,
+    label: 'Lead Sprint Bundle',
+    url: resolvePaymentUrl(
+      process.env.NEXT_PUBLIC_STRIPE_LEAD_SPRINT_LINK,
+      'https://buy.stripe.com/PLACEHOLDER_LEAD_SPRINT_BUNDLE'
+    ),
+  },
+
   // Website-in-a-Week Deposit - $1,000
   websiteDeposit: {
     price: 1000,

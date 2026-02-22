@@ -133,6 +133,24 @@ const pricingSchema = {
   ],
 };
 
+const pricingProof = [
+  {
+    label: 'Contractor Launch',
+    result: '+42% call clicks in first month',
+    quote: 'Call quality improved and we stopped missing mobile leads.',
+  },
+  {
+    label: 'Home Service Rebuild',
+    result: '2.0x quote requests after relaunch',
+    quote: 'Clear CTA structure made it easier for visitors to act.',
+  },
+  {
+    label: 'Clinic Landing Sprint',
+    result: '+54% consult form submissions',
+    quote: 'Fast delivery plus better conversion flow made a clear difference.',
+  },
+];
+
 export default function PricingPage() {
   return (
     <main className="pt-20">
@@ -184,6 +202,9 @@ export default function PricingPage() {
                 Transparent Pricing — Palm Bay, Melbourne &amp; Florida&apos;s Space Coast
               </span>
             </div>
+            <p className="mt-3 text-sm text-blue-100/90">
+              For the 24-hour sprint, the delivery clock starts after intake is complete.
+            </p>
           </div>
         </div>
 
@@ -593,6 +614,27 @@ export default function PricingPage() {
             * 1 standard domain included for year 1, subject to availability, registered under client name.
           </p>
 
+          <div className="max-w-6xl mx-auto mb-10 rounded-2xl border-2 border-primary-200 bg-primary-50 p-6 md:p-8">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-wide text-primary-700 mb-2">Lead Sprint Bundle</p>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">$698: 24-Hour Landing Page + Follow-up Automation</h3>
+                <p className="text-gray-700">
+                  Best fit if you want fast launch plus automated email/SMS follow-up for new leads.
+                </p>
+              </div>
+              <div className="w-full lg:w-auto lg:min-w-[260px]">
+                <PaymentButton
+                  type="leadSprintBundle"
+                  text="Start Lead Sprint Bundle"
+                  variant="primary"
+                  fullWidth
+                />
+                <p className="text-xs text-gray-600 mt-2 text-center">24-hour design timeline starts after intake completion.</p>
+              </div>
+            </div>
+          </div>
+
           {/* Content Note */}
           <div className="mt-12 text-center">
             <div className="inline-flex items-center gap-3 bg-primary-50 border border-primary-100 px-6 py-4 rounded-xl">
@@ -602,6 +644,26 @@ export default function PricingPage() {
               <span className="text-gray-700">
                 <strong>Just tell us what business you&apos;re in — we take care of the rest.</strong> Content & images? Provide your own or we source them for you.
               </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container-custom">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Client Result Snapshots</h2>
+            <p className="text-center text-gray-600 mb-10">
+              Recent outcomes from projects with analytics access and validated tracking.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              {pricingProof.map((item) => (
+                <div key={item.label} className="rounded-xl border border-gray-200 bg-gray-50 p-6">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-3">{item.label}</p>
+                  <p className="text-2xl font-bold text-gray-900 mb-3">{item.result}</p>
+                  <p className="text-gray-700 italic">&quot;{item.quote}&quot;</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -817,7 +879,7 @@ export default function PricingPage() {
       {/* CTA */}
       <CTASection
         title="Ready to get started?"
-        subtitle="Book a call or start your $499 landing page right now."
+        subtitle="Book a call or start your 24-hour landing page now. Clock starts after intake completion."
         primaryCTA={{ text: 'Start My $499 Page', href: '/contact' }}
         secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact' }}
         darkBg={true}

@@ -97,6 +97,7 @@ Recommended environment variables:
 
 - `NEXT_PUBLIC_GA_ID` - Google Analytics 4 measurement ID (enables analytics event tracking)
 - `NEXT_PUBLIC_STRIPE_LANDING_PAGE_LINK` - Optional override for landing page payment link
+- `NEXT_PUBLIC_STRIPE_LEAD_SPRINT_LINK` - Optional override for Lead Sprint bundle payment link
 - `NEXT_PUBLIC_STRIPE_WEBSITE_DEPOSIT_LINK` - Website deposit payment link
 - `NEXT_PUBLIC_STRIPE_CARE_BASIC_LINK` - Basic care plan payment link
 - `NEXT_PUBLIC_STRIPE_CARE_STANDARD_LINK` - Standard care plan payment link
