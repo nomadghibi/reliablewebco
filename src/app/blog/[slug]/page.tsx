@@ -89,9 +89,25 @@ export default async function BlogArticlePage({ params }: PageProps) {
     day: 'numeric',
   });
 
-  const relatedByCategory = blogPosts.filter((item) => item.slug !== post.slug && item.category === post.category);
-  const relatedFallback = blogPosts.filter((item) => item.slug !== post.slug);
-  const relatedPosts = [...relatedByCategory, ...relatedFallback].slice(0, 3);
+  const relatedPosts = blogPosts
+    .filter((item) => item.slug !== post.slug)
+    .map((item) => {
+      const sharedKeywordScore = item.keywords.filter((keyword) =>
+        post.keywords.some((postKeyword) => postKeyword.toLowerCase() === keyword.toLowerCase())
+      ).length;
+      const sharesCityFocus = item.cityFocus.some((city) =>
+        post.cityFocus.some((postCity) => postCity.toLowerCase() === city.toLowerCase())
+      );
+      const sameCategory = item.category === post.category;
+      const score = sharedKeywordScore * 3 + (sameCategory ? 2 : 0) + (sharesCityFocus ? 1 : 0);
+      return { item, score };
+    })
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return new Date(b.item.publishedAt).getTime() - new Date(a.item.publishedAt).getTime();
+    })
+    .slice(0, 3)
+    .map((entry) => entry.item);
   const longFormSections = getLongFormSections(post);
   const renderedSections = [...post.sections, ...longFormSections];
   const totalWordCount = estimateTotalPostWordCount(post);
@@ -106,6 +122,63 @@ export default async function BlogArticlePage({ params }: PageProps) {
         href: `/services/${service.slug}/${primaryMatchedCity.slug}`,
       }))
     : [];
+  const postKeywordContext = `${post.title} ${post.slug} ${post.category} ${post.keywords.join(' ')}`.toLowerCase();
+  const industryPlaybookLink = postKeywordContext.includes('hvac')
+    ? {
+        href: '/industries/hvac-web-design',
+        label: 'HVAC Industry Playbook',
+      }
+    : postKeywordContext.includes('contractor') ||
+        postKeywordContext.includes('roofing') ||
+        postKeywordContext.includes('remodel') ||
+        postKeywordContext.includes('home service')
+      ? {
+          href: '/industries/contractor-web-design',
+          label: 'Contractor Industry Playbook',
+        }
+      : postKeywordContext.includes('medical') ||
+          postKeywordContext.includes('dental') ||
+          postKeywordContext.includes('clinic') ||
+          postKeywordContext.includes('healthcare')
+        ? {
+            href: '/industries/clinic-web-design',
+            label: 'Clinic Industry Playbook',
+          }
+        : {
+            href: '/industries',
+            label: 'Industry Playbooks',
+          };
+  const locationLink = primaryMatchedCity
+    ? {
+        href: `/locations/${primaryMatchedCity.slug}`,
+        label: `Web Design in ${primaryMatchedCity.city}, FL`,
+      }
+    : {
+        href: '/locations',
+        label: 'Florida Service Areas',
+      };
+  const strategicInternalLinks = [
+    {
+      href: '/pricing',
+      label: 'See Website Packages & Pricing',
+      description: 'Compare fixed-scope options and choose your launch speed.',
+    },
+    {
+      href: industryPlaybookLink.href,
+      label: industryPlaybookLink.label,
+      description: 'Use your industry-specific page model to improve conversions.',
+    },
+    {
+      href: locationLink.href,
+      label: locationLink.label,
+      description: 'Strengthen local relevance with city-focused service structure.',
+    },
+    {
+      href: '/audit',
+      label: 'Get a Free Website Analysis',
+      description: 'Receive a P0/P1/P2 action plan by next business day.',
+    },
+  ];
   const schemaImage = primaryMatchedCity?.image ?? '/api/og';
 
   const blogPostingSchema = {
@@ -247,6 +320,40 @@ export default async function BlogArticlePage({ params }: PageProps) {
             ))}
           </article>
 
+          <section className="mt-10 rounded-xl border border-gray-200 bg-gray-50 p-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Recommended Next Pages</h2>
+            <p className="text-gray-700 mb-5">
+              Continue with these strategic pages to move from planning into measurable growth execution.
+            </p>
+            <div className="grid md:grid-cols-2 gap-3">
+              {strategicInternalLinks.map((linkItem) => (
+                <Link
+                  key={linkItem.href}
+                  href={linkItem.href}
+                  className="rounded-lg border border-gray-200 bg-white px-4 py-3 hover:border-primary-300 transition-colors"
+                >
+                  <p className="font-semibold text-primary-700 mb-1">{linkItem.label}</p>
+                  <p className="text-sm text-gray-600">{linkItem.description}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-10 rounded-xl border-2 border-primary-200 bg-primary-50 p-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Turn This Strategy Into a Live Page</h2>
+            <p className="text-gray-700 mb-6">
+              Start with a conversion-focused sprint or book a short call and we will map your best page path.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link href="/checkout?package=landingPage" className="btn-primary text-center">
+                Start 24-Hour Landing Page
+              </Link>
+              <Link href="/contact#book-call" className="btn-secondary text-center">
+                Book a 10-Minute Call
+              </Link>
+            </div>
+          </section>
+
           <section className="mt-12 rounded-xl border border-primary-200 bg-primary-50 p-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">{post.takeawayTitle}</h2>
             <ul className="space-y-2">
@@ -335,8 +442,15 @@ export default async function BlogArticlePage({ params }: PageProps) {
               If you want this implemented with real scope, timeline, and measurable conversion goals, we can map your plan quickly.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link href="/contact" className="btn-primary">Start My Project</Link>
-              <Link href="/pricing" className="btn-secondary">See Pricing</Link>
+              <Link href="/checkout?package=landingPage" className="btn-primary">
+                Start 24-Hour Landing Page
+              </Link>
+              <Link href="/pricing" className="btn-secondary">
+                See Pricing
+              </Link>
+              <Link href="/audit" className="btn-secondary">
+                Get Free Website Analysis
+              </Link>
             </div>
           </section>
         </div>
@@ -369,8 +483,8 @@ export default async function BlogArticlePage({ params }: PageProps) {
       <CTASection
         title="Ready to Turn Content Strategy Into Revenue?"
         subtitle="We can build the pages, tracking, and local SEO structure behind your growth goals."
-        primaryCTA={{ text: 'Start My Project', href: '/contact' }}
-        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact' }}
+        primaryCTA={{ text: 'Start 24-Hour Landing Page', href: '/checkout?package=landingPage' }}
+        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact#book-call' }}
         darkBg={true}
       />
     </main>
