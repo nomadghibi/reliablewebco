@@ -22,7 +22,7 @@ export default function CheckoutCancelPage() {
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-32 pb-20">
       <div className="container-custom">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="mb-6 flex items-center justify-center gap-3">
+          <div className="mb-6 flex justify-start">
             <button
               type="button"
               onClick={handleGoBack}
@@ -30,12 +30,6 @@ export default function CheckoutCancelPage() {
             >
               ← Back
             </button>
-            <Link
-              href="/pricing"
-              className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:border-primary-300 hover:text-primary-700 transition-colors"
-            >
-              Back to Pricing
-            </Link>
           </div>
 
           {/* Back Icon */}
