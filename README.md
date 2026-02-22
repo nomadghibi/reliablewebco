@@ -75,6 +75,22 @@ npm run dev
 npm run build
 ```
 
+### Release Gate (Before Deploy)
+
+```bash
+npm run release:check
+```
+
+Manual smoke checklist:
+- `/`
+- `/pricing`
+- `/contact`
+- `/checkout/success`
+- `/checkout/cancel`
+- `/audit`
+
+Detailed checklist: `/docs/13-RELEASE-CHECKLIST.md`
+
 ### Start Production Server
 
 ```bash
