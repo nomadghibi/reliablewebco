@@ -24,10 +24,6 @@ export const metadata: Metadata = {
   title: "Reliable Web Studio — Launch a Lead-Generating Website Fast | 24-Hour Landing Pages",
   description: "Get a modern landing page in 24 hours or a complete website in 7 days (up to 8 pages). Fixed price, professional, and built to convert. Generate calls, form leads, and bookings.",
   keywords: "24 hour landing page, website in a week, lead generation website, conversion website, fast website launch",
-  robots: {
-    index: true,
-    follow: true,
-  },
   openGraph: {
     title: "Reliable Web Studio — Launch a Lead-Generating Website Fast",
     description: "Get a modern landing page in 24 hours or a complete website in 7 days (up to 8 pages). Built to generate calls, form leads, and bookings.",
@@ -40,9 +36,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Reliable Web Studio — Launch a Lead-Generating Website Fast",
     description: "Get a modern landing page in 24 hours or a complete website in 7 days (up to 8 pages). Built to generate calls, form leads, and bookings.",
-  },
-  alternates: {
-    canonical: "https://reliablewebstudio.com",
   },
 };
 
