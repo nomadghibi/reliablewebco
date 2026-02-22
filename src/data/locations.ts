@@ -250,6 +250,186 @@ export const floridaLocations: FloridaLocation[] = [
     ],
   },
   {
+    slug: 'satellite-beach-fl',
+    city: 'Satellite Beach',
+    locationType: 'city',
+    county: 'Brevard County',
+    region: 'Space Coast',
+    image: '/images/cities/satellite-beach-fl.png',
+    seoTitle: 'Web Design Satellite Beach FL | Fast, Conversion-Focused Websites',
+    heroH1: 'Web Design in Satellite Beach Built for Leads',
+    summary:
+      'Satellite Beach web design services for local businesses that need stronger local visibility and more qualified inquiries.',
+    localIntent:
+      'Built for beachside service providers, healthcare teams, contractors, and local operators serving Satellite Beach and nearby Space Coast communities.',
+    keywordBuckets: [
+      {
+        bucket: 'Primary Money Keywords',
+        keywords: [
+          'web design satellite beach fl',
+          'website design satellite beach',
+          'web designer satellite beach',
+          'web development satellite beach fl',
+        ],
+      },
+      {
+        bucket: 'Offer-Aligned Keywords',
+        keywords: [
+          'landing page design satellite beach',
+          'small business website satellite beach',
+          'lead generation website satellite beach',
+        ],
+      },
+      {
+        bucket: 'SEO and GBP Keywords',
+        keywords: [
+          'local seo satellite beach fl',
+          'google business profile optimization satellite beach fl',
+        ],
+      },
+    ],
+    detailedIntro: [
+      'Satellite Beach buyers typically choose providers quickly, especially on mobile, so clarity in the first screen matters more than long sales copy. We build pages that open with one clear value promise, one clear action path, and trust signals that reflect local expectations. This structure helps reduce drop-off and improves first-contact conversion for call-driven and quote-driven services.',
+      'For SEO, Satellite Beach pages perform best when they are connected to nearby hubs like Indian Harbour Beach and Melbourne through clean internal linking and distinct local intent copy. We avoid thin duplication by building each page around unique service context, nearby-area relevance, and conversion-focused metadata. The result is stronger local search alignment and a better user path from discovery to inquiry.'
+    ],
+    cityHighlights: [
+      {
+        name: 'Hightower Beach Park',
+        detail:
+          'A recognizable local beach landmark that supports nearby relevance signals for beachside service businesses.',
+        url: 'https://www.satellitebeach.gov/',
+      },
+      {
+        name: 'Pelican Beach Park',
+        detail:
+          'A high-traffic local area where mobile-first discovery and quick service comparison behavior is common.',
+        url: 'https://www.satellitebeach.gov/',
+      },
+      {
+        name: 'A1A Beachside Corridor',
+        detail:
+          'A key route shaping how local providers communicate coverage and response zones in Space Coast markets.',
+        url: 'https://www.visitspacecoast.com/',
+      },
+    ],
+    serviceHighlights: [
+      '24-hour landing pages for fast local campaign launches',
+      'Conversion-first page structure with clear call and form CTAs',
+      'Service-area architecture for city plus nearby-market targeting',
+      'Tracking-ready setup for lead and call measurement',
+    ],
+    buyerBehaviorSignals: [
+      'Satellite Beach visitors often compare two or three providers before calling.',
+      'Mobile click-to-call remains the fastest path to first-contact conversion.',
+      'Local trust cues and service-area clarity reduce hesitation in beachside markets.',
+      'Simple quote forms outperform long multi-step forms for initial inquiries.',
+    ],
+    nearbyAreas: ['Indian Harbour Beach', 'Melbourne', 'Cocoa Beach', 'Patrick Space Force Base'],
+    faq: [
+      {
+        question: 'Can you build a city page that targets Satellite Beach and nearby beachside communities?',
+        answer:
+          'Yes. We create city-focused pages with nearby coverage signals while keeping local content unique and conversion-ready.',
+      },
+      {
+        question: 'Will my Satellite Beach page be ready for both SEO and paid traffic?',
+        answer:
+          'Yes. We structure metadata, page hierarchy, and CTA flow so your page supports organic rankings and campaign landing traffic.',
+      },
+      ...getExpandedCityFaq('Satellite Beach', ['Indian Harbour Beach', 'Melbourne', 'Cocoa Beach', 'Patrick Space Force Base']),
+    ],
+  },
+  {
+    slug: 'indian-harbour-beach-fl',
+    city: 'Indian Harbour Beach',
+    locationType: 'city',
+    county: 'Brevard County',
+    region: 'Space Coast',
+    image: '/images/cities/indian-harbour-beach-fl.png',
+    seoTitle: 'Web Design Indian Harbour Beach FL | Conversion-Ready Local Sites',
+    heroH1: 'Web Design in Indian Harbour Beach That Converts',
+    summary:
+      'Indian Harbour Beach web design services built to improve trust, local rankings, and consistent lead flow.',
+    localIntent:
+      'Ideal for professional services, home services, and local businesses serving Indian Harbour Beach, Eau Gallie, and nearby coastal communities.',
+    keywordBuckets: [
+      {
+        bucket: 'Primary Money Keywords',
+        keywords: [
+          'web design indian harbour beach fl',
+          'website design indian harbour beach',
+          'web designer indian harbour beach',
+          'web development indian harbour beach fl',
+        ],
+      },
+      {
+        bucket: 'Offer-Aligned Keywords',
+        keywords: [
+          'landing page design indian harbour beach',
+          'small business website indian harbour beach',
+          'lead generation website indian harbour beach',
+        ],
+      },
+      {
+        bucket: 'SEO and GBP Keywords',
+        keywords: [
+          'local seo indian harbour beach fl',
+          'google business profile optimization indian harbour beach fl',
+        ],
+      },
+    ],
+    detailedIntro: [
+      'Indian Harbour Beach buyers expect credibility quickly. They want to confirm service fit, local relevance, and response confidence in seconds. We build pages to meet that behavior with focused messaging, strategic trust placement, and direct contact pathways that support both phone-first and form-first users. This helps improve conversion rates without adding design noise or unnecessary friction.',
+      'From an SEO standpoint, Indian Harbour Beach pages are strongest when they connect to nearby markets with clean structure and distinct local messaging. We use clear service intent, internal linking, and conversion-aware metadata to avoid duplicate content while expanding local reach. That creates a practical growth path for businesses that need performance, not just page volume.'
+    ],
+    cityHighlights: [
+      {
+        name: 'Gleason Park',
+        detail:
+          'A central community landmark that supports local context and neighborhood-level service relevance.',
+        url: 'https://www.indianharbourbeach.org/',
+      },
+      {
+        name: 'Bicentennial Beach Park Area',
+        detail:
+          'A beachside destination where mobile discovery behavior influences conversion-focused website design.',
+        url: 'https://www.indianharbourbeach.org/',
+      },
+      {
+        name: 'Eau Gallie and Beachside Connector Routes',
+        detail:
+          'Important travel and service patterns that shape nearby-area targeting and messaging clarity.',
+        url: 'https://www.visitspacecoast.com/',
+      },
+    ],
+    serviceHighlights: [
+      'High-clarity local pages built for service intent',
+      'Fast deployment options for urgent offers and campaigns',
+      'SEO-safe city content expansion across nearby markets',
+      'Lead tracking setup for calls and form completions',
+    ],
+    buyerBehaviorSignals: [
+      'Indian Harbour Beach visitors evaluate trust and service fit before reading deep content.',
+      'Nearby-area coverage clarity helps reduce bounce from comparison traffic.',
+      'Quick-contact options perform better than long engagement funnels for first-touch leads.',
+      'Consistent branding across city and service pages improves close confidence.',
+    ],
+    nearbyAreas: ['Satellite Beach', 'Eau Gallie', 'Melbourne', 'Indialantic'],
+    faq: [
+      {
+        question: 'Can you create a dedicated Indian Harbour Beach page without duplicating nearby city content?',
+        answer:
+          'Yes. We build each city page with unique local framing, distinct FAQs, and supporting internal links to avoid duplication risk.',
+      },
+      {
+        question: 'Do Indian Harbour Beach pages work for both service businesses and professional firms?',
+        answer:
+          'Yes. We adapt structure and messaging to your buying cycle while keeping local SEO and conversion flow aligned.',
+      },
+      ...getExpandedCityFaq('Indian Harbour Beach', ['Satellite Beach', 'Eau Gallie', 'Melbourne', 'Indialantic']),
+    ],
+  },
+  {
     slug: 'brevard-county-fl',
     city: 'Brevard County',
     locationType: 'county',
@@ -284,6 +464,8 @@ export const floridaLocations: FloridaLocation[] = [
     hubLinks: [
       { label: 'Palm Bay City Hub', href: '/locations/palm-bay-fl' },
       { label: 'Melbourne City Hub', href: '/locations/melbourne-fl' },
+      { label: 'Satellite Beach City Hub', href: '/locations/satellite-beach-fl' },
+      { label: 'Indian Harbour Beach City Hub', href: '/locations/indian-harbour-beach-fl' },
       { label: 'Cocoa Beach City Hub', href: '/locations/cocoa-beach-fl' },
       { label: 'Cape Canaveral City Hub', href: '/locations/cape-canaveral-fl' },
       { label: 'Titusville City Hub', href: '/locations/titusville-fl' },
@@ -325,7 +507,16 @@ export const floridaLocations: FloridaLocation[] = [
       'Regional trust increases when city hubs and county hub messaging are aligned.',
       'Call and short-form actions remain the strongest first-contact behavior for local service traffic.',
     ],
-    nearbyAreas: ['Palm Bay', 'Melbourne', 'Cocoa Beach', 'Cape Canaveral', 'Titusville', 'Viera'],
+    nearbyAreas: [
+      'Palm Bay',
+      'Melbourne',
+      'Satellite Beach',
+      'Indian Harbour Beach',
+      'Cocoa Beach',
+      'Cape Canaveral',
+      'Titusville',
+      'Viera'
+    ],
     faq: [
       {
         question: 'Should I target Palm Bay, Melbourne, and Brevard County on separate pages?',
