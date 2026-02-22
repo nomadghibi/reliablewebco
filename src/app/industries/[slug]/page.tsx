@@ -22,7 +22,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const industry = getIndustryBySlug(slug);
 
   if (!industry) {
-    return { title: 'Industry Page Not Found | Reliable Web Studio' };
+    return {
+      title: 'Industry Page Not Found | Reliable Web Studio',
+      description: 'Requested industry playbook could not be found.',
+      alternates: {
+        canonical: 'https://reliablewebstudio.com/industries',
+      },
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
   }
 
   const title = `${industry.name} | Reliable Web Studio`;

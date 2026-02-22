@@ -30,7 +30,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const city = getLocationBySlug(citySlug);
 
   if (!service || !city) {
-    return { title: 'Service Page Not Found | Reliable Web Studio' };
+    return {
+      title: 'Service Page Not Found | Reliable Web Studio',
+      description: 'Requested local service page could not be found.',
+      alternates: {
+        canonical: 'https://reliablewebstudio.com/services',
+      },
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
   }
 
   const title = `${service.name} in ${city.city}, FL | Reliable Web Studio`;

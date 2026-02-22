@@ -11,6 +11,21 @@ export const metadata: Metadata = {
   title: 'GA4 Event & Reporting Map | Reliable Web Studio',
   description:
     'Operational GA4 event naming map, dimensions, and weekly conversion reporting checklist for Reliable Web Studio.',
+  openGraph: {
+    title: 'GA4 Event & Reporting Map | Reliable Web Studio',
+    description:
+      'Operational GA4 event naming map, dimensions, and weekly conversion reporting checklist for Reliable Web Studio.',
+    url: 'https://reliablewebstudio.com/analytics',
+    type: 'website',
+    images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Reliable Web Studio analytics map' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GA4 Event & Reporting Map | Reliable Web Studio',
+    description:
+      'Operational GA4 event naming map, dimensions, and weekly conversion reporting checklist for Reliable Web Studio.',
+    images: ['/api/og'],
+  },
   robots: {
     index: false,
     follow: false,

@@ -56,6 +56,22 @@ const packageContent: Record<
 export const metadata: Metadata = {
   title: 'Checkout | Reliable Web Studio',
   description: 'Secure checkout for Reliable Web Studio packages.',
+  openGraph: {
+    title: 'Checkout | Reliable Web Studio',
+    description: 'Secure checkout for Reliable Web Studio packages.',
+    url: 'https://reliablewebstudio.com/checkout',
+    type: 'website',
+    images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Reliable Web Studio checkout' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Checkout | Reliable Web Studio',
+    description: 'Secure checkout for Reliable Web Studio packages.',
+    images: ['/api/og'],
+  },
+  alternates: {
+    canonical: 'https://reliablewebstudio.com/checkout',
+  },
   robots: {
     index: false,
     follow: false,

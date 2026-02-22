@@ -9,13 +9,13 @@
 Routes reviewed: **22**
 
 ## Summary
-- Canonical coverage: **19/22**
-- OpenGraph coverage: **20/22**
-- Twitter coverage: **20/22**
+- Canonical coverage: **22/22**
+- OpenGraph coverage: **22/22**
+- Twitter coverage: **22/22**
 - H1 coverage: **22/22**
 
 ### Notes
-- `/checkout` and `/analytics` are intentionally noindex operational routes; metadata remains present.
+- `/checkout` and `/analytics` are intentionally noindex operational routes; canonical, OpenGraph, and Twitter metadata are still present for consistency.
 - Internal-link counts are template-level indicators and do not include header/footer links rendered globally.
 
 ## Route Matrix
@@ -32,28 +32,31 @@ Routes reviewed: **22**
 | `/locations` | `src/app/locations/page.tsx` | Yes | Yes | Yes | Yes | 7 |
 | `/locations/[slug]` | `src/app/locations/[slug]/page.tsx` | Yes | Yes | Yes | Yes | 5 |
 | `/services` | `src/app/services/page.tsx` | Yes | Yes | Yes | Yes | 1 |
-| `/services/[service]/[city]` | `src/app/services/[service]/[city]/page.tsx` | No | Yes | Yes | Yes | 7 |
+| `/services/[service]/[city]` | `src/app/services/[service]/[city]/page.tsx` | Yes | Yes | Yes | Yes | 7 |
 | `/industries` | `src/app/industries/page.tsx` | Yes | Yes | Yes | Yes | 1 |
-| `/industries/[slug]` | `src/app/industries/[slug]/page.tsx` | No | Yes | Yes | Yes | 2 |
+| `/industries/[slug]` | `src/app/industries/[slug]/page.tsx` | Yes | Yes | Yes | Yes | 2 |
 | `/platform` | `src/app/platform/page.tsx` | Yes | Yes | Yes | Yes | 6 |
 | `/process` | `src/app/process/page.tsx` | Yes | Yes | Yes | Yes | 0 |
 | `/about` | `src/app/about/page.tsx` | Yes | Yes | Yes | Yes | 2 |
 | `/faq` | `src/app/faq/page.tsx + src/app/faq/layout.tsx` | Yes | Yes | Yes | Yes | 2 |
-| `/checkout` | `src/app/checkout/page.tsx` | No | No | No | Yes | 4 |
+| `/checkout` | `src/app/checkout/page.tsx` | Yes | Yes | Yes | Yes | 4 |
 | `/privacy` | `src/app/privacy/page.tsx` | Yes | Yes | Yes | Yes | 0 |
 | `/terms` | `src/app/terms/page.tsx` | Yes | Yes | Yes | Yes | 0 |
-| `/analytics` | `src/app/analytics/page.tsx` | Yes | No | No | Yes | 6 |
+| `/analytics` | `src/app/analytics/page.tsx` | Yes | Yes | Yes | Yes | 6 |
 
 ## Findings
-- Missing canonical: `/services/[service]/[city]`, `/industries/[slug]`, `/checkout`
-- Missing OpenGraph: `/checkout`, `/analytics`
-- Missing Twitter: `/checkout`, `/analytics`
+- No critical title/canonical/OpenGraph/Twitter coverage gaps found in this route set.
 - Low internal-link density templates (<2 direct links): `/contact (0)`, `/portfolio (0)`, `/services (1)`, `/industries (1)`, `/process (0)`, `/privacy (0)`, `/terms (0)`
 
 ## Actions Completed in This Sweep
 - Added OpenGraph + Twitter metadata to `/audit` via `src/app/audit/layout.tsx`.
 - Added OpenGraph + Twitter metadata to `src/app/privacy/page.tsx` and `src/app/terms/page.tsx`.
 - Added OpenGraph image + Twitter image to `src/app/contact/layout.tsx` and `src/app/faq/layout.tsx`.
+- Added canonical + OpenGraph + Twitter metadata to `src/app/checkout/page.tsx` (retaining `noindex`).
+- Added OpenGraph + Twitter metadata to `src/app/analytics/page.tsx` (retaining `noindex`).
+- Added canonical-safe metadata fallback branches to dynamic routes:
+  - `src/app/services/[service]/[city]/page.tsx`
+  - `src/app/industries/[slug]/page.tsx`
 
 ## Next Recommended Checks
 1. Run monthly crawl diff against sitemap URLs and validate canonical targets resolve 200.
