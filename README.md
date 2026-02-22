@@ -119,6 +119,11 @@ Recommended environment variables:
 - `NEXT_PUBLIC_STRIPE_CARE_STANDARD_LINK` - Standard care plan payment link
 - `NEXT_PUBLIC_STRIPE_CARE_PRO_LINK` - Pro care plan payment link
 
+## Analytics Ops Map
+
+- Internal reporting map page: `/analytics` (noindex)
+- Source docs: `/docs/ANALYTICS.md` and `/docs/09-LOCAL-SEO-TRACKING-MAP.md`
+
 ## Customization
 
 ### Update Contact Information

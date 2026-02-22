@@ -13,10 +13,13 @@ Measure local SEO performance by city and service intent, not just total traffic
 - `cta_primary_click`
 - `cta_call_click`
 - `pricing_view`
+- `section_view`
 - `package_select`
 - `form_start`
 - `form_submit`
 - `outbound_stripe_click`
+
+Reference map: `/analytics` (internal ops page)
 
 ## Required Page-Level Dimensions
 Attach these dimensions to every tracked event where possible:
@@ -30,6 +33,9 @@ Attach these dimensions to every tracked event where possible:
 - `city_slug` (for local pages)
 - `service_slug` (for service+city pages)
 - `cta_location` (header, hero, mid_page, footer)
+- `industry_slug` (industry detail templates)
+- `retainer_tier` (pricing local growth retainer)
+- `section` (for `section_view`)
 
 ## Event Map by Template
 
@@ -48,6 +54,18 @@ Attach these dimensions to every tracked event where possible:
 ### `/blog/[slug]`
 - Internal money-page clicks (pricing/contact) -> `cta_primary_click`
   - params: `page_type=blog`, `blog_slug`, `destination`
+
+### `/industries` and `/industries/[slug]`
+- Section visibility -> `section_view`
+  - params: `section=industries_grid|industry_hero|industry_package_path`
+- CTA interactions -> `cta_primary_click` and `cta_call_click`
+  - params: `industry_slug`, `location`
+
+### `/pricing` (Local Growth Retainer)
+- Section visibility -> `section_view`
+  - params: `section=pricing_local_growth_retainer`
+- Tier CTA interactions -> `cta_primary_click`
+  - params: `retainer_tier=starter|growth|authority`, `location=pricing_local_growth_retainer`
 
 ## Reporting Views (monthly)
 
