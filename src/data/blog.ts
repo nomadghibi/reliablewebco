@@ -2067,3 +2067,61 @@ export function getLatestBlogPosts(limit = blogPosts.length): BlogPost[] {
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .slice(0, limit);
 }
+
+function normalizeCityToken(value: string) {
+  return value.trim().toLowerCase();
+}
+
+export function getBlogPostsForCity(cityName: string, limit = 3): BlogPost[] {
+  const targetCity = normalizeCityToken(cityName);
+  const ranked = blogPosts
+    .map((post) => {
+      let score = 0;
+
+      for (const cityFocus of post.cityFocus) {
+        const normalizedFocus = normalizeCityToken(cityFocus);
+
+        if (normalizedFocus === targetCity) {
+          score += 8;
+          continue;
+        }
+
+        if (normalizedFocus.includes(targetCity) || targetCity.includes(normalizedFocus)) {
+          score += 5;
+          continue;
+        }
+
+        if (normalizedFocus.includes('florida statewide')) {
+          score += 2;
+          continue;
+        }
+
+        if (normalizedFocus.includes('florida')) {
+          score += 1;
+        }
+      }
+
+      if (post.keywords.some((keyword) => normalizeCityToken(keyword).includes(targetCity))) {
+        score += 2;
+      }
+
+      if (['Local SEO', 'Lead Generation', 'Conversion', 'Landing Pages', 'Web Design'].includes(post.category)) {
+        score += 1;
+      }
+
+      return { post, score };
+    })
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return new Date(b.post.publishedAt).getTime() - new Date(a.post.publishedAt).getTime();
+    });
+
+  const primary = ranked.filter((entry) => entry.score > 0).slice(0, limit).map((entry) => entry.post);
+  if (primary.length >= limit) return primary;
+
+  const fallback = getLatestBlogPosts(limit * 2).filter(
+    (post) => !primary.some((selected) => selected.slug === post.slug)
+  );
+
+  return [...primary, ...fallback].slice(0, limit);
+}

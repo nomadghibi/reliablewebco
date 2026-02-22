@@ -8,6 +8,7 @@ import JsonLd from '@/components/JsonLd';
 import LocalIntentCtas from '@/components/LocalIntentCtas';
 import { floridaLocations, getLocationBySlug } from '@/data/locations';
 import { getLocalSeoServiceBySlug, localSeoServiceCityPairs } from '@/data/local-seo';
+import { getBlogPostsForCity } from '@/data/blog';
 
 interface PageProps {
   params: Promise<{
@@ -64,6 +65,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
   if (!service || !city) {
     notFound();
   }
+  const cityBlogPosts = getBlogPostsForCity(city.city, 3);
 
   const serviceUrl = `https://reliablewebstudio.com/services/${service.slug}/${city.slug}`;
   const relatedCitiesByRegion = floridaLocations
@@ -320,6 +322,35 @@ export default async function ServiceCityPage({ params }: PageProps) {
         </div>
       </section>
 
+      {cityBlogPosts.length > 0 && (
+        <section className="section-padding bg-white border-t border-gray-100">
+          <div className="container-custom max-w-6xl">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Related {city.city} SEO Articles
+            </h2>
+            <p className="text-gray-700 mb-6">
+              Continue with local content that supports this service + city conversion strategy.
+            </p>
+            <div className="grid md:grid-cols-3 gap-4">
+              {cityBlogPosts.map((post) => (
+                <article key={post.slug} className="rounded-xl border border-gray-200 bg-gray-50 p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-2">{post.category}</p>
+                  <h3 className="font-bold text-gray-900 mb-2 leading-snug">
+                    <Link href={`/blog/${post.slug}`} className="hover:text-primary-700 transition-colors">
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-4">{post.readingTime}</p>
+                  <Link href={`/blog/${post.slug}`} className="text-sm font-semibold text-primary-700 hover:text-primary-800">
+                    Read article
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
           <div className="rounded-xl border border-gray-200 p-6 md:p-8 bg-gray-50">
@@ -342,8 +373,8 @@ export default async function ServiceCityPage({ params }: PageProps) {
       <CTASection
         title={`Need ${service.name} for ${city.city}?`}
         subtitle="Get a fixed-scope SEO and conversion plan built for local lead generation."
-        primaryCTA={{ text: 'Start My $499 Page', href: '/contact' }}
-        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact' }}
+        primaryCTA={{ text: 'Start 24-Hour Landing Page', href: '/checkout?package=landingPage' }}
+        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact#book-call' }}
         darkBg={true}
         trackingLocation="service_city_cta_section"
         trackingContext={{

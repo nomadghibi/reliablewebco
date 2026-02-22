@@ -8,6 +8,7 @@ import JsonLd from '@/components/JsonLd';
 import LocalIntentCtas from '@/components/LocalIntentCtas';
 import { floridaLocations, getLocationBySlug } from '@/data/locations';
 import { localSeoServices } from '@/data/local-seo';
+import { getBlogPostsForCity } from '@/data/blog';
 
 interface PageProps {
   params: Promise<{
@@ -68,6 +69,7 @@ export default async function LocationPage({ params }: PageProps) {
   if (!location) {
     notFound();
   }
+  const cityBlogPosts = getBlogPostsForCity(location.city, 3);
 
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -316,6 +318,35 @@ export default async function LocationPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {cityBlogPosts.length > 0 && (
+        <section className="section-padding bg-white border-t border-gray-100">
+          <div className="container-custom max-w-6xl">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Local SEO Insights for {location.city}
+            </h2>
+            <p className="text-gray-700 mb-6">
+              Related articles that support this city strategy and connect to high-intent local growth topics.
+            </p>
+            <div className="grid md:grid-cols-3 gap-4">
+              {cityBlogPosts.map((post) => (
+                <article key={post.slug} className="rounded-xl border border-gray-200 bg-gray-50 p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-2">{post.category}</p>
+                  <h3 className="font-bold text-gray-900 mb-2 leading-snug">
+                    <Link href={`/blog/${post.slug}`} className="hover:text-primary-700 transition-colors">
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-4">{post.readingTime}</p>
+                  <Link href={`/blog/${post.slug}`} className="text-sm font-semibold text-primary-700 hover:text-primary-800">
+                    Read article
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="section-padding bg-white border-t border-gray-100">
         <div className="container-custom max-w-6xl">
