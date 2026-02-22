@@ -255,7 +255,7 @@ export const floridaLocations: FloridaLocation[] = [
     locationType: 'county',
     county: 'Brevard County',
     region: 'Space Coast',
-    image: '/images/cities/brevard-county-fl.svg',
+    image: '/images/cities/brevard-county-fl.png',
     seoTitle: 'Web Design Brevard County FL | Palm Bay • Melbourne • Space Coast',
     heroH1: 'Brevard County Web Design for Small Businesses',
     summary:
@@ -284,6 +284,8 @@ export const floridaLocations: FloridaLocation[] = [
     hubLinks: [
       { label: 'Palm Bay City Hub', href: '/locations/palm-bay-fl' },
       { label: 'Melbourne City Hub', href: '/locations/melbourne-fl' },
+      { label: 'Cocoa Beach City Hub', href: '/locations/cocoa-beach-fl' },
+      { label: 'Cape Canaveral City Hub', href: '/locations/cape-canaveral-fl' },
       { label: 'Titusville City Hub', href: '/locations/titusville-fl' },
       { label: 'Florida Locations Overview', href: '/locations' },
     ],
@@ -323,7 +325,7 @@ export const floridaLocations: FloridaLocation[] = [
       'Regional trust increases when city hubs and county hub messaging are aligned.',
       'Call and short-form actions remain the strongest first-contact behavior for local service traffic.',
     ],
-    nearbyAreas: ['Palm Bay', 'Melbourne', 'Titusville', 'Cocoa', 'Rockledge', 'Viera'],
+    nearbyAreas: ['Palm Bay', 'Melbourne', 'Cocoa Beach', 'Cape Canaveral', 'Titusville', 'Viera'],
     faq: [
       {
         question: 'Should I target Palm Bay, Melbourne, and Brevard County on separate pages?',
@@ -350,6 +352,172 @@ export const floridaLocations: FloridaLocation[] = [
         answer:
           'Yes. GBP and local maps relevance are integrated with page structure so search visibility and conversion flow stay aligned.',
       },
+    ],
+  },
+  {
+    slug: 'cocoa-beach-fl',
+    city: 'Cocoa Beach',
+    locationType: 'city',
+    county: 'Brevard County',
+    region: 'Space Coast',
+    image: '/images/cities/cocoa-beach-fl.png',
+    seoTitle: 'Web Design Cocoa Beach FL | Conversion-Focused Websites for Local Businesses',
+    heroH1: 'Web Design in Cocoa Beach Built for Leads',
+    summary:
+      'Cocoa Beach web design services for local businesses that need more calls, bookings, and qualified inquiries.',
+    localIntent:
+      'Built for hospitality, service providers, marine and tourism-adjacent businesses across Cocoa Beach and nearby Space Coast communities.',
+    keywordBuckets: [
+      {
+        bucket: 'Primary Money Keywords',
+        keywords: [
+          'web design cocoa beach fl',
+          'website design cocoa beach',
+          'web designer cocoa beach',
+          'web development cocoa beach fl',
+        ],
+      },
+      {
+        bucket: 'Offer-Aligned Keywords',
+        keywords: [
+          'small business website cocoa beach',
+          'landing page design cocoa beach',
+          'local seo cocoa beach fl',
+        ],
+      },
+    ],
+    detailedIntro: [
+      'Cocoa Beach buyers often compare providers quickly while on mobile, especially when searching after seeing a local map listing. To convert those visits, pages need clear service framing, trust cues, and direct action paths within seconds. We design Cocoa Beach pages with a focused first screen, local proof placement, and CTA structure built for both immediate calls and form-driven lead capture.',
+      'For long-term growth, Cocoa Beach pages work best when they connect to a broader Space Coast content architecture. We align service pages, nearby city hubs, and tracking so local rankings can improve without launching thin duplicate content. This creates a reliable system that supports real lead outcomes, not just page impressions.'
+    ],
+    cityHighlights: [
+      {
+        name: 'Westgate Cocoa Beach Pier',
+        detail:
+          'A major local landmark that supports strong city identity and tourism-adjacent service intent.',
+        url: 'https://cocoabeachpier.com/',
+      },
+      {
+        name: 'Ron Jon Surf Shop District',
+        detail:
+          'High-visibility local corridor useful for city-specific messaging and trust context.',
+        url: 'https://www.ronjonsurfshop.com/',
+      },
+      {
+        name: 'A1A and SR 520 Access Corridors',
+        detail:
+          'Primary movement routes that influence how service-area pages should be structured for nearby coverage.',
+        url: 'https://www.cityofcocoabeach.com/',
+      },
+    ],
+    serviceHighlights: [
+      'Conversion-focused local pages for city and nearby-area intent',
+      'Fast-launch landing pages for seasonal and campaign demand',
+      'Clear CTA and trust structure for mobile-first audiences',
+      'SEO and analytics setup for measurable lead growth',
+    ],
+    buyerBehaviorSignals: [
+      'Mobile-first browsing is dominant for local discovery and first contact.',
+      'Visitors respond to immediate service clarity and nearby-area coverage cues.',
+      'Trust indicators near CTA sections improve quote and booking actions.',
+      'Pages that connect city and nearby intent convert better than isolated pages.',
+    ],
+    nearbyAreas: ['Cape Canaveral', 'Cocoa', 'Merritt Island', 'Satellite Beach'],
+    faq: [
+      {
+        question: 'Can one Cocoa Beach page also target nearby Cape Canaveral traffic?',
+        answer:
+          'Yes. We can structure your page and internal links to support both Cocoa Beach and nearby city intent while keeping content unique.',
+      },
+      {
+        question: 'Do Cocoa Beach pages work for both local residents and visitor-driven demand?',
+        answer:
+          'Yes. We balance local trust messaging with fast action paths so both audience types can convert quickly.',
+      },
+      ...getExpandedCityFaq('Cocoa Beach', ['Cape Canaveral', 'Cocoa', 'Merritt Island', 'Satellite Beach']),
+    ],
+  },
+  {
+    slug: 'cape-canaveral-fl',
+    city: 'Cape Canaveral',
+    locationType: 'city',
+    county: 'Brevard County',
+    region: 'Space Coast',
+    image: '/images/cities/cape-canaveral-fl.png',
+    seoTitle: 'Web Design Cape Canaveral FL | Fast, Conversion-Ready Sites',
+    heroH1: 'Web Design in Cape Canaveral That Converts',
+    summary:
+      'Cape Canaveral web design services for local businesses that need clear offers, stronger visibility, and better lead flow.',
+    localIntent:
+      'Ideal for marine, port-adjacent, hospitality, and service companies competing across Cape Canaveral and nearby Space Coast cities.',
+    keywordBuckets: [
+      {
+        bucket: 'Primary Money Keywords',
+        keywords: [
+          'web design cape canaveral fl',
+          'website design cape canaveral',
+          'web designer cape canaveral',
+          'web development cape canaveral fl',
+        ],
+      },
+      {
+        bucket: 'Offer-Aligned Keywords',
+        keywords: [
+          'landing page design cape canaveral',
+          'small business website cape canaveral',
+          'local seo cape canaveral fl',
+        ],
+      },
+    ],
+    detailedIntro: [
+      'Cape Canaveral businesses typically serve mixed audiences across residents, commuters, and visitor traffic, so clarity is critical. We design pages around one clear service promise and one clear action path so users do not lose momentum. That structure improves conversion reliability, especially for call-driven and short-form lead generation workflows.',
+      'From an SEO perspective, Cape Canaveral pages should connect tightly with neighboring city hubs like Cocoa Beach and Merritt Island. We build that internal architecture with distinct local messaging and clean linking so you avoid thin duplication while expanding local reach. The result is a page system that supports both ranking and revenue outcomes.'
+    ],
+    cityHighlights: [
+      {
+        name: 'Port Canaveral',
+        detail:
+          'One of the region’s strongest commercial anchors and a key local intent signal for many business categories.',
+        url: 'https://www.portcanaveral.com/',
+      },
+      {
+        name: 'Jetty Park Area',
+        detail:
+          'A known local destination that reinforces place-based messaging for nearby service coverage.',
+        url: 'https://www.portcanaveral.com/Recreation/Jetty-Park',
+      },
+      {
+        name: 'Cape Canaveral City Center',
+        detail:
+          'Core municipal context that supports trust and location relevance in local service pages.',
+        url: 'https://www.cityofcapecanaveral.org/',
+      },
+    ],
+    serviceHighlights: [
+      'High-clarity city pages for local search and map traffic',
+      'Conversion-first CTA flow for call and form lead capture',
+      'Scalable structure linked to nearby Space Coast hubs',
+      'Tracking setup for action-level performance reporting',
+    ],
+    buyerBehaviorSignals: [
+      'Users make faster decisions when service area and offer are explicit above the fold.',
+      'Nearby-city relevance improves confidence for broad service teams.',
+      'Click-to-call remains a top conversion path for local intent traffic.',
+      'Trust and process clarity reduce drop-off on first visit.',
+    ],
+    nearbyAreas: ['Cocoa Beach', 'Merritt Island', 'Cocoa', 'Titusville'],
+    faq: [
+      {
+        question: 'Should Cape Canaveral have its own city hub page?',
+        answer:
+          'Yes. A dedicated city hub improves local relevance and gives you room for city-specific proof, FAQs, and internal links.',
+      },
+      {
+        question: 'Can you link Cape Canaveral coverage with Cocoa Beach and other nearby cities?',
+        answer:
+          'Yes. We build a connected hub model so nearby city pages support each other without duplicate thin content.',
+      },
+      ...getExpandedCityFaq('Cape Canaveral', ['Cocoa Beach', 'Merritt Island', 'Cocoa', 'Titusville']),
     ],
   },
   {
