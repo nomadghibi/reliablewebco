@@ -23,30 +23,30 @@ Routes reviewed: **22**
 |---|---|---:|---:|---:|---:|---:|
 | `/` | `src/app/page.tsx` | Yes | Yes | Yes | Yes | 32 |
 | `/pricing` | `src/app/pricing/page.tsx` | Yes | Yes | Yes | Yes | 15 |
-| `/contact` | `src/app/contact/page.tsx + src/app/contact/layout.tsx` | Yes | Yes | Yes | Yes | 0 |
+| `/contact` | `src/app/contact/page.tsx + src/app/contact/layout.tsx` | Yes | Yes | Yes | Yes | 4 |
 | `/audit` | `src/app/audit/page.tsx + src/app/audit/layout.tsx` | Yes | Yes | Yes | Yes | 4 |
 | `/blog` | `src/app/blog/page.tsx` | Yes | Yes | Yes | Yes | 4 |
 | `/blog/[slug]` | `src/app/blog/[slug]/page.tsx` | Yes | Yes | Yes | Yes | 19 |
-| `/portfolio` | `src/app/portfolio/page.tsx` | Yes | Yes | Yes | Yes | 0 |
+| `/portfolio` | `src/app/portfolio/page.tsx` | Yes | Yes | Yes | Yes | 3 |
 | `/portfolio/[slug]` | `src/app/portfolio/[slug]/page.tsx` | Yes | Yes | Yes | Yes | 3 |
 | `/locations` | `src/app/locations/page.tsx` | Yes | Yes | Yes | Yes | 7 |
 | `/locations/[slug]` | `src/app/locations/[slug]/page.tsx` | Yes | Yes | Yes | Yes | 5 |
-| `/services` | `src/app/services/page.tsx` | Yes | Yes | Yes | Yes | 1 |
+| `/services` | `src/app/services/page.tsx` | Yes | Yes | Yes | Yes | 4 |
 | `/services/[service]/[city]` | `src/app/services/[service]/[city]/page.tsx` | Yes | Yes | Yes | Yes | 7 |
-| `/industries` | `src/app/industries/page.tsx` | Yes | Yes | Yes | Yes | 1 |
+| `/industries` | `src/app/industries/page.tsx` | Yes | Yes | Yes | Yes | 4 |
 | `/industries/[slug]` | `src/app/industries/[slug]/page.tsx` | Yes | Yes | Yes | Yes | 2 |
 | `/platform` | `src/app/platform/page.tsx` | Yes | Yes | Yes | Yes | 6 |
-| `/process` | `src/app/process/page.tsx` | Yes | Yes | Yes | Yes | 0 |
+| `/process` | `src/app/process/page.tsx` | Yes | Yes | Yes | Yes | 4 |
 | `/about` | `src/app/about/page.tsx` | Yes | Yes | Yes | Yes | 2 |
 | `/faq` | `src/app/faq/page.tsx + src/app/faq/layout.tsx` | Yes | Yes | Yes | Yes | 2 |
 | `/checkout` | `src/app/checkout/page.tsx` | Yes | Yes | Yes | Yes | 4 |
-| `/privacy` | `src/app/privacy/page.tsx` | Yes | Yes | Yes | Yes | 0 |
-| `/terms` | `src/app/terms/page.tsx` | Yes | Yes | Yes | Yes | 0 |
+| `/privacy` | `src/app/privacy/page.tsx` | Yes | Yes | Yes | Yes | 3 |
+| `/terms` | `src/app/terms/page.tsx` | Yes | Yes | Yes | Yes | 3 |
 | `/analytics` | `src/app/analytics/page.tsx` | Yes | Yes | Yes | Yes | 6 |
 
 ## Findings
 - No critical title/canonical/OpenGraph/Twitter coverage gaps found in this route set.
-- Low internal-link density templates (<2 direct links): `/contact (0)`, `/portfolio (0)`, `/services (1)`, `/industries (1)`, `/process (0)`, `/privacy (0)`, `/terms (0)`
+- No templates in this route set remain below the `<2 direct internal links` threshold.
 
 ## Actions Completed in This Sweep
 - Added OpenGraph + Twitter metadata to `/audit` via `src/app/audit/layout.tsx`.
@@ -57,6 +57,14 @@ Routes reviewed: **22**
 - Added canonical-safe metadata fallback branches to dynamic routes:
   - `src/app/services/[service]/[city]/page.tsx`
   - `src/app/industries/[slug]/page.tsx`
+- Increased internal-link density with static related-page link clusters:
+  - `src/app/contact/page.tsx`
+  - `src/app/portfolio/page.tsx`
+  - `src/app/process/page.tsx`
+  - `src/app/services/page.tsx`
+  - `src/app/industries/page.tsx`
+  - `src/app/privacy/page.tsx`
+  - `src/app/terms/page.tsx`
 
 ## Next Recommended Checks
 1. Run monthly crawl diff against sitemap URLs and validate canonical targets resolve 200.

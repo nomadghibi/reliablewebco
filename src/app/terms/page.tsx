@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | Reliable Web Studio',
@@ -177,6 +178,18 @@ export default function TermsPage() {
                 </a>
               </li>
             </ul>
+
+            <div className="not-prose mt-10 rounded-xl border border-gray-200 bg-gray-50 p-6">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">Related Pages</h2>
+              <p className="text-gray-700 mb-4">
+                Use these pages to review package scope, process, and privacy details.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/pricing" className="btn-secondary">Pricing</Link>
+                <Link href="/process" className="btn-secondary">Process</Link>
+                <Link href="/privacy" className="btn-secondary">Privacy Policy</Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

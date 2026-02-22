@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Reliable Web Studio',
@@ -140,6 +141,18 @@ export default function PrivacyPage() {
                 </a>
               </li>
             </ul>
+
+            <div className="not-prose mt-10 rounded-xl border border-gray-200 bg-gray-50 p-6">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">Related Pages</h2>
+              <p className="text-gray-700 mb-4">
+                Review service terms, pricing, and contact options before starting your project.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/terms" className="btn-secondary">Terms of Service</Link>
+                <Link href="/pricing" className="btn-secondary">Pricing</Link>
+                <Link href="/contact" className="btn-secondary">Contact</Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

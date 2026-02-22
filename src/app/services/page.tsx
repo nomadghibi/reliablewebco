@@ -61,6 +61,20 @@ export default function ServicesPage() {
           <p className="text-blue-200">
             Choose a service model, then drill down into your target Florida city pages.
           </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link href="/industries" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20">
+              Industry Playbooks
+            </Link>
+            <Link href="/locations" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20">
+              Florida Locations
+            </Link>
+            <Link href="/portfolio" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20">
+              View Portfolio
+            </Link>
+            <Link href="/pricing" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20">
+              Compare Pricing
+            </Link>
+          </div>
         </div>
       </section>
 

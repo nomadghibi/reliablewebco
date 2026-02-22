@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import JsonLd from '@/components/JsonLd';
 import SectionViewTracker from '@/components/SectionViewTracker';
@@ -59,6 +60,20 @@ export default function IndustriesPage() {
           <p className="text-blue-200">
             Built for local service businesses that need calls, estimate requests, and booked appointments.
           </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link href="/services" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20">
+              Service + City Pages
+            </Link>
+            <Link href="/locations" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20">
+              Florida Locations
+            </Link>
+            <Link href="/portfolio" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20">
+              View Portfolio
+            </Link>
+            <Link href="/contact" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20">
+              Start a Project
+            </Link>
+          </div>
         </div>
       </section>
 

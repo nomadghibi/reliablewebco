@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
@@ -375,6 +376,23 @@ export default function ProcessPage() {
                 <p className="text-3xl font-bold text-primary-600 mb-2">$3,500-$4,500</p>
                 <p className="text-gray-700">50% deposit, 50% before launch</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="max-w-5xl mx-auto rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Continue Your Launch Path</h2>
+            <p className="text-gray-700 mb-6">
+              Compare packages, review live work, and book your intake when you are ready.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <Link href="/pricing" className="btn-secondary text-center">View Pricing</Link>
+              <Link href="/portfolio" className="btn-secondary text-center">See Portfolio</Link>
+              <Link href="/contact#book-call" className="btn-secondary text-center">Book 10-Min Call</Link>
+              <Link href="/audit" className="btn-secondary text-center">Free Website Analysis</Link>
             </div>
           </div>
         </div>

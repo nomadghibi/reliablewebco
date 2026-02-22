@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
+import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import JsonLd from '@/components/JsonLd';
 import PortfolioGrid from '@/components/PortfolioGrid';
@@ -92,6 +93,12 @@ export default function PortfolioPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m5.96 5.96a14.926 14.926 0 01-5.84 2.58m0 0a6 6 0 01-7.38-5.84h4.8" />
               </svg>
               <span className="text-sm md:text-base font-medium">Built on Florida&apos;s Space Coast - Serving Businesses Nationwide</span>
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <Link href="/pricing" className="btn-primary">See Pricing</Link>
+              <Link href="/services" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20">Explore Services</Link>
+              <Link href="/contact" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20">Start My Project</Link>
             </div>
           </div>
         </div>

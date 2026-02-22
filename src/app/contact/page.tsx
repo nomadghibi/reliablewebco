@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import PaymentButton from '@/components/PaymentButton';
 import { trackEvent } from '@/lib/analytics';
@@ -800,6 +801,19 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="max-w-7xl mx-auto mt-8 rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Explore Related Pages Before You Decide</h3>
+            <p className="text-gray-600 mb-5">
+              Compare packages, review real examples, and see how the build process works before we start.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/pricing" className="btn-secondary">View Pricing</Link>
+              <Link href="/portfolio" className="btn-secondary">Review Portfolio</Link>
+              <Link href="/process" className="btn-secondary">See Process</Link>
+              <Link href="/audit" className="btn-secondary">Get Free Website Analysis</Link>
             </div>
           </div>
         </div>
