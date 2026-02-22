@@ -37,8 +37,8 @@ export default function PaymentButton({
 
   const widthClass = fullWidth ? 'w-full text-center' : '';
 
-  // If not configured, link to contact page instead
-  const href = isConfigured ? payment.url : '/contact';
+  // Route through in-site checkout page so users always have visible back navigation.
+  const href = isConfigured ? `/checkout?package=${type}` : '/contact';
 
   const handleClick = () => {
     trackEvent('package_select', {
@@ -54,12 +54,6 @@ export default function PaymentButton({
       });
     }
 
-    if (isConfigured) {
-      trackEvent('outbound_stripe_click', {
-        package_type: type,
-        destination: payment.url,
-      });
-    }
   };
 
   return (

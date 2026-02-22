@@ -10,7 +10,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const landingPageUrl = PAYMENT_LINKS.landingPage.url;
   const isLandingPageConfigured = isPaymentConfigured(landingPageUrl);
-  const landingPageHref = isLandingPageConfigured ? landingPageUrl : '/contact';
+  const landingPageHref = isLandingPageConfigured ? '/checkout?package=landingPage' : '/contact';
 
   const trackLandingPageClick = () => {
     trackEvent('cta_primary_click', {
@@ -23,13 +23,6 @@ export default function Header() {
       location: 'header',
     });
 
-    if (isLandingPageConfigured) {
-      trackEvent('outbound_stripe_click', {
-        package_type: 'landingPage',
-        destination: landingPageUrl,
-        location: 'header',
-      });
-    }
   };
 
   useEffect(() => {

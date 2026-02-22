@@ -8,7 +8,7 @@ export default function CheckoutCancelPage() {
   const router = useRouter();
   const landingPageUrl = PAYMENT_LINKS.landingPage.url;
   const isLandingPageConfigured = isPaymentConfigured(landingPageUrl);
-  const landingPageHref = isLandingPageConfigured ? landingPageUrl : '/contact';
+  const landingPageHref = isLandingPageConfigured ? '/checkout?package=landingPage' : '/contact';
 
   const handleGoBack = () => {
     if (typeof window !== 'undefined' && window.history.length > 1) {
