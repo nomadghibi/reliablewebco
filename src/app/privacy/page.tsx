@@ -3,6 +3,19 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy | Reliable Web Studio',
   description: 'Privacy policy for Reliable Web Studio.',
+  openGraph: {
+    title: 'Privacy Policy | Reliable Web Studio',
+    description: 'Read the Privacy Policy for Reliable Web Studio.',
+    url: 'https://reliablewebstudio.com/privacy',
+    type: 'website',
+    images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Reliable Web Studio Privacy Policy' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | Reliable Web Studio',
+    description: 'Read the Privacy Policy for Reliable Web Studio.',
+    images: ['/api/og'],
+  },
   alternates: {
     canonical: 'https://reliablewebstudio.com/privacy',
   },

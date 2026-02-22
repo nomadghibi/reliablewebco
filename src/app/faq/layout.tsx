@@ -11,12 +11,14 @@ export const metadata: Metadata = {
       'Get answers about our 24-hour landing pages, website-in-a-week builds, pricing, revisions, hosting, and more.',
     url: 'https://reliablewebstudio.com/faq',
     type: 'website',
+    images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Reliable Web Studio FAQ' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'FAQ — Fast Website Development Questions Answered | Reliable Web Studio',
     description:
       'Get answers about our 24-hour landing pages, website-in-a-week builds, pricing, revisions, hosting, and more.',
+    images: ['/api/og'],
   },
   alternates: {
     canonical: 'https://reliablewebstudio.com/faq',
