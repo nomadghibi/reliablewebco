@@ -4,7 +4,7 @@
  * To set up:
  * 1. Go to https://dashboard.stripe.com/payment-links
  * 2. Create a payment link for each product
- * 3. Replace the placeholder URLs below with your actual Stripe payment links
+ * 3. Add links to .env.local using NEXT_PUBLIC_STRIPE_* variables
  *
  * Free to create - you only pay standard Stripe fees (2.9% + 30¢) when someone pays
  */
@@ -34,9 +34,9 @@ export const isPaymentConfigured = (linkUrl: string) => {
   }
 };
 
-const resolvePaymentUrl = (envUrl: string | undefined, fallbackUrl: string) => {
+const resolvePaymentUrl = (envUrl: string | undefined) => {
   if (envUrl && isPaymentConfigured(envUrl)) return envUrl;
-  return fallbackUrl;
+  return '';
 };
 
 export const PAYMENT_LINKS = {
@@ -44,31 +44,21 @@ export const PAYMENT_LINKS = {
   landingPage: {
     price: 499,
     label: '24-Hour Landing Page',
-    url: resolvePaymentUrl(
-      process.env.NEXT_PUBLIC_STRIPE_LANDING_PAGE_LINK,
-      'https://buy.stripe.com/28E28r2dh7xw81B5t0dUY09'
-    ),
+    url: resolvePaymentUrl(process.env.NEXT_PUBLIC_STRIPE_LANDING_PAGE_LINK),
   },
 
   // Lead Sprint Bundle - $698 ($499 page + $199 automation)
   leadSprintBundle: {
     price: 698,
     label: 'Lead Sprint Bundle',
-    url: resolvePaymentUrl(
-      process.env.NEXT_PUBLIC_STRIPE_LEAD_SPRINT_LINK,
-      'https://buy.stripe.com/PLACEHOLDER_LEAD_SPRINT_BUNDLE'
-    ),
+    url: resolvePaymentUrl(process.env.NEXT_PUBLIC_STRIPE_LEAD_SPRINT_LINK),
   },
 
   // Website-in-a-Week Deposit - $1,000
   websiteDeposit: {
     price: 1000,
     label: 'Website-in-a-Week Deposit',
-    // Replace with your actual Stripe payment link
-    url: resolvePaymentUrl(
-      process.env.NEXT_PUBLIC_STRIPE_WEBSITE_DEPOSIT_LINK,
-      'https://buy.stripe.com/PLACEHOLDER_WEBSITE_DEPOSIT'
-    ),
+    url: resolvePaymentUrl(process.env.NEXT_PUBLIC_STRIPE_WEBSITE_DEPOSIT_LINK),
   },
 
   // Care Plan - Basic $99/mo
@@ -76,11 +66,7 @@ export const PAYMENT_LINKS = {
     price: 99,
     label: 'Basic Care Plan',
     recurring: true,
-    // Replace with your actual Stripe payment link
-    url: resolvePaymentUrl(
-      process.env.NEXT_PUBLIC_STRIPE_CARE_BASIC_LINK,
-      'https://buy.stripe.com/PLACEHOLDER_CARE_BASIC'
-    ),
+    url: resolvePaymentUrl(process.env.NEXT_PUBLIC_STRIPE_CARE_BASIC_LINK),
   },
 
   // Care Plan - Standard $199/mo
@@ -88,11 +74,7 @@ export const PAYMENT_LINKS = {
     price: 199,
     label: 'Standard Care Plan',
     recurring: true,
-    // Replace with your actual Stripe payment link
-    url: resolvePaymentUrl(
-      process.env.NEXT_PUBLIC_STRIPE_CARE_STANDARD_LINK,
-      'https://buy.stripe.com/PLACEHOLDER_CARE_STANDARD'
-    ),
+    url: resolvePaymentUrl(process.env.NEXT_PUBLIC_STRIPE_CARE_STANDARD_LINK),
   },
 
   // Care Plan - Pro $299/mo
@@ -100,10 +82,6 @@ export const PAYMENT_LINKS = {
     price: 299,
     label: 'Pro Care Plan',
     recurring: true,
-    // Replace with your actual Stripe payment link
-    url: resolvePaymentUrl(
-      process.env.NEXT_PUBLIC_STRIPE_CARE_PRO_LINK,
-      'https://buy.stripe.com/PLACEHOLDER_CARE_PRO'
-    ),
+    url: resolvePaymentUrl(process.env.NEXT_PUBLIC_STRIPE_CARE_PRO_LINK),
   },
 } as const;

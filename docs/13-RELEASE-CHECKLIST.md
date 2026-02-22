@@ -31,6 +31,7 @@ For each page, confirm:
 - Mobile layout is usable
 
 ## 3) Revenue and Lead Flow Checks
+- Stripe env links are configured for active offers (`NEXT_PUBLIC_STRIPE_*`)
 - Pricing/checkout CTAs route correctly
 - Contact form submits successfully
 - Audit form submits successfully
@@ -43,4 +44,3 @@ For each page, confirm:
 
 ## 5) Launch Decision
 Deploy only when sections 1-4 are complete.
-
