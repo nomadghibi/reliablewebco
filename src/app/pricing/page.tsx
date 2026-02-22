@@ -5,6 +5,7 @@ import CTASection from '@/components/CTASection';
 import PaymentButton from '@/components/PaymentButton';
 import JsonLd from '@/components/JsonLd';
 import SectionViewTracker from '@/components/SectionViewTracker';
+import TrackedLink from '@/components/TrackedLink';
 
 export const metadata: Metadata = {
   title: 'Pricing — 24-Hour Landing Pages ($499) | Reliable Web Studio',
@@ -889,6 +890,7 @@ export default function PricingPage() {
       {/* Local Growth Retainer */}
       <section id="local-growth-retainer" className="py-16 md:py-24 bg-gray-50">
         <div className="container-custom">
+          <SectionViewTracker eventName="section_view" sectionName="pricing_local_growth_retainer" />
           <div className="max-w-4xl mx-auto text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-wide text-primary-700 mb-2">Conversion SEO</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Local Growth Retainer</h2>
@@ -907,7 +909,18 @@ export default function PricingPage() {
                 <li>• Monthly reporting for search + lead actions</li>
                 <li>• 1 conversion improvement per month</li>
               </ul>
-              <Link href="/contact" className="btn-secondary w-full text-center">Request Starter Plan</Link>
+              <TrackedLink
+                href="/contact"
+                className="btn-secondary w-full text-center"
+                eventName="cta_primary_click"
+                eventParams={{
+                  cta_text: 'Request Starter Plan',
+                  location: 'pricing_local_growth_retainer',
+                  retainer_tier: 'starter',
+                }}
+              >
+                Request Starter Plan
+              </TrackedLink>
             </article>
 
             <article className="bg-white rounded-xl border-2 border-primary-500 p-6 shadow-lg">
@@ -920,7 +933,18 @@ export default function PricingPage() {
                 <li>• GBP updates + review response templates</li>
                 <li>• Quarterly conversion tune-up</li>
               </ul>
-              <Link href="/contact" className="btn-primary w-full text-center">Request Growth Plan</Link>
+              <TrackedLink
+                href="/contact"
+                className="btn-primary w-full text-center"
+                eventName="cta_primary_click"
+                eventParams={{
+                  cta_text: 'Request Growth Plan',
+                  location: 'pricing_local_growth_retainer',
+                  retainer_tier: 'growth',
+                }}
+              >
+                Request Growth Plan
+              </TrackedLink>
             </article>
 
             <article className="bg-white rounded-xl border border-gray-200 p-6">
@@ -932,7 +956,18 @@ export default function PricingPage() {
                 <li>• Monthly conversion experiments</li>
                 <li>• Monthly strategy call</li>
               </ul>
-              <Link href="/contact" className="btn-secondary w-full text-center">Request Authority Plan</Link>
+              <TrackedLink
+                href="/contact"
+                className="btn-secondary w-full text-center"
+                eventName="cta_primary_click"
+                eventParams={{
+                  cta_text: 'Request Authority Plan',
+                  location: 'pricing_local_growth_retainer',
+                  retainer_tier: 'authority',
+                }}
+              >
+                Request Authority Plan
+              </TrackedLink>
             </article>
           </div>
         </div>

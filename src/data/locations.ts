@@ -13,11 +13,44 @@ export interface FloridaLocation {
     url: string;
   }>;
   serviceHighlights: string[];
+  buyerBehaviorSignals: string[];
   nearbyAreas: string[];
   faq: Array<{
     question: string;
     answer: string;
   }>;
+}
+
+function getExpandedCityFaq(city: string, nearbyAreas: string[]) {
+  const nearbyText = nearbyAreas.slice(0, 2).join(' and ');
+
+  return [
+    {
+      question: `How long does a ${city} website project usually take?`,
+      answer:
+        'Most projects launch in 24 hours for sprint pages or 5 to 7 days for full website scopes after intake is completed.',
+    },
+    {
+      question: `Can you target both ${city} and nearby areas like ${nearbyText}?`,
+      answer:
+        'Yes. We structure pages so city and nearby-area relevance are clear without duplicating weak content.',
+    },
+    {
+      question: `Will my ${city} page be mobile-optimized for call-heavy traffic?`,
+      answer:
+        'Yes. We prioritize mobile CTA visibility, fast load performance, and low-friction forms for local conversion flow.',
+    },
+    {
+      question: `Do you set up SEO tracking for ${city} page performance?`,
+      answer:
+        'Yes. We configure key events like call clicks and form actions so you can monitor conversion outcomes by page.',
+    },
+    {
+      question: `Can you scale from one ${city} landing page into a full multi-page site later?`,
+      answer:
+        'Yes. We build with scalable architecture so you can expand service and city coverage without rebuilding from scratch.',
+    },
+  ];
 }
 
 export const floridaLocations: FloridaLocation[] = [
@@ -61,6 +94,12 @@ export const floridaLocations: FloridaLocation[] = [
       'Lead capture setup with call, form, and booking CTAs',
       'Local SEO structure for service + city search intent',
     ],
+    buyerBehaviorSignals: [
+      'Palm Bay buyers compare providers quickly and favor pages with immediate service clarity.',
+      'Emergency and same-week service intent is common, especially for HVAC and home services.',
+      'Mobile call actions outperform long-form journeys for first-contact conversion.',
+      'Neighborhood-level trust references improve response rates in competitive categories.',
+    ],
     nearbyAreas: ['West Melbourne', 'Malabar', 'Bayside Lakes', 'Grant-Valkaria'],
     faq: [
       {
@@ -73,6 +112,7 @@ export const floridaLocations: FloridaLocation[] = [
         answer:
           'Yes. The 24-hour landing page sprint is designed for fast go-live with clear conversion-focused messaging.',
       },
+      ...getExpandedCityFaq('Palm Bay', ['West Melbourne', 'Malabar', 'Bayside Lakes', 'Grant-Valkaria']),
     ],
   },
   {
@@ -115,6 +155,12 @@ export const floridaLocations: FloridaLocation[] = [
       'Mobile-first layouts with fast performance',
       'Analytics-ready conversion funnels',
     ],
+    buyerBehaviorSignals: [
+      'Melbourne prospects often validate trust signals before comparing pricing details.',
+      'Beachside and mainland audiences respond to service-area clarity in the hero section.',
+      'Mobile-first decision behavior makes click-to-call placement a primary conversion driver.',
+      'Professional tone and polished design strongly impact first-contact confidence.',
+    ],
     nearbyAreas: ['Eau Gallie', 'Indian Harbour Beach', 'Satellite Beach', 'West Melbourne'],
     faq: [
       {
@@ -127,6 +173,7 @@ export const floridaLocations: FloridaLocation[] = [
         answer:
           'Yes. We can either rebuild the full site or create high-converting pages that improve your current lead flow.',
       },
+      ...getExpandedCityFaq('Melbourne', ['Eau Gallie', 'Indian Harbour Beach', 'Satellite Beach', 'West Melbourne']),
     ],
   },
   {
@@ -169,6 +216,12 @@ export const floridaLocations: FloridaLocation[] = [
       'Structured metadata and schema support',
       'Clear trust signals for local buyers',
     ],
+    buyerBehaviorSignals: [
+      'Titusville users respond well to straightforward service/process messaging over brand-heavy copy.',
+      'Service-area certainty matters for users comparing providers across North Brevard routes.',
+      'Quick response expectations are high for home-service and specialty repair traffic.',
+      'Visible phone actions reduce hesitation for referral-driven local visitors.',
+    ],
     nearbyAreas: ['Mims', 'Port St. John', 'Cocoa', 'Merritt Island'],
     faq: [
       {
@@ -180,6 +233,7 @@ export const floridaLocations: FloridaLocation[] = [
         question: 'How fast can a Titusville landing page be published?',
         answer: 'As soon as intake is complete, we can deliver the first version within 24 hours for sprint projects.',
       },
+      ...getExpandedCityFaq('Titusville', ['Mims', 'Port St. John', 'Cocoa', 'Merritt Island']),
     ],
   },
   {
@@ -222,6 +276,12 @@ export const floridaLocations: FloridaLocation[] = [
       'Schema markup for better search understanding',
       'Scalable content setup for growth campaigns',
     ],
+    buyerBehaviorSignals: [
+      'Viera visitors typically expect premium presentation before initiating contact.',
+      'Higher-ticket services convert better with stronger trust proof near every CTA.',
+      'Multi-location comparison behavior is common for medical, legal, and premium home services.',
+      'Concise, high-credibility copy outperforms long generic service descriptions.',
+    ],
     nearbyAreas: ['Suntree', 'Rockledge', 'Melbourne', 'Cocoa'],
     faq: [
       {
@@ -233,6 +293,7 @@ export const floridaLocations: FloridaLocation[] = [
         question: 'Can you include booking and payment integrations?',
         answer: 'Yes. We regularly implement Calendly, Stripe, and custom lead-routing workflows.',
       },
+      ...getExpandedCityFaq('Viera', ['Suntree', 'Rockledge', 'Melbourne', 'Cocoa']),
     ],
   },
   {
@@ -275,6 +336,12 @@ export const floridaLocations: FloridaLocation[] = [
       'Conversion copy focused on offer clarity and urgency',
       'Event tracking for CTA and funnel optimization',
     ],
+    buyerBehaviorSignals: [
+      'Orlando buyers compare multiple providers quickly, so positioning speed is critical.',
+      'Paid-traffic visitors convert better when ad copy and landing-page offer language match exactly.',
+      'Competitive service categories require stronger proof and differentiation near contact points.',
+      'City + nearby-suburb coverage messaging improves confidence for broader service teams.',
+    ],
     nearbyAreas: ['Winter Park', 'Lake Nona', 'Kissimmee', 'Maitland'],
     faq: [
       {
@@ -287,6 +354,7 @@ export const floridaLocations: FloridaLocation[] = [
         answer:
           'In most cases yes, especially if Orlando is a priority market. It improves topical relevance and internal linking structure.',
       },
+      ...getExpandedCityFaq('Orlando', ['Winter Park', 'Lake Nona', 'Kissimmee', 'Maitland']),
     ],
   },
   {
@@ -329,6 +397,12 @@ export const floridaLocations: FloridaLocation[] = [
       'Mobile-first UX and page-speed optimization',
       'Analytics setup for outbound click and form tracking',
     ],
+    buyerBehaviorSignals: [
+      'Tampa users respond to offer clarity and response-time confidence in the first screen.',
+      'Multi-suburb coverage requires clean location relevance to avoid page intent confusion.',
+      'Local trust signals near forms improve quote completion rates.',
+      'Mobile users often choose providers based on fast CTA access over long page exploration.',
+    ],
     nearbyAreas: ['Brandon', 'Riverview', 'Temple Terrace', 'South Tampa'],
     faq: [
       {
@@ -341,6 +415,7 @@ export const floridaLocations: FloridaLocation[] = [
         answer:
           'Yes. We cover technical foundation, content structure, and conversion-focused UX as one scope.',
       },
+      ...getExpandedCityFaq('Tampa', ['Brandon', 'Riverview', 'Temple Terrace', 'South Tampa']),
     ],
   },
   {
@@ -383,6 +458,12 @@ export const floridaLocations: FloridaLocation[] = [
       'Fast deployment options for time-sensitive campaigns',
       'Technical setup for indexing and crawl clarity',
     ],
+    buyerBehaviorSignals: [
+      'Jacksonville buyers from different neighborhoods need location-aware messaging to trust fit.',
+      'Broad service-area businesses convert better when page navigation separates services clearly.',
+      'First-contact actions trend toward phone and short forms for high-intent local traffic.',
+      'Decision-stage proof (projects, testimonials, guarantees) helps reduce comparison friction.',
+    ],
     nearbyAreas: ['Orange Park', 'Arlington', 'Mandarin', 'Atlantic Beach'],
     faq: [
       {
@@ -395,6 +476,7 @@ export const floridaLocations: FloridaLocation[] = [
         answer:
           'We configure tracking for key CTA interactions and form activity so you can see what drives real inquiries.',
       },
+      ...getExpandedCityFaq('Jacksonville', ['Orange Park', 'Arlington', 'Mandarin', 'Atlantic Beach']),
     ],
   },
 ];

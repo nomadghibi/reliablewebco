@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import JsonLd from '@/components/JsonLd';
+import SectionViewTracker from '@/components/SectionViewTracker';
+import TrackedLink from '@/components/TrackedLink';
 import { industryPlaybooks } from '@/data/industries';
 
 export const metadata: Metadata = {
@@ -63,6 +64,7 @@ export default function IndustriesPage() {
 
       <section className="section-padding bg-white">
         <div className="container-custom">
+          <SectionViewTracker eventName="section_view" sectionName="industries_grid" />
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {industryPlaybooks.map((industry) => (
               <article key={industry.slug} className="rounded-2xl border border-gray-200 bg-gray-50 p-6">
@@ -78,9 +80,18 @@ export default function IndustriesPage() {
                     </li>
                   ))}
                 </ul>
-                <Link href={`/industries/${industry.slug}`} className="btn-secondary w-full text-center">
+                <TrackedLink
+                  href={`/industries/${industry.slug}`}
+                  className="btn-secondary w-full text-center"
+                  eventName="cta_primary_click"
+                  eventParams={{
+                    cta_text: `View ${industry.shortName} Playbook`,
+                    location: 'industries_grid',
+                    industry_slug: industry.slug,
+                  }}
+                >
                   View {industry.shortName} Playbook
-                </Link>
+                </TrackedLink>
               </article>
             ))}
           </div>
@@ -93,6 +104,8 @@ export default function IndustriesPage() {
         primaryCTA={{ text: 'Start 24-Hour Landing Page', href: '/checkout?package=landingPage' }}
         secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact#book-call' }}
         darkBg={true}
+        trackingLocation="industries_cta_section"
+        trackingContext={{ page_type: 'industries_overview' }}
       />
     </main>
   );

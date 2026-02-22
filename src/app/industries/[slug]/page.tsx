@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
 import JsonLd from '@/components/JsonLd';
+import SectionViewTracker from '@/components/SectionViewTracker';
+import TrackedLink from '@/components/TrackedLink';
 import { getIndustryBySlug, industryPlaybooks } from '@/data/industries';
 
 interface PageProps {
@@ -124,6 +125,7 @@ export default async function IndustryPage({ params }: PageProps) {
 
       <section className="section-padding bg-gradient-to-b from-primary-50 to-white">
         <div className="container-custom max-w-6xl">
+          <SectionViewTracker eventName="section_view" sectionName="industry_hero" />
           <Breadcrumbs
             items={[
               { label: 'Home', href: '/' },
@@ -141,12 +143,30 @@ export default async function IndustryPage({ params }: PageProps) {
             <p className="mt-4 text-gray-600">Ideal for: {industry.idealFor}</p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/checkout?package=landingPage" className="btn-primary">
+              <TrackedLink
+                href="/checkout?package=landingPage"
+                className="btn-primary"
+                eventName="cta_primary_click"
+                eventParams={{
+                  cta_text: 'Start 24-Hour Landing Page',
+                  location: 'industry_hero',
+                  industry_slug: industry.slug,
+                }}
+              >
                 Start 24-Hour Landing Page
-              </Link>
-              <Link href="/contact#book-call" className="btn-secondary">
+              </TrackedLink>
+              <TrackedLink
+                href="/contact#book-call"
+                className="btn-secondary"
+                eventName="cta_call_click"
+                eventParams={{
+                  cta_text: 'Book a 10-Minute Call',
+                  location: 'industry_hero',
+                  industry_slug: industry.slug,
+                }}
+              >
                 Book a 10-Minute Call
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </div>
@@ -189,15 +209,26 @@ export default async function IndustryPage({ params }: PageProps) {
 
       <section className="section-padding bg-gray-50">
         <div className="container-custom max-w-6xl">
+          <SectionViewTracker eventName="section_view" sectionName="industry_package_path" />
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">Recommended Build Path</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {industry.packagePath.map((step) => (
               <article key={step.title} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
                 <p className="text-gray-700 mb-6">{step.detail}</p>
-                <Link href={step.ctaHref} className="btn-secondary w-full text-center">
+                <TrackedLink
+                  href={step.ctaHref}
+                  className="btn-secondary w-full text-center"
+                  eventName="cta_primary_click"
+                  eventParams={{
+                    cta_text: step.ctaLabel,
+                    location: 'industry_package_path',
+                    industry_slug: industry.slug,
+                    package_step: step.title,
+                  }}
+                >
                   {step.ctaLabel}
-                </Link>
+                </TrackedLink>
               </article>
             ))}
           </div>
@@ -224,6 +255,8 @@ export default async function IndustryPage({ params }: PageProps) {
         primaryCTA={{ text: 'Start 24-Hour Landing Page', href: '/checkout?package=landingPage' }}
         secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact#book-call' }}
         darkBg={true}
+        trackingLocation="industry_detail_cta_section"
+        trackingContext={{ page_type: 'industry_detail', industry_slug: industry.slug }}
       />
     </main>
   );

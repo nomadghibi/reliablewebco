@@ -232,6 +232,24 @@ export default async function LocationPage({ params }: PageProps) {
           </article>
         </div>
 
+        <div className="container-custom max-w-6xl mb-12">
+          <article className="rounded-xl border border-gray-200 bg-gray-50 p-6 md:p-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              How {location.city} Buyers Choose Providers
+            </h2>
+            <p className="text-gray-700 mb-6">
+              These buyer-behavior patterns shape page structure, CTA placement, and trust messaging for better local conversions.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {location.buyerBehaviorSignals.map((signal) => (
+                <div key={signal} className="rounded-lg border border-gray-200 bg-white px-4 py-3">
+                  <p className="text-sm text-gray-700">{signal}</p>
+                </div>
+              ))}
+            </div>
+          </article>
+        </div>
+
         <div className="container-custom max-w-6xl grid lg:grid-cols-2 gap-8">
           <article className="rounded-xl border border-gray-200 p-6 bg-gray-50">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">What We Build for {location.city} Businesses</h2>
@@ -330,8 +348,8 @@ export default async function LocationPage({ params }: PageProps) {
       <CTASection
         title={`Need a ${location.city}-Focused Site That Converts?`}
         subtitle="Get a fixed-scope plan, transparent timeline, and a clear launch path."
-        primaryCTA={{ text: 'Start My $499 Page', href: '/contact' }}
-        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact' }}
+        primaryCTA={{ text: 'Start 24-Hour Landing Page', href: '/checkout?package=landingPage' }}
+        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact#book-call' }}
         darkBg={true}
         trackingLocation="location_cta_section"
         trackingContext={{

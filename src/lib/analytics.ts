@@ -2,6 +2,7 @@ export type AnalyticsEventName =
   | 'cta_primary_click'
   | 'cta_call_click'
   | 'pricing_view'
+  | 'section_view'
   | 'package_select'
   | 'form_start'
   | 'form_submit'
