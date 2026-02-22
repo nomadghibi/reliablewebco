@@ -7,12 +7,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.reliablewebstudio.com" }],
-        destination: "https://reliablewebstudio.com/:path*",
-        permanent: true,
-      },
-      {
         source: "/index.html",
         destination: "/",
         permanent: true,
