@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const cityTitle = `Web Design in ${location.city}, FL | Reliable Web Studio`;
+  const cityTitle = location.seoTitle ?? `Web Design in ${location.city}, FL | Reliable Web Studio`;
   const description = `${location.summary} ${location.localIntent}`;
 
   return {
@@ -74,7 +74,7 @@ export default async function LocationPage({ params }: PageProps) {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: `Web Design Services in ${location.city}, Florida`,
+    name: `Web Design Services in ${location.city}${location.locationType === 'county' ? ', FL' : ', Florida'}`,
     serviceType: 'Web Design and Local SEO Website Development',
     provider: {
       '@type': 'Organization',
@@ -84,7 +84,7 @@ export default async function LocationPage({ params }: PageProps) {
       email: 'hello@reliablewebstudio.com',
     },
     areaServed: {
-      '@type': 'City',
+      '@type': location.locationType === 'county' ? 'AdministrativeArea' : 'City',
       name: location.city,
       containedInPlace: {
         '@type': 'State',
@@ -197,7 +197,7 @@ export default async function LocationPage({ params }: PageProps) {
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-5">
-                Web Design in {location.city}, Florida
+                {location.heroH1 ?? `Web Design in ${location.city}, Florida`}
               </h1>
               <p className="text-xl text-gray-700 mb-4">{location.summary}</p>
               <p className="text-lg text-gray-600 mb-8">{location.localIntent}</p>
@@ -252,6 +252,34 @@ export default async function LocationPage({ params }: PageProps) {
           </article>
         </div>
 
+        {location.keywordBuckets && location.keywordBuckets.length > 0 && (
+          <div className="container-custom max-w-6xl mb-12">
+            <article className="rounded-xl border border-gray-200 bg-white p-6 md:p-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                {location.city} Keyword Targets
+              </h2>
+              <p className="text-gray-700 mb-6">
+                These phrases are mapped to this page and supporting internal links to capture city and regional commercial intent.
+              </p>
+              <div className="grid lg:grid-cols-3 gap-5">
+                {location.keywordBuckets.map((bucket) => (
+                  <article key={bucket.bucket} className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                    <h3 className="text-base font-bold text-gray-900 mb-3">{bucket.bucket}</h3>
+                    <ul className="space-y-2 text-sm text-gray-700">
+                      {bucket.keywords.map((keyword) => (
+                        <li key={keyword} className="flex items-start gap-2">
+                          <span className="text-primary-700 font-bold">•</span>
+                          <span>{keyword}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            </article>
+          </div>
+        )}
+
         <div className="container-custom max-w-6xl grid lg:grid-cols-2 gap-8">
           <article className="rounded-xl border border-gray-200 p-6 bg-gray-50">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">What We Build for {location.city} Businesses</h2>
@@ -266,9 +294,13 @@ export default async function LocationPage({ params }: PageProps) {
           </article>
 
           <article className="rounded-xl border border-gray-200 p-6 bg-gray-50">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Nearby Areas We Support</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              {location.locationType === 'county' ? 'Cities and Communities We Support' : 'Nearby Areas We Support'}
+            </h2>
             <p className="text-gray-700 mb-4">
-              In addition to {location.city}, we commonly build pages for nearby markets and neighborhoods:
+              {location.locationType === 'county'
+                ? `Across ${location.city}, we commonly build pages for these priority cities and communities:`
+                : `In addition to ${location.city}, we commonly build pages for nearby markets and neighborhoods:`}
             </p>
             <div className="flex flex-wrap gap-2 mb-6">
               {location.nearbyAreas.map((area) => (
@@ -277,31 +309,76 @@ export default async function LocationPage({ params }: PageProps) {
                 </span>
               ))}
             </div>
-            <p className="text-sm text-gray-600">
-              Need multi-city coverage? We can create a structured service + location content model that scales.
-            </p>
+            {location.hubLinks && location.hubLinks.length > 0 ? (
+              <div>
+                <p className="text-sm text-gray-600 mb-3">
+                  Jump directly into city hubs:
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {location.hubLinks.map((hub) => (
+                    <Link
+                      key={hub.href}
+                      href={hub.href}
+                      className="inline-flex items-center rounded-md border border-gray-200 bg-white px-3 py-1.5 text-sm font-semibold text-primary-700 hover:border-primary-300 hover:text-primary-800"
+                    >
+                      {hub.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <p className="text-sm text-gray-600">
+                Need multi-city coverage? We can create a structured service + location content model that scales.
+              </p>
+            )}
           </article>
         </div>
       </section>
 
       <section className="section-padding bg-white border-t border-gray-100">
         <div className="container-custom max-w-6xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Popular Service Pages for {location.city}</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            {location.locationType === 'county'
+              ? `Regional Service Paths for ${location.city}`
+              : `Popular Service Pages for ${location.city}`}
+          </h2>
           <p className="text-gray-700 mb-6">
-            These pages target service + city intent combinations for stronger local SEO coverage and clearer conversion paths.
+            {location.locationType === 'county'
+              ? 'Use this county hub to route visitors into city hubs and core service pages without creating thin duplicate location pages.'
+              : 'These pages target service + city intent combinations for stronger local SEO coverage and clearer conversion paths.'}
           </p>
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-            {localSeoServices.map((service) => (
+
+          {location.locationType === 'county' ? (
+            <div className="grid md:grid-cols-2 gap-4">
               <Link
-                key={`${service.slug}-${location.slug}`}
-                href={`/services/${service.slug}/${location.slug}`}
+                href="/services"
                 className="block rounded-lg border border-gray-200 bg-gray-50 p-4 hover:border-primary-300 hover:shadow-sm transition-all"
               >
-                <h3 className="font-bold text-gray-900 mb-1">{service.name}</h3>
-                <p className="text-sm text-gray-600">{location.city}, FL</p>
+                <h3 className="font-bold text-gray-900 mb-1">Service + City SEO Framework</h3>
+                <p className="text-sm text-gray-600">View all service paths and city coverage options.</p>
               </Link>
-            ))}
-          </div>
+              <Link
+                href="/industries"
+                className="block rounded-lg border border-gray-200 bg-gray-50 p-4 hover:border-primary-300 hover:shadow-sm transition-all"
+              >
+                <h3 className="font-bold text-gray-900 mb-1">Industry Conversion Playbooks</h3>
+                <p className="text-sm text-gray-600">See HVAC, contractor, and clinic implementation tracks.</p>
+              </Link>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+              {localSeoServices.map((service) => (
+                <Link
+                  key={`${service.slug}-${location.slug}`}
+                  href={`/services/${service.slug}/${location.slug}`}
+                  className="block rounded-lg border border-gray-200 bg-gray-50 p-4 hover:border-primary-300 hover:shadow-sm transition-all"
+                >
+                  <h3 className="font-bold text-gray-900 mb-1">{service.name}</h3>
+                  <p className="text-sm text-gray-600">{location.city}, FL</p>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

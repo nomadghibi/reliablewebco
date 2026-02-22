@@ -52,10 +52,12 @@ export const localSeoServices: LocalSeoService[] = [
 ];
 
 export const localSeoServiceCityPairs = localSeoServices.flatMap((service) =>
-  floridaLocations.map((location) => ({
+  floridaLocations
+    .filter((location) => location.locationType !== 'county')
+    .map((location) => ({
     serviceSlug: service.slug,
     citySlug: location.slug,
-  }))
+    }))
 );
 
 export function getLocalSeoServiceBySlug(slug: string): LocalSeoService | undefined {

@@ -9,7 +9,7 @@ import { localSeoServices } from '@/data/local-seo';
 export const metadata: Metadata = {
   title: 'Florida Web Design Service Areas | Reliable Web Studio',
   description:
-    'Explore our Florida web design service areas. Find city-focused landing page and website builds across Palm Bay, Melbourne, Orlando, Tampa, Jacksonville, and more.',
+    'Explore our Florida web design service areas. Find city and county-focused landing page and website builds across Palm Bay, Melbourne, Brevard County, Orlando, Tampa, Jacksonville, and more.',
   openGraph: {
     title: 'Florida Web Design Service Areas | Reliable Web Studio',
     description:
@@ -68,10 +68,10 @@ export default function LocationsPage() {
               Web Design Service Areas Across Florida
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-4">
-              City-focused landing pages and websites for local businesses that need calls, leads, and bookings.
+              City and county-focused landing pages for local businesses that need calls, leads, and bookings.
             </p>
             <p className="text-base md:text-lg text-blue-200">
-              Built in Palm Bay, serving teams across the Space Coast and statewide markets.
+              Built in Palm Bay, serving Palm Bay, Melbourne, Brevard County, and statewide Florida markets.
             </p>
           </div>
         </div>
@@ -86,9 +86,9 @@ export default function LocationsPage() {
       <section className="section-padding bg-white" aria-labelledby="areas-heading">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 id="areas-heading" className="heading-lg mb-4">Choose Your City</h2>
+            <h2 id="areas-heading" className="heading-lg mb-4">Choose Your Location</h2>
             <p className="text-xl text-gray-700">
-              Each location page includes city-specific messaging, SEO structure, and a direct launch path.
+              Each location page includes local messaging, SEO structure, and a direct launch path.
             </p>
           </div>
 

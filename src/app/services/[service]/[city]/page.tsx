@@ -79,12 +79,14 @@ export default async function ServiceCityPage({ params }: PageProps) {
 
   const serviceUrl = `https://reliablewebstudio.com/services/${service.slug}/${city.slug}`;
   const relatedCitiesByRegion = floridaLocations
-    .filter((item) => item.slug !== city.slug && item.region === city.region)
+    .filter((item) => item.locationType !== 'county' && item.slug !== city.slug && item.region === city.region)
     .slice(0, 3);
   const relatedCities =
     relatedCitiesByRegion.length > 0
       ? relatedCitiesByRegion
-      : floridaLocations.filter((item) => item.slug !== city.slug).slice(0, 3);
+      : floridaLocations
+        .filter((item) => item.locationType !== 'county' && item.slug !== city.slug)
+        .slice(0, 3);
   const executionPrioritiesByService: Record<string, string[]> = {
     'landing-page-design': [
       'Lead with one primary offer and one primary CTA above the fold.',

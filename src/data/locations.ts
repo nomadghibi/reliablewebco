@@ -1,11 +1,22 @@
 export interface FloridaLocation {
   slug: string;
   city: string;
+  locationType?: 'city' | 'county';
   county: string;
   region: string;
   image: string;
+  seoTitle?: string;
+  heroH1?: string;
   summary: string;
   localIntent: string;
+  keywordBuckets?: Array<{
+    bucket: string;
+    keywords: string[];
+  }>;
+  hubLinks?: Array<{
+    label: string;
+    href: string;
+  }>;
   detailedIntro: string[];
   cityHighlights: Array<{
     name: string;
@@ -57,13 +68,46 @@ export const floridaLocations: FloridaLocation[] = [
   {
     slug: 'palm-bay-fl',
     city: 'Palm Bay',
+    locationType: 'city',
     county: 'Brevard County',
     region: 'Space Coast',
     image: '/images/cities/palm-bay-fl.svg',
+    seoTitle: 'Web Design Palm Bay FL | 24-Hour Landing Pages + Websites in a Week',
+    heroH1: 'Web Design in Palm Bay That Generates Calls',
     summary:
-      'Conversion-focused web design for Palm Bay service businesses that need faster calls, form leads, and bookings.',
+      'Web design Palm Bay FL service teams use to generate more calls, quote requests, and booked jobs.',
     localIntent:
-      'Built for HVAC, cleaning, home services, and healthcare businesses competing in Palm Bay and surrounding Brevard neighborhoods.',
+      'Built for HVAC, cleaning, home services, and healthcare businesses competing in Palm Bay, FL and nearby Brevard neighborhoods.',
+    keywordBuckets: [
+      {
+        bucket: 'Primary Money Keywords',
+        keywords: [
+          'web design palm bay fl',
+          'website design palm bay',
+          'web designer palm bay',
+          'web design company palm bay',
+          'website development palm bay fl',
+        ],
+      },
+      {
+        bucket: 'Offer-Aligned Keywords',
+        keywords: [
+          'landing page design palm bay',
+          'small business website palm bay',
+          'lead generation website palm bay',
+          'website redesign palm bay',
+          'fast website design palm bay',
+        ],
+      },
+      {
+        bucket: 'SEO and GBP Keywords',
+        keywords: [
+          'local seo palm bay',
+          'google business profile optimization palm bay',
+          'google maps optimization palm bay',
+        ],
+      },
+    ],
     detailedIntro: [
       'Palm Bay businesses usually do not have a traffic problem first. They have a clarity problem. People land on the site, scan for a few seconds, and leave if the service promise is vague or the next step is not obvious. Our approach for Palm Bay pages is to remove that friction immediately. We structure the first screen around one clear service outcome, one clear action, and localized trust signals that reflect how real customers in Brevard evaluate providers. Instead of generic copy, we use practical intent language that matches what buyers search when they need help now.',
       'From a local SEO perspective, Palm Bay pages work best when they are part of a connected structure, not isolated landing pages. We build city pages, service pages, and support content so internal links reinforce commercial intent and nearby area relevance. This improves crawl clarity and helps visitors move from discovery to action without confusion. The result is a site that supports both ranking growth and lead quality, with conversion tracking in place so you can see what pages produce real calls and form submissions.'
@@ -103,9 +147,9 @@ export const floridaLocations: FloridaLocation[] = [
     nearbyAreas: ['West Melbourne', 'Malabar', 'Bayside Lakes', 'Grant-Valkaria'],
     faq: [
       {
-        question: 'Do you build pages specifically for Palm Bay neighborhoods?',
+        question: 'Do you build pages specifically for Palm Bay neighborhoods and local search terms?',
         answer:
-          'Yes. We structure location intent around your real service area so your pages match how customers search in and around Palm Bay.',
+          'Yes. We structure location intent around your real service area so your pages match terms like web design Palm Bay FL and nearby service-area searches.',
       },
       {
         question: 'Can you launch quickly for a new Palm Bay business?',
@@ -118,13 +162,42 @@ export const floridaLocations: FloridaLocation[] = [
   {
     slug: 'melbourne-fl',
     city: 'Melbourne',
+    locationType: 'city',
     county: 'Brevard County',
     region: 'Space Coast',
     image: '/images/cities/melbourne-fl.svg',
+    seoTitle: 'Web Design Melbourne FL | Conversion-First Sites Built Fast',
+    heroH1: 'Web Design in Melbourne Built to Convert',
     summary:
-      'Professional website design for Melbourne, FL companies that need stronger trust, better local visibility, and consistent lead flow.',
+      'Professional web design Melbourne FL companies use to improve trust, local visibility, and consistent lead flow.',
     localIntent:
       'Ideal for contractors, clinics, legal services, and local operators serving Melbourne, Eau Gallie, and nearby coastal areas.',
+    keywordBuckets: [
+      {
+        bucket: 'Primary Money Keywords',
+        keywords: [
+          'web design melbourne fl',
+          'website design melbourne fl',
+          'web designer melbourne fl',
+          'web development melbourne fl',
+        ],
+      },
+      {
+        bucket: 'Offer-Aligned Keywords',
+        keywords: [
+          'landing page design melbourne fl',
+          'small business website melbourne',
+          'lead generation website melbourne',
+        ],
+      },
+      {
+        bucket: 'SEO and GBP Keywords',
+        keywords: [
+          'local seo melbourne fl',
+          'google business profile optimization melbourne fl',
+        ],
+      },
+    ],
     detailedIntro: [
       'Melbourne buyers compare options quickly, especially on mobile, and most decisions are made before they read long copy blocks. That is why we treat your Melbourne website like a sales system, not a brochure. We focus on offer clarity, credibility positioning, and direct call-to-action flow so visitors know exactly what you do, where you serve, and why your team is the safe choice. We also map the page hierarchy around real decision points, including urgency, service fit, and contact confidence.',
       'For ongoing SEO value, Melbourne pages need both topical depth and local context. We build that with service-focused pages tied to city relevance through clean internal linking, schema support, and conversion-focused metadata. This keeps content expansion organized as your coverage grows into nearby markets like Eau Gallie and Satellite Beach. Instead of publishing disconnected pages, you get a repeatable framework that helps rankings improve while keeping lead quality and operational clarity high over time.'
@@ -169,11 +242,114 @@ export const floridaLocations: FloridaLocation[] = [
           'No. Most projects are for local small-to-mid-size service businesses that need results quickly.',
       },
       {
-        question: 'Can you improve my current site instead of rebuilding from scratch?',
+        question: 'Can you improve my current Melbourne site instead of rebuilding from scratch?',
         answer:
-          'Yes. We can either rebuild the full site or create high-converting pages that improve your current lead flow.',
+          'Yes. We can either rebuild the full site or create high-converting pages that improve current performance for web design Melbourne FL and related local search intent.',
       },
       ...getExpandedCityFaq('Melbourne', ['Eau Gallie', 'Indian Harbour Beach', 'Satellite Beach', 'West Melbourne']),
+    ],
+  },
+  {
+    slug: 'brevard-county-fl',
+    city: 'Brevard County',
+    locationType: 'county',
+    county: 'Brevard County',
+    region: 'Space Coast',
+    image: '/images/cities/brevard-county-fl.svg',
+    seoTitle: 'Web Design Brevard County FL | Palm Bay • Melbourne • Space Coast',
+    heroH1: 'Brevard County Web Design for Small Businesses',
+    summary:
+      'Brevard County web design services for Palm Bay, Melbourne, and Space Coast businesses that need stronger lead flow.',
+    localIntent:
+      'Built for multi-city service businesses that need one conversion-focused website system across Brevard County, FL.',
+    keywordBuckets: [
+      {
+        bucket: 'Primary Money Keywords',
+        keywords: [
+          'web design brevard county',
+          'website design brevard county fl',
+          'web development brevard county',
+          'seo brevard county',
+        ],
+      },
+      {
+        bucket: 'Service-Area Keywords',
+        keywords: [
+          'web design space coast',
+          'web designer space coast fl',
+          'seo space coast',
+        ],
+      },
+    ],
+    hubLinks: [
+      { label: 'Palm Bay City Hub', href: '/locations/palm-bay-fl' },
+      { label: 'Melbourne City Hub', href: '/locations/melbourne-fl' },
+      { label: 'Titusville City Hub', href: '/locations/titusville-fl' },
+      { label: 'Florida Locations Overview', href: '/locations' },
+    ],
+    detailedIntro: [
+      'County-level intent in Brevard is different from city-specific intent. Buyers searching web design Brevard County or web design Space Coast usually want one provider who can support multiple nearby cities without fragmented messaging. This page is built as that regional bridge. It connects Palm Bay, Melbourne, Titusville, and nearby communities into a clear service-area structure while keeping conversion paths simple for high-intent visitors.',
+      'The county hub works best when it links to strong city hubs, not duplicated service pages. We use this page to strengthen topical authority for regional keywords, reinforce internal linking between city assets, and help business owners evaluate one scalable plan. That approach improves crawl clarity, avoids thin templated pages, and supports a cleaner expansion path as your local coverage grows.'
+    ],
+    cityHighlights: [
+      {
+        name: 'Brevard County Government',
+        detail:
+          'Official county resource that reflects service-area boundaries and local civic context used in location messaging.',
+        url: 'https://www.brevardfl.gov/',
+      },
+      {
+        name: 'Space Coast Office of Tourism',
+        detail:
+          'Regional destination and business visibility signal frequently referenced in Space Coast market positioning.',
+        url: 'https://www.visitspacecoast.com/',
+      },
+      {
+        name: 'Economic Development Commission of Florida’s Space Coast',
+        detail:
+          'Regional business growth signal useful for framing county-level expansion and multi-city service coverage.',
+        url: 'https://www.spacecoastedc.org/',
+      },
+    ],
+    serviceHighlights: [
+      'County-wide website strategy linked to city hub pages',
+      'Lead generation layouts for multi-city service teams',
+      'Conversion tracking setup by page and offer',
+      'Regional internal-link architecture for local SEO growth',
+    ],
+    buyerBehaviorSignals: [
+      'County-level searchers usually compare providers that can serve multiple nearby cities.',
+      'Service-area clarity across Palm Bay, Melbourne, and surrounding communities reduces lead friction.',
+      'Regional trust increases when city hubs and county hub messaging are aligned.',
+      'Call and short-form actions remain the strongest first-contact behavior for local service traffic.',
+    ],
+    nearbyAreas: ['Palm Bay', 'Melbourne', 'Titusville', 'Cocoa', 'Rockledge', 'Viera'],
+    faq: [
+      {
+        question: 'Should I target Palm Bay, Melbourne, and Brevard County on separate pages?',
+        answer:
+          'Yes. Keep city hubs for high-intent city searches and use a county hub to connect regional service coverage without duplicating thin pages.',
+      },
+      {
+        question: 'Can one website target web design Brevard County and web design Space Coast searches?',
+        answer:
+          'Yes. We use county hub architecture plus city hubs so regional and city intent are both covered with clear internal linking.',
+      },
+      {
+        question: 'Do county pages replace city pages for local SEO?',
+        answer:
+          'No. County pages are best used as bridges and authority pages. City hubs still handle most direct conversion intent.',
+      },
+      {
+        question: 'Can you map service coverage across Palm Bay, Melbourne, and nearby Brevard cities?',
+        answer:
+          'Yes. We structure coverage so visitors and search engines can understand exactly where you operate and what services are available.',
+      },
+      {
+        question: 'Do you include GBP and maps-focused optimization in county strategy?',
+        answer:
+          'Yes. GBP and local maps relevance are integrated with page structure so search visibility and conversion flow stay aligned.',
+      },
     ],
   },
   {

@@ -46,7 +46,9 @@ const servicesSchema = {
 };
 
 export default function ServicesPage() {
-  const featuredCities = floridaLocations.slice(0, 4);
+  const featuredCities = floridaLocations
+    .filter((location) => location.locationType !== 'county')
+    .slice(0, 4);
 
   return (
     <main className="pt-20 bg-white">
