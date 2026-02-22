@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import PaymentButton from '@/components/PaymentButton';
@@ -130,6 +131,30 @@ const pricingSchema = {
       priceCurrency: 'USD',
       category: 'WebSiteMaintenance',
     },
+    {
+      '@type': 'Offer',
+      name: 'Local Growth Retainer — Starter',
+      url: 'https://reliablewebstudio.com/pricing#local-growth-retainer',
+      price: '600',
+      priceCurrency: 'USD',
+      category: 'LocalSEOService',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Local Growth Retainer — Growth',
+      url: 'https://reliablewebstudio.com/pricing#local-growth-retainer',
+      price: '1200',
+      priceCurrency: 'USD',
+      category: 'LocalSEOService',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Local Growth Retainer — Authority',
+      url: 'https://reliablewebstudio.com/pricing#local-growth-retainer',
+      price: '2000',
+      priceCurrency: 'USD',
+      category: 'LocalSEOService',
+    },
   ],
 };
 
@@ -138,16 +163,22 @@ const pricingProof = [
     label: 'Contractor Launch',
     result: '+42% call clicks in first month',
     quote: 'Call quality improved and we stopped missing mobile leads.',
+    image: '/images/portfolio/flippersremodeling.jpg',
+    alt: 'Contractor website project preview',
   },
   {
     label: 'Home Service Rebuild',
     result: '2.0x quote requests after relaunch',
     quote: 'Clear CTA structure made it easier for visitors to act.',
+    image: '/images/portfolio/rjdrycleaners.jpg',
+    alt: 'Home service website project preview',
   },
   {
     label: 'Clinic Landing Sprint',
     result: '+54% consult form submissions',
     quote: 'Fast delivery plus better conversion flow made a clear difference.',
+    image: '/images/portfolio/ezzydental.jpg',
+    alt: 'Clinic landing page project preview',
   },
 ];
 
@@ -659,6 +690,15 @@ export default function PricingPage() {
             <div className="grid md:grid-cols-3 gap-6">
               {pricingProof.map((item) => (
                 <div key={item.label} className="rounded-xl border border-gray-200 bg-gray-50 p-6">
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-gray-200 mb-4">
+                    <Image
+                      src={item.image}
+                      alt={item.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover object-top"
+                    />
+                  </div>
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-3">{item.label}</p>
                   <p className="text-2xl font-bold text-gray-900 mb-3">{item.result}</p>
                   <p className="text-gray-700 italic">&quot;{item.quote}&quot;</p>
@@ -846,6 +886,58 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Local Growth Retainer */}
+      <section id="local-growth-retainer" className="py-16 md:py-24 bg-gray-50">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-wide text-primary-700 mb-2">Conversion SEO</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Local Growth Retainer</h2>
+            <p className="text-xl text-gray-700">
+              We build the conversion asset first, then grow it with high-intent local content and monthly optimization.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <article className="bg-white rounded-xl border border-gray-200 p-6">
+              <h3 className="text-2xl font-bold mb-2">Starter</h3>
+              <p className="text-4xl font-bold text-gray-900 mb-5">$600<span className="text-lg font-normal text-gray-600">/mo</span></p>
+              <ul className="space-y-2 text-gray-700 mb-6">
+                <li>• 1 high-intent service page each month</li>
+                <li>• Google Business Profile optimization touchpoint</li>
+                <li>• Monthly reporting for search + lead actions</li>
+                <li>• 1 conversion improvement per month</li>
+              </ul>
+              <Link href="/contact" className="btn-secondary w-full text-center">Request Starter Plan</Link>
+            </article>
+
+            <article className="bg-white rounded-xl border-2 border-primary-500 p-6 shadow-lg">
+              <p className="text-xs font-bold uppercase tracking-wide text-primary-700 mb-2">Most Requested</p>
+              <h3 className="text-2xl font-bold mb-2">Growth</h3>
+              <p className="text-4xl font-bold text-gray-900 mb-5">$1,200<span className="text-lg font-normal text-gray-600">/mo</span></p>
+              <ul className="space-y-2 text-gray-700 mb-6">
+                <li>• 2 high-intent service pages each month</li>
+                <li>• 1 supporting authority blog post monthly</li>
+                <li>• GBP updates + review response templates</li>
+                <li>• Quarterly conversion tune-up</li>
+              </ul>
+              <Link href="/contact" className="btn-primary w-full text-center">Request Growth Plan</Link>
+            </article>
+
+            <article className="bg-white rounded-xl border border-gray-200 p-6">
+              <h3 className="text-2xl font-bold mb-2">Authority</h3>
+              <p className="text-4xl font-bold text-gray-900 mb-5">$2,000<span className="text-lg font-normal text-gray-600">/mo</span></p>
+              <ul className="space-y-2 text-gray-700 mb-6">
+                <li>• 4 monthly content deliverables (service + blog)</li>
+                <li>• GBP + local citations strategy support</li>
+                <li>• Monthly conversion experiments</li>
+                <li>• Monthly strategy call</li>
+              </ul>
+              <Link href="/contact" className="btn-secondary w-full text-center">Request Authority Plan</Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* Upgrade Offer */}
       <section className="py-16 md:py-24 bg-primary-50">
         <div className="container-custom">
@@ -861,8 +953,8 @@ export default function PricingPage() {
               <p className="text-gray-600 mb-8">
                 Start with the 24-Hour Landing Page, then upgrade to Website-in-a-Week (up to 8 pages) and save $200.
               </p>
-              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors duration-200">
-                Start My $499 Page
+              <Link href="/checkout?package=landingPage" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors duration-200">
+                Start 24-Hour Landing Page
               </Link>
               <p className="text-sm text-gray-600 mt-5">
                 Need quick answers first?{' '}
@@ -880,8 +972,8 @@ export default function PricingPage() {
       <CTASection
         title="Ready to get started?"
         subtitle="Book a call or start your 24-hour landing page now. Clock starts after intake completion."
-        primaryCTA={{ text: 'Start My $499 Page', href: '/contact' }}
-        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact' }}
+        primaryCTA={{ text: 'Start 24-Hour Landing Page', href: '/checkout?package=landingPage' }}
+        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact#book-call' }}
         darkBg={true}
       />
     </main>

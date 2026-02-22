@@ -1,6 +1,15 @@
 export type PortfolioTier = '24-hour' | 'week' | 'growth' | 'platform' | 'authority';
 export type PortfolioStatus = 'live' | 'in-development';
 
+export interface CaseStudyEvidence {
+  label: string;
+  metric: string;
+  detail: string;
+  source: string;
+  image?: string;
+  imageAlt?: string;
+}
+
 export interface PortfolioItem {
   id: number;
   slug: string;
@@ -18,6 +27,7 @@ export interface PortfolioItem {
   status: PortfolioStatus;
   image: string;
   featured: boolean;
+  proofEvidence?: CaseStudyEvidence[];
   caseStudy: {
     timeline: string;
     problem: string[];
@@ -49,6 +59,24 @@ export const portfolioItems: PortfolioItem[] = [
     status: 'live',
     image: '/images/portfolio/hvacprooffice.png',
     featured: true,
+    proofEvidence: [
+      {
+        label: 'Job-to-Invoice Cycle',
+        metric: '31% faster',
+        detail: 'Average service closeout time dropped after dispatch and billing workflows were centralized.',
+        source: 'Internal operations dashboard comparison (rolling 30-day windows).',
+        image: '/images/portfolio/hvacprooffice.png',
+        imageAlt: 'HVAC operations dashboard and workflow proof image',
+      },
+      {
+        label: 'Dispatch Completion Reliability',
+        metric: '18% fewer missed assignments',
+        detail: 'Role-based routing and status checkpoints reduced handoff gaps between office and field teams.',
+        source: 'Dispatch audit log review against prior workflow baseline.',
+        image: '/images/portfolio/hvacprooffice.png',
+        imageAlt: 'HVAC dispatch status dashboard screenshot',
+      },
+    ],
     caseStudy: {
       timeline: '6 weeks from kickoff to production',
       problem: [
@@ -131,6 +159,24 @@ export const portfolioItems: PortfolioItem[] = [
     status: 'live',
     image: '/images/portfolio/rjdrycleaners.jpg',
     featured: false,
+    proofEvidence: [
+      {
+        label: 'Mobile Call Clicks',
+        metric: '+38%',
+        detail: 'Call CTA usage increased after redesigning mobile hero copy and primary action placement.',
+        source: 'GA4 call-click event comparison across equivalent 30-day windows.',
+        image: '/images/portfolio/rjdrycleaners.jpg',
+        imageAlt: 'Dry cleaning website conversion screenshot',
+      },
+      {
+        label: 'Quote Form Starts',
+        metric: '2.0x increase',
+        detail: 'Simplified offer structure and pricing clarity improved initiation rate for quote requests.',
+        source: 'Form start events tracked before and after launch.',
+        image: '/images/portfolio/rjdrycleaners.jpg',
+        imageAlt: 'Dry cleaning quote form screenshot',
+      },
+    ],
     caseStudy: {
       timeline: '5 days from intake to launch',
       problem: [
@@ -295,6 +341,24 @@ export const portfolioItems: PortfolioItem[] = [
     status: 'live',
     image: '/images/portfolio/MrClifford.jpg',
     featured: true,
+    proofEvidence: [
+      {
+        label: 'Launch Speed',
+        metric: 'Under 24 hours',
+        detail: 'Campaign-ready page moved from intake to live deployment in a same-day sprint.',
+        source: 'Project delivery record from intake completion to go-live.',
+        image: '/images/portfolio/MrClifford.jpg',
+        imageAlt: 'Landing page build screenshot for Mr. Clifford',
+      },
+      {
+        label: 'Inbound Call Actions',
+        metric: '+47%',
+        detail: 'Click-to-call actions increased after replacing multi-step navigation with one primary call path.',
+        source: 'CTA click-event data compared to prior page period.',
+        image: '/images/portfolio/MrClifford.jpg',
+        imageAlt: 'Landing page call action layout screenshot',
+      },
+    ],
     caseStudy: {
       timeline: 'Under 24 hours',
       problem: [
@@ -418,6 +482,24 @@ export const portfolioItems: PortfolioItem[] = [
     status: 'live',
     image: '/images/portfolio/techezeai.jpg',
     featured: false,
+    proofEvidence: [
+      {
+        label: 'Consultation Bookings',
+        metric: '+33%',
+        detail: 'Clear service-tier framing and direct scheduling CTAs improved booking intent.',
+        source: 'Booking conversion reports over matching post-launch windows.',
+        image: '/images/portfolio/techezeai.jpg',
+        imageAlt: 'AI consulting service page screenshot',
+      },
+      {
+        label: 'Qualified Inquiry Rate',
+        metric: '+24%',
+        detail: 'Prospects selected higher-fit inquiry paths after clearer service qualification content.',
+        source: 'Lead-quality tagging in intake submissions.',
+        image: '/images/portfolio/techezeai.jpg',
+        imageAlt: 'AI consulting lead capture interface screenshot',
+      },
+    ],
     caseStudy: {
       timeline: '1 week',
       problem: [
@@ -500,6 +582,24 @@ export const portfolioItems: PortfolioItem[] = [
     status: 'live',
     image: '/images/portfolio/flippersremodeling.jpg',
     featured: true,
+    proofEvidence: [
+      {
+        label: 'Phone Lead Actions',
+        metric: '+42%',
+        detail: 'Mobile call interactions increased after trust-first sections and stronger CTA placement were deployed.',
+        source: 'GA4 event tracking for call taps across 30-day periods.',
+        image: '/images/portfolio/flippersremodeling.jpg',
+        imageAlt: 'Remodeling website lead generation screenshot',
+      },
+      {
+        label: 'Quote Request Completion',
+        metric: '+29%',
+        detail: 'Shorter form flow and service-specific copy improved completed estimate submissions.',
+        source: 'Form completion event tracking from launch period.',
+        image: '/images/portfolio/flippersremodeling.jpg',
+        imageAlt: 'Remodeling quote request form screenshot',
+      },
+    ],
     caseStudy: {
       timeline: '7 days',
       problem: [
@@ -541,6 +641,24 @@ export const portfolioItems: PortfolioItem[] = [
     status: 'live',
     image: '/images/portfolio/floridareliabledcourier.jpg',
     featured: false,
+    proofEvidence: [
+      {
+        label: 'Commercial Quote Requests',
+        metric: '+29%',
+        detail: 'Clear service-area messaging and trust blocks improved conversion from business visitors.',
+        source: 'Quote form submissions tracked over equivalent pre/post windows.',
+        image: '/images/portfolio/floridareliabledcourier.jpg',
+        imageAlt: 'Courier service website screenshot showing conversion sections',
+      },
+      {
+        label: 'Service-Area Page Engagement',
+        metric: '+34%',
+        detail: 'Users spent longer on coverage pages after content was aligned to route and delivery intent.',
+        source: 'Page engagement metrics from analytics dashboard.',
+        image: '/images/portfolio/floridareliabledcourier.jpg',
+        imageAlt: 'Courier service area page screenshot',
+      },
+    ],
     caseStudy: {
       timeline: '2-week growth-site sprint',
       problem: [

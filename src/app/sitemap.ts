@@ -3,6 +3,7 @@ import { portfolioItems } from '@/data/portfolio';
 import { floridaLocations } from '@/data/locations';
 import { blogPosts } from '@/data/blog';
 import { localSeoServiceCityPairs } from '@/data/local-seo';
+import { industryPlaybooks } from '@/data/industries';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://reliablewebstudio.com';
@@ -45,6 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/industries`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/platform`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -79,6 +86,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/audit/sample`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
     },
     {
       url: `${baseUrl}/privacy`,
@@ -122,5 +135,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...caseStudyRoutes, ...locationRoutes, ...blogRoutes, ...serviceCityRoutes];
+  const industryRoutes: MetadataRoute.Sitemap = industryPlaybooks.map((industry) => ({
+    url: `${baseUrl}/industries/${industry.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...caseStudyRoutes, ...locationRoutes, ...blogRoutes, ...serviceCityRoutes, ...industryRoutes];
 }

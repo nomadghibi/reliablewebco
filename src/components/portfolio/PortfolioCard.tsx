@@ -35,6 +35,9 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
       </div>
 
       <div className="p-6">
+        {item.proofEvidence && item.proofEvidence.length > 0 && (
+          <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-2">Metrics Verified</p>
+        )}
         <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
         <p className="text-gray-600 mb-4 text-sm leading-relaxed">{item.description}</p>
 

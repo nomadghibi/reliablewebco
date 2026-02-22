@@ -7,6 +7,7 @@ import SectionViewTracker from '@/components/SectionViewTracker';
 import Reveal from '@/components/Reveal';
 import { floridaLocations } from '@/data/locations';
 import { getLatestBlogPosts } from '@/data/blog';
+import { industryPlaybooks } from '@/data/industries';
 
 export const metadata: Metadata = {
   title: 'Reliable Web Studio — 24-Hour Landing Pages & Websites in a Week',
@@ -48,6 +49,8 @@ export default function Home() {
       quote:
         'The new page made our offer clear and we started getting better quality calls.',
       person: 'Operations Manager, Palm Bay',
+      proofImage: '/images/portfolio/hvacprooffice.png',
+      proofAlt: 'HVAC project proof snapshot',
     },
     {
       industry: 'Home Cleaning Business',
@@ -55,6 +58,8 @@ export default function Home() {
       quote:
         'Most leads come from phones, and the new flow made booking much easier.',
       person: 'Owner, Melbourne',
+      proofImage: '/images/portfolio/rjdrycleaners.jpg',
+      proofAlt: 'Home service project proof snapshot',
     },
     {
       industry: 'Dental Practice',
@@ -62,6 +67,8 @@ export default function Home() {
       quote:
         'The page finally looks premium and patients can request appointments fast.',
       person: 'Practice Lead, Space Coast',
+      proofImage: '/images/portfolio/ezzydental.jpg',
+      proofAlt: 'Clinic project proof snapshot',
     },
   ];
 
@@ -93,7 +100,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <Reveal delay={0}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-white">
-                Launch a lead-generating website fast — fixed price, professional, and built to convert.
+                Launch a lead-generating website in 24 hours, or a full site in 7 days.
               </h1>
             </Reveal>
             <Reveal delay={90}>
@@ -336,6 +343,15 @@ export default function Home() {
               {proofSnapshots.map((item, index) => (
                 <Reveal key={item.industry} delay={(index + 1) * 80}>
                   <div className="bg-white rounded-xl p-6 shadow-md border border-blue-100">
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-gray-200 mb-4">
+                      <Image
+                        src={item.proofImage}
+                        alt={item.proofAlt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover object-top"
+                      />
+                    </div>
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-3">{item.industry}</p>
                     <p className="text-2xl font-bold text-gray-900 mb-3">{item.outcome}</p>
                     <p className="text-gray-700 italic mb-3">&quot;{item.quote}&quot;</p>
@@ -397,6 +413,45 @@ export default function Home() {
                 <p className="text-gray-600 text-sm">24h or 7 days</p>
               </div>
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* INDUSTRY PLAYBOOKS */}
+      <section className="py-16 md:py-24 bg-gray-50" aria-labelledby="industry-playbooks-heading">
+        <div className="container-custom">
+          <Reveal>
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 id="industry-playbooks-heading" className="text-3xl md:text-4xl font-bold mb-4">
+                Industry Playbooks
+              </h2>
+              <p className="text-xl text-gray-700">
+                Pick the page model built for your market, then launch fast with a fixed-price path.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {industryPlaybooks.map((industry, index) => (
+              <Reveal key={industry.slug} delay={(index + 1) * 70}>
+                <article className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-2">{industry.shortName}</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{industry.name}</h3>
+                  <p className="text-gray-700 mb-4">{industry.summary}</p>
+                  <ul className="space-y-2 text-sm text-gray-700 mb-6">
+                    {industry.keyWins.slice(0, 3).map((win) => (
+                      <li key={win} className="flex items-start gap-2">
+                        <span className="text-green-600 font-bold">✓</span>
+                        <span>{win}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href={`/industries/${industry.slug}`} className="btn-secondary w-full text-center">
+                    View {industry.shortName} Page
+                  </Link>
+                </article>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -630,8 +685,8 @@ export default function Home() {
       <CTASection
         title="Need something live fast?"
         subtitle="Start with the 24-hour sprint. Delivery clock starts after intake completion."
-        primaryCTA={{ text: 'Start My $499 Page', href: '/contact' }}
-        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact' }}
+        primaryCTA={{ text: 'Start 24-Hour Landing Page', href: '/checkout?package=landingPage' }}
+        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact#book-call' }}
         darkBg={true}
       />
     </main>

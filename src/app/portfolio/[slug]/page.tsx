@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
 import JsonLd from '@/components/JsonLd';
+import ProofEvidence from '@/components/portfolio/ProofEvidence';
 import { getPortfolioItemBySlug, portfolioItems } from '@/data/portfolio';
 
 interface PageProps {
@@ -218,6 +219,10 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
           </article>
         </div>
       </section>
+
+      {item.proofEvidence && item.proofEvidence.length > 0 && (
+        <ProofEvidence items={item.proofEvidence} />
+      )}
 
       <section className="section-padding bg-gray-50">
         <div className="container-custom max-w-6xl grid md:grid-cols-2 gap-8">

@@ -315,6 +315,12 @@ export default function AuditPage() {
                   <li>P0 / P1 / P2 fix priorities</li>
                   <li>7-day and 30-day action plan</li>
                 </ul>
+                <Link
+                  href="/audit/sample"
+                  className="mt-5 inline-flex items-center text-sm font-semibold text-primary-700 hover:text-primary-800"
+                >
+                  View Sample Report →
+                </Link>
               </div>
 
               <div className="bg-white rounded-2xl shadow-xl p-6">
@@ -342,4 +348,3 @@ export default function AuditPage() {
     </main>
   );
 }
-
