@@ -3,6 +3,7 @@
 ## Growth Execution Files
 - Weekly operating dashboard: `docs/15-WEEKLY-GROWTH-DASHBOARD.md`
 - Outreach templates: `docs/16-OUTREACH-TEMPLATES.md`
+- Daily operator checklist: `docs/17-DAILY-MORNING-CHECKLIST.md`
 - Outreach tracker CSV: `docs/templates/outreach-tracker-template.csv`
 
 ## Qualification (fast)
