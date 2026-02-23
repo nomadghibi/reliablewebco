@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Florida Web Design Service Areas | Reliable Web Studio',
     description:
       'City-focused web design and lead generation pages for Florida service businesses.',
-    url: 'https://reliablewebstudio.com/locations',
+    url: 'https://www.reliablewebstudio.com/locations',
     type: 'website',
     images: [
       {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     images: ['/api/og'],
   },
   alternates: {
-    canonical: 'https://reliablewebstudio.com/locations',
+    canonical: 'https://www.reliablewebstudio.com/locations',
   },
 };
 
@@ -41,13 +41,13 @@ const locationsSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Reliable Web Studio Florida Service Areas',
-  url: 'https://reliablewebstudio.com/locations',
+  url: 'https://www.reliablewebstudio.com/locations',
   mainEntity: {
     '@type': 'ItemList',
     itemListElement: floridaLocations.map((location, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      url: `https://reliablewebstudio.com/locations/${location.slug}`,
+      url: `https://www.reliablewebstudio.com/locations/${location.slug}`,
       name: `Web Design in ${location.city}, FL`,
     })),
   },

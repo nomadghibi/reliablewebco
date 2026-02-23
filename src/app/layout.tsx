@@ -20,14 +20,14 @@ const sameAsLinks = [
 ].filter(Boolean);
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://reliablewebstudio.com"),
+  metadataBase: new URL("https://www.reliablewebstudio.com"),
   title: "Reliable Web Studio — Launch a Lead-Generating Website Fast | 24-Hour Landing Pages",
   description: "Get a modern landing page in 24 hours or a complete website in 7 days (up to 8 pages). Fixed price, professional, and built to convert. Generate calls, form leads, and bookings.",
   keywords: "24 hour landing page, website in a week, lead generation website, conversion website, fast website launch",
   openGraph: {
     title: "Reliable Web Studio — Launch a Lead-Generating Website Fast",
     description: "Get a modern landing page in 24 hours or a complete website in 7 days (up to 8 pages). Built to generate calls, form leads, and bookings.",
-    url: "https://reliablewebstudio.com",
+    url: "https://www.reliablewebstudio.com",
     siteName: "Reliable Web Studio",
     type: "website",
     locale: "en_US",
@@ -44,7 +44,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Reliable Web Studio",
   legalName: "Best Computer Tech LLC",
-  url: "https://reliablewebstudio.com",
+  url: "https://www.reliablewebstudio.com",
   email: "hello@reliablewebstudio.com",
   telephone: "+1-321-953-5199",
   sameAs: sameAsLinks,
@@ -54,7 +54,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Reliable Web Studio",
-  url: "https://reliablewebstudio.com",
+  url: "https://www.reliablewebstudio.com",
   telephone: "+1-321-953-5199",
   email: "hello@reliablewebstudio.com",
   address: {

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Software Development & ML/AI Solutions — Custom MVPs Built Fast | Reliable Web Studio',
     description: 'We build custom software, web applications, and ML/AI-enabled products. Login systems, databases, dashboards, payments, integrations.',
-    url: 'https://reliablewebstudio.com/platform',
+    url: 'https://www.reliablewebstudio.com/platform',
     type: 'website',
   },
   twitter: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: 'We build custom software, web applications, and ML/AI-enabled products. $8,000-$25,000+.',
   },
   alternates: {
-    canonical: 'https://reliablewebstudio.com/platform',
+    canonical: 'https://www.reliablewebstudio.com/platform',
   },
 };
 

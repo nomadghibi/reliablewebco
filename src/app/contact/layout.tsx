@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: 'Contact — Get a Free Quote | Reliable Web Studio',
     description:
       'Request a free quote, book a 10-minute call, or start your $499 landing page today. Response within 24 hours.',
-    url: 'https://reliablewebstudio.com/contact',
+    url: 'https://www.reliablewebstudio.com/contact',
     type: 'website',
     images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Contact Reliable Web Studio' }],
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     images: ['/api/og'],
   },
   alternates: {
-    canonical: 'https://reliablewebstudio.com/contact',
+    canonical: 'https://www.reliablewebstudio.com/contact',
   },
 };
 

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Process — Launch Fast Without the Agency Drag | Reliable Web Studio',
     description: 'Simple 4-step process: Intake, Build, Review, Launch. No endless meetings. No project delays.',
-    url: 'https://reliablewebstudio.com/process',
+    url: 'https://www.reliablewebstudio.com/process',
     type: 'website',
   },
   twitter: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: 'Simple 4-step process: Intake, Build, Review, Launch. No endless meetings. No project delays.',
   },
   alternates: {
-    canonical: 'https://reliablewebstudio.com/process',
+    canonical: 'https://www.reliablewebstudio.com/process',
   },
 };
 

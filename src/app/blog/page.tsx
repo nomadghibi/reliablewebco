@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'Reliable Web Studio Blog',
     description:
       'Actionable articles on Florida web design, local SEO, landing pages, and conversion strategy for service businesses.',
-    url: 'https://reliablewebstudio.com/blog',
+    url: 'https://www.reliablewebstudio.com/blog',
     type: 'website',
     images: [
       {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     images: ['/api/og'],
   },
   alternates: {
-    canonical: 'https://reliablewebstudio.com/blog',
+    canonical: 'https://www.reliablewebstudio.com/blog',
   },
 };
 
@@ -42,14 +42,14 @@ const blogSchema = {
   '@context': 'https://schema.org',
   '@type': 'Blog',
   name: 'Reliable Web Studio Blog',
-  url: 'https://reliablewebstudio.com/blog',
+  url: 'https://www.reliablewebstudio.com/blog',
   description:
     'Actionable Florida-focused content on local SEO, web design systems, and lead generation for service businesses.',
   inLanguage: 'en-US',
   publisher: {
     '@type': 'Organization',
     name: 'Reliable Web Studio',
-    url: 'https://reliablewebstudio.com',
+    url: 'https://www.reliablewebstudio.com',
   },
   blogPost: posts.map((post) => ({
     '@type': 'BlogPosting',
@@ -57,7 +57,7 @@ const blogSchema = {
     description: post.description,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
-    url: `https://reliablewebstudio.com/blog/${post.slug}`,
+    url: `https://www.reliablewebstudio.com/blog/${post.slug}`,
     keywords: post.keywords.join(', '),
   })),
 };
@@ -68,7 +68,7 @@ const itemListSchema = {
   itemListElement: posts.map((post, index) => ({
     '@type': 'ListItem',
     position: index + 1,
-    url: `https://reliablewebstudio.com/blog/${post.slug}`,
+    url: `https://www.reliablewebstudio.com/blog/${post.slug}`,
     name: post.title,
   })),
 };

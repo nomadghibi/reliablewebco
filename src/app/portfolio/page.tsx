@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Portfolio — Real Websites, Real Results | Reliable Web Studio',
     description: 'View our live portfolio of websites and web applications. From 24-hour landing pages to full-stack platforms.',
-    url: 'https://reliablewebstudio.com/portfolio',
+    url: 'https://www.reliablewebstudio.com/portfolio',
     type: 'website',
   },
   twitter: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: 'View our live portfolio of websites and web applications. From 24-hour landing pages to full-stack platforms.',
   },
   alternates: {
-    canonical: 'https://reliablewebstudio.com/portfolio',
+    canonical: 'https://www.reliablewebstudio.com/portfolio',
   },
 };
 
@@ -33,17 +33,17 @@ const portfolioJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Reliable Web Studio Portfolio',
-  url: 'https://reliablewebstudio.com/portfolio',
+  url: 'https://www.reliablewebstudio.com/portfolio',
   mainEntity: {
     '@type': 'ItemList',
     itemListElement: portfolioItems.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      url: `https://reliablewebstudio.com/portfolio/${item.slug}`,
+      url: `https://www.reliablewebstudio.com/portfolio/${item.slug}`,
       item: {
         '@type': 'CreativeWork',
         name: item.title,
-        image: `https://reliablewebstudio.com${item.image}`,
+        image: `https://www.reliablewebstudio.com${item.image}`,
         category: item.category,
       },
     })),

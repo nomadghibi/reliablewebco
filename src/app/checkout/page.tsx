@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Checkout | Reliable Web Studio',
     description: 'Secure checkout for Reliable Web Studio packages.',
-    url: 'https://reliablewebstudio.com/checkout',
+    url: 'https://www.reliablewebstudio.com/checkout',
     type: 'website',
     images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Reliable Web Studio checkout' }],
   },
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     images: ['/api/og'],
   },
   alternates: {
-    canonical: 'https://reliablewebstudio.com/checkout',
+    canonical: 'https://www.reliablewebstudio.com/checkout',
   },
   robots: {
     index: false,

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'Pricing — 24-Hour Landing Pages ($499) | Reliable Web Studio',
     description:
       'Choose the build speed you need. 24-Hour Landing Page ($499), Website-in-a-Week ($2,000), Growth Website ($3,500+), Authority Website ($5,500+), Platform MVP ($8,000+).',
-    url: 'https://reliablewebstudio.com/pricing',
+    url: 'https://www.reliablewebstudio.com/pricing',
     type: 'website',
     images: [
       {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     images: ['/api/og/pricing'],
   },
   alternates: {
-    canonical: 'https://reliablewebstudio.com/pricing',
+    canonical: 'https://www.reliablewebstudio.com/pricing',
   },
 };
 
@@ -42,12 +42,12 @@ const pricingSchema = {
   '@context': 'https://schema.org',
   '@type': 'OfferCatalog',
   name: 'Reliable Web Studio Packages',
-  url: 'https://reliablewebstudio.com/pricing',
+  url: 'https://www.reliablewebstudio.com/pricing',
   itemListElement: [
     {
       '@type': 'Offer',
       name: '24-Hour Landing Page Sprint',
-      url: 'https://reliablewebstudio.com/pricing#landing-page',
+      url: 'https://www.reliablewebstudio.com/pricing#landing-page',
       price: '499',
       priceCurrency: 'USD',
       category: 'WebDesignService',
@@ -59,7 +59,7 @@ const pricingSchema = {
         provider: {
           '@type': 'Organization',
           name: 'Reliable Web Studio',
-          url: 'https://reliablewebstudio.com',
+          url: 'https://www.reliablewebstudio.com',
         },
         areaServed: { '@type': 'State', name: 'Florida' },
       },
@@ -67,7 +67,7 @@ const pricingSchema = {
     {
       '@type': 'Offer',
       name: 'Website-in-a-Week',
-      url: 'https://reliablewebstudio.com/pricing#website-in-a-week',
+      url: 'https://www.reliablewebstudio.com/pricing#website-in-a-week',
       price: '2000',
       priceCurrency: 'USD',
       category: 'WebDesignService',
@@ -79,7 +79,7 @@ const pricingSchema = {
         provider: {
           '@type': 'Organization',
           name: 'Reliable Web Studio',
-          url: 'https://reliablewebstudio.com',
+          url: 'https://www.reliablewebstudio.com',
         },
         areaServed: { '@type': 'State', name: 'Florida' },
       },
@@ -87,7 +87,7 @@ const pricingSchema = {
     {
       '@type': 'AggregateOffer',
       name: 'Growth Website',
-      url: 'https://reliablewebstudio.com/pricing#growth-website',
+      url: 'https://www.reliablewebstudio.com/pricing#growth-website',
       lowPrice: '3500',
       highPrice: '4500',
       priceCurrency: 'USD',
@@ -95,7 +95,7 @@ const pricingSchema = {
     {
       '@type': 'AggregateOffer',
       name: 'Authority Website',
-      url: 'https://reliablewebstudio.com/pricing#authority-website',
+      url: 'https://www.reliablewebstudio.com/pricing#authority-website',
       lowPrice: '5500',
       highPrice: '7500',
       priceCurrency: 'USD',
@@ -103,7 +103,7 @@ const pricingSchema = {
     {
       '@type': 'AggregateOffer',
       name: 'Platform / Web App MVP',
-      url: 'https://reliablewebstudio.com/pricing#web-app',
+      url: 'https://www.reliablewebstudio.com/pricing#web-app',
       lowPrice: '8000',
       highPrice: '25000',
       priceCurrency: 'USD',
@@ -111,7 +111,7 @@ const pricingSchema = {
     {
       '@type': 'Offer',
       name: 'Monthly Care Plan — Basic',
-      url: 'https://reliablewebstudio.com/pricing#care-plans',
+      url: 'https://www.reliablewebstudio.com/pricing#care-plans',
       price: '99',
       priceCurrency: 'USD',
       category: 'WebSiteMaintenance',
@@ -119,7 +119,7 @@ const pricingSchema = {
     {
       '@type': 'Offer',
       name: 'Monthly Care Plan — Standard',
-      url: 'https://reliablewebstudio.com/pricing#care-plans',
+      url: 'https://www.reliablewebstudio.com/pricing#care-plans',
       price: '199',
       priceCurrency: 'USD',
       category: 'WebSiteMaintenance',
@@ -127,7 +127,7 @@ const pricingSchema = {
     {
       '@type': 'Offer',
       name: 'Monthly Care Plan — Pro',
-      url: 'https://reliablewebstudio.com/pricing#care-plans',
+      url: 'https://www.reliablewebstudio.com/pricing#care-plans',
       price: '299',
       priceCurrency: 'USD',
       category: 'WebSiteMaintenance',
@@ -135,7 +135,7 @@ const pricingSchema = {
     {
       '@type': 'Offer',
       name: 'Local Growth Retainer — Starter',
-      url: 'https://reliablewebstudio.com/pricing#local-growth-retainer',
+      url: 'https://www.reliablewebstudio.com/pricing#local-growth-retainer',
       price: '600',
       priceCurrency: 'USD',
       category: 'LocalSEOService',
@@ -143,7 +143,7 @@ const pricingSchema = {
     {
       '@type': 'Offer',
       name: 'Local Growth Retainer — Growth',
-      url: 'https://reliablewebstudio.com/pricing#local-growth-retainer',
+      url: 'https://www.reliablewebstudio.com/pricing#local-growth-retainer',
       price: '1200',
       priceCurrency: 'USD',
       category: 'LocalSEOService',
@@ -151,7 +151,7 @@ const pricingSchema = {
     {
       '@type': 'Offer',
       name: 'Local Growth Retainer — Authority',
-      url: 'https://reliablewebstudio.com/pricing#local-growth-retainer',
+      url: 'https://www.reliablewebstudio.com/pricing#local-growth-retainer',
       price: '2000',
       priceCurrency: 'USD',
       category: 'LocalSEOService',

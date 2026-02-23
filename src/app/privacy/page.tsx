@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Privacy Policy | Reliable Web Studio',
     description: 'Read the Privacy Policy for Reliable Web Studio.',
-    url: 'https://reliablewebstudio.com/privacy',
+    url: 'https://www.reliablewebstudio.com/privacy',
     type: 'website',
     images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Reliable Web Studio Privacy Policy' }],
   },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     images: ['/api/og'],
   },
   alternates: {
-    canonical: 'https://reliablewebstudio.com/privacy',
+    canonical: 'https://www.reliablewebstudio.com/privacy',
   },
 };
 

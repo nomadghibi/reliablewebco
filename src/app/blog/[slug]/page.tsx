@@ -40,12 +40,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: pageTitle,
     description: post.description,
     alternates: {
-      canonical: `https://reliablewebstudio.com/blog/${post.slug}`,
+      canonical: `https://www.reliablewebstudio.com/blog/${post.slug}`,
     },
     openGraph: {
       title: pageTitle,
       description: post.description,
-      url: `https://reliablewebstudio.com/blog/${post.slug}`,
+      url: `https://www.reliablewebstudio.com/blog/${post.slug}`,
       type: 'article',
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
@@ -193,8 +193,8 @@ export default async function BlogArticlePage({ params }: PageProps) {
     inLanguage: 'en-US',
     wordCount: totalWordCount,
     timeRequired: `PT${Math.max(6, Math.ceil(totalWordCount / 220))}M`,
-    mainEntityOfPage: `https://reliablewebstudio.com/blog/${post.slug}`,
-    image: `https://reliablewebstudio.com${schemaImage}`,
+    mainEntityOfPage: `https://www.reliablewebstudio.com/blog/${post.slug}`,
+    image: `https://www.reliablewebstudio.com${schemaImage}`,
     author: {
       '@type': 'Organization',
       name: 'Reliable Web Studio',
@@ -202,7 +202,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
     publisher: {
       '@type': 'Organization',
       name: 'Reliable Web Studio',
-      url: 'https://reliablewebstudio.com',
+      url: 'https://www.reliablewebstudio.com',
     },
   };
 
@@ -214,19 +214,19 @@ export default async function BlogArticlePage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://reliablewebstudio.com',
+        item: 'https://www.reliablewebstudio.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Blog',
-        item: 'https://reliablewebstudio.com/blog',
+        item: 'https://www.reliablewebstudio.com/blog',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: post.title,
-        item: `https://reliablewebstudio.com/blog/${post.slug}`,
+        item: `https://www.reliablewebstudio.com/blog/${post.slug}`,
       },
     ],
   };

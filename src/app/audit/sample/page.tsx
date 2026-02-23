@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     'Preview the structure of our website analysis report including P0/P1/P2 findings and a 7-day, 30-day action plan.',
   alternates: {
-    canonical: 'https://reliablewebstudio.com/audit/sample',
+    canonical: 'https://www.reliablewebstudio.com/audit/sample',
   },
   openGraph: {
     title: 'Sample Website Analysis Report | Reliable Web Studio',
     description:
       'See a sample report format for our website analysis service with prioritized technical, SEO, and conversion fixes.',
-    url: 'https://reliablewebstudio.com/audit/sample',
+    url: 'https://www.reliablewebstudio.com/audit/sample',
     type: 'article',
     images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Sample website analysis report' }],
   },

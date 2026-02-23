@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Browse service and city-focused local SEO pages for Florida businesses. Find the right website strategy by service type and location intent.',
   alternates: {
-    canonical: 'https://reliablewebstudio.com/services',
+    canonical: 'https://www.reliablewebstudio.com/services',
   },
   openGraph: {
     title: 'Florida Service + City Pages | Local SEO Web Design',
     description:
       'Service and city-focused page framework built for Florida local SEO and lead conversion.',
-    url: 'https://reliablewebstudio.com/services',
+    url: 'https://www.reliablewebstudio.com/services',
     type: 'website',
     images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Florida local SEO service pages' }],
   },
@@ -33,14 +33,14 @@ const servicesSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Florida Local SEO Service Pages',
-  url: 'https://reliablewebstudio.com/services',
+  url: 'https://www.reliablewebstudio.com/services',
   mainEntity: {
     '@type': 'ItemList',
     itemListElement: localSeoServices.map((service, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       name: service.name,
-      url: `https://reliablewebstudio.com/services/${service.slug}/${floridaLocations[0].slug}`,
+      url: `https://www.reliablewebstudio.com/services/${service.slug}/${floridaLocations[0].slug}`,
     })),
   },
 };

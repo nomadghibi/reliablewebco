@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: 'Free Website Analysis | Reliable Web Studio',
     description:
       'Submit your website URL and get a professional AI-assisted analysis with prioritized fixes. Full report delivered by next business day.',
-    url: 'https://reliablewebstudio.com/audit',
+    url: 'https://www.reliablewebstudio.com/audit',
     type: 'website',
     images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Free Website Analysis' }],
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     images: ['/api/og'],
   },
   alternates: {
-    canonical: 'https://reliablewebstudio.com/audit',
+    canonical: 'https://www.reliablewebstudio.com/audit',
   },
 };
 

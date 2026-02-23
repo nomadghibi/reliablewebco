@@ -6,7 +6,7 @@ import { localSeoServiceCityPairs } from '@/data/local-seo';
 import { industryPlaybooks } from '@/data/industries';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://reliablewebstudio.com';
+  const baseUrl = 'https://www.reliablewebstudio.com';
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {

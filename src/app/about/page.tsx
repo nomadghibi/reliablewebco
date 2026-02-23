@@ -9,12 +9,12 @@ const aboutSchema = {
   name: 'About Reliable Web Studio',
   description:
     '15+ years building lead-generating websites for local businesses in Palm Bay, Melbourne, and Brevard County, Florida.',
-  url: 'https://reliablewebstudio.com/about',
+  url: 'https://www.reliablewebstudio.com/about',
   mainEntity: {
     '@type': 'Organization',
     name: 'Reliable Web Studio',
     legalName: 'Best Computer Tech LLC',
-    url: 'https://reliablewebstudio.com',
+    url: 'https://www.reliablewebstudio.com',
     telephone: '+1-321-953-5199',
     email: 'hello@reliablewebstudio.com',
     areaServed: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About — Reliable Web Studio | 15+ Years Serving Brevard County, FL',
     description: '15+ years building lead-generating websites for local businesses in Palm Bay, Melbourne, and Brevard County, Florida.',
-    url: 'https://reliablewebstudio.com/about',
+    url: 'https://www.reliablewebstudio.com/about',
     type: 'website',
     images: [
       {
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     images: ['/api/og/about'],
   },
   alternates: {
-    canonical: 'https://reliablewebstudio.com/about',
+    canonical: 'https://www.reliablewebstudio.com/about',
   },
 };
 

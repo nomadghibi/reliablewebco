@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: 'Service Page Not Found | Reliable Web Studio',
       description: 'Requested local service page could not be found.',
       alternates: {
-        canonical: 'https://reliablewebstudio.com/services',
+        canonical: 'https://www.reliablewebstudio.com/services',
       },
       robots: {
         index: false,
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const title = `${service.name} in ${city.city}, FL | Reliable Web Studio`;
   const description = `${service.shortDescription} ${city.localIntent}`;
-  const canonical = `https://reliablewebstudio.com/services/${service.slug}/${city.slug}`;
+  const canonical = `https://www.reliablewebstudio.com/services/${service.slug}/${city.slug}`;
 
   return {
     title,
@@ -77,7 +77,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
   }
   const cityBlogPosts = getBlogPostsForCity(city.city, 3);
 
-  const serviceUrl = `https://reliablewebstudio.com/services/${service.slug}/${city.slug}`;
+  const serviceUrl = `https://www.reliablewebstudio.com/services/${service.slug}/${city.slug}`;
   const relatedCitiesByRegion = floridaLocations
     .filter((item) => item.locationType !== 'county' && item.slug !== city.slug && item.region === city.region)
     .slice(0, 3);
@@ -131,7 +131,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
     provider: {
       '@type': 'ProfessionalService',
       name: 'Reliable Web Studio',
-      url: 'https://reliablewebstudio.com',
+      url: 'https://www.reliablewebstudio.com',
       telephone: '+1-321-953-5199',
       email: 'hello@reliablewebstudio.com',
       address: {
@@ -162,8 +162,8 @@ export default async function ServiceCityPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://reliablewebstudio.com' },
-      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://reliablewebstudio.com/services' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.reliablewebstudio.com' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.reliablewebstudio.com/services' },
       { '@type': 'ListItem', position: 3, name: `${city.city}, FL`, item: serviceUrl },
     ],
   };

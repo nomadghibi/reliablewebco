@@ -37,12 +37,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: cityTitle,
     description,
     alternates: {
-      canonical: `https://reliablewebstudio.com/locations/${location.slug}`,
+      canonical: `https://www.reliablewebstudio.com/locations/${location.slug}`,
     },
     openGraph: {
       title: cityTitle,
       description,
-      url: `https://reliablewebstudio.com/locations/${location.slug}`,
+      url: `https://www.reliablewebstudio.com/locations/${location.slug}`,
       type: 'article',
       images: [
         {
@@ -79,7 +79,7 @@ export default async function LocationPage({ params }: PageProps) {
     provider: {
       '@type': 'Organization',
       name: 'Reliable Web Studio',
-      url: 'https://reliablewebstudio.com',
+      url: 'https://www.reliablewebstudio.com',
       telephone: '+1-321-953-5199',
       email: 'hello@reliablewebstudio.com',
     },
@@ -115,7 +115,7 @@ export default async function LocationPage({ params }: PageProps) {
         },
       ],
     },
-    url: `https://reliablewebstudio.com/locations/${location.slug}`,
+    url: `https://www.reliablewebstudio.com/locations/${location.slug}`,
     description: `${location.summary} ${location.localIntent}`,
   };
 
@@ -127,19 +127,19 @@ export default async function LocationPage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://reliablewebstudio.com',
+        item: 'https://www.reliablewebstudio.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Florida Service Areas',
-        item: 'https://reliablewebstudio.com/locations',
+        item: 'https://www.reliablewebstudio.com/locations',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: `${location.city}, FL`,
-        item: `https://reliablewebstudio.com/locations/${location.slug}`,
+        item: `https://www.reliablewebstudio.com/locations/${location.slug}`,
       },
     ],
   };

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: 'Reliable Web Studio — 24-Hour Landing Pages & Websites in a Week',
     description:
       'Get a modern landing page in 24 hours or a complete website in 7 days. Built to generate calls, form leads, and bookings.',
-    url: 'https://reliablewebstudio.com',
+    url: 'https://www.reliablewebstudio.com',
     type: 'website',
     images: [
       {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     images: ['/api/og'],
   },
   alternates: {
-    canonical: 'https://reliablewebstudio.com',
+    canonical: 'https://www.reliablewebstudio.com',
   },
 };
 

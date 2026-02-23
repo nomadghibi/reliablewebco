@@ -32,16 +32,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${item.title} Case Study | Reliable Web Studio`,
     description: `${item.title}: ${item.description}`,
     alternates: {
-      canonical: `https://reliablewebstudio.com/portfolio/${item.slug}`,
+      canonical: `https://www.reliablewebstudio.com/portfolio/${item.slug}`,
     },
     openGraph: {
       title: `${item.title} Case Study | Reliable Web Studio`,
       description: item.description,
-      url: `https://reliablewebstudio.com/portfolio/${item.slug}`,
+      url: `https://www.reliablewebstudio.com/portfolio/${item.slug}`,
       type: 'article',
       images: [
         {
-          url: `https://reliablewebstudio.com${item.image}`,
+          url: `https://www.reliablewebstudio.com${item.image}`,
           alt: `${item.title} case study preview`,
         },
       ],
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: 'summary_large_image',
       title: `${item.title} Case Study | Reliable Web Studio`,
       description: item.description,
-      images: [`https://reliablewebstudio.com${item.image}`],
+      images: [`https://www.reliablewebstudio.com${item.image}`],
     },
   };
 }
@@ -76,7 +76,7 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
     '@type': 'Article',
     headline: `${item.title} Case Study`,
     description: item.description,
-    image: `https://reliablewebstudio.com${item.image}`,
+    image: `https://www.reliablewebstudio.com${item.image}`,
     author: {
       '@type': 'Organization',
       name: 'Reliable Web Studio',
@@ -85,7 +85,7 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
       '@type': 'Organization',
       name: 'Reliable Web Studio',
     },
-    mainEntityOfPage: `https://reliablewebstudio.com/portfolio/${item.slug}`,
+    mainEntityOfPage: `https://www.reliablewebstudio.com/portfolio/${item.slug}`,
   };
 
   const breadcrumbSchema = {
@@ -96,19 +96,19 @@ export default async function PortfolioCaseStudyPage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://reliablewebstudio.com',
+        item: 'https://www.reliablewebstudio.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Portfolio',
-        item: 'https://reliablewebstudio.com/portfolio',
+        item: 'https://www.reliablewebstudio.com/portfolio',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: item.title,
-        item: `https://reliablewebstudio.com/portfolio/${item.slug}`,
+        item: `https://www.reliablewebstudio.com/portfolio/${item.slug}`,
       },
     ],
   };

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'GA4 Event & Reporting Map | Reliable Web Studio',
     description:
       'Operational GA4 event naming map, dimensions, and weekly conversion reporting checklist for Reliable Web Studio.',
-    url: 'https://reliablewebstudio.com/analytics',
+    url: 'https://www.reliablewebstudio.com/analytics',
     type: 'website',
     images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Reliable Web Studio analytics map' }],
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     follow: false,
   },
   alternates: {
-    canonical: 'https://reliablewebstudio.com/analytics',
+    canonical: 'https://www.reliablewebstudio.com/analytics',
   },
 };
 

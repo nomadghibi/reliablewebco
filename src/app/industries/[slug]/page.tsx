@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: 'Industry Page Not Found | Reliable Web Studio',
       description: 'Requested industry playbook could not be found.',
       alternates: {
-        canonical: 'https://reliablewebstudio.com/industries',
+        canonical: 'https://www.reliablewebstudio.com/industries',
       },
       robots: {
         index: false,
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const title = `${industry.name} | Reliable Web Studio`;
   const description = `${industry.summary} ${industry.heroSubtitle}`;
-  const canonical = `https://reliablewebstudio.com/industries/${industry.slug}`;
+  const canonical = `https://www.reliablewebstudio.com/industries/${industry.slug}`;
 
   return {
     title,
@@ -67,7 +67,7 @@ export default async function IndustryPage({ params }: PageProps) {
     notFound();
   }
 
-  const pageUrl = `https://reliablewebstudio.com/industries/${industry.slug}`;
+  const pageUrl = `https://www.reliablewebstudio.com/industries/${industry.slug}`;
 
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -77,7 +77,7 @@ export default async function IndustryPage({ params }: PageProps) {
     provider: {
       '@type': 'ProfessionalService',
       name: 'Reliable Web Studio',
-      url: 'https://reliablewebstudio.com',
+      url: 'https://www.reliablewebstudio.com',
       telephone: '+1-321-953-5199',
       email: 'hello@reliablewebstudio.com',
     },
@@ -110,13 +110,13 @@ export default async function IndustryPage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://reliablewebstudio.com',
+        item: 'https://www.reliablewebstudio.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Industry Playbooks',
-        item: 'https://reliablewebstudio.com/industries',
+        item: 'https://www.reliablewebstudio.com/industries',
       },
       {
         '@type': 'ListItem',

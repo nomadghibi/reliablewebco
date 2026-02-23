@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     'Explore industry-focused website playbooks for HVAC, contractors, and clinics. Conversion-first structure, fixed pricing, and fast launch timelines.',
   alternates: {
-    canonical: 'https://reliablewebstudio.com/industries',
+    canonical: 'https://www.reliablewebstudio.com/industries',
   },
   openGraph: {
     title: 'Industry Website Playbooks | Reliable Web Studio',
     description:
       'Industry-specific website playbooks for local service businesses that need more calls, quote requests, and bookings.',
-    url: 'https://reliablewebstudio.com/industries',
+    url: 'https://www.reliablewebstudio.com/industries',
     type: 'website',
     images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Industry Website Playbooks' }],
   },
@@ -34,14 +34,14 @@ const industriesSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Industry Website Playbooks',
-  url: 'https://reliablewebstudio.com/industries',
+  url: 'https://www.reliablewebstudio.com/industries',
   mainEntity: {
     '@type': 'ItemList',
     itemListElement: industryPlaybooks.map((industry, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       name: industry.name,
-      url: `https://reliablewebstudio.com/industries/${industry.slug}`,
+      url: `https://www.reliablewebstudio.com/industries/${industry.slug}`,
     })),
   },
 };

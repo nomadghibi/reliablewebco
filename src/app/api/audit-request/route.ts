@@ -32,7 +32,7 @@ class ValidationError extends Error {}
 
 const DEFAULT_FORMSPREE_ENDPOINT = 'https://formspree.io/f/xlgweovk';
 const USER_AGENT =
-  'ReliableWebStudioAuditBot/1.0 (+https://reliablewebstudio.com; contact: hello@reliablewebstudio.com)';
+  'ReliableWebStudioAuditBot/1.0 (+https://www.reliablewebstudio.com; contact: hello@reliablewebstudio.com)';
 
 const CTA_PATTERN =
   /\b(call|book|schedule|quote|get started|get a quote|request quote|contact us|start now)\b/i;
