@@ -1,5 +1,10 @@
 # Operations (Delivery System)
 
+## Growth Ops Resources
+- Weekly dashboard: `docs/15-WEEKLY-GROWTH-DASHBOARD.md`
+- Outreach scripts: `docs/16-OUTREACH-TEMPLATES.md`
+- CSV templates: `docs/templates/*.csv`
+
 ## Intake Fields (must match website form)
 - Business name
 - Website/domain (if any)

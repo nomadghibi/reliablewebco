@@ -1,5 +1,10 @@
 # Sales System
 
+## Growth Execution Files
+- Weekly operating dashboard: `docs/15-WEEKLY-GROWTH-DASHBOARD.md`
+- Outreach templates: `docs/16-OUTREACH-TEMPLATES.md`
+- Outreach tracker CSV: `docs/templates/outreach-tracker-template.csv`
+
 ## Qualification (fast)
 - What service do you sell?
 - What city/service area?
