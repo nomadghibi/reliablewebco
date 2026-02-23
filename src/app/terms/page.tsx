@@ -92,7 +92,9 @@ export default function TermsPage() {
 
             <h2>Domain and Hosting Offer Terms</h2>
             <ul>
-              <li>Eligible packages include one standard domain and hosting for year 1.</li>
+              <li>Year-1 domain + hosting applies to Website-in-a-Week, Growth, Authority, and Platform packages only.</li>
+              <li>The offer requires either an active care plan or a 12-month hosting commitment.</li>
+              <li>24-Hour Landing Page and Lead Sprint Bundle do not include the year-1 hosting/domain offer.</li>
               <li>Domain selection is subject to availability at the time of registration.</li>
               <li>The domain is registered under the client&apos;s legal/business name and contact details.</li>
               <li>Premium domains, specialty TLDs, auctions, and transfer fees are not included unless quoted separately.</li>
