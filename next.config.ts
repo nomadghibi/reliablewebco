@@ -1,14 +1,11 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  turbopack: {
-    root: process.cwd(),
-  },
   async redirects() {
     return [
       {
-        source: "/index.html",
-        destination: "/",
+        source: '/index.html',
+        destination: '/',
         permanent: true,
       },
     ];
