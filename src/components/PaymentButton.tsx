@@ -23,6 +23,8 @@ export default function PaymentButton({
 }: PaymentButtonProps) {
   const payment = PAYMENT_LINKS[type];
   const isConfigured = isPaymentConfigured(payment.url);
+  const routesThroughServer = type === 'localWebsitePlan';
+  const canOpenCheckout = routesThroughServer || isConfigured;
 
   // Default text based on payment type
   const buttonText = text || `Buy Now — $${payment.price}`;
@@ -38,7 +40,7 @@ export default function PaymentButton({
   const widthClass = fullWidth ? 'w-full text-center' : '';
 
   // Route through in-site checkout page so users always have visible back navigation.
-  const href = isConfigured ? `/checkout?package=${type}` : '/contact';
+  const href = canOpenCheckout ? `/checkout?package=${type}` : '/contact';
 
   const handleClick = () => {
     trackEvent('package_select', {
@@ -63,7 +65,7 @@ export default function PaymentButton({
       onClick={handleClick}
     >
       {buttonText}
-      {isConfigured && (
+      {canOpenCheckout && (
         <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>

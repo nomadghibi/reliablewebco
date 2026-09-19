@@ -4,7 +4,7 @@
  * To set up:
  * 1. Go to https://dashboard.stripe.com/payment-links
  * 2. Create a payment link for each product
- * 3. Add links to .env.local using NEXT_PUBLIC_STRIPE_* variables
+ * 3. Add links to .env.local using the variables documented in .env.example
  *
  * Free to create - you only pay standard Stripe fees (2.9% + 30¢) when someone pays
  */
@@ -46,7 +46,8 @@ export const PAYMENT_LINKS = {
     setupPrice: 150,
     label: 'Local Website Plan',
     recurring: true,
-    url: resolvePaymentUrl(process.env.NEXT_PUBLIC_STRIPE_LOCAL_WEBSITE_LINK),
+    // This plan always routes through the server-rendered checkout page.
+    url: resolvePaymentUrl(process.env.STRIPE_LOCAL_WEBSITE_LINK),
   },
 
   // 24-Hour Landing Page Sprint - $499
