@@ -210,6 +210,9 @@ export default function Home() {
                 <Link href="/contact#website-plan" className="btn-primary w-full text-center mb-4">
                   Start for $150
                 </Link>
+                <Link href="/services/local-business-website-plan" className="mb-4 block text-center text-sm font-semibold text-primary-700 hover:text-primary-800">
+                  See complete plan details
+                </Link>
                 <p className="text-sm text-gray-600">
                   Includes up to 30 minutes of minor website updates per month. New pages, major redesigns, paid advertising, advanced SEO, and substantial content creation are quoted separately.
                 </p>

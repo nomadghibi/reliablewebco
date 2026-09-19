@@ -25,7 +25,7 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/pricing#local-website-plan" className="hover:text-white transition-colors">
+                <Link href="/services/local-business-website-plan" className="hover:text-white transition-colors">
                   Local Website Plan
                 </Link>
               </li>

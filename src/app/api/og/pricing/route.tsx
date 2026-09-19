@@ -39,7 +39,7 @@ export async function GET() {
               fontWeight: 700,
             }}
           >
-            FREE Hosting & Domain — 1 Year
+            MANAGED WEBSITE | LOCAL SUPPORT
           </div>
         </div>
 
@@ -53,7 +53,7 @@ export async function GET() {
             marginBottom: '16px',
           }}
         >
-          Choose the build speed you need.
+          Website pricing built for local businesses.
         </div>
 
         <div
@@ -63,17 +63,17 @@ export async function GET() {
             marginBottom: '48px',
           }}
         >
-          Fixed price. Fast delivery. Built to convert.
+          Start managed or choose a larger custom build.
         </div>
 
         {/* Pricing pills */}
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
           {[
+            { name: 'Local Website Setup', price: '$150', highlight: true },
+            { name: 'Managed Website', price: '$100/mo', highlight: true },
             { name: '24h Landing Page', price: '$499', highlight: true },
-            { name: 'Website-in-a-Week', price: '$2,000', highlight: true },
+            { name: 'Website-in-a-Week', price: '$2,000', highlight: false },
             { name: 'Growth Website', price: '$3,500+', highlight: false },
-            { name: 'Authority Website', price: '$5,500+', highlight: false },
-            { name: 'Platform MVP', price: '$8,000+', highlight: false },
           ].map((pkg) => (
             <div
               key={pkg.name}
@@ -105,7 +105,7 @@ export async function GET() {
             color: 'rgba(147, 197, 253, 0.7)',
           }}
         >
-          reliablewebstudio.com/pricing — Palm Bay, Melbourne & Florida&apos;s Space Coast
+          reliablewebstudio.com/pricing | Palm Bay, Melbourne & Florida&apos;s Space Coast
         </div>
       </div>
     ),

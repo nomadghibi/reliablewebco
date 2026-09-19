@@ -243,19 +243,6 @@ export default function PricingPage() {
               Start with a professional managed website for $150 setup + $100/month, or choose a larger custom website or development project when you need more.
             </p>
 
-            {/* Hosting/Domain Eligibility Banner */}
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-3 md:px-6 md:py-4 rounded-2xl shadow-lg">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                <svg aria-hidden="true" className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                </svg>
-              </div>
-              <div className="text-left">
-                <div className="font-bold text-base md:text-lg">Website-in-a-Week+ includes Year-1 Hosting + 1 Standard Domain*</div>
-                <div className="text-green-100 text-xs md:text-sm">$499 Sprint and Lead Sprint are excluded. Domain availability applies and renewals are billed at registrar/hosting rates.</div>
-              </div>
-            </div>
-
             {/* Space Coast Location Callout */}
             <div className="flex items-center justify-center gap-2 mt-6 text-blue-200">
               <svg aria-hidden="true" className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -508,9 +495,6 @@ export default function PricingPage() {
 
             {/* Website-in-a-Week */}
             <div id="website-in-a-week" className="bg-white rounded-lg shadow-xl p-8 border-2 border-primary-500 relative">
-              <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                + Year-1 Hosting & Domain*
-              </div>
               <div className="text-primary-600 font-bold text-sm uppercase mb-2">Best Value</div>
               <h2 className="text-3xl font-bold mb-4">Website-in-a-Week</h2>
               <div className="text-5xl font-bold mb-6">
@@ -608,9 +592,6 @@ export default function PricingPage() {
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
             {/* Growth Website */}
             <div id="growth-website" className="bg-white rounded-lg shadow-xl p-8 relative">
-              <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                + Year-1 Hosting & Domain*
-              </div>
               <h2 className="text-3xl font-bold mb-4">Growth Website</h2>
               <div className="text-4xl font-bold mb-2">
                 $3,500–$4,500
@@ -670,9 +651,6 @@ export default function PricingPage() {
 
             {/* Authority Website */}
             <div id="authority-website" className="bg-white rounded-lg shadow-xl p-8 border-2 border-primary-500 relative">
-              <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                + Year-1 Hosting & Domain*
-              </div>
               <h2 className="text-3xl font-bold mb-4">Authority Website</h2>
               <div className="text-4xl font-bold mb-2">
                 $5,500–$7,500+
@@ -724,9 +702,6 @@ export default function PricingPage() {
           {/* Platform / Web App MVP */}
           <div className="max-w-3xl mx-auto">
             <div id="web-app" className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-lg shadow-xl p-8 relative">
-              <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                + Year-1 Hosting & Domain*
-              </div>
               <h2 className="text-3xl font-bold mb-4">Platform / Web App / AI MVP</h2>
               <div className="text-4xl font-bold mb-6">
                 $8,000–$25,000+
@@ -761,10 +736,6 @@ export default function PricingPage() {
               </Link>
             </div>
           </div>
-
-          <p className="text-center text-xs text-gray-500 mb-8">
-            * Included with Website-in-a-Week, Growth, Authority, and Platform projects when paired with an active care plan or 12-month hosting commitment. Excludes $499 Sprint and Lead Sprint. 1 standard domain only, subject to availability, registered under client name.
-          </p>
 
           <div className="max-w-6xl mx-auto mb-10 rounded-2xl border-2 border-primary-200 bg-primary-50 p-6 md:p-8">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">

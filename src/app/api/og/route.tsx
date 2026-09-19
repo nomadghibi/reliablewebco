@@ -39,7 +39,7 @@ export async function GET() {
               fontWeight: 700,
             }}
           >
-            FREE Hosting & Domain — 1 Year
+            MANAGED WEBSITE | LOCAL SUPPORT
           </div>
         </div>
 
@@ -65,7 +65,7 @@ export async function GET() {
             maxWidth: '900px',
           }}
         >
-          Launch a lead-generating website fast.
+          Professional websites for Space Coast small businesses.
         </div>
 
         <div
@@ -77,7 +77,7 @@ export async function GET() {
             lineHeight: 1.4,
           }}
         >
-          Fixed price. Professional. Built to convert.
+          We build it, host it, maintain it, and help you get found.
         </div>
 
         {/* Two main offers */}
@@ -93,13 +93,13 @@ export async function GET() {
             }}
           >
             <div style={{ fontSize: '16px', color: '#fbbf24', fontWeight: 700, marginBottom: '4px' }}>
-              MOST POPULAR
+              GET STARTED
             </div>
             <div style={{ fontSize: '36px', fontWeight: 800, color: '#ffffff' }}>
-              $499
+              $150
             </div>
             <div style={{ fontSize: '16px', color: '#93c5fd' }}>
-              24-Hour Landing Page
+              Setup
             </div>
           </div>
 
@@ -114,13 +114,13 @@ export async function GET() {
             }}
           >
             <div style={{ fontSize: '16px', color: '#60a5fa', fontWeight: 700, marginBottom: '4px' }}>
-              BEST VALUE
+              MANAGED PLAN
             </div>
             <div style={{ fontSize: '36px', fontWeight: 800, color: '#ffffff' }}>
-              $2,000
+              $100/mo
             </div>
             <div style={{ fontSize: '16px', color: '#93c5fd' }}>
-              Website-in-a-Week
+              Hosting + Maintenance
             </div>
           </div>
 

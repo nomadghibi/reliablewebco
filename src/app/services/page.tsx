@@ -82,6 +82,21 @@ export default function ServicesPage() {
 
       <section className="section-padding bg-white">
         <div className="container-custom">
+          <div className="max-w-6xl mx-auto mb-14 rounded-3xl border-2 border-primary-200 bg-primary-50 p-6 md:p-9 shadow-sm">
+            <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-center">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-wide text-primary-700 mb-2">Primary service for local businesses</p>
+                <h2 className="heading-md mb-3">Managed Local Business Website: $150 Setup + $100/Month</h2>
+                <p className="text-gray-700 max-w-3xl">
+                  Professional design, hosting, maintenance, basic SEO, analytics, and local support in one managed plan.
+                </p>
+              </div>
+              <Link href="/services/local-business-website-plan" className="btn-primary whitespace-nowrap">
+                View Website Plan
+              </Link>
+            </div>
+          </div>
+
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="heading-lg mb-4">Choose a Service Strategy</h2>
             <p className="text-xl text-gray-700">Each service strategy includes SEO-ready city pages with conversion-focused layout patterns.</p>

@@ -3,10 +3,11 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | Reliable Web Studio',
-  description: 'Terms of service for Reliable Web Studio.',
+  description:
+    'Terms for Reliable Web Studio managed website plans, custom website projects, hosting, maintenance, payments, and client responsibilities.',
   openGraph: {
     title: 'Terms of Service | Reliable Web Studio',
-    description: 'Read the Terms of Service for Reliable Web Studio.',
+    description: 'Review the terms for managed website plans and custom web projects.',
     url: 'https://www.reliablewebstudio.com/terms',
     type: 'website',
     images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Reliable Web Studio Terms of Service' }],
@@ -14,12 +15,10 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Terms of Service | Reliable Web Studio',
-    description: 'Read the Terms of Service for Reliable Web Studio.',
+    description: 'Review the terms for managed website plans and custom web projects.',
     images: ['/api/og'],
   },
-  alternates: {
-    canonical: 'https://www.reliablewebstudio.com/terms',
-  },
+  alternates: { canonical: 'https://www.reliablewebstudio.com/terms' },
 };
 
 export default function TermsPage() {
@@ -29,164 +28,226 @@ export default function TermsPage() {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto prose prose-lg">
             <h1>Terms of Service</h1>
-            <p className="text-gray-600">Last Updated: January 29, 2026</p>
+            <p className="text-gray-600">Last updated: September 19, 2026</p>
 
-            <h2>Agreement to Terms</h2>
+            <h2>Agreement to These Terms</h2>
             <p>
-              By accessing or using the services of Reliable Web Studio / Best Computer Tech LLC (&quot;we,&quot; &quot;our,&quot; or
-              &quot;us&quot;), you agree to be bound by these Terms of Service. If you do not agree to these terms,
-              please do not use our services.
+              These Terms of Service govern services provided by Reliable Web Studio, operated by Best Computer Tech LLC
+              (&quot;Reliable Web Studio,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). By purchasing a service,
+              approving a proposal, or using an ongoing service, the client (&quot;you&quot; or &quot;your&quot;) agrees to these
+              terms and any signed proposal or service agreement. If a signed agreement conflicts with these website terms,
+              the signed agreement controls.
             </p>
 
             <h2>Services</h2>
-            <p>Reliable Web Studio provides web design and development services, including but not limited to:</p>
+            <p>We provide services that may include:</p>
             <ul>
-              <li>24-Hour Landing Pages</li>
-              <li>Website-in-a-Week packages</li>
-              <li>Growth Websites</li>
-              <li>Authority Websites</li>
-              <li>Platform / Web App MVPs</li>
-              <li>Monthly care and maintenance plans</li>
+              <li>Managed local business website plans</li>
+              <li>Landing pages and Website-in-a-Week projects</li>
+              <li>Growth, authority, and custom websites</li>
+              <li>Web applications, portals, automation, and ML/AI integrations</li>
+              <li>Hosting, maintenance, analytics, local SEO foundations, and care plans</li>
             </ul>
-
-            <h2>Service Delivery</h2>
-            <h3>Timeline</h3>
             <p>
-              Project timelines are estimates and begin upon receipt of full payment (or deposit, where applicable) and
-              completion of the intake process. Timelines may vary based on client responsiveness and scope changes.
+              The exact scope, deliverables, schedule, and price are defined by the selected plan, checkout description,
+              proposal, or written service agreement.
             </p>
 
-            <h3>24-Hour Landing Page Guarantee</h3>
+            <h2>Local Website Plan</h2>
+            <h3>Pricing and Initial Term</h3>
             <p>
-              The 24-Hour Landing Page will be delivered within 24 hours after intake completion and payment receipt. If
-              we miss this deadline and you have completed your obligations, you will receive a $100 refund.
+              The standard Local Website Plan is $150 setup plus $100 per month unless a different amount is shown in a
+              written proposal. It has a 12-month initial service term beginning when the setup payment is received. After
+              the initial term, service continues month-to-month until canceled under these terms.
+            </p>
+            <p>
+              The initial term is a minimum commitment. If you cancel before it ends, amounts already paid are
+              non-refundable and the remaining monthly fees for the initial term remain due unless we agree otherwise in
+              writing.
+            </p>
+
+            <h3>What the Standard Plan Includes</h3>
+            <ul>
+              <li>Design and development of a small-business website of approximately five pages</li>
+              <li>Responsive mobile and desktop layouts</li>
+              <li>Managed hosting, SSL, uptime monitoring, routine maintenance, and backups</li>
+              <li>Contact form, click-to-call links, map or service-area information, and basic analytics</li>
+              <li>Basic on-page SEO, sitemap, search indexing setup, and appropriate structured data</li>
+              <li>Up to 30 minutes of minor content updates per billing month</li>
+            </ul>
+            <p>
+              Unused update time does not roll over. New pages, major redesigns, advanced functionality, paid advertising,
+              ongoing SEO campaigns, extensive copywriting, custom photography, e-commerce, and third-party subscription
+              fees are outside the standard plan unless included in writing.
+            </p>
+
+            <h3>Managed Service and Website Access</h3>
+            <p>
+              Hosting, maintenance, monitoring, and support are provided while the account is active and current. The
+              managed website may use our reusable code, components, systems, and licensed tools. Those underlying tools
+              and reusable materials remain our property or the property of their licensors.
+            </p>
+
+            <h2>Domains and Hosting</h2>
+            <ul>
+              <li>Your domain should be registered in your legal or business name whenever technically possible.</li>
+              <li>You retain ownership of a client-owned domain and are responsible for keeping its registration current.</li>
+              <li>Domain registration, renewal, premium-domain, transfer, and specialty extension fees are not included unless stated in writing.</li>
+              <li>Managed hosting is included only while the applicable monthly plan remains active and paid.</li>
+              <li>You must provide accurate registration information and required access for DNS or migration work.</li>
+            </ul>
+
+            <h2>Project Delivery</h2>
+            <h3>Start Date and Timeline</h3>
+            <p>
+              Work begins after we receive the required payment, completed intake information, content, and account access.
+              Timelines are estimates unless a written agreement expressly states a guarantee. Client delays, missing
+              materials, third-party outages, and scope changes may extend delivery dates.
+            </p>
+
+            <h3>24-Hour Landing Page</h3>
+            <p>
+              When a 24-hour delivery commitment is included, the delivery period begins only after payment and the complete
+              intake are received. The commitment applies to the first review-ready draft, not final launch, and excludes
+              delays caused by missing client materials, late feedback, expanded scope, or third-party services.
             </p>
 
             <h3>Client Responsibilities</h3>
-            <p>Clients must provide:</p>
+            <p>You agree to provide:</p>
             <ul>
-              <li>Required business information</li>
-              <li>Content, images, and branding materials</li>
-              <li>Timely feedback during revision rounds</li>
-              <li>Access to existing domain/hosting accounts (if migration or DNS updates are needed)</li>
+              <li>Accurate business, contact, service, and pricing information</li>
+              <li>Content, images, logos, licenses, and branding materials you have the right to use</li>
+              <li>Timely, consolidated feedback and approvals</li>
+              <li>Access to domains, hosting, analytics, and other accounts when needed</li>
+              <li>Required legal notices, professional disclaimers, privacy disclosures, and industry-specific compliance language</li>
             </ul>
 
-            <h2>Payment Terms</h2>
-            <h3>Pricing</h3>
-            <ul>
-              <li>24-Hour Landing Page: $499 (100% upfront)</li>
-              <li>Website-in-a-Week: $2,000 ($1,000 deposit, $1,000 before launch)</li>
-              <li>Growth Website: $3,500-$4,500 (50% deposit, 50% before launch)</li>
-              <li>Authority Website: $5,500-$7,500+ (50% deposit, 50% before launch)</li>
-              <li>Platform / Web App MVP: $8,000-$25,000+ (quote after scope call)</li>
-            </ul>
+            <h2>Payments</h2>
+            <p>
+              Setup fees, deposits, subscriptions, and project balances are due as stated at checkout or in the applicable
+              proposal. You authorize recurring charges when enrolling in a monthly plan. Taxes and third-party fees may be
+              added when applicable.
+            </p>
 
-            <h3>Payment Methods</h3>
-            <p>We accept payment via credit card, debit card, and electronic transfer.</p>
+            <h3>Late or Failed Payments</h3>
+            <p>
+              If payment fails or an account becomes overdue, we may pause work, updates, support, or managed hosting after
+              reasonable notice. Suspension does not transfer or cancel your domain ownership. Service may be restored after
+              outstanding amounts and any disclosed restoration costs are paid.
+            </p>
 
             <h3>Refunds</h3>
             <p>
-              Deposits are non-refundable once work has commenced. Refunds may be issued at our discretion in cases of
-              service failure or as specified in our guarantee.
+              Setup fees and deposits become non-refundable once work begins. Completed billing periods and third-party fees
+              are non-refundable. Any additional refund or service credit must be stated in writing or required by law.
             </p>
 
-            <h2>Domain and Hosting Offer Terms</h2>
-            <ul>
-              <li>Year-1 domain + hosting applies to Website-in-a-Week, Growth, Authority, and Platform packages only.</li>
-              <li>The offer requires either an active care plan or a 12-month hosting commitment.</li>
-              <li>24-Hour Landing Page and Lead Sprint Bundle do not include the year-1 hosting/domain offer.</li>
-              <li>Domain selection is subject to availability at the time of registration.</li>
-              <li>The domain is registered under the client&apos;s legal/business name and contact details.</li>
-              <li>Premium domains, specialty TLDs, auctions, and transfer fees are not included unless quoted separately.</li>
-              <li>After year 1, renewals are billed at registrar and hosting provider rates.</li>
-              <li>For overdue accounts, we may suspend managed hosting/services until balances are current; domain ownership remains with the client.</li>
-            </ul>
-
-            <h2>Revisions</h2>
-            <p>Revision rounds included:</p>
-            <ul>
-              <li>24-Hour Landing Page: 1 revision round</li>
-              <li>Website-in-a-Week: 1 revision round</li>
-              <li>Growth Website: 2 revision rounds</li>
-            </ul>
+            <h2>Revisions and Scope Changes</h2>
             <p>
-              Additional revision rounds beyond those included will be billed at our standard hourly rate. Revisions
-              must be requested within 30 days of initial delivery.
+              Included revisions are limited to the selected plan or proposal. A revision adjusts an agreed deliverable; it
+              does not add a new page, feature, service, or design direction. We will quote work outside the agreed scope
+              before proceeding. Project revisions should be submitted within 30 days of the initial delivery unless the
+              proposal states otherwise.
             </p>
 
-            <h2>Intellectual Property</h2>
-            <h3>Ownership</h3>
+            <h2>Ownership and Licenses</h2>
+            <h3>Your Materials</h3>
             <p>
-              Upon full payment, you own the website content and design. Reliable Web Studio retains the right to display the project in
-              our portfolio unless otherwise agreed in writing.
+              You retain ownership of content, logos, photos, trademarks, and other materials you provide. You grant us a
+              limited license to use those materials to deliver and promote the services, including displaying completed
+              work in our portfolio unless we agree otherwise in writing.
             </p>
 
-            <h3>Third-Party Assets</h3>
+            <h3>Custom Project Deliverables</h3>
             <p>
-              Some assets (fonts, stock images, plugins) may be licensed from third parties. You are responsible for
-              complying with applicable licenses.
+              For a one-time custom project, ownership of the final, client-specific deliverables transfers after all related
+              invoices are paid, subject to third-party licenses and our ownership of pre-existing or reusable tools,
+              components, methods, and frameworks.
             </p>
 
-            <h2>Hosting and Maintenance</h2>
+            <h3>Managed Plan Deliverables</h3>
             <p>
-              Hosting and ongoing maintenance are available through our monthly care plans. If you choose to host
-              elsewhere, you are responsible for all hosting, security, and maintenance.
+              Under a managed website plan, you own your domain and client-supplied content. The website service, hosting
+              environment, reusable code, and licensed components remain available while the plan is active. Any export,
+              migration, or buyout must be technically feasible and separately agreed in writing. Third-party licenses may
+              not be transferable.
             </p>
 
-            <h2>Limitations of Liability</h2>
+            <h2>Cancellation and Termination</h2>
             <p>
-              Reliable Web Studio is not liable for any indirect, incidental, or consequential damages arising from the use
-              or inability to use our services. Our total liability shall not exceed the amount paid for the specific
-              service.
+              After the 12-month initial term, you may cancel a Local Website Plan with 30 days&apos; written notice. We may
+              terminate or suspend service for nonpayment, unlawful activity, abuse, security risk, material breach, or use
+              that harms our systems or other customers. Fees earned before termination remain due.
+            </p>
+            <p>
+              When managed service ends, hosting, maintenance, updates, monitoring, and support end as well. We will
+              reasonably cooperate with a requested domain transfer or approved migration after the account is paid in full.
+              You should request any available export before the termination date.
+            </p>
+
+            <h2>Third-Party Services</h2>
+            <p>
+              Websites may connect to third-party providers such as domain registrars, analytics tools, form processors,
+              payment processors, maps, email platforms, or social networks. Their terms, availability, pricing, and data
+              practices are outside our control. We are not responsible for interruptions or changes caused by those
+              providers.
+            </p>
+
+            <h2>SEO, Analytics, and Results</h2>
+            <p>
+              We apply reasonable website, indexing, analytics, and local SEO practices within the purchased scope. Search
+              rankings, traffic, leads, sales, approval by search platforms, and Google Business Profile performance are not
+              guaranteed because they depend on competition, algorithms, client operations, and third-party platforms.
+            </p>
+
+            <h2>Acceptable Use</h2>
+            <p>
+              You may not use our services for unlawful, fraudulent, infringing, abusive, deceptive, or harmful activity.
+              You may not upload malware, attempt unauthorized access, send prohibited spam, or use the service in a way that
+              threatens security or platform stability.
             </p>
 
             <h2>Warranty Disclaimer</h2>
             <p>
-              Services are provided &quot;as is&quot; without warranties of any kind. We make reasonable efforts to
-              ensure quality but do not guarantee specific results or performance metrics.
+              Services are provided &quot;as is&quot; and &quot;as available&quot; to the fullest extent permitted by law. We
+              do not warrant uninterrupted operation or specific business, search, accessibility, legal, or financial
+              outcomes. You remain responsible for reviewing and approving your website before launch.
             </p>
 
-            <h2>Termination</h2>
+            <h2>Limitation of Liability</h2>
             <p>
-              Either party may terminate the service agreement with written notice. Upon termination, you will receive
-              all completed work. Deposits are non-refundable.
+              To the fullest extent permitted by law, Reliable Web Studio and Best Computer Tech LLC will not be liable for
+              indirect, incidental, special, consequential, or lost-profit damages. Our total liability arising from a
+              specific service will not exceed the amount you paid us for that service during the six months preceding the
+              event giving rise to the claim.
             </p>
 
-            <h2>Changes to Terms</h2>
+            <h2>Changes to These Terms</h2>
             <p>
-              We reserve the right to modify these Terms of Service at any time. Changes will be effective upon posting
-              to our website. Continued use of our services constitutes acceptance of modified terms.
+              We may update these terms from time to time. Updated terms become effective when posted unless a later date is
+              stated. Material changes to an active signed agreement require the process described in that agreement or
+              applicable law.
             </p>
 
             <h2>Governing Law</h2>
             <p>
-              These terms are governed by the laws of the State of Florida. Any disputes shall be resolved in the courts
-              of Florida.
+              These terms are governed by Florida law, without regard to conflict-of-law rules. Any dispute will be handled
+              in a court with jurisdiction in Brevard County, Florida, unless a signed agreement provides another process.
             </p>
 
-            <h2>Contact Information</h2>
-            <p>For questions about these Terms of Service, please contact us:</p>
+            <h2>Contact</h2>
+            <p>Questions, notices, and cancellation requests may be sent to:</p>
             <ul>
-              <li>
-                Email:{' '}
-                <a href="mailto:hello@reliablewebstudio.com" className="text-primary-600">
-                  hello@reliablewebstudio.com
-                </a>
-              </li>
-              <li>
-                Phone:{' '}
-                <a href="tel:+13219535199" className="text-primary-600">
-                  (321) 953-5199
-                </a>
-              </li>
+              <li>Email: <a href="mailto:hello@reliablewebstudio.com" className="text-primary-600">hello@reliablewebstudio.com</a></li>
+              <li>Phone: <a href="tel:+13219535199" className="text-primary-600">(321) 953-5199</a></li>
+              <li>Business: Best Computer Tech LLC, Palm Bay, Florida</li>
             </ul>
 
             <div className="not-prose mt-10 rounded-xl border border-gray-200 bg-gray-50 p-6">
-              <h2 className="text-xl font-bold text-gray-900 mb-3">Related Pages</h2>
-              <p className="text-gray-700 mb-4">
-                Use these pages to review package scope, process, and privacy details.
-              </p>
+              <h2 className="text-xl font-bold text-gray-900 mb-3">Review the Plan Before You Start</h2>
+              <p className="text-gray-700 mb-4">Compare the managed website scope, pricing, and project process before submitting your request.</p>
               <div className="flex flex-wrap gap-3">
+                <Link href="/services/local-business-website-plan" className="btn-primary">Local Website Plan</Link>
                 <Link href="/pricing" className="btn-secondary">Pricing</Link>
                 <Link href="/process" className="btn-secondary">Process</Link>
                 <Link href="/privacy" className="btn-secondary">Privacy Policy</Link>

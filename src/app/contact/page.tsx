@@ -490,6 +490,14 @@ export default function ContactPage() {
                     )}
                   </button>
 
+                  <p className="text-center text-xs leading-5 text-gray-500">
+                    Submitting this form requests a consultation and does not start paid service. Before payment, review the{' '}
+                    <Link href="/services/local-business-website-plan" className="font-semibold text-primary-700 hover:text-primary-800">
+                      plan details
+                    </Link>{' '}
+                    and <Link href="/terms" className="font-semibold text-primary-700 hover:text-primary-800">Terms of Service</Link>.
+                  </p>
+
                   {status === 'success' && (
                     <div className="flex items-start gap-3 bg-green-50 border border-green-200 text-green-800 px-5 py-4 rounded-xl">
                       <svg className="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -570,7 +578,6 @@ export default function ContactPage() {
                   fullWidth
                   className="bg-white text-accent-600 hover:bg-accent-50"
                 />
-                <p className="text-xs text-accent-100 mt-3">$499 Sprint does not include the Year-1 hosting/domain offer.</p>
               </div>
 
               {/* Book a Call Card */}
