@@ -33,6 +33,7 @@ For each page, confirm:
 ## 3) Revenue and Lead Flow Checks
 - Stripe env links are configured for active offers (`NEXT_PUBLIC_STRIPE_*`)
 - Pricing/checkout CTAs route correctly
+- Stripe webhook listens for successful checkout, renewals, failed payments, and canceled subscriptions
 - Contact form submits successfully
 - Audit form submits successfully
 - Confirmation/success messages display

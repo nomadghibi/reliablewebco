@@ -5,10 +5,12 @@ export const runtime = 'nodejs';
 
 const DEFAULT_FORMSPREE_ENDPOINT = 'https://formspree.io/f/xlgweovk';
 const MAX_WEBHOOK_BYTES = 1_000_000;
-const PAYMENT_EVENTS = new Set([
+const BILLING_EVENTS = new Set([
   'checkout.session.completed',
   'checkout.session.async_payment_succeeded',
   'invoice.paid',
+  'invoice.payment_failed',
+  'customer.subscription.deleted',
 ]);
 
 type StripeEvent = {
@@ -35,7 +37,13 @@ function amountInDollars(value: unknown): string {
     : '';
 }
 
-async function sendPaymentNotice(event: StripeEvent): Promise<void> {
+function inquiryType(eventType: string): string {
+  if (eventType === 'invoice.payment_failed') return 'stripe_payment_failed';
+  if (eventType === 'customer.subscription.deleted') return 'stripe_subscription_canceled';
+  return 'stripe_payment_confirmed';
+}
+
+async function sendBillingNotice(event: StripeEvent): Promise<void> {
   const object = event.data?.object ?? {};
   const customerDetails = nestedRecord(object.customer_details);
   const customerEmail = stringValue(customerDetails.email || object.customer_email, 160);
@@ -51,16 +59,27 @@ async function sendPaymentNotice(event: StripeEvent): Promise<void> {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      inquiry_type: 'stripe_payment_confirmed',
+      inquiry_type: inquiryType(eventType),
       stripe_event_id: stringValue(event.id, 120),
       stripe_event_type: eventType,
       payment_status: stringValue(object.payment_status || object.status, 80),
       customer_name: customerName,
       customer_email: customerEmail,
+      customer: stringValue(object.customer, 120),
       amount_paid: amountInDollars(object.amount_total ?? object.amount_paid),
+      amount_due: amountInDollars(object.amount_due),
       currency: stringValue(object.currency, 12).toUpperCase(),
       payment_link: stringValue(object.payment_link, 120),
       subscription: stringValue(object.subscription, 120),
+      attempt_count: typeof object.attempt_count === 'number' ? object.attempt_count : '',
+      cancel_at_period_end:
+        typeof object.cancel_at_period_end === 'boolean'
+          ? object.cancel_at_period_end
+            ? 'yes'
+            : 'no'
+          : '',
+      canceled_at: typeof object.canceled_at === 'number' ? object.canceled_at : '',
+      current_period_end: typeof object.current_period_end === 'number' ? object.current_period_end : '',
     }),
   });
 
@@ -104,7 +123,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Incomplete webhook event.' }, { status: 400 });
   }
 
-  if (!PAYMENT_EVENTS.has(event.type)) {
+  if (!BILLING_EVENTS.has(event.type)) {
     return NextResponse.json({ received: true });
   }
 
@@ -122,9 +141,9 @@ export async function POST(request: Request) {
   }
 
   try {
-    await sendPaymentNotice(event);
+    await sendBillingNotice(event);
   } catch {
-    return NextResponse.json({ error: 'Payment notification could not be delivered.' }, { status: 502 });
+    return NextResponse.json({ error: 'Billing notification could not be delivered.' }, { status: 502 });
   }
 
   return NextResponse.json({ received: true });
