@@ -2,14 +2,9 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { PAYMENT_LINKS, isPaymentConfigured } from '@/config/payments';
 
 export default function CheckoutCancelPage() {
   const router = useRouter();
-  const landingPageUrl = PAYMENT_LINKS.landingPage.url;
-  const isLandingPageConfigured = isPaymentConfigured(landingPageUrl);
-  const landingPageHref = isLandingPageConfigured ? '/checkout?package=landingPage' : '/contact';
-
   const handleGoBack = () => {
     if (typeof window !== 'undefined' && window.history.length > 1) {
       router.back();
@@ -101,12 +96,9 @@ export default function CheckoutCancelPage() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={landingPageHref}
-              className="btn-primary"
-            >
-              Try Again - $499
-            </a>
+            <Link href="/services/local-business-website-plan" className="btn-primary">
+              View Local Website Plan
+            </Link>
             <Link href="/pricing" className="btn-secondary">
               View All Pricing
             </Link>

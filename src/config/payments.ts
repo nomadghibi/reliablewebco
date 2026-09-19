@@ -40,6 +40,15 @@ const resolvePaymentUrl = (envUrl: string | undefined) => {
 };
 
 export const PAYMENT_LINKS = {
+  // Local Website Plan - $150 setup + $100/mo
+  localWebsitePlan: {
+    price: 100,
+    setupPrice: 150,
+    label: 'Local Website Plan',
+    recurring: true,
+    url: resolvePaymentUrl(process.env.NEXT_PUBLIC_STRIPE_LOCAL_WEBSITE_LINK),
+  },
+
   // 24-Hour Landing Page Sprint - $499
   landingPage: {
     price: 499,

@@ -50,10 +50,10 @@ export default function CheckoutSuccessPage() {
             Payment Successful!
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Thank you for your purchase. We&apos;re excited to start building your landing page.
+            Thank you for your purchase. Complete the website intake so we have the business details needed to begin.
           </p>
           <p className="text-sm text-primary-700 font-semibold mb-8">
-            Important: the 24-hour delivery timeline starts after your intake details are complete.
+            Important: your project timeline starts after your intake details and required assets are complete.
           </p>
 
           {/* What Happens Next */}
@@ -67,9 +67,9 @@ export default function CheckoutSuccessPage() {
                   <span className="text-primary-600 font-bold">1</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Check Your Email and Complete Intake</h3>
+                  <h3 className="font-semibold text-gray-900">Complete Your Website Intake</h3>
                   <p className="text-gray-600">
-                    You&apos;ll receive your receipt and intake instructions within a few minutes. Fill out intake right away so we can start.
+                    Use the secure intake form below to send your services, location, domain status, brand preferences, and asset links.
                   </p>
                 </div>
               </div>
@@ -79,9 +79,9 @@ export default function CheckoutSuccessPage() {
                   <span className="text-primary-600 font-bold">2</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Kickoff and Content Confirmation</h3>
+                  <h3 className="font-semibold text-gray-900">We Review and Confirm the Scope</h3>
                   <p className="text-gray-600">
-                    Our team will confirm your business details, offer, and CTA flow within 2 hours during business hours.
+                    We&apos;ll review your information and contact you if anything important is missing or needs clarification.
                   </p>
                 </div>
               </div>
@@ -91,9 +91,9 @@ export default function CheckoutSuccessPage() {
                   <span className="text-primary-600 font-bold">3</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Your Page Goes Live</h3>
+                  <h3 className="font-semibold text-gray-900">Design, Review, and Launch</h3>
                   <p className="text-gray-600">
-                    Within 24 hours after intake completion, your professional landing page will be ready to launch.
+                    We prepare the first version, collect your feedback, connect the client-owned domain, and launch after approval.
                   </p>
                 </div>
               </div>
@@ -140,11 +140,11 @@ export default function CheckoutSuccessPage() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/" className="btn-primary">
-              Back to Home
+            <Link href="/onboarding" className="btn-primary">
+              Complete Website Intake
             </Link>
-            <Link href="/portfolio" className="btn-secondary">
-              View Our Work
+            <Link href="/" className="btn-secondary">
+              Back to Home
             </Link>
           </div>
         </div>

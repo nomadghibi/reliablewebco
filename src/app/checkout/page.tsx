@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PAYMENT_LINKS, isPaymentConfigured } from '@/config/payments';
+import CheckoutActions from '@/components/CheckoutActions';
 
 type PaymentType = keyof typeof PAYMENT_LINKS;
 
@@ -18,6 +19,12 @@ const packageContent: Record<
     timeline: string;
   }
 > = {
+  localWebsitePlan: {
+    title: 'Local Business Website Plan',
+    summary:
+      'A professionally designed and managed small-business website with hosting, maintenance, basic SEO, analytics, and local support.',
+    timeline: 'Your project starts after payment and completed onboarding information are received.',
+  },
   landingPage: {
     title: '24-Hour Landing Page Sprint',
     summary:
@@ -90,8 +97,9 @@ export default async function CheckoutPage({ searchParams }: CheckoutPageProps) 
   const selectedPackage = PAYMENT_LINKS[selectedType];
   const selectedContent = packageContent[selectedType];
   const configured = isPaymentConfigured(selectedPackage.url);
-  const checkoutHref = configured ? selectedPackage.url : '/contact';
   const hasRecurringPrice = 'recurring' in selectedPackage && selectedPackage.recurring;
+  const setupPrice = 'setupPrice' in selectedPackage ? selectedPackage.setupPrice : null;
+  const backHref = selectedType === 'localWebsitePlan' ? '/services/local-business-website-plan' : '/pricing';
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-primary-50 to-white pt-28 pb-16">
@@ -99,10 +107,10 @@ export default async function CheckoutPage({ searchParams }: CheckoutPageProps) 
         <div className="max-w-3xl mx-auto">
           <div className="mb-8 flex justify-start">
             <Link
-              href="/pricing"
+              href={backHref}
               className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:border-primary-300 hover:text-primary-700 transition-colors"
             >
-              ← Back to Pricing
+              ← {selectedType === 'localWebsitePlan' ? 'Back to Plan Details' : 'Back to Pricing'}
             </Link>
           </div>
 
@@ -121,25 +129,19 @@ export default async function CheckoutPage({ searchParams }: CheckoutPageProps) 
 
             <div className="rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 mb-8">
               <p className="text-sm text-gray-700">
-                Package total:{' '}
+                Price:{' '}
                 <span className="font-bold text-gray-900">
-                  ${selectedPackage.price}
-                  {hasRecurringPrice ? '/mo' : ''}
+                  {setupPrice ? `$${setupPrice} setup + ` : ''}${selectedPackage.price}
+                  {hasRecurringPrice ? '/month' : ''}
                 </span>
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={checkoutHref}
-                className="btn-primary text-center"
-              >
-                {configured ? 'Continue to Secure Payment' : 'Contact Us to Start'}
-              </a>
-              <Link href="/contact#book-call" className="btn-secondary text-center">
-                Book a 10-Minute Call
-              </Link>
-            </div>
+            <CheckoutActions
+              checkoutHref={selectedPackage.url}
+              configured={configured}
+              requiresTermAcceptance={selectedType === 'localWebsitePlan'}
+            />
 
             {!configured && (
               <p className="text-sm text-amber-700 mt-4">

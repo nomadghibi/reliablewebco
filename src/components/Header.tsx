@@ -7,7 +7,7 @@ import { trackEvent } from '@/lib/analytics';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const landingPageHref = '/contact#website-plan';
+  const landingPageHref = '/checkout?package=localWebsitePlan';
 
   const trackLandingPageClick = () => {
     trackEvent('cta_primary_click', {

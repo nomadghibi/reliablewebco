@@ -295,9 +295,7 @@ export default function PricingPage() {
                 <li>• Basic SEO, analytics, Search Console, sitemap, and schema setup</li>
                 <li>• Up to 30 minutes of minor text/photo updates per month</li>
               </ul>
-              <Link href="/contact#website-plan" className="btn-primary w-full text-center">
-                Start for $150
-              </Link>
+              <PaymentButton type="localWebsitePlan" text="Start for $150" variant="primary" fullWidth />
             </article>
 
             <article className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
@@ -1098,7 +1096,7 @@ export default function PricingPage() {
       <CTASection
         title="Ready to stop dealing with website headaches?"
         subtitle="Start with the $150 setup + $100/month local website plan, or book a call if you need a larger custom project."
-        primaryCTA={{ text: 'Start Local Website Plan', href: '/contact#website-plan' }}
+        primaryCTA={{ text: 'Start Local Website Plan', href: '/checkout?package=localWebsitePlan' }}
         secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact#book-call' }}
         darkBg={true}
       />

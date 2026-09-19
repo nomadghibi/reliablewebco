@@ -4,6 +4,7 @@ import Image from 'next/image';
 import CTASection from '@/components/CTASection';
 import SectionViewTracker from '@/components/SectionViewTracker';
 import Reveal from '@/components/Reveal';
+import PaymentButton from '@/components/PaymentButton';
 import { floridaLocations } from '@/data/locations';
 import { getLatestBlogPosts } from '@/data/blog';
 import { industryPlaybooks } from '@/data/industries';
@@ -136,9 +137,7 @@ export default function Home() {
                   We design it, host it, maintain it, and help your business get found online. No huge upfront website bill. No technology headaches.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                  <Link href="/contact#website-plan" className="btn-accent px-8 py-4 text-lg">
-                    Get My Website Started
-                  </Link>
+                  <PaymentButton type="localWebsitePlan" text="Get My Website Started" variant="accent" className="px-8 py-4 text-lg" />
                   <Link href="#local-website-plan" className="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-white hover:text-primary-800">
                     See What&apos;s Included
                   </Link>
@@ -170,9 +169,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/contact#website-plan" className="btn-primary w-full text-center">
-                  Start for $150
-                </Link>
+                <PaymentButton type="localWebsitePlan" text="Start for $150" variant="primary" fullWidth />
                 <p className="mt-4 text-xs text-gray-500">
                   12-month initial service term. Domain stays registered in the client&apos;s name whenever possible.
                 </p>
@@ -207,9 +204,7 @@ export default function Home() {
                 <p className="text-gray-700 mb-6">
                   Built for owner-operated service businesses that need a professional website without spending thousands upfront.
                 </p>
-                <Link href="/contact#website-plan" className="btn-primary w-full text-center mb-4">
-                  Start for $150
-                </Link>
+                <PaymentButton type="localWebsitePlan" text="Start for $150" variant="primary" fullWidth className="mb-4" />
                 <Link href="/services/local-business-website-plan" className="mb-4 block text-center text-sm font-semibold text-primary-700 hover:text-primary-800">
                   See complete plan details
                 </Link>
@@ -500,7 +495,7 @@ export default function Home() {
       <CTASection
         title="You Run Your Business. We Handle Your Website."
         subtitle="Start with the $150 setup + $100/month local website plan, or contact us if you need a custom project."
-        primaryCTA={{ text: 'Get My Website Started', href: '/contact#website-plan' }}
+        primaryCTA={{ text: 'Get My Website Started', href: '/checkout?package=localWebsitePlan' }}
         secondaryCTA={{ text: 'See Pricing', href: '/pricing' }}
         darkBg={true}
         trackingLocation="home_final_cta"

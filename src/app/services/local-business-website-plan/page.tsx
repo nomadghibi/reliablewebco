@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
+import PaymentButton from '@/components/PaymentButton';
 
 const pageUrl = 'https://www.reliablewebstudio.com/services/local-business-website-plan';
 
@@ -153,7 +154,7 @@ export default function LocalBusinessWebsitePlanPage() {
                 We design it, host it, maintain it, and give it the technical foundation to be found locally. You stay focused on running your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact#website-plan" className="btn-accent px-8 py-4 text-lg">Get My Website Started</Link>
+                <PaymentButton type="localWebsitePlan" text="Get My Website Started" variant="accent" className="px-8 py-4 text-lg" />
                 <a href="tel:+13219535199" className="inline-flex items-center justify-center rounded-lg border-2 border-white/60 px-8 py-4 text-lg font-semibold text-white hover:bg-white hover:text-slate-950 transition-colors">Call (321) 953-5199</a>
               </div>
               <p className="mt-5 text-sm text-blue-200">Serving Palm Bay, Melbourne, Brevard County, and Florida&apos;s Space Coast.</p>
@@ -268,7 +269,7 @@ export default function LocalBusinessWebsitePlanPage() {
           <h2 className="heading-lg mb-5">Start Your Local Business Website for $150</h2>
           <p className="text-xl text-blue-100 mb-8">Tell us what your business does, where you work, and what customers need to do next.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact#website-plan" className="btn-accent px-8 py-4 text-lg">Get My Website Started</Link>
+            <PaymentButton type="localWebsitePlan" text="Get My Website Started" variant="accent" className="px-8 py-4 text-lg" />
             <Link href="/pricing" className="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-lg font-semibold text-white hover:bg-white hover:text-primary-800 transition-colors">Compare All Pricing</Link>
           </div>
           <p className="mt-5 text-sm text-blue-200">By starting a plan, you agree to the <Link href="/terms" className="underline hover:text-white">Terms of Service</Link>.</p>
