@@ -2,23 +2,20 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { PAYMENT_LINKS, isPaymentConfigured } from '@/config/payments';
 import { trackEvent } from '@/lib/analytics';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const landingPageUrl = PAYMENT_LINKS.landingPage.url;
-  const isLandingPageConfigured = isPaymentConfigured(landingPageUrl);
-  const landingPageHref = isLandingPageConfigured ? '/checkout?package=landingPage' : '/contact';
+  const landingPageHref = '/contact#website-plan';
 
   const trackLandingPageClick = () => {
     trackEvent('cta_primary_click', {
-      cta_text: 'Start Landing Page',
+      cta_text: 'Get Website Started',
       location: 'header',
     });
     trackEvent('package_select', {
-      package_type: 'landingPage',
+      package_type: 'localWebsitePlan',
       destination: landingPageHref,
       location: 'header',
     });
@@ -46,7 +43,7 @@ export default function Header() {
             <span className="text-xl md:text-2xl font-bold text-gray-900">
               Reliable <span className="text-primary-600">Web</span> Studio
             </span>
-            <span className="text-xs text-gray-500 tracking-wide">24-Hour Launches | Fixed Pricing</span>
+            <span className="text-xs text-gray-500 tracking-wide">Managed Websites | Local Support</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -81,7 +78,7 @@ export default function Header() {
               className="inline-block bg-accent-600 hover:bg-accent-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors"
               onClick={trackLandingPageClick}
             >
-              Start Landing Page
+              Get Website Started
             </a>
             <a
               href="tel:+13219535199"
@@ -173,7 +170,7 @@ export default function Header() {
                 className="btn-primary w-full text-center mt-4"
                 onClick={trackLandingPageClick}
               >
-                Start Landing Page
+                Get Website Started
               </a>
             </div>
           </div>

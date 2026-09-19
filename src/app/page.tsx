@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import CTASection from '@/components/CTASection';
-import PaymentButton from '@/components/PaymentButton';
 import SectionViewTracker from '@/components/SectionViewTracker';
 import Reveal from '@/components/Reveal';
 import { floridaLocations } from '@/data/locations';
@@ -10,13 +9,15 @@ import { getLatestBlogPosts } from '@/data/blog';
 import { industryPlaybooks } from '@/data/industries';
 
 export const metadata: Metadata = {
-  title: 'Reliable Web Studio — 24-Hour Landing Pages & Websites in a Week',
+  title: 'Space Coast Small Business Websites | $150 Setup + $100/Month',
   description:
-    'Get a modern landing page in 24 hours ($499) or a complete website in 7 days ($2,000). Fixed price, professional, built to convert. Florida web design for local service businesses.',
+    'Professional websites for Palm Bay, Melbourne, and Space Coast small businesses. $150 to start, $100/month for design, hosting, maintenance, basic SEO, analytics, and support.',
+  keywords:
+    'web design Palm Bay FL, web designer Palm Bay, web design Melbourne FL, Space Coast web design, small business website Palm Bay, local business website Melbourne FL, website design Brevard County, affordable small business websites, handyman website design, contractor website design',
   openGraph: {
-    title: 'Reliable Web Studio — 24-Hour Landing Pages & Websites in a Week',
+    title: 'Professional Websites for Space Coast Small Businesses',
     description:
-      'Get a modern landing page in 24 hours or a complete website in 7 days. Built to generate calls, form leads, and bookings.',
+      '$150 to start. $100/month. We design it, host it, maintain it, and help your local business get found online.',
     url: 'https://www.reliablewebstudio.com',
     type: 'website',
     images: [
@@ -24,15 +25,15 @@ export const metadata: Metadata = {
         url: '/api/og',
         width: 1200,
         height: 630,
-        alt: 'Reliable Web Studio — 24-Hour Landing Pages & Websites in a Week',
+        alt: 'Reliable Web Studio managed local business website plan',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Reliable Web Studio — 24-Hour Landing Pages & Websites in a Week',
+    title: 'Space Coast Small Business Websites | $150 Setup + $100/Month',
     description:
-      'Get a modern landing page in 24 hours or a complete website in 7 days. Built to generate calls, form leads, and bookings.',
+      'We build it, host it, maintain it, and help your business get found online.',
     images: ['/api/og'],
   },
   alternates: {
@@ -40,412 +41,362 @@ export const metadata: Metadata = {
   },
 };
 
+const planIncludes = [
+  'Professional website design',
+  'Up to approximately 5 core pages',
+  'Mobile-responsive design',
+  'Fast hosting and SSL/security',
+  'Contact or quote-request form',
+  'Click-to-call buttons',
+  'Google Maps / Google Business Profile integration',
+  'Basic on-page SEO',
+  'Google Search Console setup',
+  'Google Analytics setup',
+  'XML sitemap and indexing setup',
+  'Website monitoring and technical maintenance',
+  'Backups where applicable',
+  'Minor text/photo updates',
+  'Local-business structured data where appropriate',
+];
+
+const serviceBusinesses = [
+  'Handyman',
+  'Plumber',
+  'Electrician',
+  'HVAC',
+  'Cleaner',
+  'Landscaper',
+  'Painter',
+  'Pressure Washing',
+  'Roofing',
+  'Pool Service',
+  'Mobile Services',
+  'Contractors',
+];
+
+const processSteps = [
+  {
+    title: 'Tell Us About Your Business',
+    copy: 'Complete a short form or talk with us about your services, customers, and service area.',
+  },
+  {
+    title: 'We Build Your Website',
+    copy: 'We create a professional site designed around calls, quote requests, and local customers.',
+  },
+  {
+    title: 'You Review It',
+    copy: 'You review the site and provide feedback before launch.',
+  },
+  {
+    title: 'We Launch It',
+    copy: 'We connect your domain, forms, analytics, Search Console, SEO basics, and required services.',
+  },
+  {
+    title: 'We Keep Managing It',
+    copy: 'You operate your business. We handle the website, hosting, maintenance, and technical details.',
+  },
+];
+
+const comparisonRows = [
+  ['Large upfront investment', '$150 startup cost'],
+  ['Hosting may cost extra', 'Hosting included'],
+  ['Maintenance may cost extra', 'Maintenance included'],
+  ['Technical updates are on you', 'We handle technical updates'],
+  ['SEO setup often separate', 'Basic SEO foundation included'],
+  ['Relationship may end after launch', 'Ongoing support included'],
+];
+
 export default function Home() {
   const latestPosts = getLatestBlogPosts(3);
-  const proofSnapshots = [
-    {
-      industry: 'HVAC Service Company',
-      outcome: '2.1x more quote-form starts in first 30 days',
-      quote:
-        'The new page made our offer clear and we started getting better quality calls.',
-      person: 'Operations Manager, Palm Bay',
-      proofImage: '/images/portfolio/hvacprooffice.png',
-      proofAlt: 'HVAC project proof snapshot',
-    },
-    {
-      industry: 'Home Cleaning Business',
-      outcome: '38% increase in mobile call clicks after relaunch',
-      quote:
-        'Most leads come from phones, and the new flow made booking much easier.',
-      person: 'Owner, Melbourne',
-      proofImage: '/images/portfolio/rjdrycleaners.jpg',
-      proofAlt: 'Home service project proof snapshot',
-    },
-    {
-      industry: 'Dental Practice',
-      outcome: '54% lift in consultation request submissions',
-      quote:
-        'The page finally looks premium and patients can request appointments fast.',
-      person: 'Practice Lead, Space Coast',
-      proofImage: '/images/portfolio/ezzydental.jpg',
-      proofAlt: 'Clinic project proof snapshot',
-    },
-  ];
+  const highlightedIndustries = industryPlaybooks.slice(0, 3);
 
   return (
     <main>
-      {/* HERO — Space Coast Night Sky */}
-      <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-gradient-to-b from-slate-900 via-blue-900 to-primary-800 overflow-hidden">
-        {/* CSS Stars */}
-        <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-          <div className="absolute w-1 h-1 bg-white rounded-full top-[10%] left-[15%] animate-pulse opacity-80" />
-          <div className="absolute w-1.5 h-1.5 bg-white rounded-full top-[8%] left-[45%] animate-pulse opacity-60" style={{ animationDelay: '0.5s' }} />
-          <div className="absolute w-1 h-1 bg-white rounded-full top-[15%] left-[75%] animate-pulse opacity-70" style={{ animationDelay: '1s' }} />
-          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[20%] left-[30%] opacity-50" />
-          <div className="absolute w-1 h-1 bg-white rounded-full top-[5%] left-[60%] animate-pulse opacity-60" style={{ animationDelay: '1.5s' }} />
-          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[25%] left-[85%] opacity-40" />
-          <div className="absolute w-1 h-1 bg-white rounded-full top-[12%] left-[92%] animate-pulse opacity-50" style={{ animationDelay: '2s' }} />
-          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[18%] left-[8%] opacity-60" />
-          <div className="absolute w-1.5 h-1.5 bg-white rounded-full top-[6%] left-[25%] animate-pulse opacity-40" style={{ animationDelay: '0.8s' }} />
-          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[22%] left-[55%] opacity-50" />
-          <div className="absolute w-1 h-1 bg-white rounded-full top-[3%] left-[38%] opacity-70" />
-          <div className="absolute w-0.5 h-0.5 bg-white rounded-full top-[28%] left-[70%] opacity-30" />
-        </div>
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute -top-20 -left-16 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl animate-hero-drift" />
-          <div className="absolute top-24 -right-20 h-80 w-80 rounded-full bg-blue-400/20 blur-3xl animate-hero-drift" style={{ animationDelay: '3s' }} />
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-br from-slate-950 via-blue-950 to-primary-800 overflow-hidden">
+        <div className="absolute inset-0 opacity-25" aria-hidden="true">
+          <div className="absolute -top-24 -left-20 h-80 w-80 rounded-full bg-cyan-400/40 blur-3xl animate-hero-drift" />
+          <div className="absolute top-28 -right-24 h-96 w-96 rounded-full bg-accent-400/30 blur-3xl animate-hero-drift" style={{ animationDelay: '2.5s' }} />
+          <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-blue-300/30 blur-3xl" />
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <Reveal delay={0}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-white">
-                Launch a lead-generating website in 24 hours, or a full site in 7 days.
-              </h1>
-            </Reveal>
-            <Reveal delay={90}>
-              <p className="text-xl md:text-2xl text-blue-100 mb-4">
-                Get a modern landing page <strong className="text-white">in 24 hours</strong> or a complete <strong className="text-white">website in 7 days</strong> (up to 8 pages). Designed to generate <strong className="text-white">calls, form leads, and bookings</strong>.
-              </p>
-            </Reveal>
-
-            {/* Space Coast Location Callout */}
-            <Reveal delay={180}>
-              <div className="flex items-center justify-center gap-2 mb-8 text-blue-200">
-              {/* Rocket icon */}
-                <svg aria-hidden="true" className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m5.96 5.96a14.926 14.926 0 01-5.84 2.58m0 0a6 6 0 01-7.38-5.84h4.8" />
-                </svg>
-                <span className="text-sm md:text-base font-medium">
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+            <Reveal>
+              <div>
+                <p className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100 mb-6">
                   Serving Palm Bay, Melbourne &amp; Florida&apos;s Space Coast
-                </span>
-              </div>
-            </Reveal>
-
-            <Reveal delay={260}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-3">
-              <PaymentButton
-                type="landingPage"
-                text="Start 24-Hour Landing Page"
-                variant="primary"
-                className="px-8 py-4 text-lg"
-              />
-              <Link href="/contact#book-call" className="btn-primary px-8 py-4 text-lg">
-                Book a 10-Minute Call
-              </Link>
-              </div>
-            </Reveal>
-
-            <Reveal delay={290}>
-              <p className="text-xs md:text-sm text-blue-200/90 mb-4">
-                24-hour timeline begins after checkout and intake completion.
-              </p>
-            </Reveal>
-
-            {/* Post-payment flow microcopy */}
-            <Reveal delay={320}>
-              <p className="text-sm text-blue-200/80 mb-6">
-                After checkout: 5-min intake → draft today → 1 revision → go live.
-              </p>
-            </Reveal>
-
-            {/* Space Coast Trust Badge — hidden on mobile to reduce stacking */}
-            <Reveal delay={360}>
-              <div className="hidden sm:flex items-center justify-center gap-2 mb-4 text-blue-300/80">
-                <svg aria-hidden="true" className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-xs md:text-sm">
-                  Proudly Serving Florida&apos;s Space Coast &nbsp;|&nbsp; Palm Bay · Melbourne · Brevard County
-                </span>
-              </div>
-            </Reveal>
-
-            <Reveal delay={420}>
-              <p className="text-xs md:text-sm text-blue-300/70">Speed + quality without agency timelines.</p>
-            </Reveal>
-
-            {/* Hosting/Domain Eligibility Banner */}
-            <Reveal delay={500}>
-              <div className="mt-8 flex flex-col items-center gap-2">
-                <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-3 text-center bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg animate-float-gentle">
-                  <svg aria-hidden="true" className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                  </svg>
-                  <span className="font-semibold text-sm md:text-base">Website-in-a-Week+ includes Year-1 Hosting + 1 Standard Domain*</span>
-                </div>
-                <p className="text-xs text-blue-300/60">$499 Sprint and Lead Sprint are excluded. Domain is based on availability, registered under your name, and renewals are billed at registrar/hosting rates.</p>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-
-        {/* Wave Divider */}
-        <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
-          <svg className="w-full h-16 md:h-24" viewBox="0 0 1440 96" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 96h1440V56c-120-20-240-40-360-36s-240 32-360 40-240-8-360-20S120 16 0 24v72z" fill="white" />
-          </svg>
-        </div>
-      </section>
-
-      {/* OFFER CARDS */}
-      <section className="py-16 md:py-24 bg-white" aria-labelledby="offers-heading">
-        <div className="container-custom">
-          <Reveal>
-            <h2 id="offers-heading" className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Choose your speed
-            </h2>
-          </Reveal>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* 24-Hour Landing Page Sprint */}
-            <Reveal delay={80}>
-              <div className="bg-white rounded-lg shadow-xl p-8 border-2 border-accent-500 relative">
-                <div className="absolute -top-3 right-4 bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                  Sprint Offer
-                </div>
-                <div className="text-accent-600 font-bold text-sm uppercase mb-2">Most Popular</div>
-                <h3 className="text-3xl font-bold mb-4">24-Hour Landing Page Sprint — $499</h3>
-                <ul className="space-y-3 mb-8 text-gray-700">
-                <li className="flex items-start">
-                  <svg aria-hidden="true" className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  <span>1-page conversion landing page</span>
-                </li>
-                <li className="flex items-start">
-                  <svg aria-hidden="true" className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Form + click-to-call + booking button</span>
-                </li>
-                <li className="flex items-start">
-                  <svg aria-hidden="true" className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Basic SEO + analytics</span>
-                </li>
-                <li className="flex items-start">
-                  <svg aria-hidden="true" className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  <span><strong>Live in 24 hours</strong></span>
-                </li>
-                </ul>
-                <PaymentButton
-                  type="landingPage"
-                  text="Start 24-Hour Landing Page"
-                  variant="accent"
-                  fullWidth
-                />
-                <p className="text-xs text-gray-500 mt-3">24-hour clock starts after intake is complete.</p>
-              </div>
-            </Reveal>
-
-            {/* Website-in-a-Week */}
-            <Reveal delay={160}>
-              <div className="bg-white rounded-lg shadow-xl p-8 border-2 border-primary-500 relative">
-                <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                  + Year-1 Hosting & Domain*
-                </div>
-                <div className="text-primary-600 font-bold text-sm uppercase mb-2">Best Value</div>
-                <h3 className="text-3xl font-bold mb-4">Website-in-a-Week — $2,000</h3>
-                <ul className="space-y-3 mb-8 text-gray-700">
-                <li className="flex items-start">
-                  <svg aria-hidden="true" className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Up to 8 pages</span>
-                </li>
-                <li className="flex items-start">
-                  <svg aria-hidden="true" className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Mobile-first + fast performance</span>
-                </li>
-                <li className="flex items-start">
-                  <svg aria-hidden="true" className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Contact + tracking + launch</span>
-                </li>
-                <li className="flex items-start">
-                  <svg aria-hidden="true" className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  <span><strong>Live in 5–7 days</strong></span>
-                </li>
-                </ul>
-                <div className="space-y-3">
-                  <PaymentButton
-                    type="websiteDeposit"
-                    text="Start My $2,000 Website"
-                    variant="primary"
-                    fullWidth
-                  />
-                  <Link href="/contact#book-call" className="btn-secondary w-full text-center">
-                    Book a Call First
+                </p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+                  Professional Websites for Space Coast Small Businesses
+                </h1>
+                <p className="text-2xl md:text-3xl font-bold text-accent-200 mb-5">
+                  $150 to Start. $100/Month.
+                </p>
+                <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl">
+                  We design it, host it, maintain it, and help your business get found online. No huge upfront website bill. No technology headaches.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                  <Link href="/contact#website-plan" className="btn-accent px-8 py-4 text-lg">
+                    Get My Website Started
+                  </Link>
+                  <Link href="#local-website-plan" className="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-white hover:text-primary-800">
+                    See What&apos;s Included
                   </Link>
                 </div>
+                <p className="text-sm text-blue-200">
+                  You Run Your Business. We Handle Your Website.
+                </p>
               </div>
             </Reveal>
-          </div>
 
-          <Reveal delay={200}>
-            <div className="max-w-5xl mx-auto mt-8 rounded-2xl border-2 border-primary-200 bg-primary-50 p-6 md:p-8">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-wide text-primary-700 mb-2">Lead Sprint Bundle</p>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">$698: 24-Hour Page + Follow-up Automation</h3>
-                  <p className="text-gray-700">
-                    Launch fast and automatically follow up with leads by email/SMS so fewer inquiries go cold.
-                  </p>
-                </div>
-                <div className="w-full md:w-auto md:min-w-[260px]">
-                  <PaymentButton
-                    type="leadSprintBundle"
-                    text="Start Lead Sprint Bundle"
-                    variant="primary"
-                    fullWidth
-                  />
-                  <p className="text-xs text-gray-600 mt-2 text-center">Bundle setup starts after intake confirmation.</p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Content Note */}
-          <Reveal delay={220}>
-            <div className="mt-10 text-center">
-              <div className="inline-flex items-center gap-3 bg-gray-100 px-6 py-4 rounded-xl">
-                <svg aria-hidden="true" className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="text-gray-700">
-                  <strong>Just tell us what business you&apos;re in — we take care of the rest.</strong> Content & images? Provide your own or we source them for you.
-                </span>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* PROOF — Outcome snapshots */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-cyan-50 to-blue-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <Reveal>
-              <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">Recent Outcome Snapshots</h2>
-              <p className="text-center text-gray-600 mb-12">
-                Examples from recent launches with verified analytics access.
-              </p>
-            </Reveal>
-            <div className="grid md:grid-cols-3 gap-6">
-              {proofSnapshots.map((item, index) => (
-                <Reveal key={item.industry} delay={(index + 1) * 80}>
-                  <div className="bg-white rounded-xl p-6 shadow-md border border-blue-100">
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-gray-200 mb-4">
-                      <Image
-                        src={item.proofImage}
-                        alt={item.proofAlt}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover object-top"
-                      />
-                    </div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-3">{item.industry}</p>
-                    <p className="text-2xl font-bold text-gray-900 mb-3">{item.outcome}</p>
-                    <p className="text-gray-700 italic mb-3">&quot;{item.quote}&quot;</p>
-                    <p className="text-sm text-gray-600">— {item.person}</p>
+            <Reveal delay={120}>
+              <div className="rounded-3xl border border-white/15 bg-white/95 p-6 md:p-8 shadow-2xl">
+                <p className="text-sm font-bold uppercase tracking-wide text-primary-700 mb-3">Local Business Website Plan</p>
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <div className="rounded-2xl bg-primary-50 p-5 text-center">
+                    <p className="text-sm text-gray-600">Setup</p>
+                    <p className="text-4xl font-bold text-gray-900">$150</p>
                   </div>
-                </Reveal>
-              ))}
-            </div>
+                  <div className="rounded-2xl bg-accent-50 p-5 text-center">
+                    <p className="text-sm text-gray-600">Monthly</p>
+                    <p className="text-4xl font-bold text-gray-900">$100</p>
+                  </div>
+                </div>
+                <ul className="space-y-3 text-gray-700 mb-6">
+                  {['Website design', 'Hosting and SSL', 'Maintenance and monitoring', 'Basic local SEO setup', 'Forms, call buttons, analytics'].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span className="mt-1 h-2 w-2 rounded-full bg-green-500" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/contact#website-plan" className="btn-primary w-full text-center">
+                  Start for $150
+                </Link>
+                <p className="mt-4 text-xs text-gray-500">
+                  12-month initial service term. Domain stays registered in the client&apos;s name whenever possible.
+                </p>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section className="relative py-16 md:py-24 bg-white overflow-hidden">
-        {/* Subtle wave accent at top */}
-        <div className="absolute top-0 left-0 right-0 opacity-[0.04]" aria-hidden="true">
-          <svg className="w-full h-12" viewBox="0 0 1440 48" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 48V24c240-32 480 16 720 8s480-40 720-16v32H0z" fill="currentColor" className="text-blue-900" />
-          </svg>
+      <section id="local-website-plan" className="section-padding bg-white" aria-labelledby="local-plan-heading">
+        <div className="container-custom">
+          <SectionViewTracker eventName="pricing_view" sectionName="home_local_website_plan" />
+          <Reveal>
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <p className="text-xs font-bold uppercase tracking-wide text-primary-700 mb-2">Website-as-a-Service</p>
+              <h2 id="local-plan-heading" className="heading-lg mb-4">Everything Your Local Business Website Needs</h2>
+              <p className="text-xl text-gray-700">
+                $150 setup + $100/month for the website foundation most small local service businesses need.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 max-w-6xl mx-auto items-start">
+            <Reveal delay={80}>
+              <div className="rounded-3xl border-2 border-primary-500 bg-primary-50 p-6 md:p-8 shadow-xl">
+                <h3 className="text-3xl font-bold text-gray-900 mb-2">Local Website</h3>
+                <div className="mb-6">
+                  <span className="text-5xl font-bold text-gray-900">$150</span>
+                  <span className="text-gray-600 ml-2">setup</span>
+                  <div className="text-3xl font-bold text-primary-700 mt-2">$100/month</div>
+                </div>
+                <p className="text-gray-700 mb-6">
+                  Built for owner-operated service businesses that need a professional website without spending thousands upfront.
+                </p>
+                <Link href="/contact#website-plan" className="btn-primary w-full text-center mb-4">
+                  Start for $150
+                </Link>
+                <p className="text-sm text-gray-600">
+                  Includes up to 30 minutes of minor website updates per month. New pages, major redesigns, paid advertising, advanced SEO, and substantial content creation are quoted separately.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={140}>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {planIncludes.map((item) => (
+                  <div key={item} className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+                    <div className="flex items-start gap-3">
+                      <span className="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-100 text-xs font-bold text-green-700">✓</span>
+                      <p className="text-sm font-medium text-gray-800">{item}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
         </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-gray-50" aria-labelledby="who-for-heading">
         <div className="container-custom">
           <Reveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">How It Works</h2>
+            <div className="max-w-4xl mx-auto text-center mb-10">
+              <h2 id="who-for-heading" className="heading-lg mb-4">Built for Local Businesses That Need Customers - Not Website Headaches</h2>
+              <p className="text-xl text-gray-700">
+                If you run the business yourself, you shouldn&apos;t have to become a web designer too. Tell us what you do and where you work. We handle the website.
+              </p>
+            </div>
           </Reveal>
-          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <Reveal delay={60}>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  1
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {serviceBusinesses.map((business, index) => (
+              <Reveal key={business} delay={index * 35}>
+                <div className="rounded-xl border border-gray-200 bg-white p-5 text-center shadow-sm">
+                  <p className="font-bold text-gray-900">{business}</p>
                 </div>
-                <h3 className="font-bold text-lg mb-2">Pay & Complete Intake</h3>
-                <p className="text-gray-600 text-sm">5 minutes</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white" aria-labelledby="how-it-works-heading">
+        <div className="container-custom">
+          <Reveal>
+            <h2 id="how-it-works-heading" className="heading-lg text-center mb-12">How It Works</h2>
+          </Reveal>
+          <div className="grid md:grid-cols-5 gap-5 max-w-7xl mx-auto">
+            {processSteps.map((step, index) => (
+              <Reveal key={step.title} delay={index * 70}>
+                <article className="h-full rounded-2xl border border-gray-200 bg-gray-50 p-5">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-600 text-xl font-bold text-white">
+                    {index + 1}
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
+                  <p className="text-sm text-gray-700">{step.copy}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-900 to-primary-900 text-white" aria-labelledby="trust-heading">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center max-w-6xl mx-auto">
+            <Reveal>
+              <div>
+                <p className="text-sm font-bold uppercase tracking-wide text-accent-200 mb-3">Local technology support</p>
+                <h2 id="trust-heading" className="heading-lg mb-5">Local Technology Experience You Can Actually Call</h2>
+                <p className="text-lg text-blue-100 mb-6">
+                  Reliable Web Studio is operated by Best Computer Tech LLC, serving customers since 2009. After years of providing IT services and building websites, we now offer an affordable managed website service designed specifically for small local businesses.
+                </p>
+                <p className="text-2xl font-bold text-white">We Build It. We Host It. We Maintain It. We Help You Get Found.</p>
               </div>
             </Reveal>
             <Reveal delay={120}>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  2
-                </div>
-                <h3 className="font-bold text-lg mb-2">Preview Delivered Fast</h3>
-                <p className="text-gray-600 text-sm">Same day / Day 3</p>
-              </div>
-            </Reveal>
-            <Reveal delay={180}>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  3
-                </div>
-                <h3 className="font-bold text-lg mb-2">One Revision Round</h3>
-                <p className="text-gray-600 text-sm">Fast iteration</p>
-              </div>
-            </Reveal>
-            <Reveal delay={240}>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  4
-                </div>
-                <h3 className="font-bold text-lg mb-2">Go Live</h3>
-                <p className="text-gray-600 text-sm">24h or 7 days</p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {['15+ years of technology experience', 'Palm Bay / Space Coast based', 'Local support', 'Real person you can contact', 'Website + IT experience', 'No overseas support center', 'Focus on small businesses', 'Domain in client name whenever possible'].map((item) => (
+                  <div key={item} className="rounded-xl border border-white/15 bg-white/10 p-4">
+                    <p className="font-semibold text-white">{item}</p>
+                  </div>
+                ))}
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* INDUSTRY PLAYBOOKS */}
+      <section className="section-padding bg-white" aria-labelledby="case-study-heading">
+        <div className="container-custom">
+          <Reveal>
+            <div className="max-w-4xl mx-auto text-center mb-10">
+              <p className="text-xs font-bold uppercase tracking-wide text-primary-700 mb-2">Local proof</p>
+              <h2 id="case-study-heading" className="heading-lg mb-4">Case Study: Right Away Services LLC - Palm Bay Handyman</h2>
+              <p className="text-xl text-gray-700">
+                A local handyman business needed a clearer web presence for trust, service-area visibility, and quote requests.
+              </p>
+            </div>
+          </Reveal>
+          <div className="grid md:grid-cols-4 gap-5 max-w-6xl mx-auto">
+            {[
+              ['Problem', 'The business needed a professional site that explained services clearly and supported Palm Bay / Melbourne local search intent.'],
+              ['Solution', 'We structured the website around service clarity, mobile calls, quote requests, local-service pages, and project proof.'],
+              ['Services Provided', 'Website design, mobile optimization, Google Search Console, Google Business Profile support, SEO foundations, project portfolio, and geographic targeting.'],
+              ['Results', 'Qualitative result: stronger professional presence and a clearer path for local customers to request help. Performance numbers can be added after analytics history is verified.'],
+            ].map(([title, copy]) => (
+              <article key={title} className="rounded-2xl border border-gray-200 bg-gray-50 p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+                <p className="text-gray-700">{copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-primary-50" aria-labelledby="comparison-heading">
+        <div className="container-custom">
+          <Reveal>
+            <div className="max-w-4xl mx-auto text-center mb-10">
+              <h2 id="comparison-heading" className="heading-lg mb-4">A Professional Website Without the Huge Upfront Cost</h2>
+              <p className="text-xl text-gray-700">Compare a typical one-time website project with the Reliable Local Website Plan.</p>
+            </div>
+          </Reveal>
+          <div className="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-primary-200 bg-white shadow-lg">
+            <div className="grid grid-cols-2 bg-gray-900 text-white text-sm font-bold uppercase tracking-wide">
+              <div className="p-4">Traditional Website</div>
+              <div className="p-4 bg-primary-700">Reliable Local Website Plan</div>
+            </div>
+            {comparisonRows.map(([traditional, reliable]) => (
+              <div key={traditional} className="grid grid-cols-2 border-t border-gray-200">
+                <div className="p-4 text-gray-700">{traditional}</div>
+                <div className="p-4 font-semibold text-gray-900 bg-primary-50">{reliable}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white" aria-labelledby="bigger-heading">
+        <div className="container-custom">
+          <Reveal>
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 id="bigger-heading" className="heading-lg mb-4">Need Something Bigger?</h2>
+              <p className="text-xl text-gray-700">
+                For businesses that prefer to purchase a website outright or need custom functionality, e-commerce, integrations, applications, or more advanced SEO, we also provide custom project pricing.
+              </p>
+            </div>
+          </Reveal>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+            {[
+              ['24-Hour Landing Page', '$499 one-time', '/pricing#landing-page'],
+              ['Website-in-a-Week', '$2,000 one-time', '/pricing#website-in-a-week'],
+              ['Growth / Authority Websites', '$3,500+', '/pricing#growth-website'],
+              ['Software Development / ML-AI', '$8,000+', '/platform'],
+            ].map(([title, price, href]) => (
+              <Reveal key={title}>
+                <Link href={href} className="block h-full rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all hover:border-primary-300 hover:shadow-md">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
+                  <p className="text-primary-700 font-semibold mb-4">{price}</p>
+                  <span className="text-sm font-semibold text-gray-700">View option</span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24 bg-gray-50" aria-labelledby="industry-playbooks-heading">
         <div className="container-custom">
           <Reveal>
             <div className="max-w-4xl mx-auto text-center mb-12">
-              <h2 id="industry-playbooks-heading" className="text-3xl md:text-4xl font-bold mb-4">
-                Industry Playbooks
-              </h2>
+              <h2 id="industry-playbooks-heading" className="heading-lg mb-4">Service Business Playbooks</h2>
               <p className="text-xl text-gray-700">
-                Pick the page model built for your market, then launch fast with a fixed-price path.
+                Examples of how we structure sites for common local service industries.
               </p>
             </div>
           </Reveal>
-
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {industryPlaybooks.map((industry, index) => (
+            {highlightedIndustries.map((industry, index) => (
               <Reveal key={industry.slug} delay={(index + 1) * 70}>
                 <article className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-2">{industry.shortName}</p>
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">{industry.name}</h3>
                   <p className="text-gray-700 mb-4">{industry.summary}</p>
-                  <ul className="space-y-2 text-sm text-gray-700 mb-6">
-                    {industry.keyWins.slice(0, 3).map((win) => (
-                      <li key={win} className="flex items-start gap-2">
-                        <span className="text-green-600 font-bold">✓</span>
-                        <span>{win}</span>
-                      </li>
-                    ))}
-                  </ul>
                   <Link href={`/industries/${industry.slug}`} className="btn-secondary w-full text-center">
                     View {industry.shortName} Page
                   </Link>
@@ -456,137 +407,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PORTFOLIO PREVIEW — Sandy coastal tones */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-amber-50/60 to-orange-50/40">
+      <section className="py-16 md:py-24 bg-white" aria-labelledby="portfolio-heading">
         <div className="container-custom">
           <Reveal>
             <div className="max-w-4xl mx-auto text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">See what your site can look like</h2>
-              <p className="text-xl text-gray-700">
-                These are real builds. We customize the layout to your offer and service area.
-              </p>
+              <h2 id="portfolio-heading" className="heading-lg mb-4">See What Your Site Can Look Like</h2>
+              <p className="text-xl text-gray-700">Real builds and project styles we can adapt around your business, offer, and service area.</p>
             </div>
           </Reveal>
-
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
-              { name: 'Destiny Insights', image: '/images/portfolio/destinyinsights.jpg', url: 'https://www.destiny-insights.com', category: 'AI Platform' },
-              { name: 'TechEze AI', image: '/images/portfolio/techezeai.jpg', url: 'https://www.techezeai.com', category: 'AI Consulting' },
-              { name: 'StrideSafe', image: '/images/portfolio/stridesafe.jpg', url: 'https://stridesafe.vercel.app', category: 'Healthcare Platform' },
-              { name: 'HVAC Pro Office', image: '/images/portfolio/hvacprooffice.png', url: 'https://hvacprooffice.com', category: 'Platform MVP' },
-            ].map((demo, idx) => (
-              <Reveal key={idx} delay={idx * 80}>
-                <a
-                  href={demo.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-                >
-                  <div className="aspect-video relative overflow-hidden">
-                    <Image
-                      src={demo.image}
-                      alt={demo.name}
-                      fill
-                      sizes="(min-width: 768px) 50vw, 100vw"
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <span className="text-white font-semibold flex items-center gap-2">
-                        View Live
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </span>
-                    </div>
+              { name: 'Right Away Services Style', image: '/images/portfolio/flippersremodeling.jpg', url: '/portfolio', category: 'Local Service Website' },
+              { name: 'HVAC Pro Office', image: '/images/portfolio/hvacprooffice.png', url: '/portfolio/hvac-pro-office', category: 'Custom Platform' },
+            ].map((demo) => (
+              <Reveal key={demo.name}>
+                <Link href={demo.url} className="group block overflow-hidden rounded-xl bg-white shadow-lg transition-all hover:shadow-2xl">
+                  <div className="relative aspect-video overflow-hidden">
+                    <Image src={demo.image} alt={demo.name} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-top transition-transform duration-300 group-hover:scale-105" />
                   </div>
-                  <div className="p-4">
-                    <div className="text-xs text-primary-600 font-semibold uppercase tracking-wide mb-1">{demo.category}</div>
+                  <div className="p-5">
+                    <div className="text-xs font-semibold uppercase tracking-wide text-primary-600 mb-1">{demo.category}</div>
                     <h3 className="font-bold text-gray-900">{demo.name}</h3>
-                    <p className="text-xs text-gray-500 mt-2">Designed by Reliable Web Studio - Best Computer Tech LLC</p>
                   </div>
-                </a>
+                </Link>
               </Reveal>
             ))}
-
-            {/* Your Site Here - CTA Card */}
-            <div className="md:col-span-2 md:max-w-md md:mx-auto">
-              <Link
-                href="/contact"
-                className="group block bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:from-primary-700 hover:to-primary-800"
-              >
-                <div className="aspect-video relative flex items-center justify-center p-6">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                      </svg>
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Your Site Here</h3>
-                    <p className="text-primary-100 text-sm">Starting at $499</p>
-                  </div>
-                </div>
-                <div className="p-4 bg-white">
-                  <div className="text-xs text-green-600 font-semibold uppercase tracking-wide mb-1">Website-in-a-Week+ Offer*</div>
-                  <h3 className="font-bold text-gray-900 flex items-center gap-2">
-                    Get Started Today
-                    <svg className="w-4 h-4 text-primary-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </h3>
-                </div>
-              </Link>
-            </div>
           </div>
-
-          <Reveal delay={460}>
-            <div className="text-center mt-12">
-              <p className="text-xs text-gray-500 mb-4">* Included with Website-in-a-Week and higher packages when paired with an active care plan or 12-month hosting commitment. Excludes $499 Sprint and Lead Sprint.</p>
-              <Link href="/portfolio" className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-primary-700 bg-white border-2 border-primary-600 rounded-lg hover:bg-primary-50 transition-colors duration-200">
-                See Portfolio
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* PRICING PREVIEW */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container-custom">
-          <SectionViewTracker eventName="pricing_view" sectionName="home_pricing_preview" />
-          <Reveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">All Packages</h2>
-          </Reveal>
-          <div className="max-w-3xl mx-auto space-y-4">
-            <Reveal delay={60}>
-              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <span className="font-semibold">$499 Landing Page (24h)</span>
-                <Link href="/pricing" className="text-primary-600 hover:text-primary-700 font-semibold">View →</Link>
-              </div>
-            </Reveal>
-            <Reveal delay={100}>
-              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <span className="font-semibold">$2,000 Website-in-a-Week</span>
-                <Link href="/pricing" className="text-primary-600 hover:text-primary-700 font-semibold">View →</Link>
-              </div>
-            </Reveal>
-            <Reveal delay={140}>
-              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <span className="font-semibold">$3,500–$4,500 Growth Website</span>
-                <Link href="/pricing" className="text-primary-600 hover:text-primary-700 font-semibold">View →</Link>
-              </div>
-            </Reveal>
-            <Reveal delay={180}>
-              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <span className="font-semibold">$5,500–$7,500+ Authority Website</span>
-                <Link href="/pricing" className="text-primary-600 hover:text-primary-700 font-semibold">View →</Link>
-              </div>
-            </Reveal>
-            <Reveal delay={220}>
-              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <span className="font-semibold">$8,000–$25,000+ Platform MVP</span>
-                <Link href="/pricing" className="text-primary-600 hover:text-primary-700 font-semibold">View →</Link>
-              </div>
-            </Reveal>
+          <div className="text-center mt-10">
+            <Link href="/portfolio" className="btn-secondary">See Portfolio</Link>
           </div>
         </div>
       </section>
@@ -595,20 +443,16 @@ export default function Home() {
         <div className="container-custom">
           <Reveal>
             <div className="max-w-4xl mx-auto text-center mb-10">
-              <h2 id="florida-areas-heading" className="text-3xl md:text-4xl font-bold mb-4">Florida Service Areas</h2>
+              <h2 id="florida-areas-heading" className="heading-lg mb-4">Space Coast Service Areas</h2>
               <p className="text-xl text-gray-700">
-                City-focused pages built for local search intent and stronger conversion clarity.
+                Local website design and SEO foundations for Palm Bay, Melbourne, Brevard County, and nearby Space Coast communities.
               </p>
             </div>
           </Reveal>
-
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {floridaLocations.slice(0, 8).map((location, idx) => (
               <Reveal key={location.slug} delay={idx * 60}>
-                <Link
-                  href={`/locations/${location.slug}`}
-                  className="rounded-xl border border-gray-200 bg-white p-5 text-left hover:border-primary-300 hover:shadow-md transition-all"
-                >
+                <Link href={`/locations/${location.slug}`} className="rounded-xl border border-gray-200 bg-white p-5 text-left hover:border-primary-300 hover:shadow-md transition-all block">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-2">{location.region}</p>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">{location.city}, FL</h3>
                   <p className="text-sm text-gray-600">{location.county}</p>
@@ -616,78 +460,47 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
-
-          <Reveal delay={320}>
-            <div className="text-center mt-10">
-              <Link href="/locations" className="btn-secondary">
-                View All Florida Locations
-              </Link>
-            </div>
-          </Reveal>
         </div>
       </section>
 
-      <section className="py-10 bg-white">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto rounded-xl border border-gray-200 bg-gray-50 px-6 py-5 text-center">
-            <p className="text-gray-700">
-              Have questions before starting?{' '}
-              <Link href="/faq" className="font-semibold text-primary-700 hover:text-primary-800">
-                Read our FAQ
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24 bg-gray-50" aria-labelledby="from-blog-heading">
+      <section className="py-16 md:py-24 bg-white" aria-labelledby="from-blog-heading">
         <div className="container-custom">
           <Reveal>
             <div className="max-w-4xl mx-auto text-center mb-10">
-              <h2 id="from-blog-heading" className="text-3xl md:text-4xl font-bold mb-4">From the Blog</h2>
-              <p className="text-xl text-gray-700">
-                Florida-focused SEO and conversion insights for local service businesses.
-              </p>
+              <h2 id="from-blog-heading" className="heading-lg mb-4">From the Blog</h2>
+              <p className="text-xl text-gray-700">Florida-focused SEO and conversion insights for local service businesses.</p>
             </div>
           </Reveal>
-
           <div className="grid md:grid-cols-3 gap-5 max-w-6xl mx-auto">
             {latestPosts.map((post, idx) => (
               <Reveal key={post.slug} delay={idx * 80}>
                 <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:border-primary-300 hover:shadow-md transition-all">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-2">{post.category}</p>
                   <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug">
-                    <Link href={`/blog/${post.slug}`} className="hover:text-primary-700 transition-colors">
-                      {post.title}
-                    </Link>
+                    <Link href={`/blog/${post.slug}`} className="hover:text-primary-700 transition-colors">{post.title}</Link>
                   </h3>
                   <p className="text-sm text-gray-600 mb-4">{post.readingTime}</p>
-                  <Link href={`/blog/${post.slug}`} className="text-sm font-semibold text-primary-700 hover:text-primary-800">
-                    Read article
-                  </Link>
+                  <Link href={`/blog/${post.slug}`} className="text-sm font-semibold text-primary-700 hover:text-primary-800">Read article</Link>
                 </article>
               </Reveal>
             ))}
           </div>
-
-          <Reveal delay={260}>
-            <div className="text-center mt-10">
-              <Link href="/blog" className="btn-secondary">
-                View All Blog Articles
-              </Link>
-            </div>
-          </Reveal>
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      <div className="md:hidden fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-4 right-4 z-40">
+        <Link href="/contact#website-plan" className="btn-accent w-full rounded-full py-4 shadow-2xl">
+          Get Started - $150
+        </Link>
+      </div>
+
       <CTASection
-        title="Need something live fast?"
-        subtitle="Start with the 24-hour sprint. Delivery clock starts after intake completion."
-        primaryCTA={{ text: 'Start 24-Hour Landing Page', href: '/checkout?package=landingPage' }}
-        secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact#book-call' }}
+        title="You Run Your Business. We Handle Your Website."
+        subtitle="Start with the $150 setup + $100/month local website plan, or contact us if you need a custom project."
+        primaryCTA={{ text: 'Get My Website Started', href: '/contact#website-plan' }}
+        secondaryCTA={{ text: 'See Pricing', href: '/pricing' }}
         darkBg={true}
+        trackingLocation="home_final_cta"
       />
     </main>
   );

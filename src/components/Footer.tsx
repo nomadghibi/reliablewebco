@@ -13,7 +13,7 @@ export default function Footer() {
               Reliable <span className="text-primary-400">Web Studio</span>
             </div>
             <p className="text-sm text-gray-400">
-              Fast launch. Clear pricing. Built to convert.
+              Managed local business websites. Built, hosted, maintained, and ready for local search.
             </p>
             <p className="text-xs text-gray-500 mt-2">
               Best Computer Tech LLC
@@ -25,8 +25,8 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/pricing#landing-page" className="hover:text-white transition-colors">
-                  24-Hour Landing Page
+                <Link href="/pricing#local-website-plan" className="hover:text-white transition-colors">
+                  Local Website Plan
                 </Link>
               </li>
               <li>

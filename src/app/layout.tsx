@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
 const sameAsLinks = [
@@ -21,12 +15,12 @@ const sameAsLinks = [
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.reliablewebstudio.com"),
-  title: "Reliable Web Studio — Launch a Lead-Generating Website Fast | 24-Hour Landing Pages",
-  description: "Get a modern landing page in 24 hours or a complete website in 7 days (up to 8 pages). Fixed price, professional, and built to convert. Generate calls, form leads, and bookings.",
-  keywords: "24 hour landing page, website in a week, lead generation website, conversion website, fast website launch",
+  title: "Reliable Web Studio — Managed Websites for Space Coast Small Businesses",
+  description: "Professional websites for Palm Bay, Melbourne, and Brevard County small businesses. $150 setup + $100/month for design, hosting, maintenance, basic SEO, and support.",
+  keywords: "web design Palm Bay FL, web design Melbourne FL, Space Coast web design, small business website Palm Bay, website design Brevard County, affordable small business websites",
   openGraph: {
-    title: "Reliable Web Studio — Launch a Lead-Generating Website Fast",
-    description: "Get a modern landing page in 24 hours or a complete website in 7 days (up to 8 pages). Built to generate calls, form leads, and bookings.",
+    title: "Reliable Web Studio — Managed Websites for Space Coast Small Businesses",
+    description: "$150 setup + $100/month. We build it, host it, maintain it, and help your business get found.",
     url: "https://www.reliablewebstudio.com",
     siteName: "Reliable Web Studio",
     type: "website",
@@ -34,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reliable Web Studio — Launch a Lead-Generating Website Fast",
-    description: "Get a modern landing page in 24 hours or a complete website in 7 days (up to 8 pages). Built to generate calls, form leads, and bookings.",
+    title: "Reliable Web Studio — Managed Websites for Space Coast Small Businesses",
+    description: "$150 setup + $100/month. We build it, host it, maintain it, and help your business get found.",
   },
 };
 
@@ -75,12 +69,25 @@ const localBusinessSchema = {
     { "@type": "AdministrativeArea", name: "Brevard County", containedInPlace: { "@type": "State", name: "Florida" } },
     { "@type": "State", name: "Florida" },
   ],
-  priceRange: "$499 - $25000+",
-  description: "Professional website development for local service businesses. 24-hour landing pages, websites in a week, and custom web app MVPs.",
+  priceRange: "$100/mo - $25000+",
+  description: "Managed website service and custom website development for local service businesses in Palm Bay, Melbourne, Brevard County, and Florida's Space Coast.",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Web Development Services",
     itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "Local Business Website Subscription" },
+        price: "100",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "100",
+          priceCurrency: "USD",
+          billingIncrement: "P1M",
+          description: "$150 setup plus $100 per month. 12-month initial service term.",
+        },
+      },
       {
         "@type": "Offer",
         itemOffered: { "@type": "Service", name: "24-Hour Landing Page Sprint" },
@@ -119,7 +126,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         {gaId && (
           <>
             <Script

@@ -27,8 +27,12 @@ export default function ContactPage() {
 
   const [formData, setFormData] = useState({
     name: '',
+    businessName: '',
     email: '',
     phone: '',
+    businessType: '',
+    currentWebsite: '',
+    primaryServiceArea: '',
     service: '',
     message: '',
   });
@@ -68,8 +72,12 @@ export default function ContactPage() {
         },
         body: JSON.stringify({
           name: formData.name,
+          business_name: formData.businessName,
           email: formData.email,
           phone: formData.phone,
+          business_type: formData.businessType,
+          current_website: formData.currentWebsite,
+          primary_service_area: formData.primaryServiceArea,
           service: formData.service,
           message: formData.message,
         }),
@@ -81,7 +89,17 @@ export default function ContactPage() {
           form_name: 'contact_quote_form',
           selected_service: formData.service || 'unspecified',
         });
-        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+        setFormData({
+          name: '',
+          businessName: '',
+          email: '',
+          phone: '',
+          businessType: '',
+          currentWebsite: '',
+          primaryServiceArea: '',
+          service: '',
+          message: '',
+        });
       } else {
         setStatus('error');
       }
@@ -197,10 +215,10 @@ export default function ContactPage() {
               Available for new projects
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              Let&apos;s Build Something Great
+              Get Your Local Business Website Started
             </h1>
             <p className="text-xl md:text-2xl text-primary-100 mb-6">
-              Ready to launch your website? Choose how you&apos;d like to get started.
+              Start with the $150 setup + $100/month website plan, book a short call, or request custom project pricing.
             </p>
 
             {/* Hosting/Domain Eligibility Banner */}
@@ -208,9 +226,9 @@ export default function ContactPage() {
               <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
               </svg>
-              <span className="font-semibold">Website-in-a-Week+ includes Year-1 Hosting + 1 Standard Domain*</span>
+              <span className="font-semibold">Local Website Plan: $150 setup + $100/month</span>
             </div>
-            <p className="text-xs text-primary-100/80 mt-3">$499 Sprint and Lead Sprint are excluded. Domain is based on availability and registered under the client&apos;s name.</p>
+            <p className="text-xs text-primary-100/80 mt-3">12-month initial term. Domain stays registered under the client&apos;s name whenever possible.</p>
 
             {/* Quick Contact Options */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -243,11 +261,11 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
 
             {/* Contact Form - Takes 3 columns */}
-            <div className="lg:col-span-3">
+            <div id="website-plan" className="lg:col-span-3 scroll-mt-28">
               <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
                 <div className="mb-8">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Request a Quote</h2>
-                  <p className="text-gray-600">Fill out the form below and I&apos;ll get back to you within 24 hours.</p>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Get My Website Started</h2>
+                  <p className="text-gray-600">Tell us what you do and where you work. We will reply with the best next step for your local business website.</p>
                 </div>
 
                 <form onSubmit={handleSubmit} onFocusCapture={handleFormFocus} className="space-y-6">
@@ -276,6 +294,31 @@ export default function ContactPage() {
                     </div>
 
                     <div>
+                      <label htmlFor="businessName" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Business Name <span className="text-red-500">*</span>
+                      </label>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                          <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4" />
+                          </svg>
+                        </div>
+                        <input
+                          type="text"
+                          id="businessName"
+                          name="businessName"
+                          required
+                          value={formData.businessName}
+                          onChange={handleChange}
+                          className="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-gray-50 focus:bg-white"
+                          placeholder="Reliable Plumbing Co."
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
                       <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
                         Email Address <span className="text-red-500">*</span>
                       </label>
@@ -297,9 +340,7 @@ export default function ContactPage() {
                         />
                       </div>
                     </div>
-                  </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
                         Phone Number <span className="text-red-500">*</span>
@@ -322,10 +363,61 @@ export default function ContactPage() {
                         />
                       </div>
                     </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div>
+                      <label htmlFor="businessType" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Business Type <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="businessType"
+                        name="businessType"
+                        required
+                        value={formData.businessType}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-gray-50 focus:bg-white"
+                        placeholder="Handyman, HVAC, cleaner..."
+                      />
+                    </div>
 
                     <div>
+                      <label htmlFor="primaryServiceArea" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Primary Service Area <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="primaryServiceArea"
+                        name="primaryServiceArea"
+                        required
+                        value={formData.primaryServiceArea}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-gray-50 focus:bg-white"
+                        placeholder="Palm Bay, Melbourne..."
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="currentWebsite" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Current Website <span className="text-gray-400">(optional)</span>
+                      </label>
+                      <input
+                        type="url"
+                        id="currentWebsite"
+                        name="currentWebsite"
+                        value={formData.currentWebsite}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-gray-50 focus:bg-white"
+                        placeholder="https://example.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-1 gap-6">
+                    <div>
                       <label htmlFor="service" className="block text-sm font-semibold text-gray-900 mb-2">
-                        Service Interested In <span className="text-red-500">*</span>
+                        I&apos;m interested in <span className="text-red-500">*</span>
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -342,13 +434,14 @@ export default function ContactPage() {
                           className="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-gray-50 focus:bg-white appearance-none"
                         >
                           <option value="">Select a service</option>
+                          <option value="local-website">$100/month Local Website</option>
+                          <option value="local-growth">Local Growth</option>
+                          <option value="local-pro">Local Pro</option>
+                          <option value="custom-website">Custom Website</option>
                           <option value="landing-page">24-Hour Landing Page ($499)</option>
-                          <option value="website-in-a-week">Website-in-a-Week ($2,000)</option>
-                          <option value="growth-website">Growth Website ($3,500-$4,500)</option>
-                          <option value="authority-website">Authority Website ($5,500-$7,500+)</option>
-                          <option value="web-app">Platform / Web App MVP</option>
-                          <option value="care-plan">Monthly Care Plan</option>
-                          <option value="not-sure">Not Sure / Just Exploring</option>
+                          <option value="seo">SEO</option>
+                          <option value="web-app">Software Development / ML-AI</option>
+                          <option value="something-else">Something Else</option>
                         </select>
                         <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
                           <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -361,7 +454,7 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
-                      Project Details
+                      Short Description of What You Need
                     </label>
                     <textarea
                       id="message"
@@ -370,7 +463,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={handleChange}
                       className="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-gray-50 focus:bg-white resize-none"
-                      placeholder="Tell me about your business, your goals, and any specific requirements..."
+                      placeholder="Tell me what services you offer, what city you serve, and what you want the website to help with..."
                     />
                   </div>
 
@@ -389,7 +482,7 @@ export default function ContactPage() {
                       </>
                     ) : (
                       <>
-                        Get My Free Quote
+                        Send My Website Request
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>

@@ -8,13 +8,13 @@ import SectionViewTracker from '@/components/SectionViewTracker';
 import TrackedLink from '@/components/TrackedLink';
 
 export const metadata: Metadata = {
-  title: 'Pricing — 24-Hour Landing Pages ($499) | Reliable Web Studio',
+  title: 'Small Business Website Pricing | $150 Setup + $100/Month | Reliable Web Studio',
   description:
-    'Choose the build speed you need. 24-Hour Landing Page ($499), Website-in-a-Week ($2,000), Growth Website ($3,500+), Authority Website ($5,500+), Platform MVP ($8,000+), and monthly care plans.',
+    'Professional website plans for Space Coast small businesses. Start with a managed local website for $150 setup + $100/month, or choose custom website, SEO, and software development options.',
   openGraph: {
-    title: 'Pricing — 24-Hour Landing Pages ($499) | Reliable Web Studio',
+    title: 'Small Business Website Pricing | $150 Setup + $100/Month | Reliable Web Studio',
     description:
-      'Choose the build speed you need. 24-Hour Landing Page ($499), Website-in-a-Week ($2,000), Growth Website ($3,500+), Authority Website ($5,500+), Platform MVP ($8,000+).',
+      'Start with a managed local website for $150 setup + $100/month, or choose one-time website and custom development options.',
     url: 'https://www.reliablewebstudio.com/pricing',
     type: 'website',
     images: [
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing — 24-Hour Landing Pages ($499) | Reliable Web Studio',
+    title: 'Small Business Website Pricing | $150 Setup + $100/Month',
     description:
-      'Choose the build speed you need. 24-Hour Landing Page ($499), Website-in-a-Week ($2,000), Growth Website ($3,500+), and more.',
+      'Start with a managed local website for $150 setup + $100/month, or choose custom project pricing.',
     images: ['/api/og/pricing'],
   },
   alternates: {
@@ -41,9 +41,40 @@ export const metadata: Metadata = {
 const pricingSchema = {
   '@context': 'https://schema.org',
   '@type': 'OfferCatalog',
-  name: 'Reliable Web Studio Packages',
+  name: 'Reliable Web Studio Website Plans',
   url: 'https://www.reliablewebstudio.com/pricing',
   itemListElement: [
+    {
+      '@type': 'Offer',
+      name: 'Local Website Plan',
+      url: 'https://www.reliablewebstudio.com/pricing#local-website-plan',
+      price: '100',
+      priceCurrency: 'USD',
+      category: 'WebDesignService',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '100',
+        priceCurrency: 'USD',
+        billingIncrement: 'P1M',
+        description: '$150 setup plus $100 per month. 12-month initial service term.',
+      },
+      itemOffered: {
+        '@type': 'Service',
+        name: 'Managed Local Business Website',
+        description:
+          'Professional website design, hosting, maintenance, basic SEO foundation, analytics setup, and minor monthly updates for small local service businesses.',
+        provider: {
+          '@type': 'Organization',
+          name: 'Reliable Web Studio',
+          url: 'https://www.reliablewebstudio.com',
+        },
+        areaServed: [
+          { '@type': 'City', name: 'Palm Bay' },
+          { '@type': 'City', name: 'Melbourne' },
+          { '@type': 'AdministrativeArea', name: 'Brevard County' },
+        ],
+      },
+    },
     {
       '@type': 'Offer',
       name: '24-Hour Landing Page Sprint',
@@ -207,9 +238,9 @@ export default function PricingPage() {
 
         <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-white">Choose the build speed you need</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-white">Website Pricing for Local Service Businesses</h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-6">
-              Every package is designed to generate leads. Fixed price, fast delivery, professional launch.
+              Start with a professional managed website for $150 setup + $100/month, or choose a larger custom website or development project when you need more.
             </p>
 
             {/* Hosting/Domain Eligibility Banner */}
@@ -231,11 +262,11 @@ export default function PricingPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m5.96 5.96a14.926 14.926 0 01-5.84 2.58m0 0a6 6 0 01-7.38-5.84h4.8" />
               </svg>
               <span className="text-sm md:text-base font-medium">
-                Transparent Pricing — Palm Bay, Melbourne &amp; Florida&apos;s Space Coast
+                Serving Palm Bay, Melbourne &amp; Florida&apos;s Space Coast
               </span>
             </div>
             <p className="mt-3 text-sm text-blue-100/90">
-              For the 24-hour sprint, the delivery clock starts after intake is complete.
+              Local Website plans use a 12-month initial service term, then continue month-to-month.
             </p>
           </div>
         </div>
@@ -248,10 +279,99 @@ export default function PricingPage() {
         </div>
       </section>
 
+      <section id="local-website-plan" className="section-padding bg-white">
+        <div className="container-custom">
+          <SectionViewTracker eventName="pricing_view" sectionName="pricing_local_website_plan" />
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-wide text-primary-700 mb-2">Best entry point for local service businesses</p>
+            <h2 className="heading-lg mb-4">Local Business Website Subscription</h2>
+            <p className="text-xl text-gray-700">
+              A professional website without the large upfront bill. We build it, host it, maintain it, and help you get found.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <article className="bg-white rounded-2xl shadow-xl p-8 border-2 border-primary-500 relative">
+              <div className="absolute -top-3 right-4 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                Primary Plan
+              </div>
+              <h3 className="text-2xl font-bold mb-2">Local Website</h3>
+              <p className="text-sm text-gray-600 mb-4">For owner-operated service businesses that need a dependable website.</p>
+              <div className="mb-6">
+                <div className="text-4xl font-bold">$150 <span className="text-base font-normal text-gray-600">setup</span></div>
+                <div className="text-3xl font-bold text-primary-700">$100<span className="text-base font-normal text-gray-600">/month</span></div>
+              </div>
+              <ul className="space-y-2 text-gray-700 mb-8">
+                <li>• Website design up to approximately 5 core pages</li>
+                <li>• Hosting, SSL/security, monitoring, and technical maintenance</li>
+                <li>• Contact form, click-to-call, maps/GBP integration</li>
+                <li>• Basic SEO, analytics, Search Console, sitemap, and schema setup</li>
+                <li>• Up to 30 minutes of minor text/photo updates per month</li>
+              </ul>
+              <Link href="/contact#website-plan" className="btn-primary w-full text-center">
+                Start for $150
+              </Link>
+            </article>
+
+            <article className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+              <h3 className="text-2xl font-bold mb-2">Local Growth</h3>
+              <p className="text-sm text-gray-600 mb-4">For businesses that want more local visibility support each month.</p>
+              <div className="mb-6">
+                <div className="text-4xl font-bold">$150 <span className="text-base font-normal text-gray-600">setup</span></div>
+                <div className="text-3xl font-bold text-primary-700">$199<span className="text-base font-normal text-gray-600">/month</span></div>
+              </div>
+              <ul className="space-y-2 text-gray-700 mb-8">
+                <li>• Everything in Local Website</li>
+                <li>• More ongoing website update support</li>
+                <li>• Google Business Profile assistance</li>
+                <li>• Monthly local SEO improvement</li>
+                <li>• Basic reporting</li>
+              </ul>
+              <Link href="/contact#website-plan" className="btn-secondary w-full text-center">
+                Ask About Local Growth
+              </Link>
+            </article>
+
+            <article className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+              <h3 className="text-2xl font-bold mb-2">Local Pro</h3>
+              <p className="text-sm text-gray-600 mb-4">For businesses ready for a stronger monthly SEO and conversion rhythm.</p>
+              <div className="mb-6">
+                <div className="text-4xl font-bold">$150 <span className="text-base font-normal text-gray-600">setup</span></div>
+                <div className="text-3xl font-bold text-primary-700">$299<span className="text-base font-normal text-gray-600">/month</span></div>
+              </div>
+              <ul className="space-y-2 text-gray-700 mb-8">
+                <li>• Everything in Local Growth</li>
+                <li>• Greater monthly content/SEO allocation</li>
+                <li>• Conversion optimization</li>
+                <li>• Expanded local SEO work</li>
+                <li>• Additional reporting and strategy</li>
+              </ul>
+              <Link href="/contact#website-plan" className="btn-secondary w-full text-center">
+                Ask About Local Pro
+              </Link>
+            </article>
+          </div>
+
+          <div className="max-w-5xl mx-auto mt-8 rounded-2xl border border-gray-200 bg-gray-50 p-6 text-sm text-gray-700">
+            <p className="font-semibold text-gray-900 mb-2">Service term and ownership note</p>
+            <p>
+              Local Website plans use a 12-month initial service term. After the initial term, service continues month-to-month. Domains should remain registered in the client&apos;s name whenever possible. New pages, major redesigns, paid advertising, advanced SEO, and substantial content creation are quoted separately.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Cards */}
-      <section id="packages" className="section-padding bg-white">
+      <section id="packages" className="section-padding bg-gray-50">
         <div className="container-custom">
           <SectionViewTracker eventName="pricing_view" sectionName="pricing_packages" />
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-wide text-primary-700 mb-2">Need something bigger?</p>
+            <h2 className="heading-lg mb-4">Custom Website and Development Options</h2>
+            <p className="text-xl text-gray-700">
+              For businesses that prefer to buy a site outright or need custom functionality, these existing project packages remain available.
+            </p>
+          </div>
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
             {/* 24-Hour Landing Page */}
             <div id="landing-page" className="bg-white rounded-lg shadow-xl p-8 border-2 border-accent-500 relative">
@@ -1005,9 +1125,9 @@ export default function PricingPage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to get started?"
-        subtitle="Book a call or start your 24-hour landing page now. Clock starts after intake completion."
-        primaryCTA={{ text: 'Start 24-Hour Landing Page', href: '/checkout?package=landingPage' }}
+        title="Ready to stop dealing with website headaches?"
+        subtitle="Start with the $150 setup + $100/month local website plan, or book a call if you need a larger custom project."
+        primaryCTA={{ text: 'Start Local Website Plan', href: '/contact#website-plan' }}
         secondaryCTA={{ text: 'Book a 10-Minute Call', href: '/contact#book-call' }}
         darkBg={true}
       />
