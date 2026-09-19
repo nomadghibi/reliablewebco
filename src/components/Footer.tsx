@@ -123,6 +123,11 @@ export default function Footer() {
                   Terms of Service
                 </Link>
               </li>
+              <li>
+                <Link href="/service-agreement/local-website-plan" className="hover:text-white transition-colors">
+                  Local Website Agreement
+                </Link>
+              </li>
             </ul>
             <div className="mt-6">
               <a

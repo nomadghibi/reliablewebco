@@ -272,7 +272,10 @@ export default function LocalBusinessWebsitePlanPage() {
             <PaymentButton type="localWebsitePlan" text="Get My Website Started" variant="accent" className="px-8 py-4 text-lg" />
             <Link href="/pricing" className="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-lg font-semibold text-white hover:bg-white hover:text-primary-800 transition-colors">Compare All Pricing</Link>
           </div>
-          <p className="mt-5 text-sm text-blue-200">By starting a plan, you agree to the <Link href="/terms" className="underline hover:text-white">Terms of Service</Link>.</p>
+          <p className="mt-5 text-sm text-blue-200">
+            Before payment, review the <Link href="/service-agreement/local-website-plan" className="underline hover:text-white">service agreement</Link> and{' '}
+            <Link href="/terms" className="underline hover:text-white">Terms of Service</Link>.
+          </p>
         </div></div>
       </section>
     </main>

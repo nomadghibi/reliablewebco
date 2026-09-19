@@ -494,6 +494,9 @@ export default function ContactPage() {
                     Submitting this form requests a consultation and does not start paid service. Before payment, review the{' '}
                     <Link href="/services/local-business-website-plan" className="font-semibold text-primary-700 hover:text-primary-800">
                       plan details
+                    </Link>, the{' '}
+                    <Link href="/service-agreement/local-website-plan" className="font-semibold text-primary-700 hover:text-primary-800">
+                      service agreement
                     </Link>{' '}
                     and <Link href="/terms" className="font-semibold text-primary-700 hover:text-primary-800">Terms of Service</Link>.
                   </p>

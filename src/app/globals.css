@@ -229,3 +229,50 @@ body {
     animation: none !important;
   }
 }
+
+/* Printable client agreement */
+.agreement-copy h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  color: rgb(17 24 39);
+}
+
+.agreement-copy p + p,
+.agreement-copy ul + p {
+  margin-top: 0.75rem;
+}
+
+.agreement-copy ul {
+  margin-top: 0.5rem;
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+.agreement-copy li + li {
+  margin-top: 0.25rem;
+}
+
+@media print {
+  header:not(.agreement-document-header),
+  footer:not(.agreement-document-footer),
+  .print-hide {
+    display: none !important;
+  }
+
+  .agreement-print {
+    width: 100%;
+    color: black;
+    font-size: 10pt;
+  }
+
+  .agreement-copy section {
+    break-inside: avoid;
+  }
+
+  @page {
+    size: letter;
+    margin: 0.65in;
+  }
+}

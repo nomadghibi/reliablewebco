@@ -29,6 +29,10 @@ export default function CheckoutActions({
           />
           <span>
             I understand this plan includes a 12-month initial commitment at $100/month, plus the $150 setup fee, and I agree to the{' '}
+            <Link href="/service-agreement/local-website-plan" target="_blank" className="font-semibold text-primary-700 underline hover:text-primary-800">
+              Local Website Plan Service Agreement
+            </Link>{' '}
+            and{' '}
             <Link href="/terms" target="_blank" className="font-semibold text-primary-700 underline hover:text-primary-800">
               Terms of Service
             </Link>.
