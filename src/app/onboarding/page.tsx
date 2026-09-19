@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
 const initialForm = {
   name: '',
@@ -32,6 +32,22 @@ export default function OnboardingPage() {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState<FormStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [stripeSessionId, setStripeSessionId] = useState('');
+
+  useEffect(() => {
+    let active = true;
+
+    const loadSessionId = async () => {
+      await Promise.resolve();
+      const sessionId = new URLSearchParams(window.location.search).get('session_id') ?? '';
+      if (active) setStripeSessionId(sessionId);
+    };
+
+    void loadSessionId();
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((current) => ({ ...current, [event.target.name]: event.target.value }));
@@ -46,7 +62,7 @@ export default function OnboardingPage() {
       const response = await fetch('/api/onboarding-request', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, stripeSessionId }),
       });
       const result = (await response.json()) as { error?: string };
       if (!response.ok) throw new Error(result.error || 'Unable to submit onboarding information.');
@@ -92,6 +108,12 @@ export default function OnboardingPage() {
           <form onSubmit={handleSubmit} className="rounded-3xl border border-gray-200 bg-white p-6 md:p-10 shadow-xl">
             <input name="botField" value={form.botField} onChange={handleChange} className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
+            {!stripeSessionId && (
+              <div className="mb-8 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
+                This intake form requires a verified payment. Return to checkout and complete payment before submitting your website details.
+              </div>
+            )}
+
             <fieldset className="mb-10">
               <legend className="heading-sm mb-5">Your Contact Information</legend>
               <div className="grid md:grid-cols-2 gap-5">
@@ -132,7 +154,7 @@ export default function OnboardingPage() {
             </fieldset>
 
             {status === 'error' && <p className="mb-5 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">{errorMessage}</p>}
-            <button type="submit" disabled={status === 'submitting'} className="btn-primary w-full py-4 disabled:cursor-not-allowed disabled:opacity-60">
+            <button type="submit" disabled={status === 'submitting' || !stripeSessionId} className="btn-primary w-full py-4 disabled:cursor-not-allowed disabled:opacity-60">
               {status === 'submitting' ? 'Submitting...' : 'Submit Website Information'}
             </button>
             <p className="mt-4 text-center text-xs text-gray-500">Do not submit passwords, payment information, or other sensitive credentials through this form.</p>

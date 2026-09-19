@@ -2,9 +2,48 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
+type VerificationStatus = 'checking' | 'verified' | 'unverified';
 
 export default function CheckoutSuccessPage() {
   const router = useRouter();
+  const [verificationStatus, setVerificationStatus] = useState<VerificationStatus>('checking');
+  const [sessionId, setSessionId] = useState('');
+
+  useEffect(() => {
+    let active = true;
+
+    const verifyPayment = async () => {
+      await Promise.resolve();
+      const checkoutSessionId = new URLSearchParams(window.location.search).get('session_id') ?? '';
+      if (!active) return;
+      setSessionId(checkoutSessionId);
+
+      if (!checkoutSessionId) {
+        setVerificationStatus('unverified');
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/stripe/verify-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId: checkoutSessionId }),
+        });
+        if (active) setVerificationStatus(response.ok ? 'verified' : 'unverified');
+      } catch {
+        if (active) setVerificationStatus('unverified');
+      }
+    };
+
+    void verifyPayment();
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const verified = verificationStatus === 'verified';
 
   const handleGoBack = () => {
     if (typeof window !== 'undefined' && window.history.length > 1) {
@@ -29,9 +68,9 @@ export default function CheckoutSuccessPage() {
           </div>
 
           {/* Success Icon */}
-          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
+          <div className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 ${verified ? 'bg-green-100' : 'bg-amber-100'}`}>
             <svg
-              className="w-10 h-10 text-green-600"
+              className={`w-10 h-10 ${verified ? 'text-green-600' : 'text-amber-600'}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -40,17 +79,25 @@ export default function CheckoutSuccessPage() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M5 13l4 4L19 7"
+                d={verified ? 'M5 13l4 4L19 7' : 'M12 9v4m0 4h.01M10.29 3.86l-7.82 13.55A2 2 0 004.2 20h15.6a2 2 0 001.73-3L13.71 3.86a2 2 0 00-3.42 0z'}
               />
             </svg>
           </div>
 
           {/* Heading */}
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Payment Successful!
+            {verificationStatus === 'checking'
+              ? 'Confirming Your Payment...'
+              : verified
+                ? 'Payment Confirmed!'
+                : 'Payment Confirmation Needed'}
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Thank you for your purchase. Complete the website intake so we have the business details needed to begin.
+            {verified
+              ? 'Thank you for your purchase. Complete the website intake so we have the business details needed to begin.'
+              : verificationStatus === 'checking'
+                ? 'Please wait while we securely verify your Stripe checkout.'
+                : 'We could not verify a completed payment from this link. If you paid successfully, contact us for assistance.'}
           </p>
           <p className="text-sm text-primary-700 font-semibold mb-8">
             Important: your project timeline starts after your intake details and required assets are complete.
@@ -140,9 +187,15 @@ export default function CheckoutSuccessPage() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/onboarding" className="btn-primary">
-              Complete Website Intake
-            </Link>
+            {verified ? (
+              <Link href={`/onboarding?session_id=${encodeURIComponent(sessionId)}`} className="btn-primary">
+                Complete Website Intake
+              </Link>
+            ) : (
+              <Link href="/contact" className="btn-primary">
+                Contact Us
+              </Link>
+            )}
             <Link href="/" className="btn-secondary">
               Back to Home
             </Link>

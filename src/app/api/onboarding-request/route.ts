@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { verifyLocalWebsiteCheckout } from '@/lib/stripe-checkout';
 
 const DEFAULT_FORMSPREE_ENDPOINT = 'https://formspree.io/f/xlgweovk';
 
@@ -21,9 +22,15 @@ type OnboardingPayload = {
   brandNotes?: string;
   additionalNotes?: string;
   botField?: string;
+  stripeSessionId?: string;
 };
 
 class ValidationError extends Error {}
+class PaymentVerificationError extends Error {
+  constructor(message: string, readonly status: number) {
+    super(message);
+  }
+}
 
 function clean(value: string | undefined, maxLength: number): string {
   return (value ?? '').trim().replace(/\s+/g, ' ').slice(0, maxLength);
@@ -60,6 +67,21 @@ export async function POST(request: Request) {
     if (!serviceArea) throw new ValidationError('Primary service area is required.');
     if (!services) throw new ValidationError('Please list the services the website should feature.');
 
+    const checkout = await verifyLocalWebsiteCheckout(clean(body.stripeSessionId, 240));
+    if (!checkout.verified) {
+      const temporarilyUnavailable = checkout.reason === 'unconfigured' || checkout.reason === 'unavailable';
+      throw new PaymentVerificationError(
+        temporarilyUnavailable
+          ? 'Payment verification is temporarily unavailable. Please try again shortly.'
+          : 'A verified Local Website Plan payment is required before submitting this form.',
+        temporarilyUnavailable ? 503 : 403
+      );
+    }
+
+    if (checkout.customerEmail && checkout.customerEmail !== email.toLowerCase()) {
+      throw new PaymentVerificationError('Use the same email address entered during Stripe checkout.', 403);
+    }
+
     const requestId = crypto.randomUUID();
     const endpoint = process.env.FORMSPREE_ONBOARDING_ENDPOINT || DEFAULT_FORMSPREE_ENDPOINT;
     const response = await fetch(endpoint, {
@@ -68,6 +90,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         inquiry_type: 'paid_website_onboarding',
         request_id: requestId,
+        stripe_session_id: checkout.sessionId,
         name,
         email,
         phone: clean(body.phone, 80),
@@ -96,6 +119,10 @@ export async function POST(request: Request) {
   } catch (error) {
     if (error instanceof ValidationError) {
       return NextResponse.json({ error: error.message }, { status: 400 });
+    }
+
+    if (error instanceof PaymentVerificationError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
     }
 
     return NextResponse.json(
